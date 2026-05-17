@@ -32,6 +32,7 @@ class TestDecoderV2IndexExport(unittest.TestCase):
                     "accepted_fields": {
                         "winner": {"accepted_for_index": True, "value": "left"},
                         "kills": {"accepted_for_index": True},
+                        "gold": {"accepted_for_index": True},
                     },
                     "players": [
                         {
@@ -42,6 +43,8 @@ class TestDecoderV2IndexExport(unittest.TestCase):
                             "kills": 1,
                             "deaths": 2,
                             "assists": 3,
+                            "gold": 5600,
+                            "gold_status": "accepted",
                         }
                     ],
                 }
@@ -53,6 +56,8 @@ class TestDecoderV2IndexExport(unittest.TestCase):
 
         self.assertEqual(export["matches"][0]["winner"], "left")
         self.assertEqual(export["matches"][0]["players"][0]["kills"], 1)
+        self.assertEqual(export["matches"][0]["players"][0]["gold"], 5600)
+        self.assertEqual(export["matches"][0]["players"][0]["gold_status"], "accepted")
         self.assertEqual(export["matches"][0]["players"][0]["kda_source"], "parser")
         self.assertEqual(export["matches"][0]["kda_source_summary"]["parser_rows"], 1)
         self.assertEqual(export["matches"][0]["kda_source_summary"]["result_screen_rows"], 0)

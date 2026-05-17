@@ -146,6 +146,9 @@ def build_index_ready_export(
                     parser_rows += 1
             else:
                 unresolved_rows += 1
+            if accepted.get("gold", {}).get("accepted_for_index"):
+                row["gold"] = player.get("gold")
+                row["gold_status"] = player.get("gold_status")
             player_decision = player_minion_decisions.get(player["name"])
             if player_decision:
                 row["minion_policy"] = player_decision.to_dict()

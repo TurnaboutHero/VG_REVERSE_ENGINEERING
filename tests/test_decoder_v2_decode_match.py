@@ -10,6 +10,8 @@ from vg.decoder_v2.models import (
     CompletenessAssessment,
     CompletenessStatus,
     DurationEstimate,
+    GoldExtractionResult,
+    GoldPlayerSummary,
     KDAExtractionResult,
     KDAPlayerSummary,
     ReplaySignalSummary,
@@ -58,7 +60,9 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
             "vg.decoder_v2.decode_match.decode_winner_from_replay"
         ) as winner_mock, patch(
             "vg.decoder_v2.decode_match.decode_kda_from_replay"
-        ) as kda_mock:
+        ) as kda_mock, patch(
+            "vg.decoder_v2.decode_match.decode_gold_from_replay"
+        ) as gold_mock:
             parser_cls.return_value.parse.return_value = parsed
             winner_mock.return_value = WinnerExtractionResult(
                 accepted=False,
@@ -76,6 +80,14 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
                 duration_estimate=duration,
                 players=(),
             )
+            gold_mock.return_value = GoldExtractionResult(
+                accepted=False,
+                reason="gold withheld",
+                assessment=assessment,
+                players=(
+                    GoldPlayerSummary("player1", "left", "Alpha", 1200, "partial_incomplete_replay", 600.0, 0.0, 0.0),
+                ),
+            )
 
             output = decode_match("match.0.vgr")
 
@@ -84,7 +96,10 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
         self.assertIn("kills", output.withheld_fields)
         self.assertEqual(output.players[0].hero_name, "Alpha")
         self.assertIsNone(output.players[0].kills)
+        self.assertEqual(output.players[0].gold, 1200)
+        self.assertEqual(output.players[0].gold_status, "partial_incomplete_replay")
         self.assertFalse(output.withheld_fields["winner"].accepted_for_index)
+        self.assertFalse(output.withheld_fields["gold"].accepted_for_index)
 
     def test_decode_match_emits_kda_on_complete(self) -> None:
         parsed = {
@@ -107,7 +122,9 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
             "vg.decoder_v2.decode_match.decode_winner_from_replay"
         ) as winner_mock, patch(
             "vg.decoder_v2.decode_match.decode_kda_from_replay"
-        ) as kda_mock:
+        ) as kda_mock, patch(
+            "vg.decoder_v2.decode_match.decode_gold_from_replay"
+        ) as gold_mock:
             parser_cls.return_value.parse.return_value = parsed
             winner_mock.return_value = WinnerExtractionResult(
                 accepted=True,
@@ -135,12 +152,23 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
                     ),
                 ),
             )
+            gold_mock.return_value = GoldExtractionResult(
+                accepted=True,
+                reason="gold accepted",
+                assessment=assessment,
+                players=(
+                    GoldPlayerSummary("player1", "left", "Alpha", 5600, "accepted", 5000.0, 0.0, 0.0),
+                ),
+            )
 
             output = decode_match("match.0.vgr")
 
         self.assertEqual(output.accepted_fields["winner"].value, "left")
         self.assertTrue(output.accepted_fields["winner"].accepted_for_index)
+        self.assertTrue(output.accepted_fields["gold"].accepted_for_index)
         self.assertEqual(output.players[0].kills, 1)
+        self.assertEqual(output.players[0].gold, 5600)
+        self.assertEqual(output.players[0].gold_status, "accepted")
         self.assertIn("duration_seconds", output.withheld_fields)
         self.assertEqual(output.schema_version, "decoder_v2.match.v1")
 
@@ -153,6 +181,8 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
         ) as winner_mock, patch(
             "vg.decoder_v2.decode_match.decode_kda_from_replay"
         ) as kda_mock, patch(
+            "vg.decoder_v2.decode_match.decode_gold_from_replay"
+        ) as gold_mock, patch(
             "vg.decoder_v2.decode_match.collect_minion_candidates"
         ) as minion_mock:
             safe_mock.return_value = object_with_to_dict({"safe": True})
@@ -172,6 +202,12 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
                 duration_estimate=duration,
                 players=(),
             )
+            gold_mock.return_value = GoldExtractionResult(
+                accepted=True,
+                reason="gold accepted",
+                assessment=assessment,
+                players=(),
+            )
             minion_mock.return_value = []
 
             payload = decode_match_debug("match.0.vgr")
@@ -179,6 +215,7 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
         self.assertEqual(payload["schema_version"], "decoder_v2.debug_match.v1")
         self.assertIn("completeness", payload)
         self.assertIn("duration", payload)
+        self.assertIn("gold_debug", payload)
         self.assertIn("minion_candidates", payload)
 
     def test_main_writes_debug_json(self) -> None:

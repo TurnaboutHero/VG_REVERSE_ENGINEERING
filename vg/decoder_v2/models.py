@@ -254,6 +254,39 @@ class KDAExtractionResult:
 
 
 @dataclass(frozen=True)
+class GoldPlayerSummary:
+    """Per-player credit-action gold estimate."""
+
+    player_name: str
+    team: str
+    hero_name: str
+    gold: int
+    gold_status: str
+    action_06_income: float
+    action_06_sellback_refund: float
+    action_06_spent: float
+
+    def to_dict(self) -> Dict[str, object]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class GoldExtractionResult:
+    """Gold extraction output with completeness-gated acceptance."""
+
+    accepted: bool
+    reason: str
+    assessment: CompletenessAssessment
+    players: Tuple[GoldPlayerSummary, ...] = ()
+
+    def to_dict(self) -> Dict[str, object]:
+        result = asdict(self)
+        result["assessment"] = self.assessment.to_dict()
+        result["players"] = [player.to_dict() for player in self.players]
+        return result
+
+
+@dataclass(frozen=True)
 class WinnerExtractionResult:
     """Conservative winner extraction output."""
 
@@ -283,6 +316,8 @@ class AcceptedPlayerFields:
     kills: Optional[int] = None
     deaths: Optional[int] = None
     assists: Optional[int] = None
+    gold: Optional[int] = None
+    gold_status: Optional[str] = None
 
     def to_dict(self) -> Dict[str, object]:
         return asdict(self)

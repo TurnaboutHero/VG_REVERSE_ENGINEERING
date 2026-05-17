@@ -9,6 +9,7 @@ from typing import Dict, List, Optional
 
 from vg.core.vgr_parser import VGRParser
 
+from .gold import decode_gold_from_replay
 from .kda import decode_kda_from_replay
 from .minions import collect_minion_candidates
 from .models import AcceptedPlayerFields, DecoderV2MatchOutput, FieldDecision
@@ -24,12 +25,14 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
     winner_result = decode_winner_from_replay(replay_file)
     kda_result = decode_kda_from_replay(replay_file)
     assessment = winner_result.assessment
+    gold_result = decode_gold_from_replay(replay_file, assessment=assessment)
 
     players: List[AcceptedPlayerFields] = []
     if kda_result.accepted:
         kda_by_name = {player.player_name: player for player in kda_result.players}
     else:
         kda_by_name = {}
+    gold_by_name = {player.player_name: player for player in gold_result.players}
 
     for team_label in ("left", "right"):
         for player in parsed["teams"][team_label]:
@@ -41,6 +44,8 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
                 kills=kda_by_name.get(player["name"]).kills if player["name"] in kda_by_name else None,
                 deaths=kda_by_name.get(player["name"]).deaths if player["name"] in kda_by_name else None,
                 assists=kda_by_name.get(player["name"]).assists if player["name"] in kda_by_name else None,
+                gold=gold_by_name.get(player["name"]).gold if player["name"] in gold_by_name else None,
+                gold_status=gold_by_name.get(player["name"]).gold_status if player["name"] in gold_by_name else None,
             )
             players.append(accepted)
 
@@ -139,6 +144,22 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
             reason=kda_result.reason,
         )
 
+    if gold_result.accepted:
+        accepted_fields["gold"] = FieldDecision(
+            value="accepted",
+            claim_status="strong",
+            accepted_for_index=True,
+            claim_id="gold.credit_action_06_complete_match",
+        )
+    else:
+        withheld_fields["gold"] = FieldDecision(
+            value="partial",
+            claim_status="strong",
+            accepted_for_index=False,
+            claim_id="gold.credit_action_06_complete_match",
+            reason=gold_result.reason,
+        )
+
     return DecoderV2MatchOutput(
         schema_version="decoder_v2.match.v1",
         replay_name=parsed["replay_name"],
@@ -159,6 +180,7 @@ def decode_match_debug(replay_file: str) -> Dict[str, object]:
     safe_output = decode_match(replay_file)
     winner_result = decode_winner_from_replay(replay_file)
     kda_result = decode_kda_from_replay(replay_file)
+    gold_result = decode_gold_from_replay(replay_file, assessment=winner_result.assessment)
     minion_candidates = collect_minion_candidates(replay_file)
 
     return {
@@ -168,6 +190,7 @@ def decode_match_debug(replay_file: str) -> Dict[str, object]:
         "duration": winner_result.duration_estimate.to_dict(),
         "winner_debug": winner_result.to_dict(),
         "kda_debug": kda_result.to_dict(),
+        "gold_debug": gold_result.to_dict(),
         "minion_candidates": [item.to_dict() for item in minion_candidates],
     }
 

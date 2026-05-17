@@ -21,6 +21,14 @@ DECODER_EVIDENCE = (
     ),
 )
 
+GOLD_EVIDENCE = (
+    ValidationEvidence(
+        source_type="fixture_validation",
+        reference="vg/output/credit_resource_validation_tournament.json",
+        summary="Complete fixtures: 96/98 players within 5%, 98/98 within 10%, average absolute error 79.42 gold, truth correlation 0.9993.",
+    ),
+)
+
 OFFSET_CLAIMS = [
     OffsetClaim(
         claim_id="player_block.entity_id",
@@ -103,9 +111,9 @@ EVENT_HEADER_CLAIMS = [
         entity_endian="big",
         timestamp_offset=7,
         timestamp_endian="float32-be",
-        meaning="Credit / gold / assist-related event family.",
+        meaning="Credit / gold / assist-related event family. Action 0x06 positive values excluding sell_flag 0x01 form the accepted complete-fixture gold estimate.",
         status=ClaimStatus.STRONG,
-        evidence=DECODER_EVIDENCE,
+        evidence=DECODER_EVIDENCE + GOLD_EVIDENCE,
     ),
     EventHeaderClaim(
         claim_id="event.item_acquire",
@@ -163,6 +171,12 @@ DECODER_FIELD_STATUSES = [
         status=ClaimStatus.STRONG,
         source_kind="derived",
         rationale="~98% on complete tournament fixtures.",
+    ),
+    DecoderFieldStatus(
+        field_name="gold",
+        status=ClaimStatus.STRONG,
+        source_kind="derived",
+        rationale="Complete fixtures: 96/98 within 5%, 98/98 within 10% using 600 + action 0x06 positive no-sell credits.",
     ),
     DecoderFieldStatus(
         field_name="minion_kills",

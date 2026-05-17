@@ -60,6 +60,7 @@ vg/
   output/                      # Analysis results (gitignored)
   docs/                        # Documentation
     REVERSE_ENGINEERING_NOTES.md # Detailed research notes
+    HACKEDGLORY_SEMANTIC_COMPARISON_2026-05-18.md # Packet-decoder semantics mapped to .vgr research targets
 ```
 
 ## Usage

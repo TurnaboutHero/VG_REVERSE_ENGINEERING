@@ -51,6 +51,8 @@
   - `python -m vg.decoder_v2.minion_window_research <replay.0.vgr> --truth vg/output/tournament_truth.json -o window.json`
 - complete-fixture minion window research
   - `python -m vg.decoder_v2.minion_window_fixture_research --truth vg/output/tournament_truth.json -o complete-window.json`
+- HackedGlory-style minion validation summary
+  - `python -m vg.decoder_v2.hackedglory_minion_validation --truth vg/output/tournament_truth.json -o hackedglory-minion-validation.json`
 - target-vs-baseline minion outlier compare
   - `python -m vg.decoder_v2.minion_outlier_compare --truth vg/output/tournament_truth.json --replay-name <replay_name> -o outlier.json`
 - same-hero minion outlier compare
@@ -71,6 +73,8 @@
   - `python -m vg.decoder_v2.action02_hero_affinity --truth vg/output/tournament_truth.json -o action02-heroes.json`
 - action-family subfamily summary
   - `python -m vg.decoder_v2.action02_subfamily_summary --truth vg/output/tournament_truth.json --replay-name <replay_name> -o action02-subfamilies.json`
+- HackedGlory-style XP/level validation summary
+  - `python -m vg.decoder_v2.hackedglory_xp_level_validation --truth vg/output/tournament_truth.json -o hackedglory-xp-level-validation.json`
 - target replay provenance trace
   - `python -m vg.decoder_v2.minion_action_provenance --truth vg/output/tournament_truth.json --replay-name <replay_name> --action 0x02 -o provenance.json`
 - minion outlier risk report
