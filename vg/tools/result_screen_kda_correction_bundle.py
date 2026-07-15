@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Optional
 
 from .result_screen_kda_correction_apply import build_result_screen_kda_correction_apply
 from .result_screen_kda_correction_merge import build_result_screen_kda_correction_merge
@@ -13,20 +13,29 @@ from .result_screen_kda_correction_report import (
     _load_expected_players,
     build_result_screen_kda_correction_report,
 )
+from .result_screen_image_kda_correction import build_result_screen_image_kda_correction_apply
 
 
 def build_result_screen_kda_correction_bundle(
     decoded_payload: Dict[str, object],
     dump_path: str,
+    *,
+    image_path: Optional[str] = None,
 ) -> Dict[str, object]:
     expected_players = _load_expected_players_from_payload(decoded_payload)
     report = build_result_screen_kda_correction_report(dump_path, expected_players)
     apply_report = build_result_screen_kda_correction_apply(dump_path, expected_players)
+    image_apply_report = None
+    if apply_report.get("applicable_rows") == 0 and image_path:
+        image_apply_report = build_result_screen_image_kda_correction_apply(image_path, expected_players)
+        if int(image_apply_report.get("applicable_rows") or 0) > 0:
+            apply_report = image_apply_report
     merged = build_result_screen_kda_correction_merge(decoded_payload, apply_report)
     return {
         "report": report,
         "apply": apply_report,
         "merge": merged,
+        "image_apply": image_apply_report,
     }
 
 
@@ -47,11 +56,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build result-screen KDA correction report/apply/merge artifacts.")
     parser.add_argument("--decoded", required=True, help="Decoder debug JSON or player-row JSON")
     parser.add_argument("--dump", required=True, help="Result-screen full dump path")
+    parser.add_argument("--image", help="Optional result-screen screenshot path for OCR fallback")
     parser.add_argument("--output-dir", required=True, help="Directory to write bundle artifacts into")
     args = parser.parse_args()
 
     decoded_payload = json.loads(Path(args.decoded).read_text(encoding="utf-8"))
-    bundle = build_result_screen_kda_correction_bundle(decoded_payload, args.dump)
+    bundle = build_result_screen_kda_correction_bundle(decoded_payload, args.dump, image_path=args.image)
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)

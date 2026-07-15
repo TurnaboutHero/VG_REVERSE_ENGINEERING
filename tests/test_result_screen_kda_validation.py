@@ -44,6 +44,65 @@ class TestResultScreenKdaValidation(unittest.TestCase):
         self.assertEqual(report["rows"][0]["reference_source"], "result_screen")
         self.assertEqual(report["rows"][0]["corrected_correct_rows"], 1)
 
+    def test_validation_counts_only_truth_covered_rows(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            memory_root = Path(tmp) / "memory_sessions"
+            session = memory_root / "probe" / "bundle"
+            session.mkdir(parents=True)
+            (session / "result_screen_kda_correction_merge.json").write_text(
+                json.dumps(
+                    {
+                        "replay_name": "sample",
+                        "players": [
+                            {"name": "covered", "kills": 1, "deaths": 2, "assists": 3},
+                            {"name": "missing", "kills": 9, "deaths": 9, "assists": 9},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            output_root = Path(tmp) / "output"
+            output_root.mkdir()
+            (output_root / "debug.json").write_text(
+                json.dumps(
+                    {
+                        "safe_output": {
+                            "replay_name": "sample",
+                            "players": [
+                                {"name": "covered", "kills": 0, "deaths": 0, "assists": 0},
+                                {"name": "missing", "kills": 9, "deaths": 9, "assists": 9},
+                            ],
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+            truth = Path(tmp) / "truth.json"
+            truth.write_text(
+                json.dumps(
+                    {
+                        "matches": [
+                            {
+                                "replay_name": "sample",
+                                "players": {
+                                    "covered": {"kills": 1, "deaths": 2, "assists": 3},
+                                },
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = build_result_screen_kda_validation(str(memory_root), str(output_root), str(truth))
+
+        row = report["rows"][0]
+        self.assertEqual(row["total_rows"], 1)
+        self.assertEqual(row["truth_covered_rows"], 1)
+        self.assertEqual(row["truth_uncovered_rows"], 1)
+        self.assertEqual(row["rows_improved"], 1)
+        self.assertEqual(report["truth_covered_summary"]["corrected_accuracy_pct"], 100.0)
+
 
 if __name__ == "__main__":
     unittest.main()

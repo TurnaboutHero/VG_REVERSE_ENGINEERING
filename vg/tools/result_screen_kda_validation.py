@@ -18,6 +18,10 @@ def _player_kda(player: Dict[str, object]) -> Tuple[Optional[int], Optional[int]
     return player.get("kills"), player.get("deaths"), player.get("assists")
 
 
+def _pct(correct: int, total: int) -> float:
+    return round((correct / total) * 100, 4) if total else 0.0
+
+
 def build_result_screen_kda_validation(
     memory_sessions_root: str,
     output_root: str,
@@ -57,14 +61,18 @@ def build_result_screen_kda_validation(
         rows_regressed = 0
         rows_unchanged = 0
         total_rows = 0
+        decoded_rows = len(decoded_players)
+        truth_uncovered_rows = 0
 
         for player in decoded_players:
-            total_rows += 1
             name = player["name"]
             baseline_kda = _player_kda(player)
             corrected_kda = _player_kda(corrected_players[name]) if name in corrected_players else baseline_kda
             if truth_match:
                 truth_name = _resolve_truth_player_name(name, truth_match["players"])
+                if not truth_name:
+                    truth_uncovered_rows += 1
+                    continue
                 truth_player = truth_match["players"][truth_name] if truth_name else {}
                 reference_kda = (
                     truth_player.get("kills"),
@@ -74,6 +82,7 @@ def build_result_screen_kda_validation(
             else:
                 reference_kda = corrected_kda
 
+            total_rows += 1
             baseline_correct = baseline_kda == reference_kda
             corrected_correct = corrected_kda == reference_kda
             baseline_correct_rows += int(baseline_correct)
@@ -95,15 +104,34 @@ def build_result_screen_kda_validation(
                 "rows_unchanged": rows_unchanged,
                 "rows_regressed": rows_regressed,
                 "total_rows": total_rows,
+                "decoded_rows": decoded_rows,
+                "truth_covered_rows": total_rows if truth_match else None,
+                "truth_uncovered_rows": truth_uncovered_rows if truth_match else None,
+                "baseline_accuracy_pct": _pct(baseline_correct_rows, total_rows),
+                "corrected_accuracy_pct": _pct(corrected_correct_rows, total_rows),
                 "status": "needs_review" if rows_regressed else "validated_non_regression",
             }
         )
+
+    truth_rows = [row for row in rows if row.get("reference_source") == "truth"]
+    truth_total = sum(int(row["total_rows"]) for row in truth_rows)
+    truth_baseline_correct = sum(int(row["baseline_correct_rows"]) for row in truth_rows)
+    truth_corrected_correct = sum(int(row["corrected_correct_rows"]) for row in truth_rows)
 
     return {
         "memory_sessions_root": str(root.resolve()),
         "output_root": str(output_root_path.resolve()),
         "truth_path": str(Path(truth_path).resolve()),
         "row_count": len(rows),
+        "truth_covered_summary": {
+            "rows": truth_total,
+            "baseline_correct_rows": truth_baseline_correct,
+            "corrected_correct_rows": truth_corrected_correct,
+            "baseline_accuracy_pct": _pct(truth_baseline_correct, truth_total),
+            "corrected_accuracy_pct": _pct(truth_corrected_correct, truth_total),
+            "rows_improved": sum(int(row["rows_improved"]) for row in truth_rows),
+            "rows_regressed": sum(int(row["rows_regressed"]) for row in truth_rows),
+        },
         "rows": rows,
     }
 

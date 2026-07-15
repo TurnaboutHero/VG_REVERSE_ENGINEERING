@@ -17,6 +17,17 @@ def _find_result_dump(session_dir: Path) -> Path:
     return candidates[0]
 
 
+def _find_result_image(session_dir: Path) -> Optional[Path]:
+    candidates = sorted(
+        [
+            *session_dir.rglob("result_screen*.png"),
+            *session_dir.rglob("result_screen*.jpg"),
+            *session_dir.rglob("result_screen*.jpeg"),
+        ]
+    )
+    return candidates[0] if candidates else None
+
+
 def _load_replay_name(session_dir: Path) -> Optional[str]:
     manifest = session_dir / "manifest.json"
     if manifest.exists():
@@ -83,14 +94,20 @@ def build_result_screen_kda_correction_autobundle(
         raise ValueError("Could not infer replay_name; pass --replay-name explicitly")
 
     dump_path = _find_result_dump(session_path)
+    image_path = _find_result_image(session_path)
     decoded_path = _find_decoded_payload_path(output_root_path, resolved_replay_name)
     decoded_payload = json.loads(decoded_path.read_text(encoding="utf-8"))
-    bundle = build_result_screen_kda_correction_bundle(decoded_payload, str(dump_path))
+    bundle = build_result_screen_kda_correction_bundle(
+        decoded_payload,
+        str(dump_path),
+        image_path=str(image_path) if image_path else None,
+    )
     bundle["meta"] = {
         "session_dir": str(session_path.resolve()),
         "output_root": str(output_root_path.resolve()),
         "decoded_path": str(decoded_path.resolve()),
         "dump_path": str(dump_path.resolve()),
+        "image_path": str(image_path.resolve()) if image_path else None,
         "replay_name": resolved_replay_name,
     }
     return bundle
