@@ -68,6 +68,8 @@ def main() -> int:
     _write_json(output_dir / "result_screen_kda_correction_report.json", bundle["report"])
     _write_json(output_dir / "result_screen_kda_correction_apply.json", bundle["apply"])
     _write_json(output_dir / "result_screen_kda_correction_merge.json", bundle["merge"])
+    if bundle.get("image_apply") is not None:
+        _write_json(output_dir / "result_screen_kda_correction_image_apply.json", bundle["image_apply"])
     print(f"Result-screen KDA correction bundle saved to {output_dir}")
     return 0
 

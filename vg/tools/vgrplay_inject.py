@@ -101,12 +101,7 @@ def find_live_temp_replay(temp_dir: str, replay_name: Optional[str] = None) -> D
 
 
 def _build_frame_inventory(directory: Path, replay_name: str) -> Dict[int, Path]:
-    return {
-        frame: path
-        for name, frames in _group_replay_frames(directory).items()
-        if name == replay_name
-        for frame, path in frames.items()
-    }
+    return _group_replay_frames(directory).get(replay_name, {})
 
 
 def _sha256(path: Path) -> str:

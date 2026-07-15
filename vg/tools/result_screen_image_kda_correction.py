@@ -62,8 +62,18 @@ def link_kda_rows_from_ocr_tokens(
     expected_players: List[Dict[str, object]],
     *,
     row_y_tolerance: int = 72,
+    max_name_kda_dx: float = 1200.0,
 ) -> Dict[str, object]:
-    """Link OCR KDA tokens to expected players using same-row left-side labels."""
+    """Link OCR KDA tokens to expected players using same-row left-side labels.
+
+    The result screen lays out two team columns side-by-side, so a KDA token in
+    the right column always has the left column's same-row name as a geometric
+    candidate (it IS left of it, same row). ``max_name_kda_dx`` bounds how far a
+    name token may reach horizontally to claim a KDA token, so a same-column
+    match (small dx) is never displaced by a cross-column match (large dx). The
+    default is picked from typical result-screen geometry, where a same-column
+    name->KDA gap is roughly 800-900px while a cross-column gap is 1700px+.
+    """
     expected_names = [str(player["name"]) for player in expected_players]
     name_tokens: List[Dict[str, object]] = []
     kda_tokens: List[Dict[str, object]] = []
@@ -105,22 +115,24 @@ def link_kda_rows_from_ocr_tokens(
 
     assignments: Dict[str, Dict[str, object]] = {}
     for kda_token in kda_tokens:
-        candidates = [
-            name_token
-            for name_token in name_tokens
-            if float(name_token["center_x"]) < float(kda_token["center_x"])
-            and abs(float(name_token["center_y"]) - float(kda_token["center_y"])) <= row_y_tolerance
-        ]
+        candidates = []
+        for name_token in name_tokens:
+            dx = float(kda_token["center_x"]) - float(name_token["center_x"])
+            if dx <= 0 or dx > max_name_kda_dx:
+                continue
+            if abs(float(name_token["center_y"]) - float(kda_token["center_y"])) > row_y_tolerance:
+                continue
+            candidates.append((name_token, dx))
         if not candidates:
             continue
         candidates.sort(
-            key=lambda name_token: (
-                abs(float(name_token["center_y"]) - float(kda_token["center_y"])),
-                float(kda_token["center_x"]) - float(name_token["center_x"]),
-                -float(name_token["confidence"]),
+            key=lambda item: (
+                abs(float(item[0]["center_y"]) - float(kda_token["center_y"])),
+                item[1],
+                -float(item[0]["confidence"]),
             )
         )
-        name_token = candidates[0]
+        name_token, name_kda_dx = candidates[0]
         name = str(name_token["name"])
         candidate = {
             "name": name,
@@ -129,13 +141,16 @@ def link_kda_rows_from_ocr_tokens(
             "name_confidence": name_token["confidence"],
             "kda_confidence": kda_token["confidence"],
             "row_y_delta": round(abs(float(name_token["center_y"]) - float(kda_token["center_y"])), 2),
+            "row_x_delta": round(name_kda_dx, 2),
         }
         existing = assignments.get(name)
         if existing is None or (
             float(candidate["row_y_delta"]),
+            float(candidate["row_x_delta"]),
             -float(candidate["kda_confidence"]),
         ) < (
             float(existing["row_y_delta"]),
+            float(existing["row_x_delta"]),
             -float(existing["kda_confidence"]),
         ):
             assignments[name] = candidate
