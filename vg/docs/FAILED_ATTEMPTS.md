@@ -492,6 +492,30 @@
 
 ---
 
+### 1.18 Boundary Event File-Order Disambiguation (기각)
+
+**가설:** 크리스탈 파괴 시각과 타임스탬프가 동률/근접해 시간 필터로 구분 불가능한 킬 이벤트는, 바이트 스트림 내 물리적 위치(frame_idx, file_offset)가 크리스탈 사망 레코드보다 앞/뒤인지로 스코어보드 반영 여부를 구분할 수 있다.
+
+**시도:** `vg/analysis/boundary_event_file_order.py` — 11개 truth 매치 전수 프로브. 크리스탈 사망 레코드(eid 2000-2005)의 물리적 위치를 직접 스캔하고, `KillEvent.frame_idx`/`file_offset`을 크리스탈 레코드 위치와 비교해 `after_crystal` 플래그 산출. 결과: `vg/output/boundary_file_order_report.json`.
+
+**결과:** 기각 (반례 2건 확정 + 부가적 FP 크리스탈 문제)
+
+- **M5 (예상대로 확정):** 크리스탈 레코드 유효(ts=1142.89, duration=1142와 일치, FP 아님). 유일한 경계 킬 = 2600_IcyBang(baseline_kda 기준 초과 킬, detected=1/truth=0) ts=1147.6, `after_crystal=true`. 가설과 일치.
+- **M8 반례 (결정적):** 크리스탈 레코드 유효(ts=1346.28, duration=1346과 일치, FP 아님). `2400_IcyBang` ts=1346.68(크리스탈 0.4초 후) 킬이 `after_crystal=true`이나, `baseline_kda_20260716.txt`의 "Kill Mismatches - Complete (2)" 목록에 M8은 없음 → 이 킬은 **truth에 정확히 반영된 정상 킬**. 즉 정답 킬이 크리스탈 레코드보다 물리적으로 뒤에 위치하는 반례.
+- **M10 반례:** 크리스탈 레코드 유효(ts=1312.09, duration=1312와 일치, FP 아님). `3004_BearFang` ts=1313.52(크리스탈 1.43초 후) 킬 = `after_crystal=true`이나 동일하게 M10도 Kill Mismatches 목록에 없음 → 정상 킬이 크리스탈 뒤에 위치.
+- **M4 부가 문제 (FP 크리스탈):** 스캔된 크리스탈 후보(ts=1091.72)가 디코더 자체 로직(`crystal_ts < duration_est - 30`)에 의해 FP(터렛)로 판정되어 duration=1157로 폴백됨. 이 FP 레코드를 기준으로 삼으면 이후 6개의 정상 킬(2999_IcyBang 등; M4도 Kill Mismatches 목록에 없음)이 모두 `after_crystal=true`로 오분류됨.
+- **M6 (원 대상, 판정 불가):** 스캔된 유일한 크리스탈 후보(ts=1221.31)도 동일 로직상 FP로 판정됨(duration=1486으로 폴백; 실제 게임 종료보다 265초 이른 시점). 즉 M6 파일에는 진짜 크리스탈 파괴 레코드가 물리적으로 존재하지 않음(테일 데이터 유실 — 기존 메모리 노트 "M6: replay ends 64.8s before game end"와 일치). 이 FP 레코드를 기준으로 하면 이후 12개 킬(대상 스퓨리어스 킬 2600_staplers 포함, 나머지 11개는 정상 킬로 추정)이 모두 `after_crystal=true`로 뒤섞여 구분 불가.
+
+**실패 원인:**
+- 크리스탈 사망 레코드(eid 2000-2005)는 실제 크리스탈이 아니라 터렛일 수 있는 기존에 알려진 FP 클래스. 이 스크립트는 `match.crystal_death_ts`가 FP인지 검증 없이 그대로 기준점으로 사용 — FP 크리스탈 매치(M4, M6)에서는 위치 비교 자체가 무효.
+- 크리스탈 레코드가 유효한 매치(M8, M10)에서도, 크리스탈 파괴 직후(0.4~1.4초) 발생한 마지막 교전의 정상 킬이 물리적으로 크리스탈 레코드보다 뒤에 기록됨. 바이트 스트림 위치는 이벤트 발생 순서(시간)의 대리 지표일 뿐, "포스트게임 세레모니 여부"라는 별도의 독립적 신호가 아님.
+
+**교훈:** 물리적 파일 위치는 타임스탬프와 사실상 단조 관계이므로(순차 기록), "크리스탈보다 물리적으로 뒤"는 "크리스탈보다 시간상 나중"과 거의 동치임 — 시간 필터가 못 잡는 case를 구분해 줄 새로운 신호가 아니다. 크리스탈과 거의 동시(1.4초 이내)에 벌어진 정당한 막판 킬도 위치상 크리스탈 뒤에 온다. 크리스탈 레코드 자체가 터렛 오탐일 수 있는 매치(전체 중 다수)에서는 이 방법이 원천적으로 적용 불가.
+
+**상태:** ❌ 기각 - Task 4(파일 순서 기반 필터 규칙) 보류. 반례: M8 `2400_IcyBang`, M10 `3004_BearFang`.
+
+---
+
 ### 5.2 절대 다시 시도하지 말 것
 
 | 접근법 | 이유 |
@@ -509,6 +533,7 @@
 | Roster data region KDA 검색 | Data bytes=STATIC, float arrays=damage stats, 모든 인코딩(strided/interleaved/nibble/packed) 0건 |
 | Roster float arrays ↔ Gold/CS 상관 | r=-0.133 (gold), r~0 (kills/deaths/assists). 99 players across 10 matches |
 | 마지막 프레임 전체 exhaustive KDA 스캔 | uint8/16/32 BE/LE, 87,613 bytes, stride 2-64: 6/6 exact 0건, 5/6 near 0건 |
+| 크리스탈 레코드 대비 파일 위치(offset)로 boundary kill 스코어보드 반영 판정 | 위치는 시간 순서의 대리 지표일 뿐. M8/M10에서 크리스탈 0.4~1.4s 후 정상 킬 반례 확인. 크리스탈 레코드 자체가 터렛 FP인 매치(M4/M6)에서는 적용 불가 |
 
 ---
 
@@ -525,5 +550,5 @@
 
 ---
 
-*Last Updated: 2026-02-16*
+*Last Updated: 2026-07-16*
 *이 문서는 새로운 실패 시도가 발생할 때마다 업데이트할 것.*

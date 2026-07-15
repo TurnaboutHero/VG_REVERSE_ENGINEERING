@@ -1,0 +1,323 @@
+[
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Team Stooopid (Semi)\\1\\d8736287-e35e-4c76-89b0-c78c76fd0b05-8c6e1a3e-68a0-4853-8786-44c899ff1e8a.0.vgr",
+    "crystal": {
+      "ts": 1029.27,
+      "eid": 2004,
+      "frame_idx": 102,
+      "offset": 157325
+    },
+    "crystal_candidates": 1,
+    "duration": 1029,
+    "boundary_kills": []
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Team Stooopid (Semi)\\2\\d8736287-e35e-4c76-89b0-c78c76fd0b05-20692443-e314-4ca5-934e-faa63d820d72.0.vgr",
+    "crystal": {
+      "ts": 961.72,
+      "eid": 2001,
+      "frame_idx": 96,
+      "offset": 73327
+    },
+    "crystal_candidates": 1,
+    "duration": 961,
+    "boundary_kills": []
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Maitun Gaming\\1\\d8736287-e35e-4c76-89b0-c78c76fd0b05-c2612bb7-c551-408f-bc75-c51ab6da604e.0.vgr",
+    "crystal": {
+      "ts": 1047.41,
+      "eid": 2001,
+      "frame_idx": 104,
+      "offset": 137210
+    },
+    "crystal_candidates": 1,
+    "duration": 1047,
+    "boundary_kills": []
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Maitun Gaming\\2\\02aae104-45ba-4f50-972c-00c4a6719716-863aaed7-13d5-459e-9c50-963bac077ff3.0.vgr",
+    "crystal": {
+      "ts": 1091.72,
+      "eid": 2004,
+      "frame_idx": 109,
+      "offset": 54175
+    },
+    "crystal_candidates": 2,
+    "duration": 1157,
+    "boundary_kills": [
+      {
+        "player": "3000_YiNong",
+        "killer_eid": 1500,
+        "ts": 1138.12,
+        "frame_idx": 113,
+        "offset": 165740,
+        "after_crystal": true
+      },
+      {
+        "player": "2999_IcyBang",
+        "killer_eid": 1505,
+        "ts": 1138.41,
+        "frame_idx": 113,
+        "offset": 171292,
+        "after_crystal": true
+      },
+      {
+        "player": "2999_Ghost",
+        "killer_eid": 1506,
+        "ts": 1141.04,
+        "frame_idx": 114,
+        "offset": 59628,
+        "after_crystal": true
+      },
+      {
+        "player": "2999_IcyBang",
+        "killer_eid": 1505,
+        "ts": 1143.88,
+        "frame_idx": 114,
+        "offset": 91740,
+        "after_crystal": true
+      },
+      {
+        "player": "2999_IcyBang",
+        "killer_eid": 1505,
+        "ts": 1147.07,
+        "frame_idx": 114,
+        "offset": 126004,
+        "after_crystal": true
+      },
+      {
+        "player": "2999_IcyBang",
+        "killer_eid": 1505,
+        "ts": 1156.04,
+        "frame_idx": 115,
+        "offset": 95784,
+        "after_crystal": true
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\1\\d8736287-e35e-4c76-89b0-c78c76fd0b05-e76f857f-218a-45bf-8982-292c7671c902.0.vgr",
+    "crystal": {
+      "ts": 1142.89,
+      "eid": 2004,
+      "frame_idx": 114,
+      "offset": 81013
+    },
+    "crystal_candidates": 1,
+    "duration": 1142,
+    "boundary_kills": [
+      {
+        "player": "2600_IcyBang",
+        "killer_eid": 1504,
+        "ts": 1147.6,
+        "frame_idx": 114,
+        "offset": 137485,
+        "after_crystal": true
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\2\\d8736287-e35e-4c76-89b0-c78c76fd0b05-5f22df2e-921a-4638-937b-a88f9fe88a73.0.vgr",
+    "crystal": {
+      "ts": 1221.31,
+      "eid": 2004,
+      "frame_idx": 122,
+      "offset": 61383
+    },
+    "crystal_candidates": 1,
+    "duration": 1486,
+    "boundary_kills": [
+      {
+        "player": "2599_tsuki",
+        "killer_eid": 1502,
+        "ts": 1329.45,
+        "frame_idx": 132,
+        "offset": 217993,
+        "after_crystal": true
+      },
+      {
+        "player": "2599_tsuki",
+        "killer_eid": 1502,
+        "ts": 1332.41,
+        "frame_idx": 133,
+        "offset": 78363,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_IcyBang",
+        "killer_eid": 1501,
+        "ts": 1333.06,
+        "frame_idx": 133,
+        "offset": 89635,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "killer_eid": 1503,
+        "ts": 1337.67,
+        "frame_idx": 133,
+        "offset": 141299,
+        "after_crystal": true
+      },
+      {
+        "player": "2604_topLaner",
+        "killer_eid": 1509,
+        "ts": 1341.81,
+        "frame_idx": 134,
+        "offset": 68792,
+        "after_crystal": true
+      },
+      {
+        "player": "2599_tsuki",
+        "killer_eid": 1502,
+        "ts": 1358.77,
+        "frame_idx": 135,
+        "offset": 138758,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_IcyBang",
+        "killer_eid": 1501,
+        "ts": 1438.66,
+        "frame_idx": 143,
+        "offset": 183698,
+        "after_crystal": true
+      },
+      {
+        "player": "2599_Ritoramu",
+        "killer_eid": 1500,
+        "ts": 1439.93,
+        "frame_idx": 143,
+        "offset": 204962,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_staplers",
+        "killer_eid": 1506,
+        "ts": 1449.34,
+        "frame_idx": 144,
+        "offset": 187179,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "killer_eid": 1503,
+        "ts": 1452.88,
+        "frame_idx": 145,
+        "offset": 84084,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_staplers",
+        "killer_eid": 1506,
+        "ts": 1458.83,
+        "frame_idx": 145,
+        "offset": 150372,
+        "after_crystal": true
+      },
+      {
+        "player": "2600_staplers",
+        "killer_eid": 1506,
+        "ts": 1484.38,
+        "frame_idx": 148,
+        "offset": 106088,
+        "after_crystal": true
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\3\\d8736287-e35e-4c76-89b0-c78c76fd0b05-0bfec87b-0b07-4f4d-8e4f-936d74758dfd.0.vgr",
+    "crystal": null,
+    "crystal_candidates": 0,
+    "duration": 1586,
+    "boundary_kills": [
+      {
+        "player": "2599_Ritoramu",
+        "killer_eid": 1509,
+        "ts": 1584.23,
+        "frame_idx": 158,
+        "offset": 100807,
+        "after_crystal": null
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\4\\d8736287-e35e-4c76-89b0-c78c76fd0b05-7a593bce-eded-4fdc-a164-6bb8162958ea.0.vgr",
+    "crystal": {
+      "ts": 1346.28,
+      "eid": 2001,
+      "frame_idx": 134,
+      "offset": 105955
+    },
+    "crystal_candidates": 1,
+    "duration": 1346,
+    "boundary_kills": [
+      {
+        "player": "2400_IcyBang",
+        "killer_eid": 1506,
+        "ts": 1346.68,
+        "frame_idx": 134,
+        "offset": 113779,
+        "after_crystal": true
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\5 (Incomplete)\\d8736287-e35e-4c76-89b0-c78c76fd0b05-f7dc84e0-071a-4126-a0da-319ca51a6796.0.vgr",
+    "crystal": null,
+    "crystal_candidates": 0,
+    "duration": 473,
+    "boundary_kills": [
+      {
+        "player": "1899_killlzx",
+        "killer_eid": 1509,
+        "ts": 471.55,
+        "frame_idx": 47,
+        "offset": 56873,
+        "after_crystal": null
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\Buffalo vs RRONE\\1\\f27505c4-1449-4e71-bd8a-134133e7f4b4-443dfc2c-bcf9-4791-be53-63c0f831d6f3.0.vgr",
+    "crystal": {
+      "ts": 1312.09,
+      "eid": 2001,
+      "frame_idx": 131,
+      "offset": 87210
+    },
+    "crystal_candidates": 1,
+    "duration": 1312,
+    "boundary_kills": [
+      {
+        "player": "3000_saptozz",
+        "killer_eid": 1502,
+        "ts": 1309.44,
+        "frame_idx": 130,
+        "offset": 169356,
+        "after_crystal": false
+      },
+      {
+        "player": "3004_BearFang",
+        "killer_eid": 1501,
+        "ts": 1313.52,
+        "frame_idx": 131,
+        "offset": 102178,
+        "after_crystal": true
+      }
+    ]
+  },
+  {
+    "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\Buffalo vs RRONE\\2\\02aae104-45ba-4f50-972c-00c4a6719716-9bfb7a7c-18f5-41f5-bc07-63bf7db248e8.0.vgr",
+    "crystal": {
+      "ts": 1110.11,
+      "eid": 2004,
+      "frame_idx": 111,
+      "offset": 47821
+    },
+    "crystal_candidates": 2,
+    "duration": 1110,
+    "boundary_kills": []
+  }
+]
