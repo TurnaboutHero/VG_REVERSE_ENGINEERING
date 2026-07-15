@@ -1,0 +1,155 @@
+
+======================================================================
+Match 1: SFC vs Team Stooopid (Semi)/1
+  Truth: winner=left, duration=1028s, score=13-2
+  Winner: left OK
+  Duration: detected=1029s, truth=1028s (diff=1s)
+
+======================================================================
+Match 2: SFC vs Team Stooopid (Semi)/2
+  Truth: winner=left, duration=969s, score=13-3
+  ** TEAM LABELS SWAPPED (auto-correcting) **
+  Winner: left OK
+  Duration: detected=961s, truth=969s (diff=8s)
+
+======================================================================
+Match 3: SFC vs Maitun Gaming/1
+  Truth: winner=left, duration=1036s, score=17-5
+  ** TEAM LABELS SWAPPED (auto-correcting) **
+  Winner: left OK
+  Duration: detected=1047s, truth=1036s (diff=11s)
+
+======================================================================
+Match 4: SFC vs Maitun Gaming/2
+  Truth: winner=left, duration=1163s, score=27-6
+  Winner: left OK
+  Duration: detected=1157s, truth=1163s (diff=6s)
+
+======================================================================
+Match 5: SFC vs Law Enforcers (Finals)/1
+  Truth: winner=right, duration=1135s, score=2-13
+  ** TEAM LABELS SWAPPED (auto-correcting) **
+  Winner: right OK
+  Duration: detected=1142s, truth=1135s (diff=7s)
+  2600_Acex (Lyra): A: 1 != 0 (+1)
+  2600_IcyBang (Kestrel): K: 1 != 0 (+1)
+  2599_123 (Warhawk): D: 1 != 0 (+1)
+  2599_tsuki (Caine): MK: 131 != 130 (+1)
+
+======================================================================
+Match 6: SFC vs Law Enforcers (Finals)/2
+  Truth: winner=left, duration=1551s, score=19-11
+  Winner: left OK
+  Duration: detected=1486s, truth=1551s (diff=65s)
+  2600_Acex (Lorelai): A: 12 != 11 (+1)
+  2600_Ghost (Ylva): MK: 31 != 32 (-1)
+  2600_IcyBang (Kestrel): MK: 142 != 146 (-4)
+  (fuzzy match: 2600_TenshilHime -> 2600_TenshiiHime)
+  2600_TenshilHime (Blackfeather): A: 7 != 6 (+1) | MK: 146 != 149 (-3)
+  2600_staplers (Samuel): K: 7 != 6 (+1) | MK: 160 != 166 (-6)
+  2599_Ritoramu (Celeste): MK: 226 != 234 (-8)
+  2599_123 (Lyra): D: 5 != 4 (+1) | MK: 7 != 6 (+1)
+  2599_killzx (Grumpjaw): MK: 132 != 137 (-5)
+  2599_tsuki (Kinetic): MK: 154 != 161 (-7)
+  2604_topLaner (Tony): MK: 14 != 15 (-1)
+
+======================================================================
+Match 7: SFC vs Law Enforcers (Finals)/3
+  Truth: winner=right, duration=1604s, score=17-22
+  Winner: right OK
+  Duration: detected=1586s, truth=1604s (diff=18s)
+
+======================================================================
+Match 8: SFC vs Law Enforcers (Finals)/4
+  Truth: winner=left, duration=1355s, score=24-12
+  ** TEAM LABELS SWAPPED (auto-correcting) **
+  Winner: left OK
+  Duration: detected=1346s, truth=1355s (diff=9s)
+
+======================================================================
+Match 9: SFC vs Law Enforcers (Finals)/5 (Incomplete) [INCOMPLETE]
+  Truth: winner=left, duration=1709s, score=12-6
+  Duration: detected=473s, truth=1709s (diff=1236s)
+  1900_Acex (Lyra): K: 0 != 1 (-1) | A: 3 != 8 (-5) | MK: 5 != 10 (-5)
+  1900_Ghost (Catherine): A: 3 != 9 (-6) | MK: 17 != 25 (-8)
+  1900_IcyBang (Gwen): K: 2 != 6 (-4) | A: 3 != 6 (-3) | MK: 103 != 202 (-99)
+  1900_TenshiiHime (Blackfeather): K: 2 != 3 (-1) | A: 2 != 7 (-5) | MK: 72 != 143 (-71)
+  1900_stapler (Samuel): K: 0 != 1 (-1) | A: 4 != 9 (-5) | MK: 92 != 188 (-96)
+  1899_123 (Warhawk): D: 1 != 3 (-2) | MK: 4 != 8 (-4)
+  (fuzzy match: 1899_ICN -> 1899_1CN)
+  1899_ICN (Caine): D: 1 != 3 (-2) | MK: 93 != 182 (-89)
+  1899_Ritoramu (Skye): D: 1 != 2 (-1) | MK: 120 != 238 (-118)
+  1899_killlzx (Reza): D: 2 != 3 (-1) | MK: 48 != 95 (-47)
+  1904_topLaner (Leo): D: 0 != 1 (-1) | MK: 49 != 81 (-32)
+
+======================================================================
+Match 10: Buffalo vs RRONE/1
+  Truth: winner=left, duration=1295s, score=22-8
+  ** TEAM LABELS SWAPPED (auto-correcting) **
+  Winner: left OK
+  Duration: detected=1312s, truth=1295s (diff=17s)
+
+======================================================================
+Match 11: Buffalo vs RRONE/2
+  Truth: winner=left, duration=1078s, score=30-15
+  Winner: left OK
+  Duration: detected=1110s, truth=1078s (diff=32s)
+
+======================================================================
+======================================================================
+ACCURACY REPORT
+======================================================================
+
+  Complete Matches Only (10 matches, 99 players):
+  式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式
+  Hero (normalized): 99/99 (100.0%)
+  Team Grouping:     99/99 (100.0%)  (after swap correction)
+  Winner:            10/10 (100.0%)
+  Kills:             97/99 (98.0%)
+  Deaths:            97/99 (98.0%)
+  Assists:           96/99 (97.0%)
+  Minion Kills:      69/79 (87.3%)
+
+  Including Incomplete M9 (11 matches, 109 players):
+  式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式
+  Kills:             103/109 (94.5%)
+  Deaths:            102/109 (93.6%)
+
+  Team Label Swaps: 5/11 matches
+    Swapped in: M2, M3, M5, M8, M10
+  Note: team_id byte groups players correctly (100%),
+        but 1=left/2=right mapping varies per match.
+
+  Gold (gold_earned vs truth, complete):
+    Within ▽5%:  97/99 (98.0%)
+    Within ▽10%: 99/99 (100.0%)
+    Note: gold_earned = sum of positive action 0x06 only credit records
+
+--- Kill Mismatches - Complete (2) ---
+  M5 2600_IcyBang (Kestrel): detected=1, truth=0 (diff=+1)
+  M6 2600_staplers (Samuel): detected=7, truth=6 (diff=+1)
+
+--- Death Mismatches - Complete (2) ---
+  M5 2599_123 (Warhawk): detected=1, truth=0 (diff=+1)
+  M6 2599_123 (Lyra): detected=5, truth=4 (diff=+1)
+
+--- Assist Mismatches - Complete (3) ---
+  M5 2600_Acex (Lyra): detected=1, truth=0 (diff=+1)
+  M6 2600_Acex (Lorelai): detected=12, truth=11 (diff=+1)
+  M6 2600_TenshilHime (Blackfeather): detected=7, truth=6 (diff=+1)
+
+--- Minion Kill Mismatches - Complete (10) ---
+  M5 2599_tsuki (Caine): detected=131, truth=130 (diff=+1)
+  M6 2600_Ghost (Ylva): detected=31, truth=32 (diff=-1)
+  M6 2600_IcyBang (Kestrel): detected=142, truth=146 (diff=-4)
+  M6 2600_TenshilHime (Blackfeather): detected=146, truth=149 (diff=-3)
+  M6 2600_staplers (Samuel): detected=160, truth=166 (diff=-6)
+  M6 2599_Ritoramu (Celeste): detected=226, truth=234 (diff=-8)
+  M6 2599_123 (Lyra): detected=7, truth=6 (diff=+1)
+  M6 2599_killzx (Grumpjaw): detected=132, truth=137 (diff=-5)
+  M6 2599_tsuki (Kinetic): detected=154, truth=161 (diff=-7)
+  M6 2604_topLaner (Tony): detected=14, truth=15 (diff=-1)
+
+--- Incomplete Match (M9) Errors ---
+  Kill errors: 4, Death errors: 5
+  (Expected: replay truncated, missing ~60% of game data)
