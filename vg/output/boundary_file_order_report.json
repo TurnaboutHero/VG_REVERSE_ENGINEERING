@@ -9,7 +9,32 @@
     },
     "crystal_candidates": 1,
     "duration": 1029,
-    "boundary_kills": []
+    "duration_est": 1039.599365234375,
+    "anchor_valid": true,
+    "boundary_kills": [],
+    "minion_after_crystal": [
+      {
+        "player": "2599_PeacePlayz",
+        "eid": 1509,
+        "frame_idx": 103,
+        "offset": 68904
+      }
+    ],
+    "minion_after_crystal_count_by_player": {
+      "2599_PeacePlayz": 1
+    },
+    "minion_before_crystal_count_by_player": {
+      "2600_IcyBang": 137,
+      "2604_Ray": 76,
+      "2600_staplers": 156,
+      "2599_Shifnoob": 101,
+      "2600_Ghost": 30,
+      "2599_FengLin": 14,
+      "2600_TenshiiHime": 95,
+      "2599_PeacePlayz": 150,
+      "2599_jeebanana": 4,
+      "2600_Acex": 3
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Team Stooopid (Semi)\\2\\d8736287-e35e-4c76-89b0-c78c76fd0b05-20692443-e314-4ca5-934e-faa63d820d72.0.vgr",
@@ -21,7 +46,32 @@
     },
     "crystal_candidates": 1,
     "duration": 961,
-    "boundary_kills": []
+    "duration_est": 971.18798828125,
+    "anchor_valid": true,
+    "boundary_kills": [],
+    "minion_after_crystal": [
+      {
+        "player": "2600_staplers",
+        "eid": 1501,
+        "frame_idx": 96,
+        "offset": 77271
+      }
+    ],
+    "minion_after_crystal_count_by_player": {
+      "2600_staplers": 1
+    },
+    "minion_before_crystal_count_by_player": {
+      "2599_Shifnoob": 80,
+      "2599_PeacePlayz": 126,
+      "2600_staplers": 143,
+      "2600_IcyBang": 104,
+      "2604_Kittymite": 67,
+      "2600_Ghost": 35,
+      "2600_TenshiiHime": 93,
+      "2599_FengLin": 7,
+      "2600_Acex": 7,
+      "2599_jeebanana": 4
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Maitun Gaming\\1\\d8736287-e35e-4c76-89b0-c78c76fd0b05-c2612bb7-c551-408f-bc75-c51ab6da604e.0.vgr",
@@ -33,7 +83,44 @@
     },
     "crystal_candidates": 1,
     "duration": 1047,
-    "boundary_kills": []
+    "duration_est": 1061.4217529296875,
+    "anchor_valid": true,
+    "boundary_kills": [],
+    "minion_after_crystal": [
+      {
+        "player": "2999_stapler",
+        "eid": 1505,
+        "frame_idx": 105,
+        "offset": 133534
+      },
+      {
+        "player": "2999_stapler",
+        "eid": 1505,
+        "frame_idx": 105,
+        "offset": 151990
+      },
+      {
+        "player": "2999_stapler",
+        "eid": 1505,
+        "frame_idx": 105,
+        "offset": 176062
+      }
+    ],
+    "minion_after_crystal_count_by_player": {
+      "2999_stapler": 3
+    },
+    "minion_before_crystal_count_by_player": {
+      "3000_YiNong": 76,
+      "3000_DuGuQiuBai": 110,
+      "2999_IcyBang": 104,
+      "2999_stapler": 144,
+      "3000_Dawg": 32,
+      "2999_Ghost": 22,
+      "3000_OuYangFeng": 73,
+      "3004_TenshiiHime": 106,
+      "2999_Acex": 5,
+      "3000_HongQiGong": 12
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Maitun Gaming\\2\\02aae104-45ba-4f50-972c-00c4a6719716-863aaed7-13d5-459e-9c50-963bac077ff3.0.vgr",
@@ -45,6 +132,8 @@
     },
     "crystal_candidates": 2,
     "duration": 1157,
+    "duration_est": 1157.8800048828125,
+    "anchor_valid": false,
     "boundary_kills": [
       {
         "player": "3000_YiNong",
@@ -94,7 +183,271 @@
         "offset": 95784,
         "after_crystal": true
       }
-    ]
+    ],
+    "minion_after_crystal": [
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 109,
+        "offset": 84639
+      },
+      {
+        "player": "3000_Dawg",
+        "eid": 1507,
+        "frame_idx": 109,
+        "offset": 103391
+      },
+      {
+        "player": "3000_YiNong",
+        "eid": 1500,
+        "frame_idx": 109,
+        "offset": 127919
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 109,
+        "offset": 128303
+      },
+      {
+        "player": "3000_YiNong",
+        "eid": 1500,
+        "frame_idx": 110,
+        "offset": 55452
+      },
+      {
+        "player": "3000_Dawg",
+        "eid": 1507,
+        "frame_idx": 110,
+        "offset": 63196
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 110,
+        "offset": 134244
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 110,
+        "offset": 140988
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 48178
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 73202
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 76706
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 78290
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 93298
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 96850
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 115050
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 117770
+      },
+      {
+        "player": "3000_OuYangFeng",
+        "eid": 1501,
+        "frame_idx": 111,
+        "offset": 136194
+      },
+      {
+        "player": "3000_DuGuQiuBai",
+        "eid": 1504,
+        "frame_idx": 111,
+        "offset": 142538
+      },
+      {
+        "player": "2999_Acex",
+        "eid": 1503,
+        "frame_idx": 111,
+        "offset": 144882
+      },
+      {
+        "player": "3004_TenshiiHime",
+        "eid": 1508,
+        "frame_idx": 111,
+        "offset": 147314
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 111,
+        "offset": 150386
+      },
+      {
+        "player": "2999_Acex",
+        "eid": 1503,
+        "frame_idx": 111,
+        "offset": 151682
+      },
+      {
+        "player": "3000_OuYangFeng",
+        "eid": 1501,
+        "frame_idx": 111,
+        "offset": 166130
+      },
+      {
+        "player": "3000_Dawg",
+        "eid": 1507,
+        "frame_idx": 111,
+        "offset": 179602
+      },
+      {
+        "player": "3000_Dawg",
+        "eid": 1507,
+        "frame_idx": 111,
+        "offset": 180034
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 112,
+        "offset": 60732
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 112,
+        "offset": 95932
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 112,
+        "offset": 106228
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 112,
+        "offset": 106580
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 112,
+        "offset": 106932
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 112,
+        "offset": 116036
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 112,
+        "offset": 128412
+      },
+      {
+        "player": "2999_IcyBang",
+        "eid": 1505,
+        "frame_idx": 112,
+        "offset": 141660
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 112,
+        "offset": 152356
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 115,
+        "offset": 108080
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 115,
+        "offset": 118416
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 115,
+        "offset": 122608
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 116,
+        "offset": 69909
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 116,
+        "offset": 72821
+      },
+      {
+        "player": "2999_staplers",
+        "eid": 1502,
+        "frame_idx": 116,
+        "offset": 74493
+      }
+    ],
+    "minion_after_crystal_count_by_player": {
+      "2999_IcyBang": 9,
+      "3000_Dawg": 4,
+      "3000_YiNong": 2,
+      "3004_TenshiiHime": 11,
+      "3000_OuYangFeng": 2,
+      "3000_DuGuQiuBai": 1,
+      "2999_Acex": 2,
+      "2999_staplers": 9
+    },
+    "minion_before_crystal_count_by_player": {
+      "3000_OuYangFeng": 67,
+      "3000_DuGuQiuBai": 118,
+      "2999_IcyBang": 102,
+      "3000_Dawg": 105,
+      "2999_staplers": 138,
+      "3000_HongQiGong": 2,
+      "2999_Ghost": 34,
+      "3000_YiNong": 46,
+      "3004_TenshiiHime": 102,
+      "2999_Acex": 9
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\1\\d8736287-e35e-4c76-89b0-c78c76fd0b05-e76f857f-218a-45bf-8982-292c7671c902.0.vgr",
@@ -106,6 +459,8 @@
     },
     "crystal_candidates": 1,
     "duration": 1142,
+    "duration_est": 1154.5682373046875,
+    "anchor_valid": true,
     "boundary_kills": [
       {
         "player": "2600_IcyBang",
@@ -115,7 +470,30 @@
         "offset": 137485,
         "after_crystal": true
       }
-    ]
+    ],
+    "minion_after_crystal": [
+      {
+        "player": "2599_tsuki",
+        "eid": 1508,
+        "frame_idx": 114,
+        "offset": 141733
+      }
+    ],
+    "minion_after_crystal_count_by_player": {
+      "2599_tsuki": 1
+    },
+    "minion_before_crystal_count_by_player": {
+      "2600_staplers": 148,
+      "2599_Ritoramu": 167,
+      "2599_killzx": 132,
+      "2600_Ghost": 30,
+      "2600_TenshiiHime": 108,
+      "2599_tsuki": 130,
+      "2600_IcyBang": 124,
+      "2604_topLaner": 13,
+      "2599_123": 8,
+      "2600_Acex": 4
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\2\\d8736287-e35e-4c76-89b0-c78c76fd0b05-5f22df2e-921a-4638-937b-a88f9fe88a73.0.vgr",
@@ -127,6 +505,8 @@
     },
     "crystal_candidates": 1,
     "duration": 1486,
+    "duration_est": 1486.2308349609375,
+    "anchor_valid": false,
     "boundary_kills": [
       {
         "player": "2599_tsuki",
@@ -224,13 +604,735 @@
         "offset": 106088,
         "after_crystal": true
       }
-    ]
+    ],
+    "minion_after_crystal": [
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 122,
+        "offset": 70167
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 122,
+        "offset": 70319
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 122,
+        "offset": 70527
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 122,
+        "offset": 78303
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 122,
+        "offset": 82063
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 122,
+        "offset": 112063
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 122,
+        "offset": 116455
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 122,
+        "offset": 128399
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 122,
+        "offset": 135463
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 123,
+        "offset": 105411
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 123,
+        "offset": 121243
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 123,
+        "offset": 130219
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 124,
+        "offset": 54662
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 124,
+        "offset": 65990
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 124,
+        "offset": 76662
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 124,
+        "offset": 87454
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 124,
+        "offset": 89342
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 124,
+        "offset": 112630
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 124,
+        "offset": 114822
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 125,
+        "offset": 70469
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 125,
+        "offset": 86709
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 125,
+        "offset": 92877
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 125,
+        "offset": 106589
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 125,
+        "offset": 108813
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 125,
+        "offset": 111093
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 125,
+        "offset": 121581
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 125,
+        "offset": 132541
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 126,
+        "offset": 41930
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 126,
+        "offset": 52458
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 126,
+        "offset": 63802
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 126,
+        "offset": 70962
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 126,
+        "offset": 88418
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 126,
+        "offset": 128754
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 126,
+        "offset": 129082
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 126,
+        "offset": 137826
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 127,
+        "offset": 52108
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 127,
+        "offset": 53356
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 127,
+        "offset": 56060
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 127,
+        "offset": 85996
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 127,
+        "offset": 105836
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 128,
+        "offset": 71928
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 128,
+        "offset": 83872
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 128,
+        "offset": 88120
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 128,
+        "offset": 105960
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 128,
+        "offset": 108656
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 128,
+        "offset": 150992
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 129,
+        "offset": 48503
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 129,
+        "offset": 53447
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 129,
+        "offset": 65095
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 129,
+        "offset": 67799
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 129,
+        "offset": 86551
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 129,
+        "offset": 122239
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 129,
+        "offset": 127327
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 130,
+        "offset": 45047
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 130,
+        "offset": 74519
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 130,
+        "offset": 76063
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 130,
+        "offset": 90007
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 130,
+        "offset": 120847
+      },
+      {
+        "player": "2600_TenshiiHime",
+        "eid": 1503,
+        "frame_idx": 130,
+        "offset": 155055
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 131,
+        "offset": 88167
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 131,
+        "offset": 99719
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 134,
+        "offset": 152664
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 134,
+        "offset": 152848
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 135,
+        "offset": 79254
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 135,
+        "offset": 89638
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 135,
+        "offset": 91838
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 135,
+        "offset": 92022
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 135,
+        "offset": 92206
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 135,
+        "offset": 138470
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 135,
+        "offset": 150566
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 136,
+        "offset": 43317
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 136,
+        "offset": 50517
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 137,
+        "offset": 89291
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 138,
+        "offset": 98920
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 49853
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 53613
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 55085
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 69445
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 72941
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 73093
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 77341
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 85301
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 85485
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 139,
+        "offset": 90245
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 105629
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 112797
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 113141
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 119469
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 119789
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 125621
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 139,
+        "offset": 140341
+      },
+      {
+        "player": "2604_topLaner",
+        "eid": 1509,
+        "frame_idx": 140,
+        "offset": 58774
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 140,
+        "offset": 59070
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 140,
+        "offset": 75558
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 140,
+        "offset": 82526
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 140,
+        "offset": 86414
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 140,
+        "offset": 86566
+      },
+      {
+        "player": "2599_123",
+        "eid": 1507,
+        "frame_idx": 140,
+        "offset": 97022
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 140,
+        "offset": 102822
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 140,
+        "offset": 104606
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 140,
+        "offset": 112830
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 140,
+        "offset": 116182
+      },
+      {
+        "player": "2599_killzx",
+        "eid": 1508,
+        "frame_idx": 140,
+        "offset": 119694
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 140,
+        "offset": 125174
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 141,
+        "offset": 53774
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 141,
+        "offset": 69966
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 141,
+        "offset": 71334
+      },
+      {
+        "player": "2599_123",
+        "eid": 1507,
+        "frame_idx": 141,
+        "offset": 105014
+      },
+      {
+        "player": "2600_IcyBang",
+        "eid": 1501,
+        "frame_idx": 141,
+        "offset": 109062
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 141,
+        "offset": 112350
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 141,
+        "offset": 130886
+      },
+      {
+        "player": "2599_tsuki",
+        "eid": 1502,
+        "frame_idx": 141,
+        "offset": 134102
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 142,
+        "offset": 51509
+      },
+      {
+        "player": "2599_Ritoramu",
+        "eid": 1500,
+        "frame_idx": 142,
+        "offset": 64557
+      },
+      {
+        "player": "2600_staplers",
+        "eid": 1506,
+        "frame_idx": 142,
+        "offset": 107253
+      },
+      {
+        "player": "2599_123",
+        "eid": 1507,
+        "frame_idx": 148,
+        "offset": 96176
+      }
+    ],
+    "minion_after_crystal_count_by_player": {
+      "2600_TenshiiHime": 12,
+      "2599_tsuki": 20,
+      "2599_Ritoramu": 38,
+      "2600_IcyBang": 16,
+      "2600_staplers": 10,
+      "2599_killzx": 16,
+      "2604_topLaner": 1,
+      "2599_123": 3
+    },
+    "minion_before_crystal_count_by_player": {
+      "2600_staplers": 150,
+      "2600_IcyBang": 126,
+      "2599_killzx": 116,
+      "2600_Ghost": 31,
+      "2599_tsuki": 134,
+      "2600_TenshiiHime": 134,
+      "2604_topLaner": 13,
+      "2599_Ritoramu": 188,
+      "2600_Acex": 19,
+      "2599_123": 4
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\3\\d8736287-e35e-4c76-89b0-c78c76fd0b05-0bfec87b-0b07-4f4d-8e4f-936d74758dfd.0.vgr",
     "crystal": null,
     "crystal_candidates": 0,
     "duration": 1586,
+    "duration_est": 1586.0465087890625,
+    "anchor_valid": false,
     "boundary_kills": [
       {
         "player": "2599_Ritoramu",
@@ -240,7 +1342,21 @@
         "offset": 100807,
         "after_crystal": null
       }
-    ]
+    ],
+    "minion_after_crystal": [],
+    "minion_after_crystal_count_by_player": {},
+    "minion_before_crystal_count_by_player": {
+      "2600_staplers": 172,
+      "2599_killzx": 158,
+      "2600_IcyBang": 176,
+      "2599_tsuki": 168,
+      "2599_Ritoramu": 221,
+      "2604_topLaner": 26,
+      "2600_Ghost": 44,
+      "2600_TenshiiHime": 125,
+      "2599_123": 4,
+      "2600_Acex": 13
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\4\\d8736287-e35e-4c76-89b0-c78c76fd0b05-7a593bce-eded-4fdc-a164-6bb8162958ea.0.vgr",
@@ -252,6 +1368,8 @@
     },
     "crystal_candidates": 1,
     "duration": 1346,
+    "duration_est": 1348.4989013671875,
+    "anchor_valid": true,
     "boundary_kills": [
       {
         "player": "2400_IcyBang",
@@ -261,13 +1379,29 @@
         "offset": 113779,
         "after_crystal": true
       }
-    ]
+    ],
+    "minion_after_crystal": [],
+    "minion_after_crystal_count_by_player": {},
+    "minion_before_crystal_count_by_player": {
+      "2400_Ghost": 19,
+      "2399_tsuki": 162,
+      "2399_Ritoramu": 178,
+      "2400_TenshiiHime": 127,
+      "2404_topLaner": 16,
+      "2400_IcyBang": 114,
+      "2399_killlzx": 138,
+      "2400_stapler": 172,
+      "2400_Acex": 2,
+      "2399_123": 3
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\SFC vs Law Enforcers (Finals)\\5 (Incomplete)\\d8736287-e35e-4c76-89b0-c78c76fd0b05-f7dc84e0-071a-4126-a0da-319ca51a6796.0.vgr",
     "crystal": null,
     "crystal_candidates": 0,
     "duration": 473,
+    "duration_est": 473.3531799316406,
+    "anchor_valid": false,
     "boundary_kills": [
       {
         "player": "1899_killlzx",
@@ -277,7 +1411,21 @@
         "offset": 56873,
         "after_crystal": null
       }
-    ]
+    ],
+    "minion_after_crystal": [],
+    "minion_after_crystal_count_by_player": {},
+    "minion_before_crystal_count_by_player": {
+      "1900_stapler": 92,
+      "1900_IcyBang": 103,
+      "1899_1CN": 93,
+      "1899_Ritoramu": 120,
+      "1900_TenshiiHime": 72,
+      "1900_Ghost": 17,
+      "1899_killlzx": 48,
+      "1904_topLaner": 49,
+      "1899_123": 4,
+      "1900_Acex": 5
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\Buffalo vs RRONE\\1\\f27505c4-1449-4e71-bd8a-134133e7f4b4-443dfc2c-bcf9-4791-be53-63c0f831d6f3.0.vgr",
@@ -289,6 +1437,8 @@
     },
     "crystal_candidates": 1,
     "duration": 1312,
+    "duration_est": 1323.8245849609375,
+    "anchor_valid": true,
     "boundary_kills": [
       {
         "player": "3000_saptozz",
@@ -306,7 +1456,21 @@
         "offset": 102178,
         "after_crystal": true
       }
-    ]
+    ],
+    "minion_after_crystal": [],
+    "minion_after_crystal_count_by_player": {},
+    "minion_before_crystal_count_by_player": {
+      "3000_HiTayo": 56,
+      "2999_Prym": 101,
+      "2999_DrPawn": 121,
+      "3000_FL": 74,
+      "2999_MoonQe": 138,
+      "2999_Ambrasadors": 19,
+      "3000_saptozz": 142,
+      "3000_Synd": 135,
+      "3004_BearFang": 2,
+      "3000": 6
+    }
   },
   {
     "replay": "D:\\Desktop\\My Folder\\Game\\VG\\vg replay\\Tournament_Replays\\Buffalo vs RRONE\\2\\02aae104-45ba-4f50-972c-00c4a6719716-9bfb7a7c-18f5-41f5-bc07-63bf7db248e8.0.vgr",
@@ -318,6 +1482,21 @@
     },
     "crystal_candidates": 2,
     "duration": 1110,
-    "boundary_kills": []
+    "duration_est": 1083.514892578125,
+    "anchor_valid": true,
+    "boundary_kills": [],
+    "minion_after_crystal": [],
+    "minion_after_crystal_count_by_player": {},
+    "minion_before_crystal_count_by_player": {
+      "3000_HiTayo": 64,
+      "3000_FL": 84,
+      "2999_DrPawn": 115,
+      "2999_MoonQe": 26,
+      "2999_Ambrasadors": 54,
+      "2999_Prym": 105,
+      "3000_Synd": 97,
+      "3000_saptozz": 109,
+      "3000": 8
+    }
   }
 ]
