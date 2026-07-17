@@ -194,7 +194,56 @@ Observed result after later overwrite:
 
 ## Open Question
 
-- Exact safe coordinate for the post-surrender `다시보기` button was not finalized in this run.
-- On the next attempt, capture that overlay and record the exact center coordinate before clicking.
-- Exact reliable timeline-jump coordinate/drag behavior is still unresolved.
+- ~~Exact safe coordinate for the post-surrender `다시보기` button~~ RESOLVED 2026-07-17: `190,1075` (see below)
+- Exact reliable timeline-jump coordinate/drag behavior is still unresolved — but 5x playback speed makes it unnecessary for most cases.
 - Replay menu and replay playback itself are confirmed working.
+
+## 2026-07-17 Automation Run (fully automated via vg/tools/desktop_auto.py)
+
+End-to-end loop executed without manual input: launch → practice match → surrender →
+vgrplay inject → 다시보기 → replay loaded → 5x playback. Tool: `python -m vg.tools.desktop_auto`
+(ctypes SendInput + capture; declares DPI awareness so all coordinates below are physical
+3072x1920 pixels, same basis as the rest of this file).
+
+### Launch (changed from direct exe)
+
+- Direct `Vainglory.exe` launch shows `연결할 수 없습니다` and a Steam login handoff — dead end.
+- Working path: `Start-Process 'steam://rungameid/1025580'` (app id from appmanifest_1025580.acf).
+- Steam launches a small VG launcher window; its red `플레이` button opens the mode-select
+  overlay in the same window. Maximize the window first (title bar buttons, standard Win32).
+- Game window starts SMALL — maximize before using any coordinates in this file.
+
+### New step: skin picker
+
+- After hero confirm (`선택` 1535,1793) a skin popup appears; `기본 스킨` card at `1535,200`.
+
+### Post-surrender overlay button coordinates (maximized, physical px)
+
+- `다시보기`: `190,1075`  ← the replay entry point
+- `평가`: `558,1075`
+- `게임플레이`: `2515,1075`
+- `닫기`: `2880,1075`
+
+### Replay controls (opened via bottom-center `1536,1776`)
+
+- Speed `−` button: `108,1779`; speed `+` button: `292,1779`; each click ±1x, **max 5x**.
+  19-minute replay finishes in under 4 minutes of wall time at 5x.
+- Pause/play: `1535,1779`. `다시보기 종료` button: `2894,1779`.
+- Timeline bar: y≈`1710`, x spans ≈`84`(0:00) to `2995`(end); white dot = current position.
+  **DO NOT click/seek the timeline** — see crash findings below.
+
+### Crash findings (injected replays)
+
+- Letting an injected replay reach its final frame TERMINATES the client (clean self-exit,
+  no WER crash event). The "auto result screen at replay end" assumption does NOT hold for
+  injected replays.
+- Clicking the timeline bar to seek terminated the client within seconds on the one attempt
+  (run 2). Treat seek as forbidden; the earlier "inconclusive" note likely masked the same
+  crash.
+- Safe extraction pattern: 5x playback → PAUSE (`1535,1779`) shortly before the end →
+  capture the always-on bottom HUD (per-player KDA / CS / gold for all 10 players) →
+  exit via `다시보기 종료` (`2894,1779`).
+- The Steam library window grabs foreground when the client dies; minimize Steam before
+  the run so stray clicks land on the desktop, not Steam UI.
+- Controls persist while the strip is open; time readout format `M:SS / M:SS` centered at
+  ≈`837,1779`.
