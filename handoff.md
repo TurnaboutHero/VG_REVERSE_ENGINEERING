@@ -232,18 +232,33 @@ vgrplay inject → 다시보기 → replay loaded → 5x playback. Tool: `python
 - Timeline bar: y≈`1710`, x spans ≈`84`(0:00) to `2995`(end); white dot = current position.
   **DO NOT click/seek the timeline** — see crash findings below.
 
-### Crash findings (injected replays)
+### Crash findings (injected replays) — 5 runs, 2026-07-17
 
-- Letting an injected replay reach its final frame TERMINATES the client (clean self-exit,
-  no WER crash event). The "auto result screen at replay end" assumption does NOT hold for
-  injected replays.
-- Clicking the timeline bar to seek terminated the client within seconds on the one attempt
-  (run 2). Treat seek as forbidden; the earlier "inconclusive" note likely masked the same
-  crash.
-- Safe extraction pattern: 5x playback → PAUSE (`1535,1779`) shortly before the end →
-  capture the always-on bottom HUD (per-player KDA / CS / gold for all 10 players) →
-  exit via `다시보기 종료` (`2894,1779`).
+The client SELF-TERMINATES at a RANDOM point while playing an injected replay
+(clean exit, no WER crash event). Observed survival (game-time at death):
+
+| run | speed | last alive observation | died before |
+|-----|-------|------------------------|-------------|
+| 1   | 5x    | 7:04                   | ~19:06 (assumed end-crash at the time) |
+| 2   | 1x    | 0:03 (+seek click)     | ~1 min |
+| 3   | 5x    | 0:41                   | 17:46 |
+| 4   | 1x    | (load only)            | 0:15 |
+| 5   | 5x    | 5:46                   | ~6:30 |
+
+- Randomness ⇒ NOT an end-of-file trigger, NOT a specific frame/event.
+- Race-condition hypothesis REJECTED: after surrender the live session stops writing
+  temp .vgr files (verified — no mtime updates during replay playback).
+- Likely root cause: replay version mismatch — all archived replays are 2021-2022
+  Community-Edition era; the Steam client is 4.12/4.13 (Feb 2020). No same-era replay
+  exists in the archive to A/B test this.
+- Timeline seek (run 2) still looks instantly fatal — keep seek forbidden.
+- The always-on bottom HUD (per-player KDA/CS/gold) IS readable in every capture, so
+  periodic-capture monitoring (`while tasklist | grep Vainglory: shot every ~10s`)
+  extracts partial data from every run even when it dies.
 - The Steam library window grabs foreground when the client dies; minimize Steam before
   the run so stray clicks land on the desktop, not Steam UI.
+- Full-length playback needs ~19:06/5x ≈ 230s of survival; with observed survival times
+  a single-run completion is unlikely — treat completion as a retry lottery, or solve
+  the crash root cause first.
 - Controls persist while the strip is open; time readout format `M:SS / M:SS` centered at
   ≈`837,1779`.
