@@ -80,69 +80,45 @@ _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 # stripping algorithm removes intermediates first, which could strand T1 items.
 # Verified against official VG recipes (item_price_verify.py OFFICIAL_RECIPES).
 UPGRADE_TREE = {
-    # ====== Weapon T1 → T2 + T3 (transitive) ======
-    202: {249, 205, 250, 208, 223, 251, 12, 235, 5, 226},
-    # Weapon Blade → Heavy Steel(249), Six Sins(205), Piercing Spear(250) + their T3s
-    243: {244, 223, 8},
-    # Book of Eulogies → Barbed Needle(244) → Serpent Mask(223), Poisoned Shiv(8)
-    204: {207, 252, 210, 8, 226, 251, 24, 253, 5},
-    # Swift Shooter → Blazing Salvo(207), Lucky Strike(252) + their T3s
-
-    # ====== Weapon T2 → T3 ======
-    249: {208, 223, 251, 12},   # Heavy Steel → Sorrowblade, Serpent Mask, Breaking Point, Spellsword
-    205: {208, 235, 5, 12},     # Six Sins → Sorrowblade, Tension Bow, Tyrants Monocle, Spellsword
-    244: {223, 8},              # Barbed Needle → Serpent Mask, Poisoned Shiv
-    250: {226, 235},            # Piercing Spear → Bonesaw, Tension Bow
-    207: {210, 8, 226, 251, 24, 253},  # Blazing Salvo → TT, PShiv, Bonesaw, BP, Shiversteel, AC
-    252: {210, 5},              # Lucky Strike → Tornado Trigger, Tyrants Monocle
-
-    # ====== Crystal T1 → T2 + T3 (transitive) ======
-    203: {0, 206, 254, 209, 10, 230, 11, 240, 255, 253, 236},
-    # Crystal Bit → Heavy Prism(0), Eclipse Prism(206), Piercing Shard(254) + all CP T3s
-    216: {218, 220, 255, 234},
-    # Energy Battery → Void Battery(218) → Clockwork(220), Eve of Harvest(255), Halcyon(234)
-    217: {219, 220, 236, 7, 16, 22, 23, 12},
-    # Hourglass → Chronograph(219) → all Chronograph T3s
-
-    # ====== Crystal T2 → T3 ======
-    0: {209, 10, 230, 11, 240, 255, 253},  # Heavy Prism → SG, SF, FB, DE, BM, EoH, AC
-    206: {209, 10, 230, 11, 236},           # Eclipse Prism → SG, SF, FB, DE, Aftershock
-    218: {220, 255, 234},                   # Void Battery → Clockwork, EoH, Halcyon Chargers
-    254: {240},                             # Piercing Shard → Broken Myth
-    219: {220, 236, 7, 16, 22, 23, 12},    # Chronograph → CW, AS, Stormcrown, Contraption, CapP, RD, Spellsword
-
-    # ====== Defense T1 → T2 + T3 (transitive) ======
-    211: {212, 248, 229, 20, 21, 232, 22, 23, 17, 24, 231, 247, 16},
-    # Oakheart → Dragonheart(212), Lifespring(248), Reflex Block(229), Flare Gun(20) + T3s
-    245: {246, 26, 231, 247, 13},
-    # Light Shield → Kinetic Shield(246), Warmail(26) + KS T3s (Fountain, Aegis, SlumbHusk)
-    213: {214, 26, 27, 242, 13},
-    # Light Armor → Coat of Plates(214), Warmail(26) + CoP T3s (MJ, AP, SlumbHusk)
-    215: {214, 26, 27, 242, 13},
-    # Light Armor variant → same as 213 (alternate acquisition path)
-
-    # ====== Defense T2 → T3 ======
-    212: {21, 22, 23, 17, 24},  # Dragonheart → Pulseweave, CapP, RD, WarTreads, Shiversteel (NOT Crucible - Crucible uses Reflex Block)
-    248: {231, 21},                  # Lifespring → Fountain of Renewal, Pulseweave
-    229: {232, 247},                 # Reflex Block → Crucible, Aegis
-    246: {231, 247, 13},             # Kinetic Shield → Fountain, Aegis, Slumbering Husk
-    214: {27, 242, 13},              # Coat of Plates → Metal Jacket, Atlas Pauldron, Slumbering Husk
-    228: {27, 242},                  # Coat of Plates variant → MJ, AP
-    20: {16},                        # Flare Gun → Contraption
-
-    # ====== Boots ======
-    221: {222, 241, 234, 1, 17},  # Sprint Boots → Travel Boots + all T3 boots
-    222: {241, 234, 1, 17},       # Travel Boots → Teleport, Halcyon, Journey, War Treads
-
-    # ====== Utility ======
-    19: {15},   # ScoutTuff → SuperScout 2000
+    458: {461, 464, 479, 480, 482, 491, 505, 506, 507, 524},  # Weapon Blade
+    459: {462, 465, 486, 492, 496, 509, 510, 511, 512, 522, 523},  # Crystal Bit
+    460: {463, 466, 482, 484, 491, 507, 508, 509, 520},  # Swift Shooter
+    461: {464, 480, 491, 524},  # Six Sins
+    462: {465, 486, 492, 522, 523},  # Eclipse Prism
+    463: {466, 482, 484, 507, 509, 520},  # Blazing Salvo
+    467: {468, 484, 485, 487, 488, 497, 503, 504, 531, 533, 534},  # Oakheart
+    468: {484, 497, 531, 533, 534},  # Dragonheart
+    469: {470, 471, 498, 525, 538},  # Light Armor
+    470: {471, 498, 525},  # Coat of Plates
+    472: {474, 476, 490, 511, 539},  # Energy Battery
+    473: {475, 476, 492, 524, 531, 534},  # Hourglass
+    474: {476, 490, 511, 539},  # Void Battery
+    475: {476, 492, 519, 524, 531, 534},  # Chronograph (-> Stormcrown 519)
+    513: {519},  # Stormguard Banner -> Stormcrown 519
+    477: {478, 490, 497, 530},  # Sprint Boots
+    478: {490, 497, 530},  # Travel Boots
+    485: {488, 503},  # Reflex Block
+    499: {479, 500, 520},  # Book of Eulogies
+    500: {479, 520},  # Barbed Needle
+    501: {487, 502, 503, 525, 538, 539},  # Light Shield
+    502: {487, 503, 525, 539},  # Kinetic Shield
+    504: {487, 533},  # Lifespring
+    505: {464, 479, 507, 524},  # Heavy Steel
+    506: {480, 482},  # Piercing Spear
+    508: {466, 491},  # Lucky Strike
+    510: {496},  # Piercing Shard
+    512: {465, 486, 496, 509, 511, 522, 523},  # Heavy Prism
+    528: {527},  # ScoutTuff -> SuperScout 2000
+    # (Stormguard Banner 513 -> Stormcrown edge dropped: Stormcrown is unmapped;
+    #  composed 527 is SuperScout 2000, not Stormcrown.)
+    517: {466, 491, 508},  # Minion's Foot
 }
 
 # Starter/system IDs - never in final build
 # Only items that are system events or auto-purchased at game start.
 # Consumables (infusions, scout items) can appear in final builds,
 # so they are handled by the 6-slot tier-based limit instead.
-STARTER_IDS = {14, 201}
+STARTER_IDS = {457}  # Halcyon Potion (auto-purchased at start); (1,201)
 # 14=universal system event (not an item)
 # 201=Starting Item (auto-purchased at game start)
 
@@ -613,10 +589,12 @@ class UnifiedDecoder:
                 pos += 3
                 continue
 
-            item_id = struct.unpack_from("<H", all_data, pos + 10)[0]
-            # Normalize encoding artifacts (e.g., 65505=0xFFE1 → 225=0xE1)
-            if item_id > 255:
-                item_id = item_id & 0xFF
+            # 16-bit BIG-ENDIAN id: high=qty(+9), low=id(+10).
+            # item_id = qty*256 + low  (qty=1 -> 457-511, qty=2 -> 512-539).
+            # Confirmed vs real bytes + VGNA ground truth. Old code read a
+            # uint16 LE at +10 and masked to low byte, discarding the high
+            # byte and collapsing 457-539 onto 0-255 (the misID bug).
+            item_id = qty * 256 + all_data[pos + 10]
             item_info = ITEM_ID_MAP.get(item_id)
             if item_info:
                 player_items[eid].add(item_id)

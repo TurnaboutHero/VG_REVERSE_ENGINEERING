@@ -227,216 +227,101 @@ HERO_NAME_TO_ID: Dict[str, int] = {
     info["name"].lower(): id for id, info in HERO_ID_MAP.items()
 }
 
-# Item ID Mapping
+# Item ID Mapping — composed 16-bit id keys (qty*256 + low_byte)
 # =============================================================================
-# Two acquisition mechanisms in [10 04 3D] acquire events:
-#   - qty=1 + IDs 200-255: Standard shop purchase (all tiers)
-#   - qty=2 + IDs 0-27:    T3/special item completion (crafted from components)
+# The [10 04 3D] acquire event stores a 16-bit BIG-ENDIAN item id:
+#   high byte = qty field (+9)  →  1 (ids 457-511) or 2 (ids 512-539)
+#   low  byte = id field  (+10)
+# Confirmed against real .vgr bytes and VGNA /replay/result ground truth
+# (VGNA_REPLAY_SERVER_2026-07-30.md §5, ITEM_LIST_KR_EN.md §0).
 #
-# Evidence for qty=2 = items (NOT ability upgrades):
-#   - Only 2-5 qty=2 events per player (ability upgrades would be 12 = max level)
-#   - Hero role distribution matches expected item buyers perfectly
-#   - ID 14 is universal (system event, excluded)
-#
-# Mapping sources:
-#   - "confirmed": Replay viewer screenshot or build comparison with known match
-#   - "tentative": Role matrix + co-item analysis + upgrade chain inference
-#   - "inferred":  qty=2 hero distribution analysis (buyer role matching)
-#   - "unknown":   Category known from buyer profile, specific item uncertain
+# status vocabulary:
+#   confirmed      code(price/co-buy) + VGNA + local all agree
+#   vgna_verified  conflict re-checked on local replays; VGNA won
+#   local_override local evidence refuted VGNA (493: 500g x10 = Weapon Infusion)
+#   vgna           adopted from VGNA, locally plausible, not recipe-verified
+#   unknown        not in VGNA sample; identity tentative
 # =============================================================================
 ITEM_ID_MAP: Dict[int, Dict] = {
-    # =========================================================================
-    # qty=2 T3/Special Items (IDs 0-27) - crafted/completed items
-    # Identified by hero buyer distribution across 56 replays
-    # =========================================================================
-    0: {"name": "Heavy Prism", "category": "Crystal", "tier": 2, "status": "confirmed",
-        "note": "CONFIRMED by build tree: qty=2. Crystal Bit(203) 99% co-buy. 63 buyers, CP heroes"},
-    1: {"name": "Journey Boots", "category": "Utility", "tier": 3, "status": "confirmed",
-        "note": "CONFIRMED by build tree: qty=2. Travel Boots(222) 91%. 57 buyers, melee+captain 86%"},
-    5: {"name": "Tyrants Monocle", "category": "Weapon", "tier": 3, "status": "confirmed",
-        "note": "CONFIRMED by build tree: qty=2. Six Sins(205) 83% + Lucky Strike(252) 79%. 15 buyers, WP 83%"},
-    7: {"name": "Stormcrown", "category": "Utility", "tier": 3, "status": "confirmed",
-        "note": "CONFIRMED by build tree: qty=2. Chronograph(219) 78%. 39 buyers, bruiser+captain 90%"},
-    8: {"name": "Poisoned Shiv", "category": "Weapon", "tier": 3, "status": "confirmed",
-        "note": "CONFIRMED by build tree: qty=2 completion. Blazing Salvo(207) 100% + Barbed Needle(244) 100% = both components. 17 buyers, Sniper 88% (Kinetic 7, Gwen 2, Vox 2). Measured 2750g = official"},
-    10: {"name": "Spellfire", "category": "Crystal", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Heavy Prism(0) 99% + Eclipse Prism(206) 97%. 38 buyers, CP 73%"},
-    11: {"name": "Dragons Eye", "category": "Crystal", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Heavy Prism(0) 100% + Eclipse Prism(206) 96%. 19 buyers"},
-    12: {"name": "Spellsword", "category": "Weapon", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Heavy Steel(249) 91%. 12 buyers, WP 86% (Caine 67%). Recipe = Heavy Steel + Six Sins + Chronograph (3 components, 1150+650+800+200=2800g)"},
-    13: {"name": "Slumbering Husk", "category": "Defense", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2 completion. Coat of Plates(214) 69% + Kinetic Shield(246) 66% = both components. 36 buyers, mixed (Captain 36%, WP 55%)"},
-    # ID 14 = system event (universal, excluded via STARTER_IDS)
-    15: {"name": "SuperScout 2000", "category": "Utility", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Captain 93% exclusive. 12 buyers, ALL captains"},
-    16: {"name": "Contraption", "category": "Utility", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Captain 93% exclusive. Chronograph(219) co-buy. 15 buyers"},
-    17: {"name": "War Treads", "category": "Utility", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2 completion. Travel Boots(222) 94% + Dragonheart(212) 94% = both components. Captain 87%, 39 buyers (Lyra 9, Phinn 7, Ardan 6). Blazing Salvo <30% rules out Shiversteel"},
-    18: {"name": "Unknown 18", "category": "Consumable", "tier": 0, "status": "unknown",
-         "note": "qty=2. 17 buyers, mixed roles (br 47%, cap 18%, cp 18%, wp 18%). Crystal Infusion already confirmed at ID 238. Identity uncertain"},
-    20: {"name": "Flare Gun", "category": "Utility", "tier": 2, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Oakheart(211) co-buy, Captain 88% exclusive. 29 buyers"},
-    21: {"name": "Pulseweave", "category": "Defense", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2 completion. Dragonheart(212) 89% + Lifespring(248) 86% = both components. 86 buyers, Captain 45% + Warrior 29% (Lance 14, Grumpjaw 9, Grace 8)"},
-    22: {"name": "Capacitor Plate", "category": "Defense", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Dragonheart(212) 94% + Chronograph(219) co-buy. Captain 91%. 25 buyers"},
-    23: {"name": "Rooks Decree", "category": "Defense", "tier": 3, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Dragonheart(212) 92% + Chronograph(219) co-buy. Captain 83%. 16 buyers"},
-    26: {"name": "Warmail", "category": "Defense", "tier": 2, "status": "confirmed",
-         "note": "CONFIRMED by build tree: qty=2. Light Armor(213) 76% + Light Shield(245) 56%. 45 buyers"},
-    27: {"name": "Metal Jacket", "category": "Defense", "tier": 3, "status": "inferred",
-         "note": "qty=2. 31 buyers, bruisers+carries (Gwen/Kinetic/SAW). Armor T3"},
-
-    # =========================================================================
-    # Newly discovered qty=2 IDs (from narrowed hunt analysis)
-    # =========================================================================
-    3: {"name": "Unknown 3", "category": "Weapon", "tier": 3, "status": "unknown",
-        "note": "qty=2. 2 buyers only (Kestrel, Ringo). Sniper 100%. Rare WP T3 carry item"},
-    4: {"name": "Unknown 4", "category": "Defense", "tier": 3, "status": "unknown",
-        "note": "qty=2. 3 buyers (Tony, Phinn, Lorelai). Captain 66%. Fountain+Crucible 100% co-buy"},
-    6: {"name": "Unknown 6", "category": "Defense", "tier": 3, "status": "unknown",
-        "note": "qty=2. 2 buyers (Tony, Phinn). Captain+Warrior. ID 239 100% co-buy"},
-    19: {"name": "ScoutTuff", "category": "Utility", "tier": 2, "status": "confirmed",
-         "note": "CONFIRMED via M6/M7 screenshot: 고성능 부표. qty=2. 19 buyers, Captain 89% (Ardan 6, Lorelai 4, Lance 4). Builds into SuperScout 2000(ID 15). Vision utility for captains"},
-    24: {"name": "Shiversteel", "category": "Utility", "tier": 3, "status": "tentative",
-         "note": "qty=2. 9 buyers, Captain 55%+Warrior 33%. Oakheart(→Dragonheart)+Blazing Salvo 55% co-buy = matches recipe (Dragonheart+Blazing Salvo+600g=1950g). Decoder output shows Shiversteel in 6 tournament builds (Catherine, Warhawk, Lyra, Lorelai, Grumpjaw)"},
-
-    # =========================================================================
-    # Weapon T1
-    # =========================================================================
-    202: {"name": "Weapon Blade", "category": "Weapon", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 300g + build tree Heavy Steel(249) 88% + Six Sins(205) 69% + Piercing Spear(250) 77%. WP 96%, 113 buyers"},
-    204: {"name": "Swift Shooter", "category": "Weapon", "tier": 1, "status": "confirmed"},
-    243: {"name": "Book of Eulogies", "category": "Weapon", "tier": 1, "status": "confirmed"},
-
-    # =========================================================================
-    # Weapon T2
-    # =========================================================================
-    205: {"name": "Six Sins", "category": "Weapon", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 650g = official price. WP T2 component, builds into Sorrowblade(208), Tension Bow(235)"},
-    207: {"name": "Blazing Salvo", "category": "Weapon", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 700g = official price. WP T2 attack speed, builds into Tornado Trigger(210), Poisoned Shiv(8), Bonesaw(226), Breaking Point(251)"},
-    235: {"name": "Tension Bow", "category": "Weapon", "tier": 3, "status": "confirmed",
-          "note": "CONFIRMED: 2900g measured = official Tension Bow 2900g. Build tree: Six Sins(205) 90% + Piercing Spear(250) 81%. 87% also buy Bonesaw(226) = not Bonesaw. Heroes: Baron, Kestrel, Ringo (burst WP carries)"},
-    237: {"name": "Weapon Infusion", "category": "Consumable", "tier": 0, "status": "confirmed",
-          "note": "CONFIRMED: 500g measured = official Weapon Infusion 500g. Buyer profile: 92% WP carries (Baron, Caine, Kinetic, Gwen). Late-game WP buff consumable"},
-    249: {"name": "Heavy Steel", "category": "Weapon", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 1150g = official price (unique). Builds from Weapon Blade(202). Builds into Sorrowblade(208), Serpent Mask(223), Spellsword, Breaking Point(251)"},
-    250: {"name": "Piercing Spear", "category": "Weapon", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 900g = official price. Builds from Weapon Blade(202). Builds into Bonesaw(226), Tension Bow(235)"},
-
-    # =========================================================================
-    # Weapon T3
-    # =========================================================================
-    208: {"name": "Sorrowblade", "category": "Weapon", "tier": 3, "status": "confirmed"},
-    210: {"name": "Tornado Trigger", "category": "Weapon", "tier": 3, "status": "confirmed",
-          "note": "CONFIRMED via 21.11.04 match. Built from Lucky Strike(235)+Blazing Salvo(207)"},
-    223: {"name": "Serpent Mask", "category": "Weapon", "tier": 3, "status": "confirmed"},
-    224: {"name": "Unknown 224", "category": "Weapon", "tier": 3, "status": "unknown",
-          "note": "Only 5 buyers (Ardan/Taka/Joule/Warhawk/Gwen). Previously misidentified as Tension Bow (now ID 235). No measured price available. WP T3 candidate: Sorrowblade/Spellsword/Tyrants Monocle?"},
-    226: {"name": "Bonesaw", "category": "Weapon", "tier": 3, "status": "confirmed"},
-    251: {"name": "Breaking Point", "category": "Weapon", "tier": 3, "status": "confirmed"},
-    252: {"name": "Lucky Strike", "category": "Weapon", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 900g measured = official Lucky Strike 900g (unique match). WP T2 crit item, builds into Tornado Trigger, Tyrants Monocle"},
-
-    # =========================================================================
-    # Crystal T1
-    # =========================================================================
-    203: {"name": "Crystal Bit", "category": "Crystal", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 300g + build tree Eclipse Prism(206) 96% + Heavy Prism(0) 94% + Piercing Shard(254) 69%. CP 50%, 155 buyers"},
-    206: {"name": "Eclipse Prism", "category": "Crystal", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 650g measured price = official Eclipse Prism 650g. CP T2 component. Builds into Shatterglass, Spellfire, Frostburn, Dragons Eye, Aftershock"},
-    216: {"name": "Energy Battery", "category": "Crystal", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 300g measured price. Previously misidentified as Hourglass (250g). CP T1, builds into Void Battery, Halcyon Chargers"},
-
-    # =========================================================================
-    # Crystal T2
-    # =========================================================================
-    218: {"name": "Void Battery", "category": "Crystal", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 700g measured = official Void Battery 700g (unique match). CP T2, builds into Clockwork, Eve of Harvest, Halcyon Chargers"},
-    254: {"name": "Piercing Shard", "category": "Crystal", "tier": 2, "status": "confirmed"},
-
-    # =========================================================================
-    # Crystal T3
-    # =========================================================================
-    209: {"name": "Shatterglass", "category": "Crystal", "tier": 3, "status": "confirmed"},
-    220: {"name": "Clockwork", "category": "Crystal", "tier": 3, "status": "confirmed"},
-    230: {"name": "Frostburn", "category": "Crystal", "tier": 3, "status": "confirmed"},
-    236: {"name": "Aftershock", "category": "Crystal", "tier": 3, "status": "confirmed"},
-    240: {"name": "Broken Myth", "category": "Crystal", "tier": 3, "status": "confirmed"},
-    253: {"name": "Alternating Current", "category": "Crystal", "tier": 3, "status": "confirmed"},
-    255: {"name": "Eve of Harvest", "category": "Crystal", "tier": 3, "status": "confirmed"},
-
-    # =========================================================================
-    # Defense T1
-    # =========================================================================
-    211: {"name": "Oakheart", "category": "Defense", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED by build tree: Reflex Block(229) 93% + Dragonheart(212) 72% + Lifespring(248) 60% = ALL Oakheart T2 destinations. Kinetic Shield <20% rules out Light Shield. Captain 51%, 239 buyers"},
-    212: {"name": "Dragonheart", "category": "Defense", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 650g measured price = Oakheart(300g) + 350g recipe. HP T2, builds into Pulseweave, Crucible, War Treads, Capacitor Plate, Rooks Decree, Shiversteel"},
-    213: {"name": "Light Armor", "category": "Defense", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 300g + build tree Coat of Plates(214) 45% + Warmail(26) 55%. Captain 62%, 148 buyers"},
-    215: {"name": "Light Armor", "category": "Defense", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED by build tree: Coat of Plates(214) co-buy 78%. Same item as ID 213 (alternate acquisition path). 9 buyers"},
-    245: {"name": "Light Shield", "category": "Defense", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 300g + build tree Kinetic Shield(246) 45% + Warmail(26) 57%. Captain 59%, 111 buyers. (ID 211 = Oakheart, not Light Shield)"},
-
-    # =========================================================================
-    # Defense T2
-    # =========================================================================
-    214: {"name": "Coat of Plates", "category": "Defense", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 750g measured = official Coat of Plates 750g (unique match). Armor T2, builds into Metal Jacket, Atlas Pauldron, Slumbering Husk"},
-    228: {"name": "Coat of Plates", "category": "Defense", "tier": 2, "status": "tentative",
-          "note": "4 buyers (Grumpjaw/BF/SanFeng/Catherine). Co-occurs with Light Armor(213) 100%, Atlas Pauldron(242) 75%"},
-    229: {"name": "Reflex Block", "category": "Defense", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 700g = official price. Builds from Oakheart(211). Builds into Crucible(232), Aegis(247)"},
-    246: {"name": "Kinetic Shield", "category": "Defense", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 750g = official price. Builds from Light Shield(245). Builds into Aegis(247), Fountain(231), Slumbering Husk(13)"},
-    248: {"name": "Lifespring", "category": "Defense", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 800g = official price. Builds from Oakheart(211). Builds into Fountain(231), Pulseweave(21)"},
-
-    # =========================================================================
-    # Defense T3
-    # =========================================================================
-    231: {"name": "Fountain of Renewal", "category": "Defense", "tier": 3, "status": "confirmed"},
-    232: {"name": "Crucible", "category": "Defense", "tier": 3, "status": "confirmed"},
-    242: {"name": "Atlas Pauldron", "category": "Defense", "tier": 3, "status": "confirmed"},
-    247: {"name": "Aegis", "category": "Defense", "tier": 3, "status": "confirmed",
-          "note": "CONFIRMED by buyer profile: 62 buyers, CP carries, Reflex Block 96%. Measured 2400g != official 2250g (patch version difference?)"},
-
-    # =========================================================================
-    # Utility / Boots
-    # =========================================================================
-    219: {"name": "Chronograph", "category": "Crystal", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 800g measured = official Chronograph 800g. Buyer profile: 34% Mage + 28% Captain. CP T2, builds into Clockwork, Aftershock, Contraption, Stormcrown, Capacitor Plate, Rooks Decree"},
-    221: {"name": "Sprint Boots", "category": "Utility", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 300g + build tree Travel Boots(222) 85%. Universal (WP 48%, CP 17%, Cap 33%), 368 buyers"},
-    222: {"name": "Travel Boots", "category": "Utility", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED by buyer profile: 368 buyers, universal (all roles), Sprint Boots 85%. Measured 650g != official 800g (patch version difference?)"},
-    234: {"name": "Halcyon Chargers", "category": "Utility", "tier": 3, "status": "confirmed",
-          "note": "CONFIRMED by buyer profile: 261 buyers, CP-leaning (Mage+Sniper), boots 83%. Measured 1400g != official 1700g (patch version difference?)"},
-    241: {"name": "Teleport Boots", "category": "Utility", "tier": 3, "status": "confirmed",
-          "note": "CONFIRMED: 1600g measured = official Teleport Boots 1600g (unique match). T3 boots from Travel Boots"},
-
-    # =========================================================================
-    # Consumables / System
-    # =========================================================================
-    201: {"name": "Starting Item", "category": "System", "tier": 0, "status": "tentative",
-          "note": "456 buyers (everyone), avg 13s. Auto-purchased at game start"},
-    217: {"name": "Hourglass", "category": "Crystal", "tier": 1, "status": "confirmed",
-          "note": "CONFIRMED: 250g measured price (116/116 = 100%). VG's only 250g item. CP T1, builds into Chronograph, ScoutPak"},
-    225: {"name": "Scout Trap", "category": "Consumable", "tier": 0, "status": "tentative",
-          "note": "13 captain buyers, qty up to 24x. Repeated purchase pattern = vision consumable"},
-    233: {"name": "Unknown 233", "category": "Consumable", "tier": 0, "status": "unknown",
-          "note": "4 buyers (Reim/Lorelai/Reza/Baron), avg 1316s. Very late-game, possibly Crystal Infusion"},
-    238: {"name": "Crystal Infusion", "category": "Consumable", "tier": 0, "status": "confirmed",
-          "note": "CONFIRMED: 500g measured = official Crystal Infusion 500g. Buyer profile: 47% CP mages (Skaarf, Samuel, Magnus, Celeste). Late-game CP buff consumable"},
-    239: {"name": "Unknown 239", "category": "Consumable", "tier": 0, "status": "unknown",
-          "note": "7 captain buyers, qty 2-7. Co-occurs with Scout Trap(225) 86%. Another vision consumable?"},
-    244: {"name": "Barbed Needle", "category": "Weapon", "tier": 2, "status": "confirmed",
-          "note": "CONFIRMED: 800g measured = official Barbed Needle 800g. Buyer profile: 96% WP carries (Kinetic, Caine, Baron, Gwen). WP T2 lifesteal, builds into Serpent Mask, Poisoned Shiv, Breaking Point"},
+    457: {"name": "Halcyon Potion", "category": "Consumable", "tier": 0, "status": "vgna", "qty": 1, "low": 201},
+    458: {"name": "Weapon Blade", "category": "Weapon", "tier": 1, "status": "confirmed", "qty": 1, "low": 202},
+    459: {"name": "Crystal Bit", "category": "Crystal", "tier": 1, "status": "confirmed", "qty": 1, "low": 203},
+    460: {"name": "Swift Shooter", "category": "Weapon", "tier": 1, "status": "confirmed", "qty": 1, "low": 204},
+    461: {"name": "Six Sins", "category": "Weapon", "tier": 2, "status": "confirmed", "qty": 1, "low": 205},
+    462: {"name": "Eclipse Prism", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 1, "low": 206},
+    463: {"name": "Blazing Salvo", "category": "Weapon", "tier": 2, "status": "confirmed", "qty": 1, "low": 207},
+    464: {"name": "Sorrowblade", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 208},
+    465: {"name": "Shatterglass", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 209},
+    466: {"name": "Tornado Trigger", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 210},
+    467: {"name": "Oakheart", "category": "Defense", "tier": 1, "status": "confirmed", "qty": 1, "low": 211},
+    468: {"name": "Dragonheart", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 212},
+    469: {"name": "Light Armor", "category": "Defense", "tier": 1, "status": "confirmed", "qty": 1, "low": 213},
+    470: {"name": "Coat of Plates", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 214},
+    471: {"name": "Metal Jacket", "category": "Defense", "tier": 3, "status": "vgna", "qty": 1, "low": 215},  # VGNA-adopted; not locally re-verified (old CoP co-buy came through the buggy reader)
+    472: {"name": "Energy Battery", "category": "Crystal", "tier": 1, "status": "confirmed", "qty": 1, "low": 216},
+    473: {"name": "Hourglass", "category": "Crystal", "tier": 1, "status": "confirmed", "qty": 1, "low": 217},
+    474: {"name": "Void Battery", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 1, "low": 218},
+    475: {"name": "Chronograph", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 1, "low": 219},
+    476: {"name": "Clockwork", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 220},
+    477: {"name": "Sprint Boots", "category": "Utility", "tier": 1, "status": "confirmed", "qty": 1, "low": 221},
+    478: {"name": "Travel Boots", "category": "Utility", "tier": 2, "status": "confirmed", "qty": 1, "low": 222},
+    479: {"name": "Serpent's Mask", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 223},
+    480: {"name": "Tension Bow", "category": "Weapon", "tier": 3, "status": "vgna", "qty": 1, "low": 224},  # VGNA-adopted; only 9 buyers, not locally re-verified
+    481: {"name": "Flare", "category": "Consumable", "tier": 0, "status": "vgna_verified", "qty": 1, "low": 225},
+    482: {"name": "Bonesaw", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 226},
+    484: {"name": "Shiversteel", "category": "Defense", "tier": 3, "status": "vgna", "qty": 1, "low": 228},
+    485: {"name": "Reflex Block", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 229},
+    486: {"name": "Frostburn", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 230},
+    487: {"name": "Fountain of Renewal", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 231},
+    488: {"name": "Crucible", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 232},
+    489: {"name": "Unknown 489", "category": "Utility", "tier": 3, "status": "unknown", "qty": 1, "low": 233},  # ~1400g single-purchase = equipment (NOT consumable); 4 captain buyers, no recipe signal
+    490: {"name": "Halcyon Chargers", "category": "Utility", "tier": 3, "status": "confirmed", "qty": 1, "low": 234},
+    491: {"name": "Tyrant's Monocle", "category": "Weapon", "tier": 3, "status": "vgna_verified", "qty": 1, "low": 235},
+    492: {"name": "Aftershock", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 236},
+    493: {"name": "Weapon Infusion", "category": "Consumable", "tier": 0, "status": "local_override", "qty": 1, "low": 237},
+    494: {"name": "Crystal Infusion", "category": "Consumable", "tier": 0, "status": "confirmed", "qty": 1, "low": 238},
+    495: {"name": "Scout Trap", "category": "Consumable", "tier": 0, "status": "unknown", "qty": 1, "low": 239},
+    496: {"name": "Broken Myth", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 240},
+    497: {"name": "War Treads", "category": "Utility", "tier": 3, "status": "vgna_verified", "qty": 1, "low": 241},
+    498: {"name": "Atlas Pauldron", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 242},
+    499: {"name": "Book of Eulogies", "category": "Weapon", "tier": 1, "status": "confirmed", "qty": 1, "low": 243},
+    500: {"name": "Barbed Needle", "category": "Weapon", "tier": 2, "status": "confirmed", "qty": 1, "low": 244},
+    501: {"name": "Light Shield", "category": "Defense", "tier": 1, "status": "confirmed", "qty": 1, "low": 245},
+    502: {"name": "Kinetic Shield", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 246},
+    503: {"name": "Aegis", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 247},
+    504: {"name": "Lifespring", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 248},
+    505: {"name": "Heavy Steel", "category": "Weapon", "tier": 2, "status": "confirmed", "qty": 1, "low": 249},
+    506: {"name": "Piercing Spear", "category": "Weapon", "tier": 2, "status": "confirmed", "qty": 1, "low": 250},
+    507: {"name": "Breaking Point", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 251},
+    508: {"name": "Lucky Strike", "category": "Weapon", "tier": 2, "status": "confirmed", "qty": 1, "low": 252},
+    509: {"name": "Alternating Current", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 253},
+    510: {"name": "Piercing Shard", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 1, "low": 254},
+    511: {"name": "Eve of Harvest", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 255},
+    512: {"name": "Heavy Prism", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 2, "low": 0},
+    513: {"name": "Stormguard Banner", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 1},
+    515: {"name": "Unknown 515", "category": "Weapon", "tier": 3, "status": "unknown", "qty": 2, "low": 3},
+    516: {"name": "Unknown 516", "category": "Defense", "tier": 3, "status": "unknown", "qty": 2, "low": 4},
+    517: {"name": "Minion's Foot", "category": "Weapon", "tier": 1, "status": "vgna_verified", "qty": 2, "low": 5},
+    518: {"name": "Unknown 518", "category": "Defense", "tier": 2, "status": "unknown", "qty": 2, "low": 6},  # obs ~600g reads T2
+    519: {"name": "Stormcrown", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 7},  # VGNA said Teleport Boots; local: Chronograph 82% + Stormguard Banner 96% co-buy (= recipe) + jungle 41% -> Stormcrown. Teleport Boots now unlocated.
+    520: {"name": "Poisoned Shiv", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 2, "low": 8},
+    522: {"name": "Spellfire", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 2, "low": 10},
+    523: {"name": "Dragon's Eye", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 2, "low": 11},
+    524: {"name": "Spellsword", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 2, "low": 12},
+    525: {"name": "Slumbering Husk", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 2, "low": 13},
+    526: {"name": "Vision Totem", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 14},
+    527: {"name": "SuperScout 2000", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 15},  # VGNA said Stormcrown; local: captain-only + ScoutTuff 94%/ScoutPak 87% co-buy, Chronograph+SGB only 16% -> scout-line, not Stormcrown
+    528: {"name": "ScoutTuff", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 16},  # captain + ~200g rules out old-code Contraption (2100g)
+    529: {"name": "ScoutPak", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 17},  # captain + ~500g rules out old-code War Treads (1900g)
+    530: {"name": "Teleport Boots", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 18},  # VGNA said Journey Boots; truth match6 (Finals g3): 530-holders = Kinetic/Reim/San Feng, user-confirmed as Teleport buyers. Co-occurs with other boots because Teleport is bought for backdoor via sell+rebuy (boots NOT mutually exclusive in acquire log). Journey Boots is rarely bought (inefficient) -> true id unlocated.
+    531: {"name": "Rook's Decree", "category": "Defense", "tier": 3, "status": "vgna_verified", "qty": 2, "low": 19},  # truth-confirmed: Lorelai (Acex) build, match5 (user-confirmed)
+    532: {"name": "Flare Loader", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 20},  # 5v5 vision item (3v3 counterpart is "Flare Gun"). truth icon = gold spark-gun (user-ID'd as Flare Gun; official 5v5 name = Flare Loader per VaingloryFire). VGNA was correct here.
+    533: {"name": "Pulseweave", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 2, "low": 21},
+    534: {"name": "Capacitor Plate", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 2, "low": 22},
+    535: {"name": "Protector Contract", "category": "Defense", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 23},  # captain + 600g exact match
+    536: {"name": "Dragonblood Contract", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 24},  # truth-confirmed: Fortress (Dawg) purple item, match2 (user-confirmed)
+    538: {"name": "Warmail", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 2, "low": 26},
+    539: {"name": "Celestial Shroud", "category": "Crystal", "tier": 3, "status": "vgna_verified", "qty": 2, "low": 27},
 }
 
 # Reverse lookup: item name to ID
