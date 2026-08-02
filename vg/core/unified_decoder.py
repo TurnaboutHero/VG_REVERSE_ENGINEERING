@@ -76,8 +76,9 @@ _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 #   - 200-255: standard shop purchases (qty=1)
 #   - 0-27: T3/special item completions (qty=2), identified via hero distribution
 #
-# Uses TRANSITIVE relationships (T1 → all reachable T3s) because the iterative
-# stripping algorithm removes intermediates first, which could strand T1 items.
+# Uses TRANSITIVE relationships (T1 → all reachable T3s) so a single pass can
+# compare each component against every result it could have been consumed by,
+# even when the intermediate step is itself gone from the final build.
 # Verified against official VG recipes (item_price_verify.py OFFICIAL_RECIPES).
 UPGRADE_TREE = {
     458: {461, 464, 479, 480, 482, 491, 505, 506, 507, 524},  # Weapon Blade
@@ -135,30 +136,38 @@ def _estimate_final_build(
     """
     Remove consumed components and starters. Return up to 6 items (final build).
 
-    When more than 6 items remain after upgrade-tree filtering, uses the
-    last-acquired timestamp to keep only the 6 most recently purchased items.
-    This handles sell-back scenarios where items are sold and replaced.
+    A component counts as consumed only when one of its upgrade results was
+    acquired at or after the component's LAST purchase. Players routinely finish
+    a match still holding a freshly bought component (Crystal Bit, Weapon Blade,
+    Oakheart, ...) whose earlier copy was upgraded long before; the purchase log
+    is a set, so those copies collapse and unconditional stripping deleted them.
+    Timestamps are what separates the two cases.
 
     Args:
         item_ids_set: Set of all purchased item IDs (binary replay IDs)
-        last_acquire_ts: Optional {item_id: last_purchase_timestamp} for tie-breaking
+        last_acquire_ts: Optional {item_id: last_purchase_timestamp}
 
     Returns:
         List of item names in final 6-slot build, sorted by tier desc
     """
-    remaining = set(item_ids_set) - STARTER_IDS
+    ts = last_acquire_ts or {}
+    purchased = set(item_ids_set) - STARTER_IDS
 
-    # Iteratively remove components that have been upgraded
-    changed = True
-    while changed:
-        changed = False
-        to_remove = set()
-        for comp_id, result_ids in UPGRADE_TREE.items():
-            if comp_id in remaining and (remaining & result_ids):
-                to_remove.add(comp_id)
-        if to_remove:
-            remaining -= to_remove
-            changed = True
+    # Single pass: UPGRADE_TREE edges are transitive, so every result reachable
+    # from a component is compared against it directly. (Iterating over a
+    # shrinking set instead would let a removed intermediate stop counting as a
+    # consumer, keeping components that were in fact upgraded.)
+    remaining = set(purchased)
+    for comp_id in purchased:
+        results = UPGRADE_TREE.get(comp_id, set()) & purchased
+        if not results:
+            continue
+        comp_ts = ts.get(comp_id, 0)
+        # Missing timestamp -> undecidable, fall back to unconditional removal.
+        if comp_ts <= 0 or any(
+            ts.get(rid, 0) <= 0 or ts.get(rid, 0) >= comp_ts for rid in results
+        ):
+            remaining.discard(comp_id)
 
     # Convert to named items
     items = []
@@ -170,22 +179,20 @@ def _estimate_final_build(
         else:
             items.append((-1, ts, f"Unknown_{iid}", iid))
 
-    # Select top 6: tier-based with consumable separation.
-    # 1) T1+ items (real equipment) sorted by tier desc, timestamp desc
-    # 2) T0 items (consumables: infusions, traps) only fill remaining slots
-    # This keeps core T3 items for carries while allowing consumables only
-    # when the player has fewer than 6 real items.
-    real = [x for x in items if x[0] >= 1]
-    consumables = [x for x in items if x[0] < 1]
+    # Rank for the 6-slot inventory limit:
+    #   1) completed T3 items - held for the rest of the match, so an early
+    #      purchase must not be pushed out by components bought later
+    #   2) T1/T2 items, most recent first - unconsumed components a player is
+    #      still carrying are the ones they bought last
+    #   3) consumables (T0: infusions, traps) only fill leftover slots
+    # Ranking tier ahead of recency across ALL tiers instead loses the low-tier
+    # components players genuinely end the match holding.
+    def _slot_rank(entry):
+        tier, acquired = entry[0], entry[1]
+        bucket = 0 if tier >= 3 else (1 if tier >= 1 else 2)
+        return (bucket, -acquired)
 
-    # Within real items: tier desc, timestamp desc
-    real.sort(key=lambda x: (-x[0], -x[1]))
-    selected = real[:6]
-
-    # Fill remaining slots with consumables (most recent first)
-    if len(selected) < 6:
-        consumables.sort(key=lambda x: -x[1])
-        selected.extend(consumables[:6 - len(selected)])
+    selected = sorted(items, key=_slot_rank)[:6]
 
     selected.sort(key=lambda x: (-x[0], -x[1]))
     return [name for _, _, name, _ in selected]
