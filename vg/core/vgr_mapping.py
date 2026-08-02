@@ -309,7 +309,11 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     523: {"name": "Dragon's Eye", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 2, "low": 11},
     524: {"name": "Spellsword", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 2, "low": 12},
     525: {"name": "Slumbering Husk", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 2, "low": 13},
-    526: {"name": "Vision Totem", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 14},
+    # Auto-granted to every player at match start, not bought. Same detection
+    # signature as 457: 456/502 players, and per match either all players have
+    # it (51) or none do (5, start frames missing) - never partial. External
+    # ground truth calls it a purchased "Vision Totem"; that is wrong.
+    526: {"name": "Scout Camera", "category": "Utility", "tier": 0, "status": "local_override", "qty": 2, "low": 14},
     527: {"name": "SuperScout 2000", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 15},  # VGNA said Stormcrown; local: captain-only + ScoutTuff 94%/ScoutPak 87% co-buy, Chronograph+SGB only 16% -> scout-line, not Stormcrown
     528: {"name": "ScoutTuff", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 16},  # captain + ~200g rules out old-code Contraption (2100g)
     529: {"name": "ScoutPak", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 17},  # captain + ~500g rules out old-code War Treads (1900g)

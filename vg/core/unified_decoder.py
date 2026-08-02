@@ -119,9 +119,14 @@ UPGRADE_TREE = {
 # Only items that are system events or auto-purchased at game start.
 # Consumables (infusions, scout items) can appear in final builds,
 # so they are handled by the 6-slot tier-based limit instead.
-STARTER_IDS = {457}  # Halcyon Potion (auto-purchased at start); (1,201)
-# 14=universal system event (not an item)
-# 201=Starting Item (auto-purchased at game start)
+STARTER_IDS = {
+    457,  # Halcyon Potion  (1,201) - auto-granted at match start
+    526,  # Scout Camera    (2,14)  - auto-granted at match start
+}
+# Both are handed to every player rather than bought: each appears for 456/502
+# players, and per match either everyone has it (51 matches) or nobody does
+# (5 matches whose start frames are missing) - never a partial split, which is
+# what a purchased item produces.
 
 
 def _le_to_be(eid_le: int) -> int:
@@ -226,7 +231,10 @@ class DecodedPlayer:
     gold_spent: int = 0
     gold_earned: int = 0  # 600 starting + 0x06 income (sell_flag!=0x01). ±5% 98.0%, ±10% 100%
     items: List[str] = field(default_factory=list)  # Final build (after upgrade tree filtering)
-    items_all_purchased: List[str] = field(default_factory=list)  # Raw purchase history
+    # Raw acquire log, kept unfiltered. Includes the STARTER_IDS items every
+    # player is handed at match start, so subtract those before reading it as
+    # purchase frequency.
+    items_all_purchased: List[str] = field(default_factory=list)
     # Comparison fields (populated when truth is available)
     truth_kills: Optional[int] = None
     truth_deaths: Optional[int] = None
