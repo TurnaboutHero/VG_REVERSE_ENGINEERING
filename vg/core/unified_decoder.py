@@ -119,6 +119,17 @@ UPGRADE_TREE = {
 # Only items that are system events or auto-purchased at game start.
 # Consumables (infusions, scout items) can appear in final builds,
 # so they are handled by the 6-slot tier-based limit instead.
+# One .vgr section covers this much game time. Measured externally across 14
+# matches spanning 716-2939s (9.94-10.00 s/section), so section count times this
+# gives how long the recording ran - a length the event stream cannot fake.
+SECONDS_PER_SECTION = 10
+
+# Below this, the event stream stops well before the recording does, which means
+# the tail of the match was never captured. Separates 10 complete tournament
+# matches (0.97-1.00) from the one known truncated recording (0.56); the gap
+# either side of it is empty, so the exact cut point is not tuned.
+COMPLETENESS_THRESHOLD = 0.90
+
 STARTER_IDS = {
     457,  # Halcyon Potion  (1,201) - auto-granted at match start
     526,  # Scout Camera    (2,14)  - auto-granted at match start
@@ -223,6 +234,10 @@ class DecodedPlayer:
     hero_name: str
     hero_id: Optional[int]
     entity_id: int                     # Little Endian (original)
+    # When the match's DecodedMatch.data_complete is False these are lower
+    # bounds: the recording stops mid-match so later events were never written.
+    # Checked against truth on the one known truncated match - all 9 players
+    # came in at or under the real figures, none over.
     kills: int = 0
     deaths: int = 0
     assists: Optional[int] = None
@@ -259,6 +274,14 @@ class DecodedMatch:
     crystal_death_ts: Optional[float] = None
     crystal_death_eid: Optional[int] = None
     objective_events: List[ObjectiveEvent] = field(default_factory=list)
+    # How much game time the .vgr sections cover, from the section count.
+    recorded_seconds: Optional[int] = None
+    # duration_seconds / recorded_seconds. Near 1.0 when the event stream runs
+    # to the end of the recording; well below when the recording outlasts it.
+    completeness_ratio: Optional[float] = None
+    # True/False once both durations are known, None while undecidable.
+    # False means kills/deaths/assists are LOWER BOUNDS, not wrong values.
+    data_complete: Optional[bool] = None
     # Detection flags
     kda_detection_used: bool = False
     win_detection_used: bool = False
@@ -328,6 +351,12 @@ class UnifiedDecoder:
 
         # --- Step 2: Load all frames ---
         frames = self._load_frames(frame_dir, frame_name)
+        # Section count describes the loaded bytes, so derive it from `frames`
+        # rather than re-globbing: unreadable or filtered sections must not
+        # inflate the recording length we compare the event stream against.
+        recorded_seconds = (
+            (max(idx for idx, _ in frames) + 1) * SECONDS_PER_SECTION if frames else None
+        )
 
         # --- Step 3: KDA Scanning (event collection only, no filtering yet) ---
         kda_used = False
@@ -401,6 +430,17 @@ class UnifiedDecoder:
         elif duration_est is not None:
             duration = int(duration_est)
 
+        # --- Step 7a: Completeness ---
+        # The event stream ending long before the recording does means the tail
+        # of the match was never captured, so every per-player count is short.
+        # Both durations must be known to decide; otherwise stay undecided
+        # rather than calling a replay with no deaths at all "truncated".
+        completeness = None
+        data_complete = None
+        if duration and recorded_seconds:
+            completeness = duration / recorded_seconds
+            data_complete = completeness >= COMPLETENESS_THRESHOLD
+
         # --- Step 7b: Apply KDA filter with computed duration ---
         # Now that we have proper game duration (from crystal death),
         # filter kills/deaths/assists with post-game ceremony removal.
@@ -453,6 +493,9 @@ class UnifiedDecoder:
             total_frames=match_info.get("total_frames", 0),
             crystal_death_ts=crystal_ts,
             crystal_death_eid=crystal_eid,
+            recorded_seconds=recorded_seconds,
+            completeness_ratio=round(completeness, 3) if completeness else None,
+            data_complete=data_complete,
             objective_events=objective_events,
             kda_detection_used=kda_used,
             win_detection_used=win_used,
