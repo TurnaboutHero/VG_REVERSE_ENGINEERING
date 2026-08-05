@@ -180,6 +180,32 @@ _REFUND_STEP = 25
 _LIQUIDATION_GAP = 10.0     # seconds; wider than any burst, narrower than any pair of real sales
 _LIQUIDATION_RUN = 3        # reports in one burst before it reads as liquidation
 
+# The 5v5 update notes put the automatic gold at "경기 시간 0:45부터", one tick a
+# second, and the replays agree: 300 ticks in every 300 seconds, flat from the
+# first to the last. That fixed start is what dates a recording. Timestamps run
+# from where the recording begins, so a file that covers the match start shows
+# its first tick around 45 seconds in - the corpus lands between 41 and 74 - and
+# one that joined a match already in progress shows it within a couple of
+# seconds, because the gold was already flowing. Nothing falls in between.
+_PASSIVE_TICK = 3.0
+_MATCH_START_CUTOFF = 30.0
+
+
+def _timestamp_at(data: bytes, pos: int) -> float:
+    """
+    Seconds since the recording started, read from in front of an event.
+
+    Every event is preceded by a float32 and three zero bytes, so the stamp
+    sits at pos-7. Anything that does not decode to a plausible match time is
+    reported as infinite, which keeps a bad read from passing for an early one.
+    """
+    if pos < 7:
+        return math.inf
+    when = struct.unpack_from(">f", data, pos - 7)[0]
+    if math.isnan(when) or math.isinf(when) or not 0.0 <= when < 1e5:
+        return math.inf
+    return when
+
 
 def _is_refund(amount: float) -> bool:
     """Whether a purse increase is shaped like half of an item's price."""
@@ -812,9 +838,11 @@ class UnifiedDecoder:
             ({eid: [(offset, cost)]}, {eid: [(offset, refund)]}), both sorted
         """
         costs: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
-        purse: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+        sales: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+        purse: Dict[int, List[Tuple[int, float, float]]] = defaultdict(list)
         earned: Dict[int, float] = defaultdict(float)
         spent: Dict[int, float] = defaultdict(float)
+        first_tick = math.inf
 
         pos = 0
         while True:
@@ -836,15 +864,25 @@ class UnifiedDecoder:
                 spent[eid] += -value
                 costs[eid].append((pos, -value))
             elif all_data[pos + 12] == 0x01:
-                timestamp = struct.unpack_from(">f", all_data, pos - 7)[0] if pos >= 7 else 0.0
-                if math.isnan(timestamp) or math.isinf(timestamp):
-                    timestamp = 0.0
-                purse[eid].append((pos, timestamp, value - (earned[eid] - spent[eid])))
+                purse[eid].append((pos, _timestamp_at(all_data, pos),
+                                   value - (earned[eid] - spent[eid])))
             else:
                 earned[eid] += value
+                if abs(value - _PASSIVE_TICK) < 1e-3:
+                    when = _timestamp_at(all_data, pos)
+                    if when < first_tick:
+                        first_tick = when
             pos += 3
 
-        sales: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+        # A recording that joined the match late has no usable baseline: both
+        # the income and the spending before it started are missing, so the
+        # residual is not starting gold plus refunds but starting gold plus
+        # whatever those two happened to differ by. The corpus's late joins
+        # produce baselines of 461, 388 and 261.5 - none of them a multiple of
+        # 25, which is the tell that they mean nothing.
+        if first_tick < _MATCH_START_CUTOFF:
+            return costs, sales
+
         residuals = [r for reports in purse.values() for _, _, r in reports]
         if not residuals:
             return costs, sales
