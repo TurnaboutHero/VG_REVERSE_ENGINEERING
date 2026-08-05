@@ -34,6 +34,7 @@ CLI:
     python -m vg.core.unified_decoder /path/to/replay
 """
 
+import bisect
 import json
 import math
 import struct
@@ -159,7 +160,68 @@ def _le_to_be(eid_le: int) -> int:
     return struct.unpack('>H', struct.pack('<H', eid_le))[0]
 
 
-def _estimate_final_build(acquires: List[Tuple[int, int]]) -> List[str]:
+# An acquire and the cost it was charged for sit within a few hundred bytes of
+# each other. 400 pairs 10479 of the corpus's purchases without ever reaching
+# past a neighbouring purchase.
+_COST_WINDOW = 400
+# Refunds land on whole gold, so anything looser than a rounding slack would
+# start matching items the player did not sell.
+_SALE_TOLERANCE = 1.0
+# Every price in the game is a multiple of 25, so half of one lands on 12.5 at
+# worst; 93.6% of the corpus's refunds are a clean multiple of 25. The rest are
+# accounting drift wearing a refund's clothes (see _detect_wallet), and this is
+# what keeps most of it out.
+_REFUND_STEP = 25
+# Drift accumulates report after report, so a player it has caught looks like a
+# serial seller. Real sellers are not: two is above every case that survived
+# manual reading, and the cap is what stops a drifting player from being
+# stripped down to their starter items.
+_MAX_SALES_PER_PLAYER = 2
+
+
+def _is_refund(amount: float) -> bool:
+    """Whether a purse increase is shaped like half of an item's price."""
+    return abs(amount - round(amount / _REFUND_STEP) * _REFUND_STEP) <= _SALE_TOLERANCE
+
+
+def _pair_costs(
+    acquires: List[Tuple[int, int]],
+    costs: List[Tuple[int, float]],
+) -> Dict[int, float]:
+    """
+    Match each acquire with the purchase cost logged beside it.
+
+    The cost is what the player actually handed over, which is the full price
+    only when they held none of the components - buying a result you already
+    have parts for is charged the difference. That is what makes the amount
+    usable for identifying an item, and for pricing what a sale gave back.
+
+    Args:
+        acquires: [(byte_offset, item_id)]
+        costs: [(byte_offset, amount)] sorted by offset, amounts positive
+
+    Returns:
+        {acquire_offset: amount} for acquires with a cost nearby
+    """
+    positions = [pos for pos, _ in costs]
+    paid: Dict[int, float] = {}
+    for offset, _ in acquires:
+        j = bisect.bisect_left(positions, offset)
+        best: Optional[Tuple[int, float]] = None
+        for k in (j - 1, j):
+            if 0 <= k < len(costs) and abs(costs[k][0] - offset) <= _COST_WINDOW:
+                if best is None or abs(costs[k][0] - offset) < abs(best[0] - offset):
+                    best = costs[k]
+        if best is not None:
+            paid[offset] = best[1]
+    return paid
+
+
+def _estimate_final_build(
+    acquires: List[Tuple[int, int]],
+    costs: List[Tuple[int, float]] = (),
+    sales: List[Tuple[int, float]] = (),
+) -> List[str]:
     """
     Replay the purchases and return up to 6 items (final build).
 
@@ -181,22 +243,55 @@ def _estimate_final_build(acquires: List[Tuple[int, int]]) -> List[str]:
     copies of a component is rarer than the log's repeat purchases suggest.
     The weaker-looking rule wins on the data, so it is the one that ships.
 
-    Sales are not recorded anywhere in the replay, so a sold item stays a
-    candidate and the caller can still receive an item the player no longer had.
+    A sale leaves no event of its own, so pass 1 is also told what each held
+    copy cost: a refund is half of that, which is enough to say which item went
+    back to the shop. See _detect_wallet for where the refunds come from.
 
     Args:
         acquires: [(byte_offset, item_id)] in purchase order
+        costs: [(byte_offset, amount)] purchase costs, sorted, positive
+        sales: [(byte_offset, refund)] refunds inferred from wallet reports
 
     Returns:
         List of item names in final 6-slot build, sorted by tier desc
     """
     # Pass 1: replay purchases, consuming components as results are bought.
+    # `spent_on` shadows the counts with what each held copy is worth, so a
+    # refund can be traced back to the copy it came from. None means the price
+    # was not readable and that copy can never answer for a sale.
     inventory: Dict[int, int] = defaultdict(int)
-    for _, iid in sorted(acquires):
+    spent_on: Dict[int, List[Optional[float]]] = defaultdict(list)
+    paid = _pair_costs(acquires, costs) if sales else {}
+    for offset, iid in sorted(acquires):
+        recovered, priced = 0.0, offset in paid
         for comp_id in RECIPES.get(iid, ()):
             if inventory[comp_id] > 0:
                 inventory[comp_id] -= 1
+                consumed = spent_on[comp_id].pop() if spent_on[comp_id] else None
+                if consumed is None:
+                    priced = False
+                else:
+                    recovered += consumed
         inventory[iid] += 1
+        spent_on[iid].append(paid[offset] + recovered if priced else None)
+
+    # Sales. The refund is half of everything the player put into the item,
+    # components included, so double it and look for the copy that cost that
+    # much. Drop it only when exactly one copy answers: an ambiguous refund
+    # would otherwise cost a real item, and keeping a sold one is the cheaper
+    # mistake.
+    for _, refund in sales:
+        target = 2 * refund
+        matched = [
+            (iid, slot)
+            for iid, stack in spent_on.items()
+            for slot, amount in enumerate(stack)
+            if amount is not None and abs(amount - target) <= _SALE_TOLERANCE
+        ]
+        if len(matched) == 1:
+            iid, slot = matched[0]
+            spent_on[iid].pop(slot)
+            inventory[iid] -= 1
 
     # Last purchase of each item, used both to strip and to rank.
     seq: Dict[int, int] = {}
@@ -635,6 +730,91 @@ class UnifiedDecoder:
 
         return detector, eid_map, team_map, duration_est
 
+    def _detect_wallet(
+        self,
+        all_data: bytes,
+        valid_eids: Set[int],
+    ) -> Tuple[Dict[int, List[Tuple[int, float]]], Dict[int, List[Tuple[int, float]]]]:
+        """
+        Read purchase costs, and infer sales from the wallet reports.
+
+        A credit event carrying sell_flag=0x01 is not a delta at all: it states
+        what the player is holding. Subtract the running (earned - spent) and
+        what is left is starting gold plus every refund so far, which is why
+        these values were right to keep out of income - counting them would
+        have double-counted the whole purse.
+
+        The residual is flat across a match - 750 in 37 of the 47 matches that
+        report a purse - so the match minimum is the starting gold and any rise
+        above it is a sale. 93.6% of those rises are a multiple of 25 and the
+        common ones (150, 550, 700, 850, 1250) are half of a real item price,
+        which is what makes them readable as refunds at all.
+
+        Sales before the first report or after the last one are invisible, and
+        two sales between one report and the next arrive added together. Both
+        show up as a refund matching no single item, which is dropped.
+
+        The residual also absorbs every error in the income accounting, and
+        there is one: balances still run negative for some players, so gold is
+        being earned somewhere this decoder does not see. That missing income
+        creeps into the residual and reads as a run of sales, which is what
+        _REFUND_STEP and _MAX_SALES_PER_PLAYER exist to blunt. Left unguarded
+        it stripped three players of three or four tier-3 items each. None of
+        this is measurable on the tuning set - matches 1 to 4 report almost no
+        purse at all - so the guards answer to manual reading, not to a score.
+
+        Args:
+            all_data: concatenated replay bytes
+            valid_eids: entity IDs of the players
+
+        Returns:
+            ({eid: [(offset, cost)]}, {eid: [(offset, refund)]}), both sorted
+        """
+        costs: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+        purse: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+        earned: Dict[int, float] = defaultdict(float)
+        spent: Dict[int, float] = defaultdict(float)
+
+        pos = 0
+        while True:
+            pos = all_data.find(_CREDIT_HEADER, pos)
+            if pos == -1:
+                break
+            if pos + 13 > len(all_data) or all_data[pos + 3:pos + 5] != b'\x00\x00':
+                pos += 1
+                continue
+            eid = struct.unpack_from(">H", all_data, pos + 5)[0]
+            if eid not in valid_eids or all_data[pos + 11] != 0x06:
+                pos += 3
+                continue
+            value = struct.unpack_from(">f", all_data, pos + 7)[0]
+            if math.isnan(value) or math.isinf(value):
+                pos += 3
+                continue
+            if value < 0:
+                spent[eid] += -value
+                costs[eid].append((pos, -value))
+            elif all_data[pos + 12] == 0x01:
+                purse[eid].append((pos, value - (earned[eid] - spent[eid])))
+            else:
+                earned[eid] += value
+            pos += 3
+
+        sales: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
+        residuals = [r for reports in purse.values() for _, r in reports]
+        if residuals:
+            starting_gold = min(residuals)
+            for eid, reports in purse.items():
+                previous = 0.0
+                for offset, residual in reports:
+                    refunded = residual - starting_gold
+                    step = refunded - previous
+                    previous = refunded
+                    if step > _SALE_TOLERANCE and _is_refund(step):
+                        sales[eid].append((offset, step))
+                del sales[eid][_MAX_SALES_PER_PLAYER:]
+        return costs, sales
+
     def _detect_items_per_player(
         self,
         all_data: bytes,
@@ -649,6 +829,7 @@ class UnifiedDecoder:
         Purchase cost: [10 04 1D][00 00][eid BE][cost f32 BE (negative)][06]
         """
         valid_eids = set(eid_map.keys())
+        costs, sales = self._detect_wallet(all_data, valid_eids)
 
         # --- Scan item acquire events ---
         player_items: Dict[int, Set[int]] = defaultdict(set)  # eid -> set of item_ids
@@ -709,7 +890,11 @@ class UnifiedDecoder:
                 player.items_all_purchased = all_purchased
 
                 # Replay the purchases to get the final build (max 6 slots)
-                player.items = _estimate_final_build(player_acquires.get(eid, []))
+                player.items = _estimate_final_build(
+                    player_acquires.get(eid, []),
+                    costs.get(eid, []),
+                    sales.get(eid, []),
+                )
 
         # Gold detection moved to _detect_gold_per_player (frame-by-frame dedup)
 
