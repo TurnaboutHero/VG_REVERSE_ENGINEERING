@@ -276,7 +276,11 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     480: {"name": "Tension Bow", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 224},  # read off the result screen (Gwen); all six of that build's items matched
     481: {"name": "Flare", "category": "Consumable", "tier": 0, "status": "vgna_verified", "qty": 1, "low": 225},
     482: {"name": "Bonesaw", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 226},
-    484: {"name": "Shiversteel", "category": "Defense", "tier": 3, "status": "vgna", "qty": 1, "low": 228},
+    # Verified by purchase cost rather than sight, since no screenshot covers any
+    # of its 4 buyers: every one paid 1100 while holding Blazing Salvo and
+    # Oakheart and never Dragonheart - the recipe (Dragonheart + Blazing Salvo)
+    # with the shop crediting Oakheart toward the Dragonheart half.
+    484: {"name": "Shiversteel", "category": "Defense", "tier": 3, "status": "vgna_verified", "qty": 1, "low": 228},
     485: {"name": "Reflex Block", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 229},
     486: {"name": "Frostburn", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 230},
     487: {"name": "Fountain of Renewal", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 231},
@@ -288,7 +292,7 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     # 234 Halcyon Chargers, 241 War Treads. Journey Boots is the only real
     # boots left without an id and matches the rarity, but several tier-3
     # boots sharing one timestamp is unexplained, so this stays a hypothesis.
-    489: {"name": "Unknown 489", "category": "Utility", "tier": 3, "status": "unknown", "qty": 1, "low": 233},  # ~1400g single-purchase = equipment (NOT consumable); 4 captain buyers, no recipe signal
+    489: {"name": "Journey Boots", "category": "Utility", "tier": 3, "status": "local_override", "qty": 1, "low": 233},  # costs 1400, or 750 to the one buyer holding Travel Boots
     490: {"name": "Halcyon Chargers", "category": "Utility", "tier": 3, "status": "confirmed", "qty": 1, "low": 234},
     491: {"name": "Tyrant's Monocle", "category": "Weapon", "tier": 3, "status": "vgna_verified", "qty": 1, "low": 235},
     492: {"name": "Aftershock", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 236},
@@ -322,9 +326,9 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     # which is what a component looks like. All buyers are captains and buy
     # only defensive items alongside. Neither wiki lists a matching item, so
     # these may post-date the sources - candidates for a VG:CE-era addition.
-    516: {"name": "Unknown 516", "category": "Defense", "tier": 3, "status": "unknown", "qty": 2, "low": 4},
+    516: {"name": "Contraption", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 4},  # 2100 total: 700 holding Flare Gun+Chronograph, 1500 holding Flare Gun, 1850 holding Hourglass
     517: {"name": "Minion's Foot", "category": "Weapon", "tier": 1, "status": "vgna_verified", "qty": 2, "low": 5},
-    518: {"name": "Unknown 518", "category": "Defense", "tier": 2, "status": "unknown", "qty": 2, "low": 6},  # obs ~600g reads T2
+    518: {"name": "Flare Gun", "category": "Utility", "tier": 2, "status": "local_override", "qty": 2, "low": 6},  # 600 flat, and Contraption is cheaper for whoever holds it
     519: {"name": "Stormcrown", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 7},  # VGNA said Teleport Boots; local: Chronograph 82% + Stormguard Banner 96% co-buy (= recipe) + jungle 41% -> Stormcrown. Teleport Boots now unlocated.
     520: {"name": "Poisoned Shiv", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 2, "low": 8},
     522: {"name": "Spellfire", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 2, "low": 10},
@@ -572,11 +576,19 @@ RECIPES = {
     524: (505, 475,),  # Spellsword <- Heavy Steel + Chronograph
     525: (470, 502,),  # Slumbering Husk <- Coat of Plates + Kinetic Shield
     527: (529, 528,),  # SuperScout 2000 <- ScoutPak + ScoutTuff
-    528: (532,),  # ScoutTuff <- Flare Loader
+    # The recipe source calls this component "Flare gun". Before 518 was
+    # identified it had no id and got aliased onto Flare Loader, the 5v5 item;
+    # both exist and are distinct.
+    528: (518,),  # ScoutTuff <- Flare Gun
     529: (473,),  # ScoutPak <- Hourglass
     530: (478,),  # Teleport Boots <- Travel Boots
     531: (468, 475,),  # Rook's Decree <- Dragonheart + Chronograph
     532: (467,),  # Flare Loader <- Oakheart
+    # Added once purchase costs identified these three; the recipe source lists
+    # them but they had no ids to key on.
+    489: (478,),      # Journey Boots <- Travel Boots
+    516: (518, 475),  # Contraption   <- Flare Gun + Chronograph
+    518: (467,),      # Flare Gun     <- Oakheart
     533: (468, 504,),  # Pulseweave <- Dragonheart + Lifespring
     534: (468, 475,),  # Capacitor Plate <- Dragonheart + Chronograph
     535: (467,),  # Protector Contract <- Oakheart

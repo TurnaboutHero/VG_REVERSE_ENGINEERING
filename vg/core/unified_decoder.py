@@ -87,17 +87,17 @@ UPGRADE_TREE = {
     461: {464, 480, 491, 524},  # Six Sins
     462: {465, 486, 492, 522, 523},  # Eclipse Prism
     463: {466, 482, 484, 507, 509, 520},  # Blazing Salvo
-    467: {468, 484, 485, 487, 488, 497, 503, 504, 531, 533, 534},  # Oakheart
+    467: {468, 484, 485, 487, 488, 497, 503, 504, 516, 518, 528, 531, 533, 534},  # Oakheart
     468: {484, 497, 531, 533, 534},  # Dragonheart
     469: {470, 471, 498, 525, 538},  # Light Armor
     470: {471, 498, 525},  # Coat of Plates
     472: {474, 476, 490, 511, 539},  # Energy Battery
     473: {475, 476, 492, 524, 531, 534},  # Hourglass
     474: {476, 490, 511, 539},  # Void Battery
-    475: {476, 492, 519, 524, 531, 534},  # Chronograph (-> Stormcrown 519)
+    475: {476, 492, 516, 519, 524, 531, 534},  # Chronograph (-> Stormcrown 519)
     513: {519},  # Stormguard Banner -> Stormcrown 519
-    477: {478, 490, 497, 530},  # Sprint Boots
-    478: {490, 497, 530},  # Travel Boots
+    477: {478, 489, 490, 497, 530},  # Sprint Boots
+    478: {489, 490, 497, 530},  # Travel Boots
     485: {488, 503},  # Reflex Block
     499: {479, 500, 520},  # Book of Eulogies
     500: {479, 520},  # Barbed Needle
@@ -115,6 +115,9 @@ UPGRADE_TREE = {
     # upgrade stayed a build candidate forever.
     528: {527},  # ScoutTuff -> SuperScout 2000
     529: {527},  # ScoutPak  -> SuperScout 2000
+    # Journey Boots(489), Contraption(516) and Flare Gun(518) were identified
+    # from purchase costs; their edges follow the same transitive convention.
+    518: {516, 527, 528},  # Flare Gun -> Contraption / ScoutTuff -> SuperScout
     # (Stormguard Banner 513 -> Stormcrown edge dropped: Stormcrown is unmapped;
     #  composed 527 is SuperScout 2000, not Stormcrown.)
     517: {466, 491, 508},  # Minion's Foot
