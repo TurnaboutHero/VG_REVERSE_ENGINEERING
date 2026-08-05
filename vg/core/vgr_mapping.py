@@ -337,11 +337,12 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     # ground truth calls it a purchased "Vision Totem"; that is wrong.
     526: {"name": "Scout Camera", "category": "Utility", "tier": 0, "status": "local_override", "qty": 2, "low": 14},
     527: {"name": "SuperScout 2000", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 15},  # VGNA said Stormcrown; local: captain-only + ScoutTuff 94%/ScoutPak 87% co-buy, Chronograph+SGB only 16% -> scout-line, not Stormcrown
-    # Both are consumables (ITEM_LIST_KR_EN.md: 500g 소모품), so they must not
-    # compete for a slot as equipment. Carrying tier 2 let a spent ScoutPak
-    # outrank a Kinetic Shield the player was actually still holding.
-    528: {"name": "ScoutTuff", "category": "Utility", "tier": 0, "status": "vgna_verified", "qty": 2, "low": 16},  # captain + ~200g rules out old-code Contraption (2100g)
-    529: {"name": "ScoutPak", "category": "Utility", "tier": 0, "status": "vgna_verified", "qty": 2, "low": 17},  # captain + ~500g rules out old-code War Treads (1900g)
+    # Components of SuperScout 2000 (527), not consumables - an earlier pass
+    # demoted them to tier 0 on the strength of a "500g 소모품" doc line and had
+    # to be reverted. They vanish from a build by being upgraded away, which is
+    # UPGRADE_TREE's job, not the slot ranking's.
+    528: {"name": "ScoutTuff", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 16},  # captain + ~200g rules out old-code Contraption (2100g)
+    529: {"name": "ScoutPak", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 17},  # captain + ~500g rules out old-code War Treads (1900g)
     530: {"name": "Teleport Boots", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 18},  # VGNA said Journey Boots; truth match6 (Finals g3): 530-holders = Kinetic/Reim/San Feng, user-confirmed as Teleport buyers. Co-occurs with other boots because Teleport is bought for backdoor via sell+rebuy (boots NOT mutually exclusive in acquire log). Journey Boots is rarely bought (inefficient) -> true id unlocated.
     531: {"name": "Rook's Decree", "category": "Defense", "tier": 3, "status": "vgna_verified", "qty": 2, "low": 19},  # truth-confirmed: Lorelai (Acex) build, match5 (user-confirmed)
     532: {"name": "Flare Loader", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 20},  # 5v5 vision item (3v3 counterpart is "Flare Gun"). truth icon = gold spark-gun (user-ID'd as Flare Gun; official 5v5 name = Flare Loader per VaingloryFire). VGNA was correct here.

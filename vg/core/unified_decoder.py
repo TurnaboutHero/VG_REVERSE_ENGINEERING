@@ -109,7 +109,12 @@ UPGRADE_TREE = {
     508: {466, 491},  # Lucky Strike
     510: {496},  # Piercing Shard
     512: {465, 486, 496, 509, 511, 522, 523},  # Heavy Prism
+    # Both scout items feed SuperScout 2000: of its 31 owners, 27 also bought a
+    # ScoutPak and 29 a ScoutTuff, and in every one of those cases the component
+    # came first. The 529 edge was missing, so a ScoutPak consumed by the
+    # upgrade stayed a build candidate forever.
     528: {527},  # ScoutTuff -> SuperScout 2000
+    529: {527},  # ScoutPak  -> SuperScout 2000
     # (Stormguard Banner 513 -> Stormcrown edge dropped: Stormcrown is unmapped;
     #  composed 527 is SuperScout 2000, not Stormcrown.)
     517: {466, 491, 508},  # Minion's Foot
