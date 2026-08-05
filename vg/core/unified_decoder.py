@@ -47,13 +47,13 @@ from typing import Dict, List, Optional, Set, Tuple
 try:
     from vg.core.vgr_parser import VGRParser
     from vg.core.kda_detector import KDADetector
-    from vg.core.vgr_mapping import ITEM_ID_MAP
+    from vg.core.vgr_mapping import ITEM_ID_MAP, RECIPES
     from vg.analysis.win_loss_detector import WinLossDetector
 except ImportError:
     try:
         from vgr_parser import VGRParser
         from kda_detector import KDADetector
-        from vgr_mapping import ITEM_ID_MAP
+        from vgr_mapping import ITEM_ID_MAP, RECIPES
         _root = Path(__file__).resolve().parent.parent
         sys.path.insert(0, str(_root.parent))
         from vg.analysis.win_loss_detector import WinLossDetector
@@ -120,10 +120,6 @@ UPGRADE_TREE = {
     517: {466, 491, 508},  # Minion's Foot
 }
 
-# Starter/system IDs - never in final build
-# Only items that are system events or auto-purchased at game start.
-# Consumables (infusions, scout items) can appear in final builds,
-# so they are handled by the 6-slot tier-based limit instead.
 # One .vgr section covers this much game time. Measured externally across 14
 # matches spanning 716-2939s (9.94-10.00 s/section), so section count times this
 # gives how long the recording ran - a length the event stream cannot fake.
@@ -135,6 +131,9 @@ SECONDS_PER_SECTION = 10
 # either side of it is empty, so the exact cut point is not tuned.
 COMPLETENESS_THRESHOLD = 0.90
 
+# Granted at match start, never bought, so never part of a final build.
+# Consumables that ARE bought (infusions, flares) stay eligible and are held
+# back by the slot ranking instead.
 STARTER_IDS = {
     457,  # Healing Flask   (1,201) - auto-granted at match start
     526,  # Scout Camera    (2,14)  - auto-granted at match start
@@ -150,51 +149,64 @@ def _le_to_be(eid_le: int) -> int:
     return struct.unpack('>H', struct.pack('<H', eid_le))[0]
 
 
-def _estimate_final_build(
-    item_ids_set: Set[int],
-    last_acquire_ts: Optional[Dict[int, float]] = None,
-) -> List[str]:
+def _estimate_final_build(acquires: List[Tuple[int, int]]) -> List[str]:
     """
-    Remove consumed components and starters. Return up to 6 items (final build).
+    Replay the purchases and return up to 6 items (final build).
 
-    A component counts as consumed only when one of its upgrade results was
-    acquired at or after the component's LAST purchase. Players routinely finish
-    a match still holding a freshly bought component (Crystal Bit, Weapon Blade,
-    Oakheart, ...) whose earlier copy was upgraded long before; the purchase log
-    is a set, so those copies collapse and unconditional stripping deleted them.
-    Timestamps are what separates the two cases.
+    Two passes, because each catches what the other cannot:
+
+    1. Inventory replay against RECIPES. Buying a result consumes one of each
+       component, so a component bought three times and upgraded twice still
+       leaves one. Counting is what makes that expressible - the older
+       set-of-purchased-ids could only say "bought at some point".
+    2. Order-aware strip against UPGRADE_TREE. A component bought after the
+       result it feeds was never eaten by it, and pass 1 misses that because it
+       consumes at the moment of the upgrade. UPGRADE_TREE is transitive, so one
+       sweep compares each component against every result it could have fed.
+
+    Pass 2 drops a component outright rather than decrementing it, so it can
+    discard copies pass 1 says are still held - buy three Weapon Blades, upgrade
+    one, and none survive. Decrementing instead is the coherent reading and was
+    measured: it scores 97.5%/90.0% against 98.0%/90.9%, because holding spare
+    copies of a component is rarer than the log's repeat purchases suggest.
+    The weaker-looking rule wins on the data, so it is the one that ships.
+
+    Sales are not recorded anywhere in the replay, so a sold item stays a
+    candidate and the caller can still receive an item the player no longer had.
 
     Args:
-        item_ids_set: Set of all purchased item IDs (binary replay IDs)
-        last_acquire_ts: Optional {item_id: last_purchase_timestamp}
+        acquires: [(byte_offset, item_id)] in purchase order
 
     Returns:
         List of item names in final 6-slot build, sorted by tier desc
     """
-    ts = last_acquire_ts or {}
-    purchased = set(item_ids_set) - STARTER_IDS
+    # Pass 1: replay purchases, consuming components as results are bought.
+    inventory: Dict[int, int] = defaultdict(int)
+    for _, iid in sorted(acquires):
+        for comp_id in RECIPES.get(iid, ()):
+            if inventory[comp_id] > 0:
+                inventory[comp_id] -= 1
+        inventory[iid] += 1
 
-    # Single pass: UPGRADE_TREE edges are transitive, so every result reachable
-    # from a component is compared against it directly. (Iterating over a
-    # shrinking set instead would let a removed intermediate stop counting as a
-    # consumer, keeping components that were in fact upgraded.)
-    remaining = set(purchased)
-    for comp_id in purchased:
-        results = UPGRADE_TREE.get(comp_id, set()) & purchased
-        if not results:
-            continue
-        comp_ts = ts.get(comp_id, 0)
-        # Missing timestamp -> undecidable, fall back to unconditional removal.
-        if comp_ts <= 0 or any(
-            ts.get(rid, 0) <= 0 or ts.get(rid, 0) >= comp_ts for rid in results
-        ):
+    # Last purchase of each item, used both to strip and to rank.
+    seq: Dict[int, int] = {}
+    for offset, iid in acquires:
+        if offset > seq.get(iid, -1):
+            seq[iid] = offset
+
+    remaining = {iid for iid, n in inventory.items() if n > 0} - STARTER_IDS
+
+    # Pass 2: drop components whose result was bought at or after them.
+    for comp_id in list(remaining):
+        results = UPGRADE_TREE.get(comp_id, set()) & remaining
+        if results and any(seq.get(r, 0) >= seq.get(comp_id, 0) for r in results):
             remaining.discard(comp_id)
 
     # Convert to named items
     items = []
     for iid in remaining:
         info = ITEM_ID_MAP.get(iid)
-        ts = last_acquire_ts.get(iid, 0) if last_acquire_ts else 0
+        ts = seq.get(iid, 0)
         if info:
             items.append((info.get('tier', 0), ts, info['name'], iid))
         else:
@@ -624,7 +636,10 @@ class UnifiedDecoder:
 
         # --- Scan item acquire events ---
         player_items: Dict[int, Set[int]] = defaultdict(set)  # eid -> set of item_ids
-        player_item_ts: Dict[int, Dict[int, float]] = defaultdict(dict)  # eid -> {item_id: last_ts}
+        # Ordered acquisitions, keyed by byte offset. Sections are concatenated
+        # in play order, so offset is a total order over purchases and unlike the
+        # float timestamp it is never missing or out of range.
+        player_acquires: Dict[int, List[Tuple[int, int]]] = defaultdict(list)
         pos = 0
         while True:
             pos = all_data.find(_ITEM_ACQUIRE_HEADER, pos)
@@ -661,11 +676,7 @@ class UnifiedDecoder:
             item_info = ITEM_ID_MAP.get(item_id)
             if item_info:
                 player_items[eid].add(item_id)
-                # Track last acquire timestamp per item
-                if pos + 21 <= len(all_data):
-                    ts = struct.unpack_from(">f", all_data, pos + 17)[0]
-                    if 0 < ts < 5000:
-                        player_item_ts[eid][item_id] = ts
+                player_acquires[eid].append((pos, item_id))
 
             pos += 3
 
@@ -681,11 +692,8 @@ class UnifiedDecoder:
                         all_purchased.append(info['name'])
                 player.items_all_purchased = all_purchased
 
-                # Apply upgrade tree to get final build (max 6 slots)
-                # Pass timestamps for sell-back resolution
-                player.items = _estimate_final_build(
-                    item_ids, last_acquire_ts=player_item_ts.get(eid),
-                )
+                # Replay the purchases to get the final build (max 6 slots)
+                player.items = _estimate_final_build(player_acquires.get(eid, []))
 
         # Gold detection moved to _detect_gold_per_player (frame-by-frame dedup)
 

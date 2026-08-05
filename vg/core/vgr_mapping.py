@@ -515,3 +515,70 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# Direct recipes: result id -> the ids consumed to make it. Taken from
+# item_price_verify.OFFICIAL_RECIPES, which UPGRADE_TREE was derived from but
+# flattened transitively, losing which components a specific result actually
+# eats. Replaying purchases against this table gives an exact inventory, since
+# the same component bought three times and upgraded twice leaves one behind -
+# something a set of purchased ids cannot express.
+# Journey Boots and Contraption are absent: neither has a known item id yet.
+RECIPES = {
+    461: (458,),  # Six Sins <- Weapon Blade
+    462: (459,),  # Eclipse Prism <- Crystal Bit
+    463: (460,),  # Blazing Salvo <- Swift Shooter
+    464: (505, 461,),  # Sorrowblade <- Heavy Steel + Six Sins
+    465: (512, 462,),  # Shatterglass <- Heavy Prism + Eclipse Prism
+    466: (463, 508,),  # Tornado Trigger <- Blazing Salvo + Lucky Strike
+    468: (467,),  # Dragonheart <- Oakheart
+    470: (469,),  # Coat of Plates <- Light Armor
+    471: (470,),  # Metal Jacket <- Coat of Plates
+    474: (472,),  # Void Battery <- Energy Battery
+    475: (473,),  # Chronograph <- Hourglass
+    476: (474, 475,),  # Clockwork <- Void Battery + Chronograph
+    478: (477,),  # Travel Boots <- Sprint Boots
+    479: (505, 500,),  # Serpent's Mask <- Heavy Steel + Barbed Needle
+    480: (461, 506,),  # Tension Bow <- Six Sins + Piercing Spear
+    482: (506, 463,),  # Bonesaw <- Piercing Spear + Blazing Salvo
+    484: (468, 463,),  # Shiversteel <- Dragonheart + Blazing Salvo
+    485: (467,),  # Reflex Block <- Oakheart
+    486: (512, 462,),  # Frostburn <- Heavy Prism + Eclipse Prism
+    487: (504, 502,),  # Fountain of Renewal <- Lifespring + Kinetic Shield
+    488: (468, 485,),  # Crucible <- Dragonheart + Reflex Block
+    490: (478, 474,),  # Halcyon Chargers <- Travel Boots + Void Battery
+    491: (461, 508,),  # Tyrant's Monocle <- Six Sins + Lucky Strike
+    492: (462, 475,),  # Aftershock <- Eclipse Prism + Chronograph
+    496: (512, 510,),  # Broken Myth <- Heavy Prism + Piercing Shard
+    497: (478, 468,),  # War Treads <- Travel Boots + Dragonheart
+    498: (470,),  # Atlas Pauldron <- Coat of Plates
+    500: (499,),  # Barbed Needle <- Book of Eulogies
+    502: (501,),  # Kinetic Shield <- Light Shield
+    503: (485, 502,),  # Aegis <- Reflex Block + Kinetic Shield
+    504: (467,),  # Lifespring <- Oakheart
+    505: (458,),  # Heavy Steel <- Weapon Blade
+    506: (458,),  # Piercing Spear <- Weapon Blade
+    507: (505, 463,),  # Breaking Point <- Heavy Steel + Blazing Salvo
+    508: (517,),  # Lucky Strike <- Minion's Foot
+    509: (512, 463,),  # Alternating Current <- Heavy Prism + Blazing Salvo
+    510: (459,),  # Piercing Shard <- Crystal Bit
+    511: (512, 474,),  # Eve of Harvest <- Heavy Prism + Void Battery
+    512: (459,),  # Heavy Prism <- Crystal Bit
+    513: (467,),  # Stormguard Banner <- Oakheart
+    519: (513, 475,),  # Stormcrown <- Stormguard Banner + Chronograph
+    520: (463, 500,),  # Poisoned Shiv <- Blazing Salvo + Barbed Needle
+    522: (512, 462,),  # Spellfire <- Heavy Prism + Eclipse Prism
+    523: (512, 462,),  # Dragon's Eye <- Heavy Prism + Eclipse Prism
+    524: (505, 475,),  # Spellsword <- Heavy Steel + Chronograph
+    525: (470, 502,),  # Slumbering Husk <- Coat of Plates + Kinetic Shield
+    527: (529, 528,),  # SuperScout 2000 <- ScoutPak + ScoutTuff
+    528: (532,),  # ScoutTuff <- Flare Loader
+    529: (473,),  # ScoutPak <- Hourglass
+    530: (478,),  # Teleport Boots <- Travel Boots
+    531: (468, 475,),  # Rook's Decree <- Dragonheart + Chronograph
+    532: (467,),  # Flare Loader <- Oakheart
+    533: (468, 504,),  # Pulseweave <- Dragonheart + Lifespring
+    534: (468, 475,),  # Capacitor Plate <- Dragonheart + Chronograph
+    535: (467,),  # Protector Contract <- Oakheart
+    538: (469, 501,),  # Warmail <- Light Armor + Light Shield
+}
