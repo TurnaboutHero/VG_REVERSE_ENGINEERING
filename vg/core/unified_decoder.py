@@ -172,16 +172,50 @@ _SALE_TOLERANCE = 1.0
 # accounting drift wearing a refund's clothes (see _detect_wallet), and this is
 # what keeps most of it out.
 _REFUND_STEP = 25
-# Drift accumulates report after report, so a player it has caught looks like a
-# serial seller. Real sellers are not: two is above every case that survived
-# manual reading, and the cap is what stops a drifting player from being
-# stripped down to their starter items.
-_MAX_SALES_PER_PLAYER = 2
+# When a match ends the whole inventory goes back to the shop at once, and the
+# purse reports it item by item within a second or two. Those are not sales -
+# the player finished holding every one of them - so a run of reports packed
+# this tightly is thrown away. Real sales sit alone: the isolated ones in the
+# corpus are seconds to minutes from their neighbours, never fractions.
+_LIQUIDATION_GAP = 10.0     # seconds; wider than any burst, narrower than any pair of real sales
+_LIQUIDATION_RUN = 3        # reports in one burst before it reads as liquidation
 
 
 def _is_refund(amount: float) -> bool:
     """Whether a purse increase is shaped like half of an item's price."""
     return abs(amount - round(amount / _REFUND_STEP) * _REFUND_STEP) <= _SALE_TOLERANCE
+
+
+def _sales_only(
+    steps: List[Tuple[int, float, float]],
+) -> List[Tuple[int, float]]:
+    """
+    Keep the purse increases that are sales, drop the end-of-match liquidation.
+
+    Splitting on a gap is what separates them: liquidation arrives as one
+    tight run of reports, so any run of _LIQUIDATION_RUN or more is discarded
+    whole. Taking only the first few of such a run would be worse than taking
+    none, because the items it names are exactly the ones the player kept.
+
+    Args:
+        steps: [(byte_offset, timestamp, increase)] in report order
+
+    Returns:
+        [(byte_offset, refund)] for the increases that look like sales
+    """
+    runs: List[List[Tuple[int, float, float]]] = []
+    for step in steps:
+        if runs and step[1] - runs[-1][-1][1] <= _LIQUIDATION_GAP:
+            runs[-1].append(step)
+        else:
+            runs.append([step])
+    return [
+        (offset, step)
+        for run in runs
+        if len(run) < _LIQUIDATION_RUN
+        for offset, _, step in run
+        if step > _SALE_TOLERANCE and _is_refund(step)
+    ]
 
 
 def _pair_costs(
@@ -280,6 +314,7 @@ def _estimate_final_build(
     # much. Drop it only when exactly one copy answers: an ambiguous refund
     # would otherwise cost a real item, and keeping a sold one is the cheaper
     # mistake.
+    sold = 0
     for _, refund in sales:
         target = 2 * refund
         matched = [
@@ -292,6 +327,7 @@ def _estimate_final_build(
             iid, slot = matched[0]
             spent_on[iid].pop(slot)
             inventory[iid] -= 1
+            sold += 1
 
     # Last purchase of each item, used both to strip and to rank.
     seq: Dict[int, int] = {}
@@ -336,7 +372,12 @@ def _estimate_final_build(
         bucket = 0 if tier >= 3 else (1 if tier >= 1 else 2)
         return (bucket, -acquired)
 
-    selected = sorted(items, key=_slot_rank)[:6]
+    # A sale empties a slot and the player has to be seen buying something to
+    # fill it again, so the freed slot stays free rather than being handed to
+    # the next candidate. Reim in match 7 is the case that settles it: the
+    # screenshot shows five items and one empty slot, and without this the
+    # Teleport Boots he sold were replaced by a Warmail he never held.
+    selected = sorted(items, key=_slot_rank)[:max(1, 6 - sold)]
 
     selected.sort(key=lambda x: (-x[0], -x[1]))
     return [name for _, _, name, _ in selected]
@@ -795,24 +836,27 @@ class UnifiedDecoder:
                 spent[eid] += -value
                 costs[eid].append((pos, -value))
             elif all_data[pos + 12] == 0x01:
-                purse[eid].append((pos, value - (earned[eid] - spent[eid])))
+                timestamp = struct.unpack_from(">f", all_data, pos - 7)[0] if pos >= 7 else 0.0
+                if math.isnan(timestamp) or math.isinf(timestamp):
+                    timestamp = 0.0
+                purse[eid].append((pos, timestamp, value - (earned[eid] - spent[eid])))
             else:
                 earned[eid] += value
             pos += 3
 
         sales: Dict[int, List[Tuple[int, float]]] = defaultdict(list)
-        residuals = [r for reports in purse.values() for _, r in reports]
-        if residuals:
-            starting_gold = min(residuals)
-            for eid, reports in purse.items():
-                previous = 0.0
-                for offset, residual in reports:
-                    refunded = residual - starting_gold
-                    step = refunded - previous
-                    previous = refunded
-                    if step > _SALE_TOLERANCE and _is_refund(step):
-                        sales[eid].append((offset, step))
-                del sales[eid][_MAX_SALES_PER_PLAYER:]
+        residuals = [r for reports in purse.values() for _, _, r in reports]
+        if not residuals:
+            return costs, sales
+        starting_gold = min(residuals)
+        for eid, reports in purse.items():
+            steps, previous = [], 0.0
+            for offset, timestamp, residual in reports:
+                refunded = residual - starting_gold
+                steps.append((offset, timestamp, refunded - previous))
+                previous = refunded
+            for offset, step in _sales_only(steps):
+                sales[eid].append((offset, step))
         return costs, sales
 
     def _detect_items_per_player(
