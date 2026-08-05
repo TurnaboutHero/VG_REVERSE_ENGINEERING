@@ -131,7 +131,7 @@ SECONDS_PER_SECTION = 10
 COMPLETENESS_THRESHOLD = 0.90
 
 STARTER_IDS = {
-    457,  # Halcyon Potion  (1,201) - auto-granted at match start
+    457,  # Healing Flask   (1,201) - auto-granted at match start
     526,  # Scout Camera    (2,14)  - auto-granted at match start
 }
 # Both are handed to every player rather than bought: each appears for 456/502

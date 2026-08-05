@@ -243,7 +243,14 @@ HERO_NAME_TO_ID: Dict[str, int] = {
 #   unknown        not in VGNA sample; identity tentative
 # =============================================================================
 ITEM_ID_MAP: Dict[int, Dict] = {
-    457: {"name": "Halcyon Potion", "category": "Consumable", "tier": 0, "status": "vgna", "qty": 1, "low": 201},
+    # External ground truth calls this Halcyon Potion, which cannot be right:
+    # that item is 3v3-only and has since been removed, while this one is handed
+    # to every player in a corpus that is overwhelmingly 5v5 (4970 vs 105 HF
+    # matches). It is the Healing Flask instead. That also settles a
+    # contradiction in ITEM_LIST_KR_EN.md, which argued Halcyon Potion could not
+    # be a removed item because "it shows up in real matches" - what shows up is
+    # this id, under the wrong name.
+    457: {"name": "Healing Flask", "category": "Consumable", "tier": 0, "status": "local_override", "qty": 1, "low": 201},
     458: {"name": "Weapon Blade", "category": "Weapon", "tier": 1, "status": "confirmed", "qty": 1, "low": 202},
     459: {"name": "Crystal Bit", "category": "Crystal", "tier": 1, "status": "confirmed", "qty": 1, "low": 203},
     460: {"name": "Swift Shooter", "category": "Weapon", "tier": 1, "status": "confirmed", "qty": 1, "low": 204},
