@@ -264,7 +264,7 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     468: {"name": "Dragonheart", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 212},
     469: {"name": "Light Armor", "category": "Defense", "tier": 1, "status": "confirmed", "qty": 1, "low": 213},
     470: {"name": "Coat of Plates", "category": "Defense", "tier": 2, "status": "confirmed", "qty": 1, "low": 214},
-    471: {"name": "Metal Jacket", "category": "Defense", "tier": 3, "status": "vgna", "qty": 1, "low": 215},  # VGNA-adopted; not locally re-verified (old CoP co-buy came through the buggy reader)
+    471: {"name": "Metal Jacket", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 215},  # read off the result screen for two players (Reim, Grumpjaw)
     472: {"name": "Energy Battery", "category": "Crystal", "tier": 1, "status": "confirmed", "qty": 1, "low": 216},
     473: {"name": "Hourglass", "category": "Crystal", "tier": 1, "status": "confirmed", "qty": 1, "low": 217},
     474: {"name": "Void Battery", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 1, "low": 218},
@@ -273,7 +273,7 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     477: {"name": "Sprint Boots", "category": "Utility", "tier": 1, "status": "confirmed", "qty": 1, "low": 221},
     478: {"name": "Travel Boots", "category": "Utility", "tier": 2, "status": "confirmed", "qty": 1, "low": 222},
     479: {"name": "Serpent's Mask", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 223},
-    480: {"name": "Tension Bow", "category": "Weapon", "tier": 3, "status": "vgna", "qty": 1, "low": 224},  # VGNA-adopted; only 9 buyers, not locally re-verified
+    480: {"name": "Tension Bow", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 224},  # read off the result screen (Gwen); all six of that build's items matched
     481: {"name": "Flare", "category": "Consumable", "tier": 0, "status": "vgna_verified", "qty": 1, "low": 225},
     482: {"name": "Bonesaw", "category": "Weapon", "tier": 3, "status": "confirmed", "qty": 1, "low": 226},
     484: {"name": "Shiversteel", "category": "Defense", "tier": 3, "status": "vgna", "qty": 1, "low": 228},
@@ -337,8 +337,11 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     # ground truth calls it a purchased "Vision Totem"; that is wrong.
     526: {"name": "Scout Camera", "category": "Utility", "tier": 0, "status": "local_override", "qty": 2, "low": 14},
     527: {"name": "SuperScout 2000", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 15},  # VGNA said Stormcrown; local: captain-only + ScoutTuff 94%/ScoutPak 87% co-buy, Chronograph+SGB only 16% -> scout-line, not Stormcrown
-    528: {"name": "ScoutTuff", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 16},  # captain + ~200g rules out old-code Contraption (2100g)
-    529: {"name": "ScoutPak", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 17},  # captain + ~500g rules out old-code War Treads (1900g)
+    # Both are consumables (ITEM_LIST_KR_EN.md: 500g 소모품), so they must not
+    # compete for a slot as equipment. Carrying tier 2 let a spent ScoutPak
+    # outrank a Kinetic Shield the player was actually still holding.
+    528: {"name": "ScoutTuff", "category": "Utility", "tier": 0, "status": "vgna_verified", "qty": 2, "low": 16},  # captain + ~200g rules out old-code Contraption (2100g)
+    529: {"name": "ScoutPak", "category": "Utility", "tier": 0, "status": "vgna_verified", "qty": 2, "low": 17},  # captain + ~500g rules out old-code War Treads (1900g)
     530: {"name": "Teleport Boots", "category": "Utility", "tier": 3, "status": "local_override", "qty": 2, "low": 18},  # VGNA said Journey Boots; truth match6 (Finals g3): 530-holders = Kinetic/Reim/San Feng, user-confirmed as Teleport buyers. Co-occurs with other boots because Teleport is bought for backdoor via sell+rebuy (boots NOT mutually exclusive in acquire log). Journey Boots is rarely bought (inefficient) -> true id unlocated.
     531: {"name": "Rook's Decree", "category": "Defense", "tier": 3, "status": "vgna_verified", "qty": 2, "low": 19},  # truth-confirmed: Lorelai (Acex) build, match5 (user-confirmed)
     532: {"name": "Flare Loader", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 20},  # 5v5 vision item (3v3 counterpart is "Flare Gun"). truth icon = gold spark-gun (user-ID'd as Flare Gun; official 5v5 name = Flare Loader per VaingloryFire). VGNA was correct here.
