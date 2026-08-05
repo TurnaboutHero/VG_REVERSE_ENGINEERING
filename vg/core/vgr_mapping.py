@@ -274,6 +274,13 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     486: {"name": "Frostburn", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 230},
     487: {"name": "Fountain of Renewal", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 231},
     488: {"name": "Crucible", "category": "Defense", "tier": 3, "status": "confirmed", "qty": 1, "low": 232},
+    # Every one of its 4 buyers acquires it within 1-3s of a tier-3 boots
+    # purchase (War Treads / Halcyon Chargers / Teleport Boots), while their
+    # Sprint and Travel Boots came hundreds of seconds earlier. Its low byte
+    # also sits inside the boots run: 221 Sprint, 222 Travel, 233 here,
+    # 234 Halcyon Chargers, 241 War Treads. Journey Boots is the only real
+    # boots left without an id and matches the rarity, but several tier-3
+    # boots sharing one timestamp is unexplained, so this stays a hypothesis.
     489: {"name": "Unknown 489", "category": "Utility", "tier": 3, "status": "unknown", "qty": 1, "low": 233},  # ~1400g single-purchase = equipment (NOT consumable); 4 captain buyers, no recipe signal
     490: {"name": "Halcyon Chargers", "category": "Utility", "tier": 3, "status": "confirmed", "qty": 1, "low": 234},
     491: {"name": "Tyrant's Monocle", "category": "Weapon", "tier": 3, "status": "vgna_verified", "qty": 1, "low": 235},
@@ -299,7 +306,15 @@ ITEM_ID_MAP: Dict[int, Dict] = {
     511: {"name": "Eve of Harvest", "category": "Crystal", "tier": 3, "status": "confirmed", "qty": 1, "low": 255},
     512: {"name": "Heavy Prism", "category": "Crystal", "tier": 2, "status": "confirmed", "qty": 2, "low": 0},
     513: {"name": "Stormguard Banner", "category": "Utility", "tier": 2, "status": "vgna_verified", "qty": 2, "low": 1},
+    # Both buyers get it at t=1.2s and t=1.9s, ahead of the two items every
+    # player is handed at the start, so it is granted rather than bought. Only
+    # 2 of 502 players have it though, unlike 457/526 which reach 456, so it
+    # looks conditional on mode or situation. Too few samples for STARTER_IDS.
     515: {"name": "Unknown 515", "category": "Weapon", "tier": 3, "status": "unknown", "qty": 2, "low": 3},
+    # 518 precedes 516 in both players that own both (755->925s, 1028->1072s),
+    # which is what a component looks like. All buyers are captains and buy
+    # only defensive items alongside. Neither wiki lists a matching item, so
+    # these may post-date the sources - candidates for a VG:CE-era addition.
     516: {"name": "Unknown 516", "category": "Defense", "tier": 3, "status": "unknown", "qty": 2, "low": 4},
     517: {"name": "Minion's Foot", "category": "Weapon", "tier": 1, "status": "vgna_verified", "qty": 2, "low": 5},
     518: {"name": "Unknown 518", "category": "Defense", "tier": 2, "status": "unknown", "qty": 2, "low": 6},  # obs ~600g reads T2
