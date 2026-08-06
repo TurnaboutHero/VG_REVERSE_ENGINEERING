@@ -184,10 +184,18 @@ _LIQUIDATION_RUN = 3        # reports in one burst before it reads as liquidatio
 # second, and the replays agree: 300 ticks in every 300 seconds, flat from the
 # first to the last. That fixed start is what dates a recording. Timestamps run
 # from where the recording begins, so a file that covers the match start shows
-# its first tick around 45 seconds in - the corpus lands between 41 and 74 - and
+# its first tick around 45 seconds in - the corpus lands between 41 and 77 - and
 # one that joined a match already in progress shows it within a couple of
 # seconds, because the gold was already flowing. Nothing falls in between.
-_PASSIVE_TICK = 3.0
+#
+# The amount per tick is not fixed: 5v5 pays 3 and 3v3 pays 6, so the tick has
+# to be found rather than assumed. It is the commonest income too small to be a
+# bounty - the cheapest of those is a minion at 30, and an ally's share of one
+# is 18.
+# The lower bound is there because one file's commonest small income is 0.3,
+# which is not a per-second gold tick and would date the recording wrongly.
+_PASSIVE_TICK_MIN = 1.0
+_PASSIVE_TICK_MAX = 10.0
 _MATCH_START_CUTOFF = 30.0
 
 
@@ -842,7 +850,8 @@ class UnifiedDecoder:
         purse: Dict[int, List[Tuple[int, float, float]]] = defaultdict(list)
         earned: Dict[int, float] = defaultdict(float)
         spent: Dict[int, float] = defaultdict(float)
-        first_tick = math.inf
+        small_income: Counter = Counter()
+        first_seen: Dict[float, float] = {}
 
         pos = 0
         while True:
@@ -868,11 +877,19 @@ class UnifiedDecoder:
                                    value - (earned[eid] - spent[eid])))
             else:
                 earned[eid] += value
-                if abs(value - _PASSIVE_TICK) < 1e-3:
+                if _PASSIVE_TICK_MIN <= value <= _PASSIVE_TICK_MAX:
+                    amount = round(value, 2)
+                    small_income[amount] += 1
                     when = _timestamp_at(all_data, pos)
-                    if when < first_tick:
-                        first_tick = when
+                    if when < first_seen.get(amount, math.inf):
+                        first_seen[amount] = when
             pos += 3
+
+        # The tick is whichever small income repeats most; its first appearance
+        # dates the recording.
+        first_tick = math.inf
+        if small_income:
+            first_tick = first_seen[small_income.most_common(1)[0][0]]
 
         # A recording that joined the match late has no usable baseline: both
         # the income and the spending before it started are missing, so the
