@@ -1,0 +1,60 @@
+{
+  "_note": "홀드아웃(경기 5~11) 결과 스크린샷에서 읽은 플레이어별 최종 아이템 칸 수. 빈 칸은 검은 원이라 아이콘 식별과 달리 오독 여지가 거의 없다. 아이템 종류는 기록하지 않는다 - 썸네일에서 신뢰할 수 없기 때문. match 9 는 녹화가 경기 도중부터 시작해 제외.",
+  "_source": "Claude 가 result 이미지를 직접 판독, 2026-08-07",
+  "matches": {
+    "5": {
+      "result_image": "Tournament_Replays/SFC vs Law Enforcers (Finals)/1/result.jpg",
+      "slots": {
+        "2600_staplers": 5, "2600_IcyBang": 6, "2600_TenshiiHime": 6,
+        "2600_Ghost": 5, "2600_Acex": 5,
+        "2599_Ritoramu": 6, "2599_tsuki": 6, "2599_killzx": 5,
+        "2599_123": 4, "2604_topLaner": 4
+      }
+    },
+    "6": {
+      "result_image": "Tournament_Replays/SFC vs Law Enforcers (Finals)/2/result.jpg",
+      "slots": {
+        "2600_staplers": 6, "2600_IcyBang": 5, "2600_TenshiiHime": 6,
+        "2600_Ghost": 5, "2600_Acex": 6,
+        "2599_Ritoramu": 6, "2599_tsuki": 6, "2599_killzx": 6,
+        "2604_topLaner": 6, "2599_123": 5
+      }
+    },
+    "7": {
+      "result_image": "Tournament_Replays/SFC vs Law Enforcers (Finals)/3/result.jpeg",
+      "slots": {
+        "2600_IcyBang": 6, "2600_staplers": 6, "2600_TenshiiHime": 6,
+        "2600_Ghost": 6, "2600_Acex": 6,
+        "2599_Ritoramu": 6, "2599_tsuki": 6, "2599_killzx": 6,
+        "2604_topLaner": 5, "2599_123": 6
+      }
+    },
+    "8": {
+      "result_image": "Tournament_Replays/SFC vs Law Enforcers (Finals)/4/result.jpg",
+      "slots": {
+        "2400_stapler": 6, "2400_IcyBang": 6, "2400_TenshiiHime": 6,
+        "2400_Ghost": 5, "2400_Acex": 6,
+        "2399_killlzx": 6, "2399_tsuki": 6, "2399_Ritoramu": 6,
+        "2404_topLaner": 6, "2399_123": 4
+      }
+    },
+    "10": {
+      "result_image": "Tournament_Replays/Buffalo vs RRONE/1/result.jpeg",
+      "slots": {
+        "3000_saptozz": 6, "3000_Synd": 6, "3000_HiTayo": 6,
+        "3000_FL": 5, "3000": 4,
+        "2999_MoonQe": 6, "2999_DrPawn": 5, "2999_Prym": 6,
+        "2999_Ambrasadors": 6, "3004_BearFang": 5
+      }
+    },
+    "11": {
+      "result_image": "Tournament_Replays/Buffalo vs RRONE/2/result.jpeg",
+      "slots": {
+        "3000_HiTayo": 6, "3000_saptozz": 6, "3000_Synd": 4,
+        "3000_FL": 5, "3000": 3,
+        "2999_DrPawn": 6, "2999_MoonQe": 5, "2999_Ambrasadors": 5,
+        "3004_BearFang": 5, "2999_Prym": 4
+      }
+    }
+  }
+}

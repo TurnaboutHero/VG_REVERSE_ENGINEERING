@@ -188,6 +188,29 @@ _PASSIVE_TICK_MAX = 10.0
 _MATCH_START_CUTOFF = 30.0
 
 
+# Whether a detected sale removes the item from the build.
+#
+# Off, because the only truth that can see it says it loses more than it wins.
+# Matches 1 to 4 report almost no purse, so the tuning set is blind to this
+# feature and scored it 98.0/91.7 either way. Reading the six holdout
+# screenshots for slot counts gave the first real measurement: 49 of 60 players
+# exact without sales, 48 with. It changed three players and got one of them
+# right - Reim in match 7, whose Teleport Boots the screenshot confirms he did
+# not finish holding - while taking a Shatterglass and a Teleport Boots off
+# Ritoramu and another Teleport Boots off tsuki, both of whom the screenshot
+# shows with a full six.
+#
+# All three removals are the same item in the same match, which points at the
+# baseline rather than the rule: it is the match minimum of the residual, so a
+# minimum player who sold before their first report drags it low and hands
+# every other player a refund they never got.
+#
+# Tightening it against these three events would be fitting the holdout, which
+# is the one thing it cannot be spent on. _detect_wallet still runs and its
+# findings stand on their own; only the build edit is withheld.
+APPLY_SALES = False
+
+
 def _timestamp_at(data: bytes, pos: int) -> float:
     """
     Seconds since the recording started, read from in front of an event.
@@ -977,11 +1000,12 @@ class UnifiedDecoder:
                         all_purchased.append(info['name'])
                 player.items_all_purchased = all_purchased
 
-                # Replay the purchases to get the final build (max 6 slots)
+                # Replay the purchases to get the final build (max 6 slots).
+                # Sales are read but not applied - see APPLY_SALES.
                 player.items = _estimate_final_build(
                     player_acquires.get(eid, []),
                     costs.get(eid, []),
-                    sales.get(eid, []),
+                    sales.get(eid, []) if APPLY_SALES else (),
                 )
 
         # Gold detection moved to _detect_gold_per_player (frame-by-frame dedup)
