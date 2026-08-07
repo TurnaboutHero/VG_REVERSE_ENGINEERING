@@ -17,7 +17,10 @@ Team label limitation:
   have swapped labels). No binary-level signal has been found to resolve
   this (exhaustive search: player block bytes, entity events, event headers,
   turret clustering, crystal entity IDs — all fail to discriminate left/right).
-  The E.V.I.L. engine replay format does not appear to encode map position.
+  Map position IS encoded, contrary to what this note used to say: see
+  _detect_positions. Whether it resolves the left/right label is untested -
+  the decoder's existing labels happen to order by x in all 11 truth matches,
+  but that has not been traced back to what the label is derived from.
   Winner detection via kill count asymmetry is 100% accurate (the winning
   GROUP is always correctly identified), but its "left"/"right" label may
   not match the API convention. Use truth_comparison.py auto-swap correction
@@ -68,6 +71,29 @@ _CREDIT_HEADER = bytes([0x10, 0x04, 0x1D])
 _DEATH_HEADER = bytes([0x08, 0x04, 0x31])
 _KILL_HEADER = bytes([0x18, 0x04, 0x1C])
 _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
+
+# Map position, as (header, offset of the first of three float32 BE).
+#
+# Found by looking for smoothness rather than by guessing a layout: a position
+# has to be continuous, so consecutive samples of one entity must move at
+# something like a hero's speed. Three tests then agreed. In match 7 every
+# player on the left sits at negative x in the opening minute and every player
+# on the right at positive x. Speed between consecutive samples has a median of
+# 2.7 m/s. And the middle float never leaves zero - median 0.0000, largest
+# 0.041 - which is the height axis of a flat map.
+#
+# Across all 11 truth matches the left team's median x is below the right
+# team's, 11 for 11. The sign does not always separate them, because by the
+# 120-second mark players have spread into lanes, but the ordering holds.
+#
+# Sampling is sparse: about 1800 points a match for ten players, one every nine
+# seconds or so. This is position attached to particular events, not a
+# continuous track.
+_POSITION_EVENTS = ((bytes([0x18, 0x04, 0x16]), 7),
+                    (bytes([0x18, 0x04, 0x03]), 11))
+# A point is kept only if it looks like one: on the map, and on the ground.
+_POSITION_MAP_LIMIT = 150.0
+_POSITION_GROUND_LIMIT = 0.5
 
 # ===== ITEM BUILD ESTIMATION =====
 # Upgrade tree using BINARY REPLAY IDs (from ITEM_ID_MAP).
@@ -458,6 +484,8 @@ class DecodedPlayer:
     assists: Optional[int] = None
     minion_kills: int = 0
     jungle_kills: int = 0  # action 0x0D credit count
+    # [(timestamp, x, z)] on the ground plane, only when decode(detect_positions=True)
+    positions: List[Tuple[float, float, float]] = field(default_factory=list)
     gold_spent: int = 0
     gold_earned: int = 0  # 600 starting + 0x06 income (sell_flag!=0x01). ±5% 98.0%, ±10% 100%
     items: List[str] = field(default_factory=list)  # Final build (after upgrade tree filtering)
@@ -529,12 +557,16 @@ class UnifiedDecoder:
         """
         self.replay_path = Path(replay_path)
 
-    def decode(self, detect_items: bool = False) -> DecodedMatch:
+    def decode(self, detect_items: bool = False,
+               detect_positions: bool = False) -> DecodedMatch:
         """
         Run full decoding pipeline.
 
         Args:
             detect_items: If True, also run ItemExtractor (partial accuracy).
+            detect_positions: If True, fill DecodedPlayer.positions. Off by
+                default because it adds roughly 1800 points a match to the
+                output and nothing downstream reads them yet.
 
         Returns:
             DecodedMatch with all detected fields populated.
@@ -620,6 +652,8 @@ class UnifiedDecoder:
                 self._detect_items_per_player(all_data, eid_map_be)
                 self._detect_gold_per_player(frames, eid_map_be)
                 item_used = True
+            if eid_map_be and detect_positions:
+                self._detect_positions(all_data, eid_map_be)
 
         # --- Step 6: Crystal Death Detection ---
         crystal_ts = None
@@ -925,6 +959,50 @@ class UnifiedDecoder:
             for offset, step in _sales_only(steps):
                 sales[eid].append((offset, step))
         return costs, sales
+
+    def _detect_positions(
+        self,
+        all_data: bytes,
+        eid_map: Dict[int, 'DecodedPlayer'],
+    ) -> None:
+        """
+        Fill each player's ground-plane positions from the two events that
+        carry them.
+
+        Layout is the usual one - header, 00 00, entity - followed by three
+        float32 BE. The middle of the three is height and sits at zero on this
+        map, which is what identifies the triple; a point is dropped if it
+        leaves the ground or leaves the map, since neither event is position
+        only and the same offsets sometimes hold something else (86% of
+        [18 04 16] and 91% of [18 04 03] pass).
+
+        Args:
+            all_data: concatenated replay bytes
+            eid_map: BE entity ID -> player
+        """
+        for header, offset in _POSITION_EVENTS:
+            pos = 0
+            while True:
+                pos = all_data.find(header, pos)
+                if pos == -1:
+                    break
+                end = pos + offset + 12
+                if end > len(all_data) or all_data[pos + 3:pos + 5] != b'\x00\x00':
+                    pos += 3
+                    continue
+                player = eid_map.get(struct.unpack_from(">H", all_data, pos + 5)[0])
+                if player is None:
+                    pos += 3
+                    continue
+                x, y, z = struct.unpack_from(">fff", all_data, pos + offset)
+                if (not any(math.isnan(v) or math.isinf(v) for v in (x, y, z))
+                        and abs(y) <= _POSITION_GROUND_LIMIT
+                        and abs(x) <= _POSITION_MAP_LIMIT
+                        and abs(z) <= _POSITION_MAP_LIMIT):
+                    player.positions.append((_timestamp_at(all_data, pos), x, z))
+                pos += 3
+        for player in eid_map.values():
+            player.positions.sort()
 
     def _detect_items_per_player(
         self,
