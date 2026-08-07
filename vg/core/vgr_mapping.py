@@ -548,17 +548,28 @@ RECIPES = {
     484: (468, 463,),  # Shiversteel <- Dragonheart + Blazing Salvo
     485: (467,),  # Reflex Block <- Oakheart
     486: (512, 462,),  # Frostburn <- Heavy Prism + Eclipse Prism
-    487: (504, 502,),  # Fountain of Renewal <- Lifespring + Kinetic Shield
+    # The recipe source names Kinetic Shield here and in Aegis, but the shop
+    # charges for Warmail: 74 of the 107 buyers held Lifespring and Warmail and
+    # paid 500, the five holding Warmail's parts unbuilt paid 700 - its 200
+    # combine cost - and the three holding neither paid 1800, which is the 2100
+    # total less the Oakheart inside Lifespring. Kinetic Shield is a real and
+    # separate item; Slumbering Husk does take it.
+    487: (504, 538,),  # Fountain of Renewal <- Lifespring + Warmail  (2100)
     488: (468, 485,),  # Crucible <- Dragonheart + Reflex Block
     490: (478, 474,),  # Halcyon Chargers <- Travel Boots + Void Battery
     491: (461, 508,),  # Tyrant's Monocle <- Six Sins + Lucky Strike
     492: (462, 475,),  # Aftershock <- Eclipse Prism + Chronograph
-    496: (512, 510,),  # Broken Myth <- Heavy Prism + Piercing Shard
+    # Heavy Prism buys nothing here - 3 buyers held one and paid the same 1350
+    # as the 98 who did not. Eclipse Prism does: 66 holding it paid 1350 against
+    # 2000 for the 35 who did not, a gap of exactly its 650. With Piercing Shard
+    # at 900 that puts the total at 2900, which is the price the wiki lists.
+    496: (462, 510,),  # Broken Myth <- Eclipse Prism + Piercing Shard  (2900)
     497: (478, 468,),  # War Treads <- Travel Boots + Dragonheart
     498: (470,),  # Atlas Pauldron <- Coat of Plates
     500: (499,),  # Barbed Needle <- Book of Eulogies
     502: (501,),  # Kinetic Shield <- Light Shield
-    503: (485, 502,),  # Aegis <- Reflex Block + Kinetic Shield
+    503: (485, 538,),  # Aegis <- Reflex Block + Warmail  (2400: 2 paid full,
+    #                     56 holding Reflex Block paid 1700, 16 holding both 900)
     504: (467,),  # Lifespring <- Oakheart
     505: (458,),  # Heavy Steel <- Weapon Blade
     506: (458,),  # Piercing Spear <- Weapon Blade
@@ -582,15 +593,28 @@ RECIPES = {
     528: (518,),  # ScoutTuff <- Flare Gun
     529: (473,),  # ScoutPak <- Hourglass
     530: (478,),  # Teleport Boots <- Travel Boots
-    531: (468, 475,),  # Rook's Decree <- Dragonheart + Chronograph
-    532: (467,),  # Flare Loader <- Oakheart
+    # Both of these read Dragonheart + Chronograph, which is what the source says
+    # about neither of them. Purchase costs give Warmail in both.
+    531: (535, 538,),  # Rook's Decree <- Protector Contract + Warmail  (2000)
+    # No recipe: an Oakheart buys no discount on this. All 63 buyers paid 300,
+    # the 23 holding an Oakheart no less than the 40 without one. The 600 item
+    # that does take an Oakheart is 518, which is priced like the Flare Gun the
+    # wiki puts at this id - the two names are probably the wrong way round.
     # Added once purchase costs identified these three; the recipe source lists
     # them but they had no ids to key on.
     489: (478,),      # Journey Boots <- Travel Boots
     516: (518, 475),  # Contraption   <- Flare Gun + Chronograph
     518: (467,),      # Flare Gun     <- Oakheart
     533: (468, 504,),  # Pulseweave <- Dragonheart + Lifespring
-    534: (468, 475,),  # Capacitor Plate <- Dragonheart + Chronograph
+    # Celestial Shroud had no recipe at all, so nothing it consumed was ever
+    # released. Purchase costs give the whole of it: 1900 total, and all four
+    # groups of buyers follow - 24 holding both paid 450, 16 holding only the
+    # Kinetic Shield paid 1150, 21 holding only the Reflex Block paid 1200, and
+    # 4 holding the shield plus the Oakheart inside a Reflex Block paid 850.
+    539: (502, 485,),  # Celestial Shroud <- Kinetic Shield + Reflex Block  (1900)
+    534: (468, 538,),  # Capacitor Plate <- Dragonheart + Warmail  (2000: 20
+    #                     holding both paid 550, 12 holding Dragonheart 1350,
+    #                     3 holding Warmail 1200)
     535: (467,),  # Protector Contract <- Oakheart
     538: (469, 501,),  # Warmail <- Light Armor + Light Shield
 }

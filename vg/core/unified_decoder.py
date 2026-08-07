@@ -70,59 +70,48 @@ _KILL_HEADER = bytes([0x18, 0x04, 0x1C])
 _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 
 # ===== ITEM BUILD ESTIMATION =====
-# Upgrade tree using BINARY REPLAY IDs (from ITEM_ID_MAP)
-# component_id -> set of result_ids it could have been upgraded into
+# Upgrade tree using BINARY REPLAY IDs (from ITEM_ID_MAP).
 #
 # Two ID ranges:
 #   - 200-255: standard shop purchases (qty=1)
 #   - 0-27: T3/special item completions (qty=2), identified via hero distribution
 #
-# Uses TRANSITIVE relationships (T1 → all reachable T3s) so a single pass can
-# compare each component against every result it could have been consumed by,
-# even when the intermediate step is itself gone from the final build.
-# Verified against official VG recipes (item_price_verify.py OFFICIAL_RECIPES).
-UPGRADE_TREE = {
-    458: {461, 464, 479, 480, 482, 491, 505, 506, 507, 524},  # Weapon Blade
-    459: {462, 465, 486, 492, 496, 509, 510, 511, 512, 522, 523},  # Crystal Bit
-    460: {463, 466, 482, 484, 491, 507, 508, 509, 520},  # Swift Shooter
-    461: {464, 480, 491, 524},  # Six Sins
-    462: {465, 486, 492, 522, 523},  # Eclipse Prism
-    463: {466, 482, 484, 507, 509, 520},  # Blazing Salvo
-    467: {468, 484, 485, 487, 488, 497, 503, 504, 516, 518, 528, 531, 533, 534},  # Oakheart
-    468: {484, 497, 531, 533, 534},  # Dragonheart
-    469: {470, 471, 498, 525, 538},  # Light Armor
-    470: {471, 498, 525},  # Coat of Plates
-    472: {474, 476, 490, 511, 539},  # Energy Battery
-    473: {475, 476, 492, 524, 531, 534},  # Hourglass
-    474: {476, 490, 511, 539},  # Void Battery
-    475: {476, 492, 516, 519, 524, 531, 534},  # Chronograph (-> Stormcrown 519)
-    513: {519},  # Stormguard Banner -> Stormcrown 519
-    477: {478, 489, 490, 497, 530},  # Sprint Boots
-    478: {489, 490, 497, 530},  # Travel Boots
-    485: {488, 503},  # Reflex Block
-    499: {479, 500, 520},  # Book of Eulogies
-    500: {479, 520},  # Barbed Needle
-    501: {487, 502, 503, 525, 538, 539},  # Light Shield
-    502: {487, 503, 525, 539},  # Kinetic Shield
-    504: {487, 533},  # Lifespring
-    505: {464, 479, 507, 524},  # Heavy Steel
-    506: {480, 482},  # Piercing Spear
-    508: {466, 491},  # Lucky Strike
-    510: {496},  # Piercing Shard
-    512: {465, 486, 496, 509, 511, 522, 523},  # Heavy Prism
-    # Both scout items feed SuperScout 2000: of its 31 owners, 27 also bought a
-    # ScoutPak and 29 a ScoutTuff, and in every one of those cases the component
-    # came first. The 529 edge was missing, so a ScoutPak consumed by the
-    # upgrade stayed a build candidate forever.
-    528: {527},  # ScoutTuff -> SuperScout 2000
-    529: {527},  # ScoutPak  -> SuperScout 2000
-    # Journey Boots(489), Contraption(516) and Flare Gun(518) were identified
-    # from purchase costs; their edges follow the same transitive convention.
-    518: {516, 527, 528},  # Flare Gun -> Contraption / ScoutTuff -> SuperScout
-    # (Stormguard Banner 513 -> Stormcrown edge dropped: Stormcrown is unmapped;
-    #  composed 527 is SuperScout 2000, not Stormcrown.)
-    517: {466, 491, 508},  # Minion's Foot
-}
+def _build_upgrade_tree() -> Dict[int, Set[int]]:
+    """
+    component_id -> every result it could have been consumed by, transitively.
+
+    Derived from RECIPES rather than written out, because the two were kept
+    side by side and drifted. Warmail is what exposed it: the recipe source
+    names Kinetic Shield in Fountain of Renewal and Aegis where the shop
+    charges for Warmail, so nothing ever consumed a Warmail and it sat in
+    every build that bought one until the end of the match. Correcting the
+    recipes would not have been enough on its own - the tree still said
+    Kinetic Shield - and that is the failure this removes rather than fixes.
+
+    Transitive, so a single pass can compare each component against every
+    result it could have fed even when the intermediate step is itself gone
+    from the final build.
+    """
+    direct: Dict[int, Set[int]] = defaultdict(set)
+    for result, components in RECIPES.items():
+        for component in components:
+            direct[component].add(result)
+
+    tree: Dict[int, Set[int]] = {}
+    for component in direct:
+        reachable: Set[int] = set()
+        pending = list(direct[component])
+        while pending:
+            result = pending.pop()
+            if result in reachable:
+                continue
+            reachable.add(result)
+            pending.extend(direct.get(result, ()))
+        tree[component] = reachable
+    return tree
+
+
+UPGRADE_TREE = _build_upgrade_tree()
 
 # One .vgr section covers this much game time. Measured externally across 14
 # matches spanning 716-2939s (9.94-10.00 s/section), so section count times this
