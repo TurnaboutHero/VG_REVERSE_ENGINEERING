@@ -590,7 +590,14 @@ RECIPES = {
     # The recipe source calls this component "Flare gun". Before 518 was
     # identified it had no id and got aliased onto Flare Loader, the 5v5 item;
     # both exist and are distinct.
-    528: (518,),  # ScoutTuff <- Flare Gun
+    # 518 costs 600 and this discount is 300, so the component is 532: of the 45
+    # buyers the 36 holding one paid 200 against 500 for the 9 without, and an
+    # Oakheart bought them nothing. An earlier pass in this session pointed it
+    # at 518 on the strength of the name alone.
+    528: (532,),  # ScoutTuff <- Flare Loader
+    # No recipe until now, so nothing released the Oakheart it eats: 6 buyers
+    # holding one paid 300 against 600 for the 3 without.
+    536: (467,),  # Dragonblood Contract <- Oakheart  (600)
     529: (473,),  # ScoutPak <- Hourglass
     530: (478,),  # Teleport Boots <- Travel Boots
     # Both of these read Dragonheart + Chronograph, which is what the source says
