@@ -104,6 +104,26 @@ _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 # Sampling is sparse: about 1800 points a match for ten players, one every nine
 # seconds or so. This is position attached to particular events, not a
 # continuous track.
+#
+# What the two events are, as far as it has been pinned down. Both stop while
+# their player is dead - neither ever fires within a second of that player's own
+# death, against 0.5% for the same samples shifted in time - and both are
+# suppressed around item acquisition, which is the same fact seen from the shop.
+# [18 04 16] carries the bulk and is close to uniform in time. [18 04 03] is
+# rarer, clusters near kills (1.88x against a shifted control, where [18 04 16]
+# manages 1.23x), and holds an extra float32 ahead of the coordinates: an
+# exact-integer duration between 1 and 60 seconds that is steady per player and
+# differs between them. Respawn time is ruled out (the value does not land on
+# the preceding death, median error 124s) and so is anything that grows over the
+# match. Which hero-dependent duration it is remains open.
+#
+# Role inference was tried on these coordinates and does not work. Against
+# minion kills as the role proxy, every spatial feature is flat - distance from
+# own base -0.02, spread of that distance -0.02, lane offset -0.01, absolute
+# lane offset 0.21 over 75 players. The only things that correlate are total
+# path length (0.55) and sample count (0.58), which measure how often a player
+# was recorded rather than where they were. Positions say who was busy, not who
+# was in the jungle.
 _POSITION_EVENTS = ((bytes([0x18, 0x04, 0x16]), 7),
                     (bytes([0x18, 0x04, 0x03]), 11))
 # A point is kept only if it looks like one: on the map, and on the ground.
@@ -995,9 +1015,19 @@ class UnifiedDecoder:
         Layout is the usual one - header, 00 00, entity - followed by three
         float32 BE. The middle of the three is height and sits at zero on this
         map, which is what identifies the triple; a point is dropped if it
-        leaves the ground or leaves the map, since neither event is position
-        only and the same offsets sometimes hold something else (86% of
-        [18 04 16] and 91% of [18 04 03] pass).
+        leaves the ground or leaves the map.
+
+        That guard almost never fires. An earlier note here put it at 86% and
+        91% of the two events, which was wrong: it counted every occurrence of
+        the three header bytes, including the ones that fail the 00 00 check and
+        so are byte coincidences rather than events. Among real events 100% and
+        99.5% carry a usable position.
+
+        Filtering to eid_map is what keeps this to heroes. The headers do fire
+        for other entities - around 70 of them a match, moving in groups of four
+        the way minion waves do - but they sit far above the player range and
+        contribute a handful of points each against hundreds per player. None of
+        them are stationary, so no camp or turret is being read as a hero.
 
         Args:
             all_data: concatenated replay bytes
