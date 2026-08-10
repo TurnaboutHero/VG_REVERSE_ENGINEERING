@@ -1487,6 +1487,23 @@ class UnifiedDecoder:
           - No player kill nearby → GOLD_MINE_CAPTURE
         Multi-entity clusters (n>1) are KRAKEN_WAVE or MINION_WAVE.
 
+        For 5v5, prefer mythic_captures and turret_kills. They read the payout,
+        which only an objective makes, and they name the team from who was paid.
+        This one and those two describe different events almost entirely: of 151
+        payout-detected captures across 49 files, 2 have anything from this
+        detector within eight seconds.
+
+        The reason is the eid>60000 threshold, which does not isolate
+        objectives. There are 67 to 94 such deaths in a match - 60017, 61129,
+        62796 and so on are minions and jungle creatures - so the clusters this
+        builds are mostly waves that a nearby player kill then labels. It is
+        still the only reading available for 3v3, where the mythic payouts
+        differ and nothing has been identified yet.
+
+        (The timestamp read at idx+9 is not the problem, in case that looks
+        suspect next to _timestamp_at's pos-7. Both agree on all 4084 objective
+        deaths in the corpus.)
+
         Map position does not improve this and it has been tried. Objective
         entities emit no position events of their own, so the only handle is
         where the players were, and locating the densest group of them within
