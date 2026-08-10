@@ -127,7 +127,17 @@ _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 # the value, which a cooldown cannot be. A distance in map units - the range to
 # the nearest enemy sits under the value 62.6% of the time against 62.3% when
 # the value is swapped for another event's, so it knows nothing about range.
-# Going further needs Vainglory's ability tables, which are not in this repo.
+# One value per active ability is out too: matching hero ability lists from the
+# Korean guide database against the values each hero produces, only 4 heroes of
+# 15 line up. Skye, Reza, Kinetic, Fortress and Grace each hold three actives
+# and emit a single value; Baptiste emits six.
+#
+# The guide database has ability names but its stat arrays carry labels with no
+# numbers, so it cannot close this. Somebody's extracted ability table would.
+#
+# The same search did confirm the unit. The hero sheet lists move speeds of 3.1
+# to 3.7, and the speed measured between consecutive samples here runs 2.71 to
+# 3.11, so these coordinates are in metres and the map is about 140 across.
 #
 # Role inference was tried on these coordinates and does not work. Against
 # minion kills as the role proxy, every spatial feature is flat - distance from
