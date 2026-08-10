@@ -252,11 +252,19 @@ _REFUND_STEP = 25
 _LIQUIDATION_GAP = 10.0     # seconds; wider than any burst, narrower than any pair of real sales
 _LIQUIDATION_RUN = 3        # reports in one burst before it reads as liquidation
 
-# The 5v5 update notes put the automatic gold at "경기 시간 0:45부터", one tick a
-# second, and the replays agree: 300 ticks in every 300 seconds, flat from the
-# first to the last. That fixed start is what dates a recording. Timestamps run
-# from where the recording begins, so a file that covers the match start shows
-# its first tick around 45 seconds in - the corpus lands between 41 and 77 - and
+# Automatic gold starts at a fixed point in the match, one tick a second, and
+# the replays agree: 300 ticks in every 300 seconds, flat from the first to the
+# last. That fixed start is what dates a recording.
+#
+# On when: the Glory Guide companion app's 5v5 data (5v5.plist, 2022, Community
+# Edition) says "Players generate 3 gold per second starting at 0:40". The 2018
+# update notes for 3.0 said 0:45 and 5 a second; the rate and the start both
+# changed, and these tournament recordings are the later ones. 0:40 is also the
+# only figure consistent with what is measured here - the earliest first tick in
+# the corpus is 41 seconds, which cannot happen if gold began at 0:45.
+#
+# Timestamps run from where the recording begins, so a file that covers the
+# match start shows its first tick just after 40 - the corpus lands 41 to 77 - and
 # one that joined a match already in progress shows it within a couple of
 # seconds, because the gold was already flowing. Nothing falls in between.
 #
