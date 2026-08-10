@@ -16,11 +16,22 @@ Team label limitation:
   but the 1→left / 2→right mapping is non-deterministic (~50% of matches
   have swapped labels). No binary-level signal has been found to resolve
   this (exhaustive search: player block bytes, entity events, event headers,
-  turret clustering, crystal entity IDs — all fail to discriminate left/right).
+  turret clustering, crystal entity IDs, map position, player block order —
+  all fail to discriminate left/right).
   Map position IS encoded, contrary to what this note used to say: see
-  _detect_positions. Whether it resolves the left/right label is untested -
-  the decoder's existing labels happen to order by x in all 11 truth matches,
-  but that has not been traced back to what the label is derived from.
+  _detect_positions. It does not settle the label, and the reason is worth
+  knowing. team_byte 1 is the low-x side of the map in all 11 truth matches,
+  so x-ordering and team_byte are the same partition - sorting teams by x
+  re-derives the byte and adds nothing. Measured against truth, team_byte 1
+  is the left column in 6 matches of 11, and the team owning the first player
+  block in 7 of 11. Both are coin flips. Blocks are interleaved by team
+  (1212221112), so there is no team-major slot order left to read either.
+  What truth calls "left"/"right" is the column in the result screenshot,
+  which is a property of the screen rather than of the match: across a
+  tournament series the column stays put while team_byte flips from game to
+  game, which is what teams switching map sides looks like. The part that is
+  a match property is recorded as DecodedPlayer.map_side. Worked through in
+  vg/docs/TEAM_LABEL_2026-08-10.md.
   Winner detection via kill count asymmetry is 100% accurate (the winning
   GROUP is always correctly identified), but its "left"/"right" label may
   not match the API convention. Use truth_comparison.py auto-swap correction
@@ -40,6 +51,7 @@ CLI:
 import bisect
 import json
 import math
+import statistics
 import struct
 import sys
 from collections import Counter, defaultdict
@@ -82,9 +94,12 @@ _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 # 2.7 m/s. And the middle float never leaves zero - median 0.0000, largest
 # 0.041 - which is the height axis of a flat map.
 #
-# Across all 11 truth matches the left team's median x is below the right
-# team's, 11 for 11. The sign does not always separate them, because by the
-# 120-second mark players have spread into lanes, but the ordering holds.
+# Across all 11 truth matches the team carrying team_byte 1 has the lower
+# median x, 11 for 11. The sign does not always separate the two, because by
+# the 120-second mark players have spread into lanes, but the ordering holds.
+# This is what map_side records. Note what it does NOT give you: since the
+# byte already picks out the low-x side, x cannot disagree with it, and so it
+# carries no information about which side the scoreboard calls "left".
 #
 # Sampling is sparse: about 1800 points a match for ten players, one every nine
 # seconds or so. This is position attached to particular events, not a
@@ -486,6 +501,13 @@ class DecodedPlayer:
     jungle_kills: int = 0  # action 0x0D credit count
     # [(timestamp, x, z)] on the ground plane, only when decode(detect_positions=True)
     positions: List[Tuple[float, float, float]] = field(default_factory=list)
+    # Which half of the map this player's team spawned on: "low_x", "high_x",
+    # or "" when positions were not read. Measured from the coordinates rather
+    # than copied off team_byte, so that a replay where the two disagree shows
+    # up instead of being assumed away. Unlike `team` this survives comparison
+    # with anything outside the decoder, because it names the map and not a
+    # column in a screenshot.
+    map_side: str = ""
     gold_spent: int = 0
     gold_earned: int = 0  # 600 starting + 0x06 income (sell_flag!=0x01). ±5% 98.0%, ±10% 100%
     items: List[str] = field(default_factory=list)  # Final build (after upgrade tree filtering)
@@ -654,6 +676,7 @@ class UnifiedDecoder:
                 item_used = True
             if eid_map_be and detect_positions:
                 self._detect_positions(all_data, eid_map_be)
+                self._assign_map_sides(all_players)
 
         # --- Step 6: Crystal Death Detection ---
         crystal_ts = None
@@ -1003,6 +1026,40 @@ class UnifiedDecoder:
                 pos += 3
         for player in eid_map.values():
             player.positions.sort()
+
+    @staticmethod
+    def _assign_map_sides(players: List['DecodedPlayer']) -> None:
+        """
+        Name each team's half of the map from where its players actually were.
+
+        The two teams are told apart by median x: one sits low, the other high.
+        Medians rather than means because a player who spends the match roaming
+        should not drag their team across the map, and because the samples are
+        sparse enough that one outlier is a real risk.
+
+        This deliberately measures instead of reading team_byte, even though the
+        two agree in all 11 truth matches. Copying the byte would make the
+        agreement unfalsifiable; measuring leaves it a claim that a future
+        replay can break.
+
+        Left as "" when a team has no coordinates, or when the two medians are
+        equal and there is nothing to order.
+        """
+        by_team: Dict[str, List[float]] = defaultdict(list)
+        for player in players:
+            by_team[player.team].extend(x for _, x, _ in player.positions)
+        sides = {team: statistics.median(xs)
+                 for team, xs in by_team.items() if xs}
+        if len(sides) != 2:
+            return
+        (low, low_x), (high, _) = sorted(sides.items(), key=lambda kv: kv[1])
+        if low_x == sides[high]:
+            return
+        for player in players:
+            if player.team == low:
+                player.map_side = "low_x"
+            elif player.team == high:
+                player.map_side = "high_x"
 
     def _detect_items_per_player(
         self,
