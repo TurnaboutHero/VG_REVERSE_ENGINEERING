@@ -112,10 +112,22 @@ _PLAYER_EID_RANGE = set(range(1500, 1510))  # BE entity IDs for players
 # [18 04 16] carries the bulk and is close to uniform in time. [18 04 03] is
 # rarer, clusters near kills (1.88x against a shifted control, where [18 04 16]
 # manages 1.23x), and holds an extra float32 ahead of the coordinates: an
-# exact-integer duration between 1 and 60 seconds that is steady per player and
-# differs between them. Respawn time is ruled out (the value does not land on
-# the preceding death, median error 124s) and so is anything that grows over the
-# match. Which hero-dependent duration it is remains open.
+# mostly-integer value between 1 and 60 that is locked to the hero: the same
+# hero picked by a different player in a different match produces the same one
+# to three values, and they appear throughout the match together. Grumpjaw is
+# 16 and 14 across six matches, Caine 13, Kinetic 22.5.
+#
+# What the constant measures is not settled, and four readings are ruled out.
+# Respawn time - subtracting it does not land on the preceding death, median
+# error 124s. Anything that grows with the match - the median holds at 16, 16,
+# 18 across thirds. A cooldown carrying cooldown acceleration - the values
+# coexist all match rather than stepping down, and Blackfeather's 8.57 appears
+# 77 seconds before he buys the item that would explain it. A cooldown at all -
+# 49% of consecutive same-value events for one player are closer together than
+# the value, which a cooldown cannot be. A distance in map units - the range to
+# the nearest enemy sits under the value 62.6% of the time against 62.3% when
+# the value is swapped for another event's, so it knows nothing about range.
+# Going further needs Vainglory's ability tables, which are not in this repo.
 #
 # Role inference was tried on these coordinates and does not work. Against
 # minion kills as the role proxy, every spatial feature is flat - distance from
