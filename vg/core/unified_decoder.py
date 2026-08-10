@@ -256,15 +256,27 @@ _LIQUIDATION_RUN = 3        # reports in one burst before it reads as liquidatio
 # the replays agree: 300 ticks in every 300 seconds, flat from the first to the
 # last. That fixed start is what dates a recording.
 #
-# On when: the Glory Guide companion app's 5v5 data (5v5.plist, 2022, Community
-# Edition) says "Players generate 3 gold per second starting at 0:40". The 2018
-# update notes for 3.0 said 0:45 and 5 a second; the rate and the start both
-# changed, and these tournament recordings are the later ones. 0:40 is also the
-# only figure consistent with what is measured here - the earliest first tick in
-# the corpus is 41 seconds, which cannot happen if gold began at 0:45.
+# When and how much, both per mode and both measured across the 56-file corpus:
+#
+#   5v5  starts 0:40, 3 gold a second   (48 files; earliest first tick 41.4)
+#   3v3  starts 0:35, 6 gold a second   (7 files; first ticks cluster 37.7-38.0)
+#
+# The 2018 update notes for 3.0 said 5 a second from 0:45 for 5v5, which is a
+# different game to this one - these recordings are dated June 2022. Do not
+# reach for those notes to explain a number here.
+#
+# A warning about the other source that gets consulted for these numbers. The
+# Glory Guide companion app's 5v5 data (5v5.plist) agrees with the replays on
+# the trickle, on minion gold (35 melee, 25 ranged, 60 siege) and on Goldoak at
+# 220 - and then says the mythic creatures award "0 each". They do not: the
+# corpus carries 541 credits of 125 and 260 of 250, which is Ghostwing and
+# Blackclaw paying out normally. That section of the app data was never filled
+# in. Agreeing with measurement in six places does not make a source right in
+# the seventh.
 #
 # Timestamps run from where the recording begins, so a file that covers the
-# match start shows its first tick just after 40 - the corpus lands 41 to 77 - and
+# match start shows its first tick a second or two after the mode's start
+# time - the 5v5 corpus lands 41 to 77 - and
 # one that joined a match already in progress shows it within a couple of
 # seconds, because the gold was already flowing. Nothing falls in between.
 #
