@@ -286,6 +286,23 @@ _LIQUIDATION_RUN = 3        # reports in one burst before it reads as liquidatio
 # is 18.
 # The lower bound is there because one file's commonest small income is 0.3,
 # which is not a per-second gold tick and would date the recording wrongly.
+# Mythic creatures pay every surviving member of the capturing team at once, so
+# the payout names the team without any inference: whoever was paid took it.
+#
+# The catch is that the same two numbers are hero bounties - the app data gives
+# the kill bounty as 250 with 125 per kill on top - and those go to one player.
+# Burst size separates them cleanly, and the cut is measured rather than picked:
+# across 50 matches every burst of one or two recipients has a player death
+# within four seconds (42 of 42), while bursts of four or five sit at 18-22%,
+# which is just how often somebody dies in the fight over the objective.
+#
+# Objective death events do not corroborate these and are not expected to.
+# Ghostwing is captured rather than killed, and only 3-12% of the bursts have an
+# eid>60000 death anywhere near them.
+_MYTHIC_PAYOUT = {125.0: "GHOSTWING_CAPTURE", 250.0: "BLACKCLAW_CAPTURE"}
+_MYTHIC_BURST_GAP = 2.0     # seconds; the whole team is paid in one instant
+_MYTHIC_MIN_SHARE = 3       # recipients; below this it is a hero bounty
+
 _PASSIVE_TICK_MIN = 1.0
 _PASSIVE_TICK_MAX = 10.0
 _MATCH_START_CUTOFF = 30.0
@@ -539,6 +556,8 @@ class ObjectiveEvent:
     event_type: str  # 3v3: GOLD_MINE_CAPTURE, KRAKEN_DEATH/WAVE. 5v5: GHOSTWING_CAPTURE, BLACKCLAW_DEATH/WAVE
     entity_count: int
     entity_ids: List[int] = field(default_factory=list)
+    # Filled only on mythic captures, where the payout names the team outright.
+    capturing_team: str = ""
 
     def to_dict(self) -> Dict:
         return asdict(self)
@@ -601,6 +620,11 @@ class DecodedMatch:
     crystal_death_ts: Optional[float] = None
     crystal_death_eid: Optional[int] = None
     objective_events: List[ObjectiveEvent] = field(default_factory=list)
+    # Ghostwing and Blackclaw captures read off the payout, with the capturing
+    # team named by whoever received it. Deliberately a separate list from
+    # objective_events: the two detectors work from different evidence and
+    # merging them would double-count the same capture.
+    mythic_captures: List[ObjectiveEvent] = field(default_factory=list)
     # How much game time the .vgr sections cover, from the section count.
     recorded_seconds: Optional[int] = None
     # duration_seconds / recorded_seconds. Near 1.0 when the event stream runs
@@ -725,6 +749,7 @@ class UnifiedDecoder:
 
         # --- Step 5: Per-player Item Detection via [10 04 3D] ---
         item_used = False
+        mythic_captures: List[ObjectiveEvent] = []
         all_data = b"".join(data for _, data in frames) if frames else b""
         if all_data and all_players:
             eid_map_be = {}
@@ -736,6 +761,8 @@ class UnifiedDecoder:
                 self._detect_items_per_player(all_data, eid_map_be)
                 self._detect_gold_per_player(frames, eid_map_be)
                 item_used = True
+            if eid_map_be:
+                mythic_captures = self._detect_mythic_captures(all_data, eid_map_be)
             if eid_map_be and detect_positions:
                 self._detect_positions(all_data, eid_map_be)
                 self._assign_map_sides(all_players)
@@ -831,6 +858,7 @@ class UnifiedDecoder:
             completeness_ratio=round(completeness, 3) if completeness else None,
             data_complete=data_complete,
             objective_events=objective_events,
+            mythic_captures=mythic_captures,
             kda_detection_used=kda_used,
             win_detection_used=win_used,
             item_detection_used=item_used,
@@ -1132,6 +1160,77 @@ class UnifiedDecoder:
                 player.map_side = "low_x"
             elif player.team == high:
                 player.map_side = "high_x"
+
+    @staticmethod
+    def _detect_mythic_captures(
+        all_data: bytes,
+        eid_map: Dict[int, 'DecodedPlayer'],
+    ) -> List[ObjectiveEvent]:
+        """
+        Find Ghostwing and Blackclaw captures from who got paid for them.
+
+        A capture pays every living member of one team the same amount in the
+        same instant, so the recipients are the capturing team - no proximity
+        argument, no inference. Bursts that reach fewer than _MYTHIC_MIN_SHARE
+        players are hero bounties sharing the same two values and are dropped;
+        so is any burst that spans both teams, which nothing legitimate does.
+
+        Kept apart from _detect_objective_events rather than merged into it.
+        The two look for different things - a payout against an entity death -
+        and appending these to the same list would have anything counting
+        objectives count the captures twice.
+
+        5v5 only in practice. Halcyon Fold has the Kraken and the Gold Mine
+        instead, which pay something else, so all seven 3v3 files come back
+        empty here and _detect_objective_events remains the only reading for
+        that mode.
+        """
+        rows = []
+        pos = 0
+        while True:
+            pos = all_data.find(_CREDIT_HEADER, pos)
+            if pos == -1:
+                break
+            if pos + 13 > len(all_data) or all_data[pos + 3:pos + 5] != b'\x00\x00':
+                pos += 3
+                continue
+            eid = struct.unpack_from(">H", all_data, pos + 5)[0]
+            player = eid_map.get(eid)
+            if player is not None and all_data[pos + 11] == 0x06 \
+                    and all_data[pos + 12] != 0x01:
+                value = struct.unpack_from(">f", all_data, pos + 7)[0]
+                if round(value, 2) in _MYTHIC_PAYOUT:
+                    when = _timestamp_at(all_data, pos)
+                    if when < math.inf:
+                        rows.append((when, eid, round(value, 2), player.team))
+            pos += 3
+
+        rows.sort()
+        events: List[ObjectiveEvent] = []
+        burst: List[tuple] = []
+
+        def flush() -> None:
+            if len(burst) < _MYTHIC_MIN_SHARE:
+                return
+            teams = {t for _, _, _, t in burst}
+            if len(teams) != 1:
+                return
+            events.append(ObjectiveEvent(
+                timestamp=round(burst[0][0], 2),
+                event_type=_MYTHIC_PAYOUT[burst[0][2]],
+                entity_count=len(burst),
+                entity_ids=[eid for _, eid, _, _ in burst],
+                capturing_team=teams.pop(),
+            ))
+
+        for row in rows:
+            if burst and (row[0] - burst[-1][0] > _MYTHIC_BURST_GAP
+                          or row[2] != burst[-1][2]):
+                flush()
+                burst = []
+            burst.append(row)
+        flush()
+        return events
 
     def _detect_items_per_player(
         self,
