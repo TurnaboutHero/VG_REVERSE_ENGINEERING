@@ -1253,6 +1253,16 @@ class UnifiedDecoder:
           - Player kill [18 04 1C] within ±500B → KRAKEN_DEATH
           - No player kill nearby → GOLD_MINE_CAPTURE
         Multi-entity clusters (n>1) are KRAKEN_WAVE or MINION_WAVE.
+
+        Map position does not improve this and it has been tried. Objective
+        entities emit no position events of their own, so the only handle is
+        where the players were, and locating the densest group of them within
+        three seconds of the death finds nothing an arbitrary moment does not:
+        the top three clusters hold 41% of real events against 46% for the same
+        count placed at evenly spaced times. What that method finds is where
+        players congregate, which a few spots on the map do all match regardless
+        of what died there - and the clusters mix the two objective types rather
+        than separating them. See vg/docs/POSITION_EVENTS_2026-08-10.md.
         """
         # Collect all objective deaths
         deaths = []
