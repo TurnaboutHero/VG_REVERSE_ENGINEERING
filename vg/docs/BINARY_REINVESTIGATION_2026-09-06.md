@@ -50,7 +50,7 @@ next_record = record_start +8 +content_length
 
 [디컴파일dispatcher의0x0431분기](https://github.com/a1cnore/HackedGlory/blob/0fdc6ddd65a6c0c8657d238d41668baa86debdf0/ghidra_projects/GameKindred_decompile_output/structured/functions/10012.c#L5645)는32비트값하나를읽어`FUN_1003c6194`로전달한다. [생성자](https://github.com/a1cnore/HackedGlory/blob/0fdc6ddd65a6c0c8657d238d41668baa86debdf0/ghidra_projects/GameKindred_decompile_output/structured/functions/1003c.c#L5427)도그값하나를저장한다. 이자료는레코드본문에timestamp가없다는해석과맞지만,그동작을‘사망’으로확정하지는않는다.
 
-### 그대로 가져오면 틀리는 예
+### 직접 이식 전에 확인해야 할 불일치
 
 [HackedGlory dashboard](https://github.com/a1cnore/HackedGlory/blob/0fdc6ddd65a6c0c8657d238d41668baa86debdf0/mitm/match_decryption/vg_match_dashboard.py#L574)는opcode0x042B의index0/value3전이를사망후보로센다. 같은필드해석과연속중복제거를로컬세경기에적용했다.
 
@@ -60,7 +60,7 @@ next_record = record_start +8 +content_length
 | M5 |755|17|
 | M6 |1085|31|
 
-0x0431후보총64건중이value3후보와±1초안에겹치는것도0건이다. 이는**규칙의직접이식이로컬VGR에서성립하지않는다**는반례다. VGNA서버가이규칙을사용한다거나,HackedGlory의자체네트워크캡처에서도동일하게틀린다는주장은하지않는다.
+0x0431후보총64건중이value3후보와±1초안에겹치는것도0건이다. 두 후보 규칙은 로컬 세 경기에서 수와 시각이 크게 불일치한다. 따라서 이 규칙을 검증 없이 채택할 근거는 없으며, 어느 신호가 실제 사망을 나타내는지는 독립 사건 증거로 확인해야 한다. VGNA서버가이규칙을사용한다거나,HackedGlory의자체네트워크캡처에서도동일한차이가관찰된다는주장은하지않는다.
 
 반대로로컬`0x041C/subtype0x29/value1`후보와`0x041D/subtype0x09/value1`은M1/M5/M6에서각각15/16/31건이고,플레이어별발생시각이전부같았다. 별도의두신호가있는것은후속재구성의단서지만,같은원천을복제한메시지일수있어독립정답으로두번세지않는다.
 
