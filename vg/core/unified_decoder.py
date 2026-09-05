@@ -232,6 +232,25 @@ def _le_to_be(eid_le: int) -> int:
     return struct.unpack('>H', struct.pack('<H', eid_le))[0]
 
 
+def _assess_core_completeness(
+    duration: Optional[int],
+    recorded_seconds: Optional[int],
+    crystal_ts: Optional[float],
+    duration_est: Optional[float],
+) -> Tuple[Optional[bool], str]:
+    if not duration or not recorded_seconds:
+        return None, "Insufficient timing evidence to assess match completion."
+    if duration / recorded_seconds < COMPLETENESS_THRESHOLD:
+        return False, "Event duration falls short of the recorded span."
+    if (
+        crystal_ts is not None
+        and duration_est is not None
+        and abs(crystal_ts - duration_est) <= 30
+    ):
+        return True, "Terminal crystal candidate agrees with the player-death tail."
+    return None, "Recording coverage alone does not confirm a terminal match end."
+
+
 # An acquire and the cost it was charged for sit within a few hundred bytes of
 # each other. 400 pairs 10479 of the corpus's purchases without ever reaching
 # past a neighbouring purchase.
@@ -591,10 +610,9 @@ class DecodedPlayer:
     hero_name: str
     hero_id: Optional[int]
     entity_id: int                     # Little Endian (original)
-    # When the match's DecodedMatch.data_complete is False these are lower
-    # bounds: the recording stops mid-match so later events were never written.
-    # Checked against truth on the one known truncated match - all 9 players
-    # came in at or under the real figures, none over.
+    # When match completion is False or unknown, these are estimates only.
+    # Missing tail events can reduce counts, while known detector overcounts
+    # mean they are not guaranteed lower bounds.
     kills: int = 0
     deaths: int = 0
     assists: Optional[int] = None
@@ -653,9 +671,10 @@ class DecodedMatch:
     # duration_seconds / recorded_seconds. Near 1.0 when the event stream runs
     # to the end of the recording; well below when the recording outlasts it.
     completeness_ratio: Optional[float] = None
-    # True/False once both durations are known, None while undecidable.
-    # False means kills/deaths/assists are LOWER BOUNDS, not wrong values.
+    # True requires corroborated terminal evidence, False identifies a short
+    # event tail, and None means the available evidence is undecidable.
     data_complete: Optional[bool] = None
+    completeness_reason: str = ""
     # Detection flags
     kda_detection_used: bool = False
     win_detection_used: bool = False
@@ -818,14 +837,15 @@ class UnifiedDecoder:
 
         # --- Step 7a: Completeness ---
         # The event stream ending long before the recording does means the tail
-        # of the match was never captured, so every per-player count is short.
-        # Both durations must be known to decide; otherwise stay undecided
-        # rather than calling a replay with no deaths at all "truncated".
+        # was not captured. High recording coverage is necessary, while only
+        # terminal crystal evidence can establish completion. See
+        # vg/docs/COMPLETENESS_EVIDENCE_2026-09-06.md.
         completeness = None
-        data_complete = None
         if duration and recorded_seconds:
             completeness = duration / recorded_seconds
-            data_complete = completeness >= COMPLETENESS_THRESHOLD
+        data_complete, completeness_reason = _assess_core_completeness(
+            duration, recorded_seconds, crystal_ts, duration_est,
+        )
 
         # --- Step 7b: Apply KDA filter with computed duration ---
         # Now that we have proper game duration (from crystal death),
@@ -882,6 +902,7 @@ class UnifiedDecoder:
             recorded_seconds=recorded_seconds,
             completeness_ratio=round(completeness, 3) if completeness else None,
             data_complete=data_complete,
+            completeness_reason=completeness_reason,
             objective_events=objective_events,
             mythic_captures=mythic_captures,
             turret_kills=turret_kills,
