@@ -205,6 +205,35 @@ class EventTimelineTests(unittest.TestCase):
         self.assertNotEqual(same_output, 0)
         self.assertEqual(original, preserved)
 
+    def test_cli_rejects_hardlink_output_and_preserves_input_bytes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "match.1.vgr"
+            output_alias = root / "timeline.jsonl"
+            original = packet(1.0, 0x0431, struct.pack(">I", 10) + b"zz")
+            path.write_bytes(original)
+            output_alias.hardlink_to(path)
+
+            result = main([str(path), "-o", str(output_alias)])
+
+            self.assertNotEqual(result, 0)
+            self.assertEqual(path.read_bytes(), original)
+            self.assertEqual(output_alias.read_bytes(), original)
+
+    def test_cli_rejects_new_same_prefix_section_without_creating_it(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "match.1.vgr"
+            output = root / "match.2.vgr"
+            original = packet(1.0, 0x0431, struct.pack(">I", 10) + b"zz")
+            path.write_bytes(original)
+
+            result = main([str(path), "-o", str(output)])
+
+            self.assertNotEqual(result, 0)
+            self.assertEqual(path.read_bytes(), original)
+            self.assertFalse(output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

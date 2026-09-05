@@ -225,7 +225,23 @@ def main(argv: Sequence[str] | None = None) -> int:
         sections = _discover_sections(args.path)
         if args.output is not None:
             output_path = args.output.resolve()
-            if any(output_path == section_path.resolve() for _, section_path in sections):
+            output_match = SECTION_NAME.fullmatch(args.output.name)
+            input_prefix = args.path.name.rsplit(".", 2)[0]
+            if (
+                output_match is not None
+                and output_match.group("prefix") == input_prefix
+                and output_path.parent == args.path.resolve().parent
+            ):
+                raise TimelineInputError(
+                    path=args.output,
+                    reason="output names a sibling input .vgr section",
+                )
+            output_exists = args.output.exists()
+            if any(
+                output_path == section_path.resolve()
+                or (output_exists and args.output.samefile(section_path))
+                for _, section_path in sections
+            ):
                 raise TimelineInputError(
                     path=args.output,
                     reason="output path is an input .vgr section",
