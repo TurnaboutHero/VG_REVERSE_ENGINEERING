@@ -1,0 +1,77 @@
+{
+  "commit": "0fdc6ddd65a6c0c8657d238d41668baa86debdf0",
+  "files": [
+    {
+      "local": "work/event-semantics/native/10034.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/10034.c",
+      "git_blob_sha": "fa63e6935ff25e14861eebbf8b18bc257b70d917",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/1003a.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/1003a.c",
+      "git_blob_sha": "4c27d3fe4a957a3568acaf86ed070accaf900b5c",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/1003d.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/1003d.c",
+      "git_blob_sha": "2deb2e889fac8ee9dfcfd9052493507a4e1623ab",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/10046.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/10046.c",
+      "git_blob_sha": "6b9b80a46ed318ebd6201657990b116d9e47aef1",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/10049.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/10049.c",
+      "git_blob_sha": "69808447b819a6eed7f67833555f39e6f58609a3",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/GameKindred.h",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/headers/GameKindred.h",
+      "git_blob_sha": "b96dfa1e36aa543c3948f795388af8f2074b0c8c",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/globals.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/globals.c",
+      "git_blob_sha": "332313128a3d033b19d452153d0718fc4ee435e2",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/vtable_trace.md",
+      "remote": "reports/generated/vtable_trace.md",
+      "git_blob_sha": "25dbf54ac49ac524722885c35b3339d9ec671303",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/binary-reinvestigation/10012.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/10012.c",
+      "git_blob_sha": "467aa8fa9d52269c3fc6d68f7eec09f9299ab83a",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/binary-reinvestigation/1003c.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/1003c.c",
+      "git_blob_sha": "6d4c1462746885f3af569a23130ab460541212f7",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/10045.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/10045.c",
+      "git_blob_sha": "cf6c207b14e79a979130c38500dd0a1585d14b83",
+      "matches_pinned_tree": true
+    },
+    {
+      "local": "work/event-semantics/native/1003e.c",
+      "remote": "ghidra_projects/GameKindred_decompile_output/structured/functions/1003e.c",
+      "git_blob_sha": "67cad255e896e967a3f9200ced6d8c19e4c91217",
+      "matches_pinned_tree": true
+    }
+  ]
+}
