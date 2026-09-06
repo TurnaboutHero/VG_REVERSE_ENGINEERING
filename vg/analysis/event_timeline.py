@@ -1,4 +1,4 @@
-"""Stream neutral, lossless event rows from numbered VGR replay sections."""
+"""Stream lossless event rows with verified native labels from numbered VGR sections."""
 
 import argparse
 from collections.abc import Iterable, Iterator, Sequence
@@ -16,6 +16,9 @@ from vg.core.vgr_records import VGRRecord, VGRRecordError, iter_records
 
 
 APPLE_DOUBLE_MAGIC: Final = b"\x00\x05\x16\x07"
+NATIVE_EVIDENCE_SHA256: Final = "c23b2e9eb201f47694c7e71ab39d2c8c96850beb4ddf489745def23927fcd891"
+NATIVE_EVIDENCE: Final = "gamekindred-c23b2e9e"
+ATTRIBUTE_STATS: Final[dict[int, str]] = {0x29: "kills", 0x2A: "deaths"}
 type KnownOpcode = Literal[0x041C, 0x041D, 0x042B, 0x0431]
 DEFAULT_OPCODES: Final = frozenset({0x041C, 0x041D, 0x042B, 0x0431})
 EXPECTED_CONTENT_LENGTH: Final[dict[KnownOpcode, int]] = {
@@ -37,6 +40,19 @@ class DecodedFields(TypedDict, total=False):
     code: int
     remaining_hex: str
     uninterpreted_bytes: list[int]
+    native_evidence: str
+    native_type: str
+    native_index: int
+    native_layer: int
+    native_operation: str
+    native_stat: str | None
+    native_flags: list[int]
+    native_state_bits: int
+    native_mask_a: int
+    native_mask_b: int
+    native_state_from: int
+    native_state_to: int
+    native_conditional: bool
 
 
 class TimelineRow(DecodedFields):
@@ -97,6 +113,10 @@ def decode_fields(record: VGRRecord) -> DecodedFields:
                 "value_bits": raw_bits,
                 "code": payload[12],
                 "remaining_hex": payload[13:].hex(),
+                "native_evidence": NATIVE_EVIDENCE, "native_type": "attribute_update",
+                "native_index": payload[12], "native_layer": payload[13],
+                "native_operation": "set" if payload[14] != 0 else "add",
+                "native_stat": ATTRIBUTE_STATS.get(payload[12]),
             }
         case 0x041D:
             value, raw_bits = _float_fields(payload, 4)
@@ -107,18 +127,29 @@ def decode_fields(record: VGRRecord) -> DecodedFields:
                 "value_bits": raw_bits,
                 "code": payload[8],
                 "remaining_hex": payload[9:].hex(),
+                "native_evidence": NATIVE_EVIDENCE, "native_type": "resource_update",
+                "native_index": payload[8], "native_operation": "set" if payload[9] != 0 else "add",
+                "native_flags": [payload[10], payload[11]],
+                "native_stat": "assists" if payload[8] == 0x0B else None,
             }
         case 0x042B:
             return {
                 "decoding_status": "decoded",
                 "ref0": struct.unpack_from(">I", payload, 0)[0],
                 "uninterpreted_bytes": list(payload[4:]),
+                "native_evidence": NATIVE_EVIDENCE, "native_type": "indexed_state_bits",
+                "native_index": payload[4], "native_state_bits": payload[5],
+                "native_mask_a": payload[6], "native_mask_b": payload[7],
             }
         case 0x0431:
             return {
                 "decoding_status": "decoded",
                 "ref0": struct.unpack_from(">I", payload, 0)[0],
                 "remaining_hex": payload[4:].hex(),
+                "native_evidence": NATIVE_EVIDENCE, "native_type": "actor_state_transition",
+                "native_state_from": 3, "native_state_to": 4,
+                "native_conditional": True,
+                "native_stat": None,
             }
         case unreachable:
             assert_never(unreachable)
@@ -199,23 +230,11 @@ def _integer(value: str) -> int:
 
 
 def _parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Stream neutral VGR event structures as lossless JSONL."
-    )
+    parser = argparse.ArgumentParser(description="Stream verified native VGR event structures as lossless JSONL.")
     parser.add_argument("path", type=Path, help="numbered .vgr replay section")
     parser.add_argument("-o", "--output", type=Path, help="write JSONL to this path")
-    parser.add_argument(
-        "--opcode",
-        action="append",
-        type=_integer,
-        help="opcode integer such as 0x041c; repeat to select more",
-    )
-    parser.add_argument(
-        "--entity",
-        action="append",
-        type=_integer,
-        help="ref0/ref1 integer; repeat to select more",
-    )
+    parser.add_argument("--opcode", action="append", type=_integer, help="opcode integer; repeat to select more")
+    parser.add_argument("--entity", action="append", type=_integer, help="ref0/ref1 integer; repeat to select more")
     return parser
 
 
@@ -247,16 +266,11 @@ def main(argv: Sequence[str] | None = None) -> int:
                     reason="output path is an input .vgr section",
                 )
 
-        output_context = (
-            args.output.open("w", encoding="utf-8", newline="\n")
-            if args.output is not None
-            else nullcontext(sys.stdout)
-        )
+        output_context = (args.output.open("w", encoding="utf-8", newline="\n")
+                          if args.output is not None else nullcontext(sys.stdout))
         with output_context as stream:
-            _write_jsonl(
-                iter_timeline(args.path, opcodes=args.opcode, entity_ids=args.entity),
-                stream,
-            )
+            rows = iter_timeline(args.path, opcodes=args.opcode, entity_ids=args.entity)
+            _write_jsonl(rows, stream)
     except (OSError, TimelineInputError, VGRRecordError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 2
