@@ -14,6 +14,11 @@ from typing import List, Dict, Optional, Set
 from vg.core.vgr_records import VGRRecord, iter_records
 
 
+KILL_HEADER = bytes([0x18, 0x04, 0x1C])
+DEATH_HEADER = bytes([0x08, 0x04, 0x31])
+CREDIT_HEADER = bytes([0x10, 0x04, 0x1D])
+
+
 @dataclass
 class CreditRecord:
     """A framed 0x041D update retained by the legacy assist heuristic."""

@@ -32,6 +32,21 @@ def credit_payload(
 
 
 class KDARecordFramingTests(unittest.TestCase):
+    def test_preserves_header_exports_used_by_analysis_modules(self) -> None:
+        from vg.core.kda_detector import (
+            CREDIT_HEADER,
+            DEATH_HEADER,
+            KILL_HEADER,
+        )
+        from vg.analysis import diagnose_mismatches
+
+        self.assertEqual(KILL_HEADER, b"\x18\x04\x1c")
+        self.assertEqual(DEATH_HEADER, b"\x08\x04\x31")
+        self.assertEqual(CREDIT_HEADER, b"\x10\x04\x1d")
+        self.assertEqual(diagnose_mismatches.KILL_HEADER, KILL_HEADER)
+        self.assertEqual(diagnose_mismatches.DEATH_HEADER, DEATH_HEADER)
+        self.assertEqual(diagnose_mismatches.CREDIT_HEADER, CREDIT_HEADER)
+
     def test_uses_each_record_own_timestamp_without_raw_extraction_caps(self) -> None:
         killer = 0x123405DC
         victim = 0x89AB05DD
