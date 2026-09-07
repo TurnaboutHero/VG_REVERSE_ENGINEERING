@@ -1,5 +1,7 @@
 # Native event binary verification
 
+**Provenance correction (2026-09-07):** Per the user clarification, VG:NA is a community-modified redistribution, not the original official client. The inspected engine was extracted from a VG:NA iOS IPA; the separate original official Android APK was not inspected. Handler links and KDA mappings below are established for this specific VG:NA engine only. Their equivalence to the original official client and the replay-producing build remains unverified. Agreement with public decompiled material does not independently authenticate the original official implementation.
+
 **Current status:** The later named-getter trace in `NATIVE_STAT_LABELS_2026-09-06.md` confirms attribute41/0x29=myKills, attribute42/0x2a=myDeaths, and resource11/0x0b=myAssists. References below to those names being unresolved describe the earlier investigation stage. Resource9/10, actor-state names, and whole-build identity remain unconfirmed.
 
 
@@ -39,7 +41,7 @@ Evidence: `range-log.json`, `zip-tail.bin`, `zip-central-directory.bin`, `zip-en
 - LC_ENCRYPTION_INFO_64 cryptoff32768, cryptsize21217280, **cryptid0**. The code is statically readable without decryption.
 - Classic LC_DYLD_INFO_ONLY rebase stream at file25640960, length9056; parser recovered294727 rebase entries. **Every slot shown below, including0x0/0x8, is registered as pointer rebase type1.** These are ordinary preferred-image pointers to which the loader applies its slide, not unresolved imports or guessed pointer encodings.
 
-A bounded literal-string search did not find147219. Therefore this report does **not** assert that the complete modified VGNA engine has an independently verified original build147219 identifier, nor that all its bytes equal the original HackedGlory executable. Instead, the exact addresses, constructor layouts, serializer constants, handler branches and virtual queue code for the four target opcodes were independently verified in the current official-distribution engine. This closes the relevant structural links without claiming whole-build identity.
+A bounded literal-string search did not find147219. Therefore this report does **not** assert that the complete modified VGNA engine has an independently verified original build147219 identifier, nor that all its bytes equal the original HackedGlory executable. Instead, the exact addresses, constructor layouts, serializer constants, handler branches and virtual queue code for the four target opcodes were independently verified in the current community-distribution engine. This closes the relevant structural links without claiming whole-build identity.
 
 Evidence: `macho-load-commands.txt`, `macho-identity.json`, `build-string-probe.json`, `inspect_macho.py`.
 

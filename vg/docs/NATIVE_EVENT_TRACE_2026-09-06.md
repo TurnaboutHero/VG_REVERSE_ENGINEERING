@@ -1,11 +1,13 @@
 # Native opcode trace: 0431, 041c, 041d, 042b
 
+**Provenance correction (2026-09-07):** Per the user clarification, VG:NA is a community-modified redistribution, not the original official client. The inspected engine was extracted from a VG:NA iOS IPA; the separate original official Android APK was not inspected. Handler links and KDA mappings below are established for this specific VG:NA engine only. Their equivalence to the original official client and the replay-producing build remains unverified. Agreement with public decompiled material does not independently authenticate the original official implementation.
+
 **Current status:** The later named-getter trace in `NATIVE_STAT_LABELS_2026-09-06.md` confirms attribute41/0x29=myKills, attribute42/0x2a=myDeaths, and resource11/0x0b=myAssists. References below to those names being unresolved describe the earlier investigation stage. Resource9/10, actor-state names, and whole-build identity remain unconfirmed.
 
 
 Date: 2026-09-06. Bounded static trace, independent of Python event names. No remote checkout changes.
 
-**Final status:** This records the initial source-only trace. The missing vtable edge discussed below was subsequently resolved for all four opcodes in the inspected official engine; see `NATIVE_EVENT_BINARY_2026-09-06.md`. Enum names and whole-build identity remain unconfirmed.
+**Final status:** This records the initial source-only trace. The missing vtable edge discussed below was subsequently resolved for all four opcodes in the inspected community-modified VGNA engine; see `NATIVE_EVENT_BINARY_2026-09-06.md`. Enum names and whole-build identity remain unconfirmed.
 
 
 ## Result
@@ -115,4 +117,4 @@ A final bounded registry search inspected10045.c and1003e.c, plus the earlier100
 
 ## Binary follow-up
 
-The one official VGNA iOS candidate was checked against the bounded download condition; its1.73GB IPA exceeds250MB, so exact vtable slots remain unread. See [native-binary-followup.md](native-binary-followup.md) for current manifest/HEAD evidence and build/hash mismatch cautions.
+The one community-modified VGNA iOS candidate was checked against the bounded download condition; its1.73GB IPA exceeds250MB, so exact vtable slots remain unread. See [native-binary-followup.md](native-binary-followup.md) for current manifest/HEAD evidence and build/hash mismatch cautions.

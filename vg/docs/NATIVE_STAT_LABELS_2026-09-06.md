@@ -1,10 +1,12 @@
 # Bounded native label trace: resourceName, totalKills, myAssists
 
+**Provenance correction (2026-09-07):** Per the user clarification, VG:NA is a community-modified redistribution, not the original official client. The inspected engine was extracted from a VG:NA iOS IPA; the separate original official Android APK was not inspected. Handler links and KDA mappings below are established for this specific VG:NA engine only. Their equivalence to the original official client and the replay-producing build remains unverified. Agreement with public decompiled material does not independently authenticate the original official implementation.
+
 2026-09-06 KST. **Result: resource11 is the actor statistic exported as `myAssists`; attribute41/42 are exported as `myKills`/`myDeaths`. Resource9/10 English names remain unconfirmed.** `totalKills` is a match-actor aggregate of computed attribute41, not a direct resource9 read. `resourceName` is an icon/reward JSON field and supplies no resource-index registry here.
 
 ## Scope and evidence identity
 
-This used only the previously extracted official VGNA `GameKindredEngine` (SHA256 `c23b2e9eb201f47694c7e71ab39d2c8c96850beb4ddf489745def23927fcd891`, UUID B51EBB99-1532-32DC-9FB0-3C8CD08B505A) and two needed pinned decompile chunks. No additional IPA, executable installation, execution, subagents or implementation edits occurred.
+This used only the previously extracted community-modified VGNA `GameKindredEngine` (SHA256 `c23b2e9eb201f47694c7e71ab39d2c8c96850beb4ddf489745def23927fcd891`, UUID B51EBB99-1532-32DC-9FB0-3C8CD08B505A) and two needed pinned decompile chunks. No additional IPA, executable installation, execution, subagents or implementation edits occurred.
 
 The bounded scan found **five direct ADRP+ADD references** to the three target strings, below the fifteen-reference cap. It looked for exact64-bit pointers and same-register ADRP+ADD patterns within six instructions in the declared __text section. It is not a complete dataflow analyzer; absence of this pattern does not exclude every possible indirect reference. The five hits were then inspected in bounded disassembly and the corresponding source function. No exact64-bit pointer occurrences of the three string addresses were present in the binary.
 
