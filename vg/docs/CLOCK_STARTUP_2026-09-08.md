@@ -108,5 +108,8 @@ live resynchronization, activation order, and time scaling. The current stored
 files alone have not established which mechanism occurred in these two games.
 
 Runtime follow-up: [actual Android probe experiment](CLOCK_RUNTIME_2026-09-08.md)
-verified attachment and bounded teardown, but did not reach game-clock events
-because a compatible complete game installation was unavailable.
+verified attachment and bounded teardown. Installing the matching OBB resolved
+the missing-data prerequisite, but EGL context creation still prevented gameplay.
+The subsequent [Windows runtime experiment](WINDOWS_CLOCK_RUNTIME_2026-09-08.md)
+observed a normal practice replay and its native game clock. Neither original
+target replay was observed playing, so the anomaly remains unresolved.

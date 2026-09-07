@@ -1,0 +1,138 @@
+{
+  "client_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "runtime_base": "0xaa0000",
+  "runtime_guards": 3,
+  "scope": "Controlled practice and replay clock observations; no original anomaly cause established.",
+  "cases": {
+    "control-clocks": {
+      "raw_log_sha256": "674d391c0e87d3c918090cffc061f1776ccc665c8aec23d9d2a2660f078231dc",
+      "samples": 2984,
+      "nonnull_samples": 2105,
+      "first_game_clock": null,
+      "last_game_clock": 113.87566375732422,
+      "game_clock_range": [
+        0.0,
+        113.87566375732422
+      ],
+      "last_record_clock": 115.00418090820312,
+      "null_transitions": [],
+      "summary": {
+        "tag": "summary",
+        "samples": 2984,
+        "elapsed": 300.0044707000002,
+        "native_cause_confirmed": false
+      }
+    },
+    "control-replay-clocks": {
+      "raw_log_sha256": "cb049b5c7adbc21cc8c36c02a3bd5697df60fccfeb93aaecb398f6c622a5d551",
+      "samples": 1194,
+      "nonnull_samples": 1194,
+      "first_game_clock": 38.21827697753906,
+      "last_game_clock": 113.88111877441406,
+      "game_clock_range": [
+        38.21827697753906,
+        113.88111877441406
+      ],
+      "last_record_clock": 115.00418090820312,
+      "null_transitions": [],
+      "summary": {
+        "tag": "summary",
+        "samples": 1194,
+        "elapsed": 120.06254020000006,
+        "native_cause_confirmed": false
+      }
+    },
+    "target1-clocks": {
+      "raw_log_sha256": "2fd3acc116a3732bdd7b40919104578a9788ffd8b7fe4e4a3b9572ca38cb636d",
+      "samples": 1194,
+      "nonnull_samples": 99,
+      "first_game_clock": 113.05339050292969,
+      "last_game_clock": null,
+      "game_clock_range": [
+        113.05339050292969,
+        113.05339050292969
+      ],
+      "last_record_clock": 113.8451919555664,
+      "null_transitions": [
+        9.954624900000454
+      ],
+      "summary": {
+        "tag": "summary",
+        "samples": 1194,
+        "elapsed": 120.05223660000047,
+        "native_cause_confirmed": false
+      },
+      "injection": {
+        "source_frame_count": 150,
+        "target_frame_count": 150,
+        "source_min_frame": 0,
+        "source_max_frame": 149,
+        "target_min_frame": 0,
+        "target_max_frame": 149,
+        "missing_target_frames": [],
+        "extra_target_frames": [],
+        "size_mismatch_count": 0,
+        "size_mismatches": [],
+        "hash_mismatch_count": 0,
+        "hash_mismatches": [],
+        "verified_frame_count": 150,
+        "ok": true
+      }
+    },
+    "target2-clocks": {
+      "raw_log_sha256": "a111753673ad7c418e21cd2f8f5f195d11a80b9a2d52f1c473264b04cb256afa",
+      "samples": 1194,
+      "nonnull_samples": 0,
+      "first_game_clock": null,
+      "last_game_clock": null,
+      "game_clock_range": null,
+      "last_record_clock": 155.7379608154297,
+      "null_transitions": [],
+      "summary": {
+        "tag": "summary",
+        "samples": 1194,
+        "elapsed": 120.04721789999985,
+        "native_cause_confirmed": false
+      },
+      "injection": {
+        "source_frame_count": 117,
+        "target_frame_count": 117,
+        "source_min_frame": 0,
+        "source_max_frame": 116,
+        "target_min_frame": 0,
+        "target_max_frame": 116,
+        "missing_target_frames": [],
+        "extra_target_frames": [],
+        "size_mismatch_count": 0,
+        "size_mismatches": [],
+        "hash_mismatch_count": 0,
+        "hash_mismatches": [],
+        "verified_frame_count": 117,
+        "ok": true
+      }
+    }
+  },
+  "control_ui": {
+    "scene": "unmodified practice replay",
+    "final_time_display": "1:53",
+    "full_playback_observed": true
+  },
+  "target_ui": {
+    "target1": "main menu after attempted replay entry; no target HUD",
+    "target2": "main menu after attempted replay entry; game singleton already absent at observation start"
+  },
+  "excluded_frida_attempt": {
+    "hooks_installed": 0,
+    "failure": "snapshot entry guard rejected; partial relocation handling limitation",
+    "later_process_exit_cause": "unconfirmed",
+    "timing_evidence_usable": false
+  },
+  "cleanup": {
+    "scheduled_tasks_removed": true,
+    "game_running": false,
+    "remaining_temp_slot_restored_frames": 17,
+    "other_replaced_slots": "already absent following client cleanup",
+    "source_replays_modified": false,
+    "steam_left_open": true
+  }
+}

@@ -41,9 +41,14 @@ nonzero. `cleanup_confirmed` and `spawn_terminated` describe teardown separately
 
 A 2026-09-08 experiment installed the exact signed APK on a fresh ARM64 Android
 35 emulator. Seven hooks loaded, but no game-clock or recording events were
-observed: the asset-install activity exited and compatible OBB data was absent.
-The original two `unsupported_clock` inputs remain withheld. See the associated
-runtime evidence report for the exact validation results and limitations.
+observed. The initially missing OBB was installed afterward, but an EGL context
+creation failure still prevented gameplay. The original two `unsupported_clock`
+inputs remain withheld. See the [Android runtime report](../../docs/CLOCK_RUNTIME_2026-09-08.md).
+
+For the separately identified Windows build, the [read-only Windows observer](WINDOWS_README.md)
+captured game-clock progression during a normal practice replay. The
+[Windows experiment](../../docs/WINDOWS_CLOCK_RUNTIME_2026-09-08.md) records that
+positive control and the unsuccessful target replay-entry attempts.
 
 Frida APIs: https://frida.re/docs/javascript-api/ and
 https://frida.re/docs/android/ .
