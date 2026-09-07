@@ -245,11 +245,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.output is not None:
             output_path = args.output.resolve()
             output_match = SECTION_NAME.fullmatch(args.output.name)
+            target_match = SECTION_NAME.fullmatch(output_path.name)
             input_prefix = args.path.name.rsplit(".", 2)[0]
             if (
-                output_match is not None
-                and output_match.group("prefix") == input_prefix
-                and output_path.parent == args.path.resolve().parent
+                (output_match is not None
+                 and output_match.group("prefix") == input_prefix
+                 and args.output.parent.resolve() == args.path.parent.resolve())
+                or (target_match is not None
+                    and target_match.group("prefix") == input_prefix
+                    and output_path.parent == args.path.parent.resolve())
             ):
                 raise TimelineInputError(
                     path=args.output,

@@ -244,19 +244,52 @@ class EventTimelineTests(unittest.TestCase):
             self.assertEqual(path.read_bytes(), original)
             self.assertEqual(output_alias.read_bytes(), original)
 
-    def test_cli_rejects_new_same_prefix_section_without_creating_it(self):
+    def test_cli_rejects_discoverable_outputs_through_symlink_paths(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            path = root / "match.1.vgr"
-            output = root / "match.2.vgr"
             original = packet(1.0, 0x0431, struct.pack(">I", 10) + b"zz")
-            path.write_bytes(original)
 
-            result = main([str(path), "-o", str(output)])
+            replay = root / "match.1.vgr"
+            direct_output = root / "match.2.vgr"
+            replay.write_bytes(original)
 
-            self.assertNotEqual(result, 0)
-            self.assertEqual(path.read_bytes(), original)
-            self.assertFalse(output.exists())
+            dangling_target = root / "match.3.vgr"
+            dangling_output = root / "timeline.jsonl"
+            dangling_output.symlink_to(dangling_target.name)
+
+            file_target_dir = root / "file-target"
+            file_target_dir.mkdir()
+            file_source = file_target_dir / "source.1.vgr"
+            file_source.write_bytes(original)
+            file_input = root / "linked.1.vgr"
+            file_input.symlink_to(file_source)
+            file_output = root / "linked.2.vgr"
+
+            directory_source = root / "directory-source"
+            directory_source.mkdir()
+            directory_replay = directory_source / "match.1.vgr"
+            directory_replay.write_bytes(original)
+            directory_input = root / "directory-link"
+            directory_input.symlink_to(directory_source, target_is_directory=True)
+            directory_output = directory_input / "match.2.vgr"
+
+            cases = (
+                (replay, direct_output, direct_output, replay),
+                (replay, dangling_output, dangling_target, replay),
+                (file_input, file_output, file_output, file_source),
+                (
+                    directory_input / "match.1.vgr",
+                    directory_output,
+                    directory_output,
+                    directory_replay,
+                ),
+            )
+            for input_path, output_path, forbidden_target, source in cases:
+                with self.subTest(input=input_path, output=output_path):
+                    result = main([str(input_path), "-o", str(output_path)])
+                    self.assertNotEqual(result, 0)
+                    self.assertFalse(forbidden_target.exists())
+                    self.assertEqual(source.read_bytes(), original)
 
 
 if __name__ == "__main__":

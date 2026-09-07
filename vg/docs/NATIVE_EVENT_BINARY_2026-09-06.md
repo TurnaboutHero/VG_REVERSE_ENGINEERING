@@ -71,8 +71,3 @@ The041c actual table value is1003db808, not1003db80c. Instruction at1003db808 is
 **Final implication:** the earlier missing-vtable qualification in `native-trace.md` is resolved for these four opcode handlers in this statically inspected engine. The English enum meanings of resource9/10/11, attribute0x29/0x2a, actor states3/4, and042b bits remain unproven. The native SET/ADD behavior and0431 state transition now have a closed constructor→vtable→handler link. The separate question of the VGR outer payload's extra bytes/version framing is not resolved by these pointer checks.
 
 A bounded `__cstring` inventory is saved as `cstring-label-candidates.json` for a subsequent registry lookup. It finds `resourceName` at0x1013dd55c, `totalKills` at0x1013dabd6, `myAssists` at0x1013db718, `hud_stats_assists` at0x1013d0c43, and `HeroKilled` / multikill notification strings at0x1013ce529 onward. The scanned section had no killStreak/deathStreak literal match. These string addresses are verified, but **no string-to-resource/attribute-index mapping was traced**, so none establishes the English enum labels requested above.
-# Native event binary verification
-
-**Cu# Native event binary verification
-
-**Cu
