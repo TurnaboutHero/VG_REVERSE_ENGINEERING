@@ -1,5 +1,7 @@
 # 이벤트 의미 재조사: 숫자의 종류와 계산 방법부터 바로잡기
 
+**후속 불일치 원인 확인 (2026-09-07):** 시작 통계 스냅샷, 파일 시계와 경기 시계, 중간 점수판의 비교 시점, M9의 혼합 녹화 구간을 대조했습니다. 일관된10경기의 기존 비교 대상은 시작값과 시점을 반영하면 일치하며 M9은 검증 불가입니다. [원인 보고서](MISMATCH_CAUSES_2026-09-07.md)
+
 **Android APK follow-up (2026-09-07):** The provenance correction below describes the earlier evidence state. A separately retrieved Android4.13.4(147219) archive APK has now passed hash/signature checks and its four opcode receive/apply paths and KDA field exports have been traced. The selected fields and core operations correspond to VG:NA; whole-client equivalence, all floating-point bit results, and replay-producer identity remain unverified. See [APK comparison](OFFICIAL_APK_COMPARISON_2026-09-07.md) and [binary identities](OFFICIAL_APK_COMPARISON_2026-09-07.json).
 
 **출처 정정 (2026-09-07):** 사용자 설명에 따라 VG:NA는 커뮤니티가 원본 클라이언트를 변조해 재배포한 것으로 구분한다. 이번에 검사한 것은 VG:NA의 iOS IPA에서 추출한 엔진이며, 별도로 존재하는 원본 공식 Android APK는 검사하지 않았다. 아래 함수 연결과 KDA 매핑은 해당 VG:NA 엔진에서 확인한 결과다. 원본 공식 클라이언트 및 보유 리플레이 생성 빌드에도 동일한지는 별도 대조가 필요하다. 공개 디컴파일 자료와 이 엔진의 일치만으로 원본 공식 구현의 독립 검증을 완료했다고 볼 수 없다.
