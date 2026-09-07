@@ -32,6 +32,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 from vg.core.unified_decoder import UnifiedDecoder, DecodedMatch
 
 
+def _complete_sum(values):
+    """A total is unavailable if any of its components is unavailable."""
+    values = list(values)
+    return None if any(value is None for value in values) else sum(values)
+
+
 def export_match_json(match: DecodedMatch, output_path: Path) -> None:
     """Export a single decoded match to JSON."""
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -42,8 +48,9 @@ def match_to_csv_rows(match: DecodedMatch, match_idx: int = 0) -> List[Dict]:
     """Convert a decoded match to flat CSV rows (one row per player)."""
     rows = []
     for player in match.all_players:
-        assists = player.assists if player.assists is not None else 0
-        kda_ratio = round((player.kills + assists) / max(player.deaths, 1), 2)
+        kda_ratio = None
+        if all(value is not None for value in (player.kills, player.deaths, player.assists)):
+            kda_ratio = round((player.kills + player.assists) / max(player.deaths, 1), 2)
         is_winner = 1 if match.winner and player.team == match.winner else 0
         row = {
             'match_idx': match_idx,
@@ -70,20 +77,20 @@ def match_to_csv_rows(match: DecodedMatch, match_idx: int = 0) -> List[Dict]:
         }
         if player.truth_kills is not None:
             row['truth_kills'] = player.truth_kills
-            row['kill_match'] = 1 if player.kills == player.truth_kills else 0
+            row['kill_match'] = None if player.kills is None else int(player.kills == player.truth_kills)
         if player.truth_deaths is not None:
             row['truth_deaths'] = player.truth_deaths
-            row['death_match'] = 1 if player.deaths == player.truth_deaths else 0
+            row['death_match'] = None if player.deaths is None else int(player.deaths == player.truth_deaths)
         rows.append(row)
     return rows
 
 
 def match_to_summary_row(match: DecodedMatch, match_idx: int = 0) -> Dict:
     """Convert a decoded match to a single summary row."""
-    left_kills = sum(p.kills for p in match.left_team)
-    right_kills = sum(p.kills for p in match.right_team)
-    left_deaths = sum(p.deaths for p in match.left_team)
-    right_deaths = sum(p.deaths for p in match.right_team)
+    left_kills = _complete_sum(p.kills for p in match.left_team)
+    right_kills = _complete_sum(p.kills for p in match.right_team)
+    left_deaths = _complete_sum(p.deaths for p in match.left_team)
+    right_deaths = _complete_sum(p.deaths for p in match.right_team)
     left_gold = sum(p.gold_earned for p in match.left_team)
     right_gold = sum(p.gold_earned for p in match.right_team)
 
@@ -216,8 +223,8 @@ def decode_batch(
     # Summary
     if matches:
         total_players = sum(len(m.all_players) for m in matches)
-        total_kills = sum(p.kills for m in matches for p in m.all_players)
-        total_deaths = sum(p.deaths for m in matches for p in m.all_players)
+        total_kills = _complete_sum(p.kills for m in matches for p in m.all_players)
+        total_deaths = _complete_sum(p.deaths for m in matches for p in m.all_players)
         print(f"\nSummary: {len(matches)} matches, {total_players} players")
         print(f"  Total K/D: {total_kills}/{total_deaths}")
         winners = [m.winner for m in matches if m.winner]

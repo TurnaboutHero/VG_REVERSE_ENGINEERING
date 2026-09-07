@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Iterable, List, Optional, Sequence, Tuple
 
 from vg.core.kda_detector import KDADetector
+from vg.core.native_stats import inspect_native_clock
 from vg.core.unified_decoder import _DEATH_HEADER, _ITEM_ACQUIRE_HEADER, _le_to_be
 from vg.core.vgr_parser import VGRParser
 
@@ -121,6 +122,7 @@ def extract_replay_signals(replay_file: str) -> ReplaySignalSummary:
         if crystal_events:
             crystal_ts = max(crystal_events)
 
+    clock = inspect_native_clock(frames)
     return ReplaySignalSummary(
         replay_name=parsed["replay_name"],
         replay_file=parsed["replay_file"],
@@ -131,11 +133,23 @@ def extract_replay_signals(replay_file: str) -> ReplaySignalSummary:
         max_player_death_ts=max_player_death_ts,
         max_death_header_ts=max_death_header_ts,
         max_item_ts=max_item_ts,
+        native_clock_valid=clock.valid,
+        native_clock_status=clock.status,
+        native_clock_reason=clock.reason,
+        first_game_time=clock.first_game_time,
+        last_game_time=clock.last_game_time,
     )
 
 
 def assess_completeness(signals: ReplaySignalSummary) -> CompletenessAssessment:
     """Apply a conservative completeness heuristic."""
+    if signals.native_clock_valid is False:
+        return CompletenessAssessment(
+            status=CompletenessStatus.COMPLETENESS_UNKNOWN,
+            reason=f"Native clock integrity failed ({signals.native_clock_status}): {signals.native_clock_reason}",
+            signals=signals,
+        )
+
     crystal_ts = signals.crystal_ts
     max_death_ts = signals.max_player_death_ts
     max_death_header_ts = signals.max_death_header_ts

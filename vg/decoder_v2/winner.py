@@ -3,16 +3,17 @@
 from __future__ import annotations
 
 from .kda import decode_kda_from_replay
-from .models import WinnerExtractionResult
+from .models import CompletenessStatus, WinnerExtractionResult
 
 
 def decode_winner_from_replay(replay_file: str) -> WinnerExtractionResult:
     """Decode winner conservatively from gated K/D/A output."""
     kda_result = decode_kda_from_replay(replay_file)
-    if not kda_result.accepted:
+    if (not kda_result.accepted or kda_result.scope != "final"
+            or kda_result.assessment.status != CompletenessStatus.COMPLETE_CONFIRMED):
         return WinnerExtractionResult(
             accepted=False,
-            reason="Replay completeness is not confirmed; winner export is withheld.",
+            reason=f"Winner export is withheld: {kda_result.reason}",
             assessment=kda_result.assessment,
             duration_estimate=kda_result.duration_estimate,
             winner=None,

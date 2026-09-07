@@ -21,7 +21,7 @@ This project reverse-engineers the VGR replay binary format to extract match dat
 | Item purchase event | Action code `0xBC` (Entity 0) | Confirmed |
 | Skill level-up event | Action code `0x3E` (Entity 0/128) | Confirmed |
 | Win/Loss | Turret ID clustering + Crystal destruction pattern | 99% (1 replay validated) |
-| K/D/A | Event stream analysis | Research stage |
+| K/D/A | Native snapshots + SET/ADD state at a requested game clock | 294/294 compared values across 10 coherent capture fixtures; final-match scope remains gated |
 
 ### Hero Coverage
 
@@ -87,6 +87,22 @@ python vg/analysis/extract_all_item_ids.py /path/to/replay/
 # Batch analysis summary
 python vg/tools/replay_batch_parser.py /path/to/replays/ -o batch_summary.json
 ```
+
+### Native scoreboard capture
+
+```bash
+# Query observed K/D/A at game-clock 25:51 (1551 seconds)
+python -m vg.decoder_v2.decode_match /path/to/replay.0.vgr --at-game-time 1551 -o capture.json
+```
+
+Capture output uses `decoder_v2.capture.v1` with `scope`, `at_game_time`, and
+`as_of_game_time`. Captured K/D/A is excluded from the final-match index;
+final winner, gold, duration, and unaccepted minion counts are withheld.
+Without `--at-game-time`, the existing final-match completeness gate applies.
+Missing native baselines, unsupported state, malformed records, and clock
+integrity failures produce unavailable statistics (`null`), never guessed zeros.
+
+See [native integration evidence and limits](vg/docs/NATIVE_STATS_INTEGRATION_2026-09-07.md).
 
 ## VGR Binary Format
 
@@ -178,7 +194,7 @@ Item IDs range from 101 (Weapon Blade) to 423 (Stormcrown). See `vgr_mapping.py`
 - Win/Loss via turret team clustering (ID gap 834-2519) + Crystal destruction pattern (6+ turrets in 5-frame window)
 
 ### In Progress
-- **K/D/A**: No single action code maps to kill/death events. The input replay system means K/D/A is computed in real-time by the game engine, not stored directly. Research ongoing with entity lifecycle tracking and multi-replay cross-validation.
+- **K/D/A**: Native snapshots and SET/ADD updates now restore observed counters. Ten coherent capture fixtures matched all 294 compared K/D/A values; this does not establish final-score accuracy for every replay. Mixed or unsupported clock profiles remain withheld. See the native integration evidence above.
 - **Inferred hero validation** (20 heroes at ~80% confidence via suffix pattern + release chronology)
 
 ## Disclaimer
