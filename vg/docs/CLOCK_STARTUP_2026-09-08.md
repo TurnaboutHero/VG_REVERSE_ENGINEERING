@@ -106,3 +106,7 @@ build that observes incoming `0451`, `046f` creation, both clock variables,
 raw/capped delta, and scale/pause state around startup. This would distinguish
 live resynchronization, activation order, and time scaling. The current stored
 files alone have not established which mechanism occurred in these two games.
+
+Runtime follow-up: [actual Android probe experiment](CLOCK_RUNTIME_2026-09-08.md)
+verified attachment and bounded teardown, but did not reach game-clock events
+because a compatible complete game installation was unavailable.

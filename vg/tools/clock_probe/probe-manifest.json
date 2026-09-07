@@ -1,0 +1,36 @@
+{
+  "sha256": "cd1b8831f82c469274613fc30f1f1f6e78c788102cdad7db5db2c04b96580a47",
+  "arch": "arm64",
+  "module": "libGameKindred.so",
+  "hooks": {
+    "timer": {
+      "va": 25723436,
+      "hex": "ff4301d1f51300f9f44f03a9fd7b04a9"
+    },
+    "game_get": {
+      "va": 9159272,
+      "hex": "00bc42bdc0035fd6c0035fd6c0035fd6"
+    },
+    "clock_0451": {
+      "va": 9164224,
+      "hex": "00bc02bdc0035fd6005841f9c0035fd6"
+    },
+    "clock_046f": {
+      "va": 9163824,
+      "hex": "ff0302d1e82300fdf65705a9f44f06a9"
+    },
+    "writer": {
+      "va": 8533864,
+      "hex": "f44fbea9fd7b01a9fd430091f40300aa"
+    },
+    "record_start": {
+      "va": 8535460,
+      "hex": "ffc301d1f52300f9f44f05a9fd7b06a9"
+    },
+    "record_tick": {
+      "va": 8536052,
+      "hex": "e80f1efcf30700f9fd7b01a9fd430091"
+    }
+  },
+  "record_va": 45596432
+}
