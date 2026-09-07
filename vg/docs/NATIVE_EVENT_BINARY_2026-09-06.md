@@ -1,5 +1,7 @@
 # Native event binary verification
 
+**Android APK follow-up (2026-09-07):** The provenance correction below describes the earlier evidence state. A separately retrieved Android4.13.4(147219) archive APK has now passed hash/signature checks and its four opcode receive/apply paths and KDA field exports have been traced. The selected fields and core operations correspond to VG:NA; whole-client equivalence, all floating-point bit results, and replay-producer identity remain unverified. See [APK comparison](OFFICIAL_APK_COMPARISON_2026-09-07.md) and [binary identities](OFFICIAL_APK_COMPARISON_2026-09-07.json).
+
 **Provenance correction (2026-09-07):** Per the user clarification, VG:NA is a community-modified redistribution, not the original official client. The inspected engine was extracted from a VG:NA iOS IPA; the separate original official Android APK was not inspected. Handler links and KDA mappings below are established for this specific VG:NA engine only. Their equivalence to the original official client and the replay-producing build remains unverified. Agreement with public decompiled material does not independently authenticate the original official implementation.
 
 **Current status:** The later named-getter trace in `NATIVE_STAT_LABELS_2026-09-06.md` confirms attribute41/0x29=myKills, attribute42/0x2a=myDeaths, and resource11/0x0b=myAssists. References below to those names being unresolved describe the earlier investigation stage. Resource9/10, actor-state names, and whole-build identity remain unconfirmed.
