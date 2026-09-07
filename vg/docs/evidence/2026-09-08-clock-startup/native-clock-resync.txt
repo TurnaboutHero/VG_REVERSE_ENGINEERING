@@ -1,0 +1,15 @@
+
+FUNCTION 0x82b300..0x82b334 containing 0x82b300
+0082b300  f30f1ef8  str      x19, [sp, #-0x20]!
+0082b304  fd7b01a9  stp      x29, x30, [sp, #0x10]
+0082b308  fd430091  add      x29, sp, #0x10
+0082b30c  f30300aa  mov      x19, x0
+0082b310  23430294  bl       #0x8bbf9c
+0082b314  80000036  tbz      w0, #0, #0x82b324
+0082b318  26430294  bl       #0x8bbfb0
+0082b31c  600240bd  ldr      s0, [x19]
+0082b320  a8480294  bl       #0x8bd5c0
+0082b324  fd7b41a9  ldp      x29, x30, [sp, #0x10]
+0082b328  e0030032  mov      w0, #1
+0082b32c  f30742f8  ldr      x19, [sp], #0x20
+0082b330  c0035fd6  ret

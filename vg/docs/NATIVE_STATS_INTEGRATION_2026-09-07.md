@@ -89,3 +89,7 @@ v2 final-mode partial gold values retain their explicit non-indexable status.
 Local detailed QA artifacts are kept under the ignored
 `.superpowers/sdd/2026-09-07-native-stats/` directory. Raw replays and player data
 are not included in this change.
+
+Follow-up: [startup clock investigation](CLOCK_STARTUP_2026-09-08.md) identifies
+independent clock stores and an intentionally omitted clock-reset message.
+The two unsupported inputs remain withheld; no startup origin was repaired.

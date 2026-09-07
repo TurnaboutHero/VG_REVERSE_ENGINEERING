@@ -1,0 +1,116 @@
+{
+  "binary_sha256": "cd1b8831f82c469274613fc30f1f1f6e78c788102cdad7db5db2c04b96580a47",
+  "scope": "Exact static byte ranges only, not execution or full-build equivalence",
+  "evidence": [
+    {
+      "name": "timer cap and scale",
+      "address": "0x18882ac",
+      "hex": "0010601e2058601e4008601e6086016d"
+    },
+    {
+      "name": "capped delta getter",
+      "address": "0x18882f8",
+      "hex": "000c40fdc0035fd6"
+    },
+    {
+      "name": "record consumes capped delta",
+      "address": "0x820490",
+      "hex": "0041621ed80e0094"
+    },
+    {
+      "name": "game receives same capped delta",
+      "address": "0x820500",
+      "hex": "201da94e011da84e66a14194"
+    },
+    {
+      "name": "game delta global write",
+      "address": "0x1888af4",
+      "hex": "69c40090284909bd69c40090"
+    },
+    {
+      "name": "game delta getter",
+      "address": "0x1888c78",
+      "hex": "68c40090004949bdc0035fd6"
+    },
+    {
+      "name": "game increment and pause",
+      "address": "0x8bc644",
+      "hex": "68164b39480100378b313f9408c0221e75980c9461be42bd0008681e21c0221e0028611e0040621e60be02bd"
+    },
+    {
+      "name": "snapshot clock getter",
+      "address": "0x8bc268",
+      "hex": "00bc42bdc0035fd6"
+    },
+    {
+      "name": "snapshot serializes actual gameclock",
+      "address": "0x823528",
+      "hex": "a26202944f6302940800261e0809c05ae90300328ae08d52e1230091a2088052e00313aae84b00b9e9330139ea5b02796ac0fd97e0b30491e108805281000094"
+    },
+    {
+      "name": "0451 dispatch",
+      "address": "0x82d490",
+      "hex": "680240b9e04300910809c05ae81300b998f7ff9727010014"
+    },
+    {
+      "name": "0451 receiver",
+      "address": "0x82b310",
+      "hex": "234302948000003626430294600240bda8480294"
+    },
+    {
+      "name": "0451 setter",
+      "address": "0x8bd5c0",
+      "hex": "00bc02bdc0035fd6"
+    },
+    {
+      "name": "046f receive float",
+      "address": "0x82b500",
+      "hex": "68124139604240bde1030091e00314aa1f010071e2079f1ac6470294"
+    },
+    {
+      "name": "046f setter",
+      "address": "0x8bd488",
+      "hex": "a8be02bd"
+    },
+    {
+      "name": "writer excludes0451",
+      "address": "0x8237dc",
+      "hex": "084511511fb1007108020054aae180d2e90300320a00a1f22921c89a8a62c3f23f010aea80000054fd7b41a9f44fc2a8c0035fd6"
+    },
+    {
+      "name": "writer timestamp source",
+      "address": "0x823824",
+      "hex": "c81a019000114fbdfd7b41a9c018019000a03691e10314aae203132af44fc2a8741f0f14"
+    },
+    {
+      "name": "record zero origin",
+      "address": "0x823ea8",
+      "hex": "c81a0190c91a0190ca1a0190eb0300321f110fb93f090fb94b513c39"
+    },
+    {
+      "name": "record delta activation and accumulation",
+      "address": "0x824018",
+      "hex": "a81a01f008317c391f05007121030054b31a01f0690a4fb9a81a01f000114fbd0290241e290500112101221e0028281e2108221e0020211e00110fbdad010054"
+    },
+    {
+      "name": "record timestamp packed",
+      "address": "0xbeb690",
+      "hex": "39c928b8c80280b92801088b180500b9c80280b9"
+    }
+  ],
+  "artifact_sha256": {
+    "native-clock-functions.txt": "a40dc8086371fdbf1092c3d9b8728e460c87cfe90d8de2df340b900a2588a35a",
+    "native-clock-serializers.txt": "361092dfeb9d96434f8f9ef4a0c6ef17d9c82c11aad1240eadfe421838b0e315",
+    "native-record-writer.txt": "e2fac59956522c876db72ef8e433b9856016ea17341c4d3ea7e12c294d678ef7",
+    "native-record-clock-life.txt": "e902c810dc660d71242e74c2ea87338c81ba774b8c609963bcb8d9d5b82ae277",
+    "native-clock-resync.txt": "13adb2d715ffc214bda2973694770a3e077e7a53e98d59c3be8fbb20ed8bd07e",
+    "native-resync-dispatch.txt": "34bd9b95b8c5b3868b29d2237d4fbc1e0d9f930bd095e20090f11560fdd2f0ec",
+    "native-delta-capping.txt": "c140ec1621426a25d9ef8b1df7792190ce9e188ee655858d970b58c57236d239",
+    "native-record-tick-caller.txt": "567fd325125582c4d66359abd48a589588adb72d467396a820799fd1692d9134",
+    "native-game-delta-write.txt": "f99e846c0587fe52dec0ae3469c31d6ec67e10fe21ad3080ac7a2e769a463177",
+    "native-game-delta-callers.txt": "3a1f93fbc934be2fcb18035455d7ef053bb9a14cc2baef52ef55fd4d01806ab0",
+    "native-macho-clock-crosscheck.txt": "45e6a77780976fbde9aaebc7bc4bb402c9feeed24ec2ab6b4afe2efc694938c2",
+    "native-verify.py": "e437407142bc804f8b68c8affe65a4eb9b6cbdd36b9a9ce4e53ee56428b02cd3"
+  },
+  "artifact_hash_encoding": "SHA256 of repository UTF8/LF file bytes; binary ranges verified independently"
+}

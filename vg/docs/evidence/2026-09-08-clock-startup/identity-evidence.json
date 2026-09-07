@@ -1,0 +1,274 @@
+[
+  {
+    "needle": "172f190f-db00-4091-b138-585854372063",
+    "frames": [
+      {
+        "file": "23.11.14\\cache (2)\\cache\\a8d06624-352e-4897-b920-2cdbafdb48ab-172f190f-db00-4091-b138-585854372063.0.vgr",
+        "actors": {
+          "1509": {
+            "hero_signature": "0000019347d5a809",
+            "team": 1
+          },
+          "1508": {
+            "hero_signature": "0000039345f0d5b4",
+            "team": 1
+          },
+          "1507": {
+            "hero_signature": "0000011d8c04876e",
+            "team": 2
+          },
+          "1506": {
+            "hero_signature": "000000f2edf9f020",
+            "team": 2
+          },
+          "1505": {
+            "hero_signature": "000001b7838ef8f1",
+            "team": 2
+          },
+          "1504": {
+            "hero_signature": "0000039183443392",
+            "team": 1
+          },
+          "1503": {
+            "hero_signature": "000001055b65dad4",
+            "team": 2
+          },
+          "1502": {
+            "hero_signature": "000001ad47422689",
+            "team": 1
+          },
+          "1501": {
+            "hero_signature": "00000394958318ea",
+            "team": 2
+          },
+          "1500": {
+            "hero_signature": "000001010f1a8a52",
+            "team": 1
+          }
+        },
+        "anchors": [
+          {
+            "record_time": 0.0,
+            "game_float": 81.57266235351562
+          }
+        ]
+      },
+      {
+        "file": "23.11.14\\cache (2)\\cache\\a8d06624-352e-4897-b920-2cdbafdb48ab-172f190f-db00-4091-b138-585854372063.1.vgr",
+        "actors": {
+          "1500": {
+            "hero_signature": "000001010f1a8a52",
+            "team": 1
+          },
+          "1501": {
+            "hero_signature": "00000394958318ea",
+            "team": 2
+          },
+          "1502": {
+            "hero_signature": "000001ad47422689",
+            "team": 1
+          },
+          "1503": {
+            "hero_signature": "000001055b65dad4",
+            "team": 2
+          },
+          "1504": {
+            "hero_signature": "0000039183443392",
+            "team": 1
+          },
+          "1505": {
+            "hero_signature": "000001b7838ef8f1",
+            "team": 2
+          },
+          "1506": {
+            "hero_signature": "000000f2edf9f020",
+            "team": 2
+          },
+          "1507": {
+            "hero_signature": "0000011d8c04876e",
+            "team": 2
+          },
+          "1508": {
+            "hero_signature": "0000039345f0d5b4",
+            "team": 1
+          },
+          "1509": {
+            "hero_signature": "0000019347d5a809",
+            "team": 1
+          }
+        },
+        "anchors": [
+          {
+            "record_time": 10.015262603759766,
+            "game_float": 98.30280303955078
+          }
+        ]
+      },
+      {
+        "file": "23.11.14\\cache (2)\\cache\\a8d06624-352e-4897-b920-2cdbafdb48ab-172f190f-db00-4091-b138-585854372063.2.vgr",
+        "actors": {
+          "1500": {
+            "hero_signature": "000001010f1a8a52",
+            "team": 1
+          },
+          "1501": {
+            "hero_signature": "00000394958318ea",
+            "team": 2
+          },
+          "1502": {
+            "hero_signature": "000001ad47422689",
+            "team": 1
+          },
+          "1503": {
+            "hero_signature": "000001055b65dad4",
+            "team": 2
+          },
+          "1504": {
+            "hero_signature": "0000039183443392",
+            "team": 1
+          },
+          "1505": {
+            "hero_signature": "000001b7838ef8f1",
+            "team": 2
+          },
+          "1506": {
+            "hero_signature": "000000f2edf9f020",
+            "team": 2
+          },
+          "1507": {
+            "hero_signature": "0000011d8c04876e",
+            "team": 2
+          },
+          "1508": {
+            "hero_signature": "0000039345f0d5b4",
+            "team": 1
+          },
+          "1509": {
+            "hero_signature": "0000019347d5a809",
+            "team": 1
+          }
+        },
+        "anchors": [
+          {
+            "record_time": 20.00617790222168,
+            "game_float": 108.29386138916016
+          }
+        ]
+      }
+    ],
+    "actor_maps_identical_0_1": true,
+    "actor_maps_identical_1_2": true
+  },
+  {
+    "needle": "d9cbb04f-85e7-4471-baff-88cfae0c03ae",
+    "frames": [
+      {
+        "file": "\ub9ac\ud50c\ub808\uc774\ud329\\3\ub3003\\\ud788\\8fc12404-6151-11eb-afe2-061b3d1d141d-d9cbb04f-85e7-4471-baff-88cfae0c03ae.0.vgr",
+        "actors": {
+          "1505": {
+            "hero_signature": "00000117a2ce7ba4",
+            "team": 2
+          },
+          "1504": {
+            "hero_signature": "0000018bee62135c",
+            "team": 1
+          },
+          "1503": {
+            "hero_signature": "0000019347d5a809",
+            "team": 2
+          },
+          "1502": {
+            "hero_signature": "000001992ca2e7ea",
+            "team": 1
+          },
+          "1501": {
+            "hero_signature": "000000f52d65a10d",
+            "team": 1
+          },
+          "1500": {
+            "hero_signature": "0000039345f0d5b4",
+            "team": 2
+          }
+        },
+        "anchors": [
+          {
+            "record_time": 0.0,
+            "game_float": 0.0
+          }
+        ]
+      },
+      {
+        "file": "\ub9ac\ud50c\ub808\uc774\ud329\\3\ub3003\\\ud788\\8fc12404-6151-11eb-afe2-061b3d1d141d-d9cbb04f-85e7-4471-baff-88cfae0c03ae.1.vgr",
+        "actors": {
+          "1500": {
+            "hero_signature": "0000039345f0d5b4",
+            "team": 2
+          },
+          "1501": {
+            "hero_signature": "000000f52d65a10d",
+            "team": 1
+          },
+          "1502": {
+            "hero_signature": "000001992ca2e7ea",
+            "team": 1
+          },
+          "1503": {
+            "hero_signature": "0000019347d5a809",
+            "team": 2
+          },
+          "1504": {
+            "hero_signature": "0000018bee62135c",
+            "team": 1
+          },
+          "1505": {
+            "hero_signature": "00000117a2ce7ba4",
+            "team": 2
+          }
+        },
+        "anchors": [
+          {
+            "record_time": 10.006121635437012,
+            "game_float": 21.140392303466797
+          }
+        ]
+      },
+      {
+        "file": "\ub9ac\ud50c\ub808\uc774\ud329\\3\ub3003\\\ud788\\8fc12404-6151-11eb-afe2-061b3d1d141d-d9cbb04f-85e7-4471-baff-88cfae0c03ae.2.vgr",
+        "actors": {
+          "1500": {
+            "hero_signature": "0000039345f0d5b4",
+            "team": 2
+          },
+          "1501": {
+            "hero_signature": "000000f52d65a10d",
+            "team": 1
+          },
+          "1502": {
+            "hero_signature": "000001992ca2e7ea",
+            "team": 1
+          },
+          "1503": {
+            "hero_signature": "0000019347d5a809",
+            "team": 2
+          },
+          "1504": {
+            "hero_signature": "0000018bee62135c",
+            "team": 1
+          },
+          "1505": {
+            "hero_signature": "00000117a2ce7ba4",
+            "team": 2
+          }
+        },
+        "anchors": [
+          {
+            "record_time": 20.00214385986328,
+            "game_float": 32.980506896972656
+          }
+        ]
+      }
+    ],
+    "actor_maps_identical_0_1": true,
+    "actor_maps_identical_1_2": true
+  }
+]

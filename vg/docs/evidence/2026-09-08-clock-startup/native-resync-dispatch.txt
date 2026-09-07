@@ -1,0 +1,34 @@
+0x451 0x82d490
+0082d490  680240b9  ldr      w8, [x19]
+0082d494  e0430091  add      x0, sp, #0x10
+0082d498  0809c05a  rev      w8, w8
+0082d49c  e81300b9  str      w8, [sp, #0x10]
+0082d4a0  98f7ff97  bl       #0x82b300
+0082d4a4  27010014  b        #0x82d940
+0082d4a8  e0430091  add      x0, sp, #0x10
+0082d4ac  02438152  mov      w2, #0xa18
+0082d4b0  e10313aa  mov      x1, x19
+0082d4b4  f4430091  add      x20, sp, #0x10
+0082d4b8  9298fd97  bl       #0x793700
+0082d4bc  e91340b9  ldr      w9, [sp, #0x10]
+0082d4c0  e8031faa  mov      x8, xzr
+0082d4c4  2909c05a  rev      w9, w9
+0082d4c8  e91300b9  str      w9, [sp, #0x10]
+0082d4cc  e91740b9  ldr      w9, [sp, #0x14]
+0x45a 0x82d4a8
+0082d4a8  e0430091  add      x0, sp, #0x10
+0082d4ac  02438152  mov      w2, #0xa18
+0082d4b0  e10313aa  mov      x1, x19
+0082d4b4  f4430091  add      x20, sp, #0x10
+0082d4b8  9298fd97  bl       #0x793700
+0082d4bc  e91340b9  ldr      w9, [sp, #0x10]
+0082d4c0  e8031faa  mov      x8, xzr
+0082d4c4  2909c05a  rev      w9, w9
+0082d4c8  e91300b9  str      w9, [sp, #0x10]
+0082d4cc  e91740b9  ldr      w9, [sp, #0x14]
+0082d4d0  2909c05a  rev      w9, w9
+0082d4d4  e91700b9  str      w9, [sp, #0x14]
+0082d4d8  8902088b  add      x9, x20, x8
+0082d4dc  2a114178  ldurh    w10, [x9, #0x11]
+0082d4e0  2b314178  ldurh    w11, [x9, #0x13]
+0082d4e4  08850291  add      x8, x8, #0xa1
