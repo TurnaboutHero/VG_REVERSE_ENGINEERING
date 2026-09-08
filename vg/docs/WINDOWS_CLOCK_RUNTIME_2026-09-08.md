@@ -121,3 +121,12 @@ A future decisive run needs a successfully initialized target replay and,
 separately, controlled live clock-assignment observation if explaining original
 recording behavior. The current runtime path is useful, but it does not justify
 repairing either unsupported recording or assuming a constant clock offset.
+
+## Follow-up: normal injection and offline crash dumps
+
+The [subsequent controlled investigation](WINDOWS_REPLAY_FAILURE_2026-09-08.md)
+verified playback after injecting a normal recording into a different slot.
+For the 150-frame target, existing crash dumps identify a null Buffer input in
+a background texture-spec task after snapshot initialization. Installed files
+match their cached Steam depot manifest. The exact resource and the original
+recording-clock anomaly remain unexplained.

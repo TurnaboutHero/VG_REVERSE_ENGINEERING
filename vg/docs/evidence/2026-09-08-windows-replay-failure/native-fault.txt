@@ -1,0 +1,33 @@
+Exact executable SHA256: 659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642
+Preferred image base: 00400000. All addresses below are preferred VAs.
+
+Both Crashpad exception contexts: C0000005, read address 0, EAX=0,
+PC RVA=572352. Module timestamp 1583757028 matches local PE.
+Both first exception-frame return addresses: RVA d3bd98 = VA 113bd98.
+Both EBX input slots read as a zero DWORD from captured memory.
+
+Texture preparation function 0113bd50:
+0113bd5c call 00975da0       ; TlsGetValue task context
+0113bd61 push 815f1c7b     ; input key
+0113bd68 call 00976570     ; two-slot keyed lookup
+0113bd89 cmp DWORD [ebx],0 ; EBX points at record+0xc
+0113bd8c jne 0113bd9b
+0113bd8e push 0121d400     ; static string Inconsistency
+0113bd93 call 00972330     ; second fatal call, observed return 0113bd98
+
+00972330 copies optional message into 020ea228, then:
+0097234d mov eax,[020ea220]
+00972352 mov eax,[eax]     ; observed read-zero exception
+
+Input record vtable VA129a3cc, COL189f2f4, type descriptor1e6c26c:
+Nuo::Concurrency::TaskData<Nuo::Base::Buffer>
+After the assertion, 0113bd50 would allocate:
+Nuo::Concurrency::TaskData<Nuo::Shading::TextureSpec>
+and parse its input using 01141760 / 01141190.
+
+Worker frame actual EBP=W: context=W-38, input slots W-30/W-2c.
+Both dumps: slot0 key815f1c7b, Buffer payload zero; slot1 absent.
+Saved task descriptor W-20 cannot be dereferenced from captured memory.
+Resource filename and reason for absent data are not established.
+
+Raw dump files, memory contents, player data and full Ghidra outputs stay private.
