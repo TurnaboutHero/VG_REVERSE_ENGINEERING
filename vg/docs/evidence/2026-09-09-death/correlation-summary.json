@@ -1,0 +1,405 @@
+{
+  "exact_pairs": 2157,
+  "additional_unique_same_victim_pairs_within_100ms": [
+    {
+      "corpus": "C02",
+      "victim": 1502,
+      "delay": 0.0238037109375
+    },
+    {
+      "corpus": "C05",
+      "victim": 1507,
+      "delay": 0.0093841552734375
+    },
+    {
+      "corpus": "C06",
+      "victim": 1505,
+      "delay": 0.0150146484375
+    },
+    {
+      "corpus": "C08",
+      "victim": 1504,
+      "delay": 0.01068115234375
+    },
+    {
+      "corpus": "C09",
+      "victim": 1509,
+      "delay": 0.02197265625
+    },
+    {
+      "corpus": "C13",
+      "victim": 1500,
+      "delay": 0.0804443359375
+    },
+    {
+      "corpus": "C17",
+      "victim": 1509,
+      "delay": 0.0218505859375
+    },
+    {
+      "corpus": "C18",
+      "victim": 1503,
+      "delay": 0.01544189453125
+    },
+    {
+      "corpus": "C19",
+      "victim": 1508,
+      "delay": 0.01995849609375
+    },
+    {
+      "corpus": "C23",
+      "victim": 1509,
+      "delay": 0.03515625
+    },
+    {
+      "corpus": "C23",
+      "victim": 1504,
+      "delay": 0.0089111328125
+    },
+    {
+      "corpus": "C23",
+      "victim": 1506,
+      "delay": 0.00927734375
+    },
+    {
+      "corpus": "C23",
+      "victim": 1502,
+      "delay": 0.009765625
+    },
+    {
+      "corpus": "C24",
+      "victim": 1504,
+      "delay": 0.0322265625
+    },
+    {
+      "corpus": "C25",
+      "victim": 1508,
+      "delay": 0.01318359375
+    },
+    {
+      "corpus": "C27",
+      "victim": 1506,
+      "delay": 0.01080322265625
+    },
+    {
+      "corpus": "C38",
+      "victim": 1500,
+      "delay": 0.01763916015625
+    },
+    {
+      "corpus": "C40",
+      "victim": 1506,
+      "delay": 0.0185546875
+    },
+    {
+      "corpus": "C40",
+      "victim": 1504,
+      "delay": 0.02801513671875
+    },
+    {
+      "corpus": "C42",
+      "victim": 1509,
+      "delay": 0.0164794921875
+    },
+    {
+      "corpus": "C42",
+      "victim": 1500,
+      "delay": 0.014404296875
+    },
+    {
+      "corpus": "C43",
+      "victim": 1501,
+      "delay": 0.0146484375
+    },
+    {
+      "corpus": "C55",
+      "victim": 1504,
+      "delay": 0.0240478515625
+    },
+    {
+      "corpus": "C56",
+      "victim": 1501,
+      "delay": 0.02020263671875
+    },
+    {
+      "corpus": "C56",
+      "victim": 1508,
+      "delay": 0.0166015625
+    }
+  ],
+  "remaining_actions": [
+    {
+      "corpus": "C01",
+      "victim": 1504,
+      "source": 1505,
+      "record_time": 1028.331298828125,
+      "seconds_before_end_action": 1.633544921875
+    },
+    {
+      "corpus": "C03",
+      "victim": 1502,
+      "source": 1504,
+      "record_time": 803.872802734375,
+      "seconds_before_end_action": 0.298583984375
+    },
+    {
+      "corpus": "C05",
+      "victim": 1503,
+      "source": 1507,
+      "record_time": 1550.50537109375,
+      "seconds_before_end_action": 5.3232421875
+    },
+    {
+      "corpus": "C13",
+      "victim": 1500,
+      "source": 1506,
+      "record_time": 1910.990478515625,
+      "seconds_before_end_action": 2.407958984375
+    },
+    {
+      "corpus": "C16",
+      "victim": 1504,
+      "source": 1507,
+      "record_time": 1699.3516845703125,
+      "seconds_before_end_action": 4.3309326171875
+    },
+    {
+      "corpus": "C17",
+      "victim": 1504,
+      "source": 1507,
+      "record_time": 2151.390869140625,
+      "seconds_before_end_action": 2.218994140625
+    },
+    {
+      "corpus": "C17",
+      "victim": 1503,
+      "source": 1506,
+      "record_time": 2153.01318359375,
+      "seconds_before_end_action": 0.5966796875
+    },
+    {
+      "corpus": "C18",
+      "victim": 1503,
+      "source": 1505,
+      "record_time": 1333.974365234375,
+      "seconds_before_end_action": 3.50634765625
+    },
+    {
+      "corpus": "C19",
+      "victim": 1505,
+      "source": 1501,
+      "record_time": 1514.007080078125,
+      "seconds_before_end_action": 2.3740234375
+    },
+    {
+      "corpus": "C21",
+      "victim": 1506,
+      "source": 1503,
+      "record_time": 1484.4273681640625,
+      "seconds_before_end_action": 0.1190185546875
+    },
+    {
+      "corpus": "C23",
+      "victim": 1506,
+      "source": 1505,
+      "record_time": 1947.9891357421875,
+      "seconds_before_end_action": 1.765625
+    },
+    {
+      "corpus": "C23",
+      "victim": 1504,
+      "source": 1503,
+      "record_time": 1948.3990478515625,
+      "seconds_before_end_action": 1.355712890625
+    },
+    {
+      "corpus": "C24",
+      "victim": 1507,
+      "source": 95876,
+      "record_time": 1281.701171875,
+      "seconds_before_end_action": 2.158447265625
+    },
+    {
+      "corpus": "C26",
+      "victim": 1502,
+      "source": 1507,
+      "record_time": 1792.264404296875,
+      "seconds_before_end_action": 2.50830078125
+    },
+    {
+      "corpus": "C26",
+      "victim": 1503,
+      "source": 1505,
+      "record_time": 1793.914306640625,
+      "seconds_before_end_action": 0.8583984375
+    },
+    {
+      "corpus": "C27",
+      "victim": 1504,
+      "source": 1508,
+      "record_time": 1784.4189453125,
+      "seconds_before_end_action": 3.79736328125
+    },
+    {
+      "corpus": "C28",
+      "victim": 1500,
+      "source": 1503,
+      "record_time": 2054.83251953125,
+      "seconds_before_end_action": 1.604248046875
+    },
+    {
+      "corpus": "C28",
+      "victim": 1509,
+      "source": 1506,
+      "record_time": 2055.43505859375,
+      "seconds_before_end_action": 1.001708984375
+    },
+    {
+      "corpus": "C29",
+      "victim": 1501,
+      "source": 1508,
+      "record_time": 1779.86767578125,
+      "seconds_before_end_action": 2.1937255859375
+    },
+    {
+      "corpus": "C29",
+      "victim": 1508,
+      "source": 1502,
+      "record_time": 1781.088134765625,
+      "seconds_before_end_action": 0.9732666015625
+    },
+    {
+      "corpus": "C32",
+      "victim": 1506,
+      "source": 83694,
+      "record_time": 964.3279418945312,
+      "seconds_before_end_action": 5.8125
+    },
+    {
+      "corpus": "C32",
+      "victim": 1505,
+      "source": 1503,
+      "record_time": 965.6652221679688,
+      "seconds_before_end_action": 4.4752197265625
+    },
+    {
+      "corpus": "C35",
+      "victim": 1505,
+      "source": 1506,
+      "record_time": 1321.188720703125,
+      "seconds_before_end_action": 4.740234375
+    },
+    {
+      "corpus": "C35",
+      "victim": 1501,
+      "source": 1502,
+      "record_time": 1322.021728515625,
+      "seconds_before_end_action": 3.9072265625
+    },
+    {
+      "corpus": "C36",
+      "victim": 1502,
+      "source": 1507,
+      "record_time": 1114.553466796875,
+      "seconds_before_end_action": 0.2989501953125
+    },
+    {
+      "corpus": "C37",
+      "victim": 1509,
+      "source": 1504,
+      "record_time": 1152.6829833984375,
+      "seconds_before_end_action": 2.2523193359375
+    },
+    {
+      "corpus": "C42",
+      "victim": 1500,
+      "source": 1501,
+      "record_time": 1057.9014892578125,
+      "seconds_before_end_action": 4.6759033203125
+    },
+    {
+      "corpus": "C42",
+      "victim": 1505,
+      "source": 1507,
+      "record_time": 1059.6866455078125,
+      "seconds_before_end_action": 2.8907470703125
+    },
+    {
+      "corpus": "C43",
+      "victim": 1504,
+      "source": 1505,
+      "record_time": 1187.768310546875,
+      "seconds_before_end_action": 1.2022705078125
+    },
+    {
+      "corpus": "C44",
+      "victim": 1509,
+      "source": 1508,
+      "record_time": 1037.761474609375,
+      "seconds_before_end_action": 2.4403076171875
+    },
+    {
+      "corpus": "C45",
+      "victim": 1507,
+      "source": 1502,
+      "record_time": 969.3689575195312,
+      "seconds_before_end_action": 3.4730224609375
+    },
+    {
+      "corpus": "C46",
+      "victim": 1508,
+      "source": 1506,
+      "record_time": 1770.701904296875,
+      "seconds_before_end_action": 1.9970703125
+    },
+    {
+      "corpus": "C51",
+      "victim": 1503,
+      "source": 1505,
+      "record_time": 1380.2813720703125,
+      "seconds_before_end_action": 5.4039306640625
+    },
+    {
+      "corpus": "C53",
+      "victim": 1509,
+      "source": 1503,
+      "record_time": 1557.25390625,
+      "seconds_before_end_action": 5.173828125
+    },
+    {
+      "corpus": "C53",
+      "victim": 1500,
+      "source": 1507,
+      "record_time": 1558.788818359375,
+      "seconds_before_end_action": 3.638916015625
+    },
+    {
+      "corpus": "C54",
+      "victim": 1502,
+      "source": 1506,
+      "record_time": 1622.548828125,
+      "seconds_before_end_action": 4.8040771484375
+    },
+    {
+      "corpus": "C54",
+      "victim": 1506,
+      "source": 142711,
+      "record_time": 1624.6588134765625,
+      "seconds_before_end_action": 2.694091796875
+    },
+    {
+      "corpus": "C55",
+      "victim": 1505,
+      "source": 1503,
+      "record_time": 1907.7239990234375,
+      "seconds_before_end_action": 5.5687255859375
+    },
+    {
+      "corpus": "C55",
+      "victim": 1501,
+      "source": 1506,
+      "record_time": 1912.7646484375,
+      "seconds_before_end_action": 0.528076171875
+    }
+  ]
+}

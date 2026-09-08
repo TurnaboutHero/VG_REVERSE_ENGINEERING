@@ -66,3 +66,7 @@ python -m vg.decoder_v2.decode_match replay.0.vgr --at-game-time 1551 -o capture
 - [아이템·위치 등의 기존 Unified 구현](../core/unified_decoder.py), [목표물 후보](../core/objective_detector.py)
 - [XP/레벨 판단](../decoder_v2/hackedglory_xp_level_validation.py), [레벨 후보](../decoder_v2/level_signal_probe.py)
 - [좌표 연구와 한계](POSITION_EVENTS_2026-08-10.md)
+
+## 2026-09-09 후속 확인
+
+`0430`을 native `ActionActorDie`로 확인했고, 직접 경기의 source 2007을 `VainCrystal_Away_5v5`로 연결했다. [사망 검증과 종료 전 39건의 집계 예외](DEATH_EVENTS_2026-09-09.md), [구현·검증 순서](../../docs/plans/2026-09-09-event-semantics-next.md)를 참조한다. 이 발견을 제품 라벨/최종 카운터로 자동 승격하지 않는다.

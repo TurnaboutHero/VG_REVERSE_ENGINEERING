@@ -6,9 +6,9 @@ Vainglory: Community Edition (VG:CE) replay file (.vgr) binary format analysis a
 
 This project reverse-engineers the VGR replay binary format to extract match data including player names, hero selections, team compositions, game modes, and entity interactions. All analysis is performed on locally-stored replay files.
 
-### Current event evidence (2026-09-08)
+### Current event evidence (2026-09-09)
 
-See the [event catalog](vg/docs/EVENT_CATALOG_2026-09-08.md) and [endgame boundary investigation](vg/docs/ENDGAME_BOUNDARY_2026-09-08.md) for current evidence, scope, and remaining validation. Native `0x03f1` end actions are available in the timeline; final-match acceptance remains gated. The legacy achievement table below contains historical claims and is not a substitute for those scoped validation records.
+See the [event catalog](vg/docs/EVENT_CATALOG_2026-09-08.md), [endgame boundary investigation](vg/docs/ENDGAME_BOUNDARY_2026-09-08.md), [death action and crystal-source proof](vg/docs/DEATH_EVENTS_2026-09-09.md), and [next implementation plan](docs/plans/2026-09-09-event-semantics-next.md). Native `0x03f1` end actions are available in the timeline; `0x0430` death labels and generic source classification are verified research queued for implementation. Final-match acceptance remains gated. The legacy achievement table below contains historical claims and is not a substitute for those scoped validation records.
 
 ### Key Achievements
 

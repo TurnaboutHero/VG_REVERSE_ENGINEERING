@@ -1,0 +1,1317 @@
+[
+  {
+    "corpus": "C01",
+    "clock_status": "accepted",
+    "hero_death_increments": 15,
+    "increments_with_exact_action": 15,
+    "hero_die_actions": 16,
+    "hero_actions_with_exact_increment": 15,
+    "source_is_player": 14,
+    "player_source_with_exact_kill_increment": 13,
+    "action_payload_lengths": {
+      "14": 700
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1504,
+        "source": 1505,
+        "record_time": 1028.331298828125
+      }
+    ]
+  },
+  {
+    "corpus": "C02",
+    "clock_status": "accepted",
+    "hero_death_increments": 38,
+    "increments_with_exact_action": 37,
+    "hero_die_actions": 38,
+    "hero_actions_with_exact_increment": 37,
+    "source_is_player": 36,
+    "player_source_with_exact_kill_increment": 35,
+    "action_payload_lengths": {
+      "14": 1422
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1502,
+        "record_time": 880.9512329101562
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1502,
+        "source": 1501,
+        "record_time": 880.9274291992188
+      }
+    ]
+  },
+  {
+    "corpus": "C03",
+    "clock_status": "accepted",
+    "hero_death_increments": 33,
+    "increments_with_exact_action": 33,
+    "hero_die_actions": 34,
+    "hero_actions_with_exact_increment": 33,
+    "source_is_player": 30,
+    "player_source_with_exact_kill_increment": 29,
+    "action_payload_lengths": {
+      "14": 1135
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1502,
+        "source": 1504,
+        "record_time": 803.872802734375
+      }
+    ]
+  },
+  {
+    "corpus": "C04",
+    "clock_status": "accepted",
+    "hero_death_increments": 56,
+    "increments_with_exact_action": 56,
+    "hero_die_actions": 56,
+    "hero_actions_with_exact_increment": 56,
+    "source_is_player": 56,
+    "player_source_with_exact_kill_increment": 56,
+    "action_payload_lengths": {
+      "14": 2522
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C05",
+    "clock_status": "accepted",
+    "hero_death_increments": 49,
+    "increments_with_exact_action": 48,
+    "hero_die_actions": 50,
+    "hero_actions_with_exact_increment": 48,
+    "source_is_player": 49,
+    "player_source_with_exact_kill_increment": 46,
+    "action_payload_lengths": {
+      "14": 2095
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1507,
+        "record_time": 197.3251953125
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1507,
+        "source": 1502,
+        "record_time": 197.31581115722656
+      },
+      {
+        "victim": 1503,
+        "source": 1507,
+        "record_time": 1550.50537109375
+      }
+    ]
+  },
+  {
+    "corpus": "C06",
+    "clock_status": "accepted",
+    "hero_death_increments": 46,
+    "increments_with_exact_action": 45,
+    "hero_die_actions": 46,
+    "hero_actions_with_exact_increment": 45,
+    "source_is_player": 46,
+    "player_source_with_exact_kill_increment": 45,
+    "action_payload_lengths": {
+      "14": 2422
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1505,
+        "record_time": 660.5774536132812
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1505,
+        "source": 1503,
+        "record_time": 660.5624389648438
+      }
+    ]
+  },
+  {
+    "corpus": "C07",
+    "clock_status": "accepted",
+    "hero_death_increments": 53,
+    "increments_with_exact_action": 53,
+    "hero_die_actions": 53,
+    "hero_actions_with_exact_increment": 53,
+    "source_is_player": 52,
+    "player_source_with_exact_kill_increment": 52,
+    "action_payload_lengths": {
+      "14": 1798
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C08",
+    "clock_status": "accepted",
+    "hero_death_increments": 44,
+    "increments_with_exact_action": 43,
+    "hero_die_actions": 44,
+    "hero_actions_with_exact_increment": 43,
+    "source_is_player": 37,
+    "player_source_with_exact_kill_increment": 35,
+    "action_payload_lengths": {
+      "14": 2154
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1504,
+        "record_time": 620.108642578125
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1504,
+        "source": 1501,
+        "record_time": 620.0979614257812
+      }
+    ]
+  },
+  {
+    "corpus": "C09",
+    "clock_status": "accepted",
+    "hero_death_increments": 67,
+    "increments_with_exact_action": 66,
+    "hero_die_actions": 67,
+    "hero_actions_with_exact_increment": 66,
+    "source_is_player": 65,
+    "player_source_with_exact_kill_increment": 63,
+    "action_payload_lengths": {
+      "14": 2574
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1509,
+        "record_time": 1174.9212646484375
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1507,
+        "record_time": 1174.8992919921875
+      }
+    ]
+  },
+  {
+    "corpus": "C10",
+    "clock_status": "accepted",
+    "hero_death_increments": 46,
+    "increments_with_exact_action": 46,
+    "hero_die_actions": 46,
+    "hero_actions_with_exact_increment": 46,
+    "source_is_player": 44,
+    "player_source_with_exact_kill_increment": 43,
+    "action_payload_lengths": {
+      "14": 2249
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C11",
+    "clock_status": "accepted",
+    "hero_death_increments": 20,
+    "increments_with_exact_action": 20,
+    "hero_die_actions": 20,
+    "hero_actions_with_exact_increment": 20,
+    "source_is_player": 20,
+    "player_source_with_exact_kill_increment": 20,
+    "action_payload_lengths": {
+      "14": 1385
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C12",
+    "clock_status": "accepted",
+    "hero_death_increments": 59,
+    "increments_with_exact_action": 59,
+    "hero_die_actions": 59,
+    "hero_actions_with_exact_increment": 59,
+    "source_is_player": 53,
+    "player_source_with_exact_kill_increment": 53,
+    "action_payload_lengths": {
+      "14": 2316
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C13",
+    "clock_status": "accepted",
+    "hero_death_increments": 49,
+    "increments_with_exact_action": 48,
+    "hero_die_actions": 50,
+    "hero_actions_with_exact_increment": 48,
+    "source_is_player": 33,
+    "player_source_with_exact_kill_increment": 31,
+    "action_payload_lengths": {
+      "14": 2405
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1500,
+        "record_time": 1832.2247314453125
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1500,
+        "source": 1506,
+        "record_time": 1832.144287109375
+      },
+      {
+        "victim": 1500,
+        "source": 1506,
+        "record_time": 1910.990478515625
+      }
+    ]
+  },
+  {
+    "corpus": "C14",
+    "clock_status": "accepted",
+    "hero_death_increments": 52,
+    "increments_with_exact_action": 52,
+    "hero_die_actions": 52,
+    "hero_actions_with_exact_increment": 52,
+    "source_is_player": 47,
+    "player_source_with_exact_kill_increment": 47,
+    "action_payload_lengths": {
+      "14": 2342
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C15",
+    "clock_status": "accepted",
+    "hero_death_increments": 29,
+    "increments_with_exact_action": 29,
+    "hero_die_actions": 29,
+    "hero_actions_with_exact_increment": 29,
+    "source_is_player": 27,
+    "player_source_with_exact_kill_increment": 27,
+    "action_payload_lengths": {
+      "14": 1504
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C16",
+    "clock_status": "accepted",
+    "hero_death_increments": 65,
+    "increments_with_exact_action": 65,
+    "hero_die_actions": 66,
+    "hero_actions_with_exact_increment": 65,
+    "source_is_player": 64,
+    "player_source_with_exact_kill_increment": 63,
+    "action_payload_lengths": {
+      "14": 2482
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1504,
+        "source": 1507,
+        "record_time": 1699.3516845703125
+      }
+    ]
+  },
+  {
+    "corpus": "C17",
+    "clock_status": "accepted",
+    "hero_death_increments": 59,
+    "increments_with_exact_action": 58,
+    "hero_die_actions": 61,
+    "hero_actions_with_exact_increment": 58,
+    "source_is_player": 60,
+    "player_source_with_exact_kill_increment": 57,
+    "action_payload_lengths": {
+      "14": 2878
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1509,
+        "record_time": 1490.4127197265625
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1501,
+        "record_time": 1490.390869140625
+      },
+      {
+        "victim": 1504,
+        "source": 1507,
+        "record_time": 2151.390869140625
+      },
+      {
+        "victim": 1503,
+        "source": 1506,
+        "record_time": 2153.01318359375
+      }
+    ]
+  },
+  {
+    "corpus": "C18",
+    "clock_status": "accepted",
+    "hero_death_increments": 31,
+    "increments_with_exact_action": 30,
+    "hero_die_actions": 32,
+    "hero_actions_with_exact_increment": 30,
+    "source_is_player": 23,
+    "player_source_with_exact_kill_increment": 21,
+    "action_payload_lengths": {
+      "14": 1731
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1503,
+        "record_time": 282.62213134765625
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1503,
+        "source": 1509,
+        "record_time": 282.606689453125
+      },
+      {
+        "victim": 1503,
+        "source": 1505,
+        "record_time": 1333.974365234375
+      }
+    ]
+  },
+  {
+    "corpus": "C19",
+    "clock_status": "accepted",
+    "hero_death_increments": 73,
+    "increments_with_exact_action": 72,
+    "hero_die_actions": 74,
+    "hero_actions_with_exact_increment": 72,
+    "source_is_player": 70,
+    "player_source_with_exact_kill_increment": 68,
+    "action_payload_lengths": {
+      "14": 2156
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1508,
+        "record_time": 687.7506713867188
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1508,
+        "source": 1504,
+        "record_time": 687.730712890625
+      },
+      {
+        "victim": 1505,
+        "source": 1501,
+        "record_time": 1514.007080078125
+      }
+    ]
+  },
+  {
+    "corpus": "C20",
+    "clock_status": "accepted",
+    "hero_death_increments": 47,
+    "increments_with_exact_action": 47,
+    "hero_die_actions": 47,
+    "hero_actions_with_exact_increment": 47,
+    "source_is_player": 40,
+    "player_source_with_exact_kill_increment": 40,
+    "action_payload_lengths": {
+      "14": 1502
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C21",
+    "clock_status": "accepted",
+    "hero_death_increments": 71,
+    "increments_with_exact_action": 71,
+    "hero_die_actions": 72,
+    "hero_actions_with_exact_increment": 71,
+    "source_is_player": 68,
+    "player_source_with_exact_kill_increment": 67,
+    "action_payload_lengths": {
+      "14": 1861
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1506,
+        "source": 1503,
+        "record_time": 1484.4273681640625
+      }
+    ]
+  },
+  {
+    "corpus": "C22",
+    "clock_status": "accepted",
+    "hero_death_increments": 48,
+    "increments_with_exact_action": 48,
+    "hero_die_actions": 48,
+    "hero_actions_with_exact_increment": 48,
+    "source_is_player": 36,
+    "player_source_with_exact_kill_increment": 36,
+    "action_payload_lengths": {
+      "14": 1992
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C23",
+    "clock_status": "accepted",
+    "hero_death_increments": 44,
+    "increments_with_exact_action": 40,
+    "hero_die_actions": 46,
+    "hero_actions_with_exact_increment": 40,
+    "source_is_player": 46,
+    "player_source_with_exact_kill_increment": 40,
+    "action_payload_lengths": {
+      "14": 2496
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1509,
+        "record_time": 1299.917236328125
+      },
+      {
+        "victim": 1504,
+        "record_time": 1313.345458984375
+      },
+      {
+        "victim": 1506,
+        "record_time": 1412.209716796875
+      },
+      {
+        "victim": 1502,
+        "record_time": 1888.982177734375
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1505,
+        "record_time": 1299.882080078125
+      },
+      {
+        "victim": 1504,
+        "source": 1503,
+        "record_time": 1313.3365478515625
+      },
+      {
+        "victim": 1506,
+        "source": 1505,
+        "record_time": 1412.200439453125
+      },
+      {
+        "victim": 1502,
+        "source": 1501,
+        "record_time": 1888.972412109375
+      },
+      {
+        "victim": 1506,
+        "source": 1505,
+        "record_time": 1947.9891357421875
+      },
+      {
+        "victim": 1504,
+        "source": 1503,
+        "record_time": 1948.3990478515625
+      }
+    ]
+  },
+  {
+    "corpus": "C24",
+    "clock_status": "accepted",
+    "hero_death_increments": 36,
+    "increments_with_exact_action": 35,
+    "hero_die_actions": 37,
+    "hero_actions_with_exact_increment": 35,
+    "source_is_player": 35,
+    "player_source_with_exact_kill_increment": 33,
+    "action_payload_lengths": {
+      "14": 1589
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1504,
+        "record_time": 1227.44921875
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1504,
+        "source": 1507,
+        "record_time": 1227.4169921875
+      },
+      {
+        "victim": 1507,
+        "source": 95876,
+        "record_time": 1281.701171875
+      }
+    ]
+  },
+  {
+    "corpus": "C25",
+    "clock_status": "accepted",
+    "hero_death_increments": 49,
+    "increments_with_exact_action": 48,
+    "hero_die_actions": 49,
+    "hero_actions_with_exact_increment": 48,
+    "source_is_player": 44,
+    "player_source_with_exact_kill_increment": 43,
+    "action_payload_lengths": {
+      "14": 2444
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1508,
+        "record_time": 1084.787353515625
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1508,
+        "source": 1504,
+        "record_time": 1084.774169921875
+      }
+    ]
+  },
+  {
+    "corpus": "C26",
+    "clock_status": "accepted",
+    "hero_death_increments": 69,
+    "increments_with_exact_action": 69,
+    "hero_die_actions": 71,
+    "hero_actions_with_exact_increment": 69,
+    "source_is_player": 67,
+    "player_source_with_exact_kill_increment": 65,
+    "action_payload_lengths": {
+      "14": 2476
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1502,
+        "source": 1507,
+        "record_time": 1792.264404296875
+      },
+      {
+        "victim": 1503,
+        "source": 1505,
+        "record_time": 1793.914306640625
+      }
+    ]
+  },
+  {
+    "corpus": "C27",
+    "clock_status": "accepted",
+    "hero_death_increments": 40,
+    "increments_with_exact_action": 39,
+    "hero_die_actions": 41,
+    "hero_actions_with_exact_increment": 39,
+    "source_is_player": 39,
+    "player_source_with_exact_kill_increment": 37,
+    "action_payload_lengths": {
+      "14": 2195
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1506,
+        "record_time": 675.5864868164062
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1506,
+        "source": 1505,
+        "record_time": 675.57568359375
+      },
+      {
+        "victim": 1504,
+        "source": 1508,
+        "record_time": 1784.4189453125
+      }
+    ]
+  },
+  {
+    "corpus": "C28",
+    "clock_status": "accepted",
+    "hero_death_increments": 58,
+    "increments_with_exact_action": 58,
+    "hero_die_actions": 60,
+    "hero_actions_with_exact_increment": 58,
+    "source_is_player": 58,
+    "player_source_with_exact_kill_increment": 56,
+    "action_payload_lengths": {
+      "14": 3093
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1500,
+        "source": 1503,
+        "record_time": 2054.83251953125
+      },
+      {
+        "victim": 1509,
+        "source": 1506,
+        "record_time": 2055.43505859375
+      }
+    ]
+  },
+  {
+    "corpus": "C29",
+    "clock_status": "accepted",
+    "hero_death_increments": 50,
+    "increments_with_exact_action": 50,
+    "hero_die_actions": 52,
+    "hero_actions_with_exact_increment": 50,
+    "source_is_player": 48,
+    "player_source_with_exact_kill_increment": 46,
+    "action_payload_lengths": {
+      "14": 2222
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1501,
+        "source": 1508,
+        "record_time": 1779.86767578125
+      },
+      {
+        "victim": 1508,
+        "source": 1502,
+        "record_time": 1781.088134765625
+      }
+    ]
+  },
+  {
+    "corpus": "C30",
+    "clock_status": "unsupported_clock",
+    "hero_death_increments": 63,
+    "increments_with_exact_action": 63,
+    "hero_die_actions": 63,
+    "hero_actions_with_exact_increment": 63,
+    "source_is_player": 57,
+    "player_source_with_exact_kill_increment": 56,
+    "action_payload_lengths": {
+      "14": 2249
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C31",
+    "clock_status": "accepted",
+    "hero_death_increments": 25,
+    "increments_with_exact_action": 25,
+    "hero_die_actions": 25,
+    "hero_actions_with_exact_increment": 25,
+    "source_is_player": 25,
+    "player_source_with_exact_kill_increment": 25,
+    "action_payload_lengths": {
+      "14": 1584
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C32",
+    "clock_status": "accepted",
+    "hero_death_increments": 21,
+    "increments_with_exact_action": 21,
+    "hero_die_actions": 23,
+    "hero_actions_with_exact_increment": 21,
+    "source_is_player": 19,
+    "player_source_with_exact_kill_increment": 18,
+    "action_payload_lengths": {
+      "14": 1297
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1506,
+        "source": 83694,
+        "record_time": 964.3279418945312
+      },
+      {
+        "victim": 1505,
+        "source": 1503,
+        "record_time": 965.6652221679688
+      }
+    ]
+  },
+  {
+    "corpus": "C33",
+    "clock_status": "accepted",
+    "hero_death_increments": 0,
+    "increments_with_exact_action": 0,
+    "hero_die_actions": 0,
+    "hero_actions_with_exact_increment": 0,
+    "source_is_player": 0,
+    "player_source_with_exact_kill_increment": 0,
+    "action_payload_lengths": {
+      "14": 8
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C34",
+    "clock_status": "accepted",
+    "hero_death_increments": 1,
+    "increments_with_exact_action": 1,
+    "hero_die_actions": 1,
+    "hero_actions_with_exact_increment": 1,
+    "source_is_player": 0,
+    "player_source_with_exact_kill_increment": 0,
+    "action_payload_lengths": {
+      "14": 1
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C35",
+    "clock_status": "accepted",
+    "hero_death_increments": 30,
+    "increments_with_exact_action": 30,
+    "hero_die_actions": 32,
+    "hero_actions_with_exact_increment": 30,
+    "source_is_player": 31,
+    "player_source_with_exact_kill_increment": 29,
+    "action_payload_lengths": {
+      "14": 1773
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1505,
+        "source": 1506,
+        "record_time": 1321.188720703125
+      },
+      {
+        "victim": 1501,
+        "source": 1502,
+        "record_time": 1322.021728515625
+      }
+    ]
+  },
+  {
+    "corpus": "C36",
+    "clock_status": "accepted",
+    "hero_death_increments": 45,
+    "increments_with_exact_action": 45,
+    "hero_die_actions": 46,
+    "hero_actions_with_exact_increment": 45,
+    "source_is_player": 45,
+    "player_source_with_exact_kill_increment": 44,
+    "action_payload_lengths": {
+      "14": 1371
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1502,
+        "source": 1507,
+        "record_time": 1114.553466796875
+      }
+    ]
+  },
+  {
+    "corpus": "C37",
+    "clock_status": "accepted",
+    "hero_death_increments": 16,
+    "increments_with_exact_action": 16,
+    "hero_die_actions": 17,
+    "hero_actions_with_exact_increment": 16,
+    "source_is_player": 17,
+    "player_source_with_exact_kill_increment": 15,
+    "action_payload_lengths": {
+      "14": 1626
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1504,
+        "record_time": 1152.6829833984375
+      }
+    ]
+  },
+  {
+    "corpus": "C38",
+    "clock_status": "accepted",
+    "hero_death_increments": 31,
+    "increments_with_exact_action": 30,
+    "hero_die_actions": 31,
+    "hero_actions_with_exact_increment": 30,
+    "source_is_player": 31,
+    "player_source_with_exact_kill_increment": 30,
+    "action_payload_lengths": {
+      "14": 2257
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1500,
+        "record_time": 289.7303161621094
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1500,
+        "source": 1505,
+        "record_time": 289.7126770019531
+      }
+    ]
+  },
+  {
+    "corpus": "C39",
+    "clock_status": "accepted",
+    "hero_death_increments": 39,
+    "increments_with_exact_action": 39,
+    "hero_die_actions": 39,
+    "hero_actions_with_exact_increment": 39,
+    "source_is_player": 38,
+    "player_source_with_exact_kill_increment": 38,
+    "action_payload_lengths": {
+      "14": 2413
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C40",
+    "clock_status": "accepted",
+    "hero_death_increments": 36,
+    "increments_with_exact_action": 34,
+    "hero_die_actions": 36,
+    "hero_actions_with_exact_increment": 34,
+    "source_is_player": 35,
+    "player_source_with_exact_kill_increment": 34,
+    "action_payload_lengths": {
+      "14": 1776
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1506,
+        "record_time": 546.8502197265625
+      },
+      {
+        "victim": 1504,
+        "record_time": 897.9749755859375
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1506,
+        "source": 36664,
+        "record_time": 546.8316650390625
+      },
+      {
+        "victim": 1504,
+        "source": 1509,
+        "record_time": 897.9469604492188
+      }
+    ]
+  },
+  {
+    "corpus": "C41",
+    "clock_status": "mixed_segments",
+    "hero_death_increments": 11,
+    "increments_with_exact_action": 11,
+    "hero_die_actions": 11,
+    "hero_actions_with_exact_increment": 11,
+    "source_is_player": 11,
+    "player_source_with_exact_kill_increment": 11,
+    "action_payload_lengths": {
+      "14": 1081
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C42",
+    "clock_status": "accepted",
+    "hero_death_increments": 22,
+    "increments_with_exact_action": 20,
+    "hero_die_actions": 24,
+    "hero_actions_with_exact_increment": 20,
+    "source_is_player": 23,
+    "player_source_with_exact_kill_increment": 19,
+    "action_payload_lengths": {
+      "14": 1316
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1509,
+        "record_time": 979.2234497070312
+      },
+      {
+        "victim": 1500,
+        "record_time": 982.2965087890625
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1508,
+        "record_time": 979.2069702148438
+      },
+      {
+        "victim": 1500,
+        "source": 1505,
+        "record_time": 982.2821044921875
+      },
+      {
+        "victim": 1500,
+        "source": 1501,
+        "record_time": 1057.9014892578125
+      },
+      {
+        "victim": 1505,
+        "source": 1507,
+        "record_time": 1059.6866455078125
+      }
+    ]
+  },
+  {
+    "corpus": "C43",
+    "clock_status": "accepted",
+    "hero_death_increments": 33,
+    "increments_with_exact_action": 32,
+    "hero_die_actions": 34,
+    "hero_actions_with_exact_increment": 32,
+    "source_is_player": 34,
+    "player_source_with_exact_kill_increment": 32,
+    "action_payload_lengths": {
+      "14": 1561
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1501,
+        "record_time": 858.91357421875
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1501,
+        "source": 1508,
+        "record_time": 858.89892578125
+      },
+      {
+        "victim": 1504,
+        "source": 1505,
+        "record_time": 1187.768310546875
+      }
+    ]
+  },
+  {
+    "corpus": "C44",
+    "clock_status": "accepted",
+    "hero_death_increments": 15,
+    "increments_with_exact_action": 15,
+    "hero_die_actions": 16,
+    "hero_actions_with_exact_increment": 15,
+    "source_is_player": 13,
+    "player_source_with_exact_kill_increment": 12,
+    "action_payload_lengths": {
+      "14": 1403
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1508,
+        "record_time": 1037.761474609375
+      }
+    ]
+  },
+  {
+    "corpus": "C45",
+    "clock_status": "accepted",
+    "hero_death_increments": 16,
+    "increments_with_exact_action": 16,
+    "hero_die_actions": 17,
+    "hero_actions_with_exact_increment": 16,
+    "source_is_player": 16,
+    "player_source_with_exact_kill_increment": 15,
+    "action_payload_lengths": {
+      "14": 1304
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1507,
+        "source": 1502,
+        "record_time": 969.3689575195312
+      }
+    ]
+  },
+  {
+    "corpus": "C46",
+    "clock_status": "accepted",
+    "hero_death_increments": 36,
+    "increments_with_exact_action": 36,
+    "hero_die_actions": 37,
+    "hero_actions_with_exact_increment": 36,
+    "source_is_player": 37,
+    "player_source_with_exact_kill_increment": 36,
+    "action_payload_lengths": {
+      "14": 2993
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1508,
+        "source": 1506,
+        "record_time": 1770.701904296875
+      }
+    ]
+  },
+  {
+    "corpus": "C47",
+    "clock_status": "accepted",
+    "hero_death_increments": 15,
+    "increments_with_exact_action": 15,
+    "hero_die_actions": 15,
+    "hero_actions_with_exact_increment": 15,
+    "source_is_player": 15,
+    "player_source_with_exact_kill_increment": 15,
+    "action_payload_lengths": {
+      "14": 719
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C48",
+    "clock_status": "accepted",
+    "hero_death_increments": 31,
+    "increments_with_exact_action": 31,
+    "hero_die_actions": 31,
+    "hero_actions_with_exact_increment": 31,
+    "source_is_player": 30,
+    "player_source_with_exact_kill_increment": 30,
+    "action_payload_lengths": {
+      "14": 858
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C49",
+    "clock_status": "accepted",
+    "hero_death_increments": 13,
+    "increments_with_exact_action": 13,
+    "hero_die_actions": 13,
+    "hero_actions_with_exact_increment": 13,
+    "source_is_player": 13,
+    "player_source_with_exact_kill_increment": 13,
+    "action_payload_lengths": {
+      "14": 603
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C50",
+    "clock_status": "accepted",
+    "hero_death_increments": 23,
+    "increments_with_exact_action": 23,
+    "hero_die_actions": 23,
+    "hero_actions_with_exact_increment": 23,
+    "source_is_player": 23,
+    "player_source_with_exact_kill_increment": 23,
+    "action_payload_lengths": {
+      "14": 843
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C51",
+    "clock_status": "accepted",
+    "hero_death_increments": 37,
+    "increments_with_exact_action": 37,
+    "hero_die_actions": 38,
+    "hero_actions_with_exact_increment": 37,
+    "source_is_player": 36,
+    "player_source_with_exact_kill_increment": 35,
+    "action_payload_lengths": {
+      "14": 964
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1503,
+        "source": 1505,
+        "record_time": 1380.2813720703125
+      }
+    ]
+  },
+  {
+    "corpus": "C52",
+    "clock_status": "unsupported_clock",
+    "hero_death_increments": 31,
+    "increments_with_exact_action": 31,
+    "hero_die_actions": 31,
+    "hero_actions_with_exact_increment": 31,
+    "source_is_player": 31,
+    "player_source_with_exact_kill_increment": 31,
+    "action_payload_lengths": {
+      "14": 916
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": []
+  },
+  {
+    "corpus": "C53",
+    "clock_status": "accepted",
+    "hero_death_increments": 36,
+    "increments_with_exact_action": 36,
+    "hero_die_actions": 38,
+    "hero_actions_with_exact_increment": 36,
+    "source_is_player": 36,
+    "player_source_with_exact_kill_increment": 34,
+    "action_payload_lengths": {
+      "14": 2370
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1509,
+        "source": 1503,
+        "record_time": 1557.25390625
+      },
+      {
+        "victim": 1500,
+        "source": 1507,
+        "record_time": 1558.788818359375
+      }
+    ]
+  },
+  {
+    "corpus": "C54",
+    "clock_status": "accepted",
+    "hero_death_increments": 57,
+    "increments_with_exact_action": 57,
+    "hero_die_actions": 59,
+    "hero_actions_with_exact_increment": 57,
+    "source_is_player": 56,
+    "player_source_with_exact_kill_increment": 55,
+    "action_payload_lengths": {
+      "14": 2139
+    },
+    "unmatched_increments": [],
+    "unmatched_actions": [
+      {
+        "victim": 1502,
+        "source": 1506,
+        "record_time": 1622.548828125
+      },
+      {
+        "victim": 1506,
+        "source": 142711,
+        "record_time": 1624.6588134765625
+      }
+    ]
+  },
+  {
+    "corpus": "C55",
+    "clock_status": "accepted",
+    "hero_death_increments": 58,
+    "increments_with_exact_action": 57,
+    "hero_die_actions": 60,
+    "hero_actions_with_exact_increment": 57,
+    "source_is_player": 59,
+    "player_source_with_exact_kill_increment": 54,
+    "action_payload_lengths": {
+      "14": 2785
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1504,
+        "record_time": 1399.5521240234375
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1504,
+        "source": 1506,
+        "record_time": 1399.528076171875
+      },
+      {
+        "victim": 1505,
+        "source": 1503,
+        "record_time": 1907.7239990234375
+      },
+      {
+        "victim": 1501,
+        "source": 1506,
+        "record_time": 1912.7646484375
+      }
+    ]
+  },
+  {
+    "corpus": "C56",
+    "clock_status": "accepted",
+    "hero_death_increments": 45,
+    "increments_with_exact_action": 43,
+    "hero_die_actions": 45,
+    "hero_actions_with_exact_increment": 43,
+    "source_is_player": 37,
+    "player_source_with_exact_kill_increment": 34,
+    "action_payload_lengths": {
+      "14": 2291
+    },
+    "unmatched_increments": [
+      {
+        "victim": 1501,
+        "record_time": 750.9593505859375
+      },
+      {
+        "victim": 1508,
+        "record_time": 1286.3487548828125
+      }
+    ],
+    "unmatched_actions": [
+      {
+        "victim": 1501,
+        "source": 1506,
+        "record_time": 750.9391479492188
+      },
+      {
+        "victim": 1508,
+        "source": 1506,
+        "record_time": 1286.3321533203125
+      }
+    ]
+  }
+]
