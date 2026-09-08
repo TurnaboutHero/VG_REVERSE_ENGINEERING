@@ -1,0 +1,8 @@
+Command: python -m unittest discover -s tests -q
+Ran 318 tests in 52.805s
+OK
+
+CLI surface checks: see cli-verification.json
+Corpus comparison: 56 records, no completeness class or duration value/source changes.
+Runtime controls: see runtime-controls.json; independent UI observations recorded in boundary report.
+Cleanup: five owned scheduled tasks removed; owned game PID 50032 and UI worker PID 17188 no longer running.

@@ -18,10 +18,13 @@ from vg.core.vgr_records import VGRRecord, VGRRecordError, iter_records
 APPLE_DOUBLE_MAGIC: Final = b"\x00\x05\x16\x07"
 NATIVE_EVIDENCE_SHA256: Final = "c23b2e9eb201f47694c7e71ab39d2c8c96850beb4ddf489745def23927fcd891"
 NATIVE_EVIDENCE: Final = "gamekindred-c23b2e9e"
+END_MATCH_EVIDENCE_SHA256: Final = "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642"
+END_MATCH_EVIDENCE: Final = "windows-659f9eed"
 ATTRIBUTE_STATS: Final[dict[int, str]] = {0x29: "kills", 0x2A: "deaths"}
-type KnownOpcode = Literal[0x041C, 0x041D, 0x042B, 0x0431]
-DEFAULT_OPCODES: Final = frozenset({0x041C, 0x041D, 0x042B, 0x0431})
+type KnownOpcode = Literal[0x03F1, 0x041C, 0x041D, 0x042B, 0x0431]
+DEFAULT_OPCODES: Final = frozenset({0x03F1, 0x041C, 0x041D, 0x042B, 0x0431})
 EXPECTED_CONTENT_LENGTH: Final[dict[KnownOpcode, int]] = {
+    0x03F1: 8,
     0x041C: 24,
     0x041D: 16,
     0x042B: 16,
@@ -41,6 +44,12 @@ class DecodedFields(TypedDict, total=False):
     remaining_hex: str
     uninterpreted_bytes: list[int]
     native_evidence: str
+    native_evidence_sha256: str
+    native_class: str
+    native_winning_team_id: int
+    native_winning_team_raw: int
+    native_end_reason: int
+    native_surrender: bool
     native_type: str
     native_index: int
     native_layer: int
@@ -90,7 +99,13 @@ def _float_fields(payload: memoryview, offset: int) -> tuple[float | None, int]:
 
 
 def decode_fields(record: VGRRecord) -> DecodedFields:
-    """Decode only structurally confirmed fields for an exact known layout."""
+    """Decode only structurally confirmed fields for an exact known layout.
+
+    An end-match action records a queued request, not completed-match proof.
+    Reasons 5/6/7 enter validation-error paths and 8 is a no-op in this build.
+    native_surrender is only the consumer's reason == 2 boolean; team IDs have
+    no screen-side mapping here. Timestamp always belongs to the outer record.
+    """
     if not _is_known_opcode(record.opcode):
         return {"decoding_status": "unknown_opcode"}
 
@@ -103,6 +118,20 @@ def decode_fields(record: VGRRecord) -> DecodedFields:
 
     payload = record.payload
     match record.opcode:
+        case 0x03F1:
+            winning_team_raw = struct.unpack_from(">I", payload, 0)[0]
+            return {
+                "decoding_status": "decoded",
+                "native_type": "end_match_action",
+                "native_class": "Nuo::Kindred::ActionEndMatch",
+                "native_winning_team_raw": winning_team_raw,
+                "native_winning_team_id": winning_team_raw & 0xFF,
+                "native_end_reason": payload[4],
+                "native_surrender": payload[4] == 2,
+                "remaining_hex": payload[5:].hex(),
+                "native_evidence": END_MATCH_EVIDENCE,
+                "native_evidence_sha256": END_MATCH_EVIDENCE_SHA256,
+            }
         case 0x041C:
             value, raw_bits = _float_fields(payload, 8)
             return {

@@ -1,23 +1,20 @@
+import struct
 import unittest
 
-from vg.decoder_v2.completeness import _scan_max_timestamp, assess_completeness
+from vg.decoder_v2.completeness import _scan_record_tails, assess_completeness
 from vg.decoder_v2.duration import estimate_duration_from_signals
 from vg.decoder_v2.models import CompletenessStatus, ReplaySignalSummary
 
 
 class TestDecoderV2Completeness(unittest.TestCase):
-    def test_scan_max_timestamp_does_not_cross_frame_boundaries(self) -> None:
-        frame_a = b"\x00\x08\x04"
-        frame_b = b"\x31\x00\x00\x07\xd0\x00\x00\x44\xc5\x40\x00"
+    def test_record_tails_do_not_cross_frame_boundaries(self) -> None:
+        framed_death = struct.pack(">fIHIH", 100.0, 8, 0x0431, 2000, 0)
+        frame_a, frame_b = framed_death[:9], framed_death[9:]
 
-        value = _scan_max_timestamp(
-            [(0, frame_a), (1, frame_b)],
-            b"\x08\x04\x31",
-            9,
-            guards=((3, b"\x00\x00"), (7, b"\x00\x00")),
-        )
+        value = _scan_record_tails([(0, frame_a), (1, frame_b)])
 
-        self.assertIsNone(value)
+        self.assertEqual(value, (None, None, None))
+        self.assertEqual(_scan_record_tails([(0, frame_a + frame_b)]), (100.0, None, 100.0))
 
     def test_complete_confirmed_from_crystal_and_death_alignment(self) -> None:
         signals = ReplaySignalSummary(

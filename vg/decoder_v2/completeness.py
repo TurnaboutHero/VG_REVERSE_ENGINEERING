@@ -4,12 +4,13 @@ from __future__ import annotations
 
 import struct
 from pathlib import Path
-from typing import Iterable, List, Optional, Sequence, Tuple
+from typing import List, Sequence, Tuple
 
 from vg.core.kda_detector import KDADetector
 from vg.core.native_stats import inspect_native_clock
-from vg.core.unified_decoder import _DEATH_HEADER, _ITEM_ACQUIRE_HEADER, _le_to_be
+from vg.core.unified_decoder import _le_to_be
 from vg.core.vgr_parser import VGRParser
+from vg.core.vgr_records import VGRRecordError, iter_records
 
 from .models import CompletenessAssessment, CompletenessStatus, ReplaySignalSummary
 
@@ -25,45 +26,37 @@ def load_frames(replay_file: str) -> List[Tuple[int, bytes]]:
     ]
 
 
-def _scan_max_timestamp_in_bytes(
-    data: bytes,
-    header: bytes,
-    timestamp_offset: int,
-    guards: Sequence[Tuple[int, bytes]] = (),
-) -> Optional[float]:
-    values = []
-    pos = 0
-    while True:
-        idx = data.find(header, pos)
-        if idx == -1:
-            break
-        pos = idx + 1
-        if idx + timestamp_offset + 4 > len(data):
-            continue
-        if any(data[idx + rel:idx + rel + len(expected)] != expected for rel, expected in guards):
-            continue
-        try:
-            ts = struct.unpack_from(">f", data, idx + timestamp_offset)[0]
-        except struct.error:
-            continue
-        if 0 < ts < 5000:
-            values.append(ts)
-    return max(values) if values else None
-
-
-def _scan_max_timestamp(
+def _scan_record_tails(
     frames: Sequence[Tuple[int, bytes]],
-    header: bytes,
-    timestamp_offset: int,
-    guards: Sequence[Tuple[int, bytes]] = (),
-) -> Optional[float]:
-    """Scan the largest valid float timestamp for a header family frame-by-frame."""
-    values = []
-    for _, data in frames:
-        value = _scan_max_timestamp_in_bytes(data, header, timestamp_offset, guards)
-        if value is not None:
-            values.append(value)
-    return max(values) if values else None
+) -> tuple[float | None, float | None, float | None]:
+    """Read legacy candidate tails from owning records, never neighboring bytes.
+
+    A malformed frame invalidates all candidate tails, including earlier ones.
+    Candidate labels/ranges remain heuristics, not native terminal semantics.
+    """
+    death_times: list[float] = []
+    item_times: list[float] = []
+    crystal_times: list[float] = []
+    try:
+        for _, data in frames:
+            for record in iter_records(data):
+                if record.opcode == 0x0431 and record.content_length == 8:
+                    reference = struct.unpack_from(">I", record.payload)[0]
+                    if reference > 0xFFFF or record.payload[4:] != b"\x00\x00":
+                        continue
+                    if 0 < record.timestamp < 5000:
+                        death_times.append(record.timestamp)
+                    if 2000 <= reference <= 2005 and 60 < record.timestamp < 2400:
+                        crystal_times.append(record.timestamp)
+                if record.opcode == 0x043D and record.content_length == 16:
+                    reference = struct.unpack_from(">I", record.payload)[0]
+                    if reference <= 0xFFFF and 0 < record.timestamp < 5000:
+                        item_times.append(record.timestamp)
+    except VGRRecordError:
+        # inspect_native_clock reports the framing failure to the public gate.
+        return None, None, None
+    return (max(death_times, default=None), max(item_times, default=None),
+            max(crystal_times, default=None))
 
 
 def extract_replay_signals(replay_file: str) -> ReplaySignalSummary:
@@ -79,50 +72,20 @@ def extract_replay_signals(replay_file: str) -> ReplaySignalSummary:
         if player.get("entity_id")
     }
 
+    clock = inspect_native_clock(frames)
     detector = KDADetector(valid_eids)
-    for frame_idx, data in frames:
-        detector.process_frame(frame_idx, data)
+    if clock.status != "malformed_records":
+        for frame_idx, data in frames:
+            try:
+                detector.process_frame(frame_idx, data)
+            except VGRRecordError:
+                detector = KDADetector(valid_eids)
+                break
 
     max_kill_ts = max((event.timestamp for event in detector.kill_events if event.timestamp is not None), default=None)
     max_player_death_ts = max((event.timestamp for event in detector.death_events), default=None)
-    max_death_header_ts = _scan_max_timestamp(
-        frames,
-        _DEATH_HEADER,
-        9,
-        guards=((3, b"\x00\x00"), (7, b"\x00\x00")),
-    )
-    max_item_ts = _scan_max_timestamp(
-        frames,
-        _ITEM_ACQUIRE_HEADER,
-        17,
-        guards=((3, b"\x00\x00"),),
-    )
+    max_death_header_ts, max_item_ts, crystal_ts = _scan_record_tails(frames)
 
-    crystal_ts = None
-    if frames:
-        crystal_events = []
-        for _, data in frames:
-            pos = 0
-            while True:
-                idx = data.find(_DEATH_HEADER, pos)
-                if idx == -1:
-                    break
-                pos = idx + 1
-                if idx + 13 > len(data):
-                    continue
-                if (
-                    data[idx + 3:idx + 5] != b"\x00\x00"
-                    or data[idx + 7:idx + 9] != b"\x00\x00"
-                ):
-                    continue
-                eid = struct.unpack_from(">H", data, idx + 5)[0]
-                ts = struct.unpack_from(">f", data, idx + 9)[0]
-                if 2000 <= eid <= 2005 and 60 < ts < 2400:
-                    crystal_events.append(ts)
-        if crystal_events:
-            crystal_ts = max(crystal_events)
-
-    clock = inspect_native_clock(frames)
     return ReplaySignalSummary(
         replay_name=parsed["replay_name"],
         replay_file=parsed["replay_file"],
