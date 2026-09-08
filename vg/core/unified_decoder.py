@@ -863,7 +863,7 @@ class UnifiedDecoder:
             data_complete = None
             completeness_reason = f"Native clock integrity failed ({clock.status}): {clock.reason}"
         native_by_id = {p.entity_id: p for p in native.players}
-        kda_used = bool(native.valid and all_players and all(
+        kda_used = bool(data_complete is True and native.valid and all_players and all(
             p.entity_id and _le_to_be(p.entity_id) in native_by_id for p in all_players
         ))
         if kda_used:

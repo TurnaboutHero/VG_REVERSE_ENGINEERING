@@ -92,16 +92,23 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv=None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.output is not None:
+            files, _ = _candidate_files(args.path)
+            output_path = args.output.resolve()
+            for input_path in files:
+                if output_path == input_path.resolve() or (
+                    args.output.exists() and args.output.samefile(input_path)
+                ):
+                    raise ValueError("output path aliases an input replay")
         summary = audit_path(args.path)
+        rendered = json.dumps(summary, indent=2, sort_keys=True) + "\n"
+        if args.output:
+            args.output.write_text(rendered, encoding="utf-8")
+        else:
+            print(rendered, end="")
     except (OSError, ValueError) as error:
         print(f"error: {error}", file=sys.stderr)
         return 2
-
-    rendered = json.dumps(summary, indent=2, sort_keys=True) + "\n"
-    if args.output:
-        args.output.write_text(rendered, encoding="utf-8")
-    else:
-        print(rendered, end="")
 
     if summary["replay_files"] == 0:
         print("error: audit contains no real replay files", file=sys.stderr)

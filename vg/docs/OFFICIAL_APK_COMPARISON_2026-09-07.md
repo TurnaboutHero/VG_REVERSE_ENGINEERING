@@ -104,10 +104,8 @@ clamp((layer0 + layer1 × (layer3 + 1)) × (layer2 + 1), min[index], max[index])
 
 ## 검증 자료와 재현
 
-- [APK·엔진·함수 식별 목록](/Users/gimhunhui/Documents/Codex/2026-09-05/ssh-winsrv-d-vg/outputs/vg-apk-comparison-manifest.json)
-- [APK 서명 검증 원문](/Users/gimhunhui/Documents/Codex/2026-09-05/ssh-winsrv-d-vg/outputs/vg-apk-signature.txt)
-- [대조 결과와 바이트 검증 기록](/Users/gimhunhui/Documents/Codex/2026-09-05/ssh-winsrv-d-vg/outputs/vg-apk-comparison-verification.json)
-- [선택한 기계어·분기표·스크립트 묶음](/Users/gimhunhui/Documents/Codex/2026-09-05/ssh-winsrv-d-vg/outputs/vg-apk-comparison-evidence.zip)
+- [공개 APK·엔진 식별과 대조 결과](OFFICIAL_APK_COMPARISON_2026-09-07.json)
+- 서명 검증 원문, 선택 기계어·분기표·재현 스크립트 묶음은 비공개 작업 자료로 보관한다. 저장소에 포함되지 않은 로컬 경로를 공개 링크로 제공하지 않는다.
 
 묶음에는 APK·엔진 전체나 웹페이지의 추적 데이터가 들어 있지 않다. 각 바이너리의 해시, 선택한 함수 범위와 기계어, 재현용 스크립트를 담았다. 분석 도구는 기존 Android SDK의 apksigner/aapt2, Apple LLVM 도구 및 분석 폴더 안에 설치한 Capstone 5.0.9·pyelftools 0.33을 사용했다. KDA의 주요 명령은 Capstone과 LLVM 양쪽의 출력으로 확인했다.
 

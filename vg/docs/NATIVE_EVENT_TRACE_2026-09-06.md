@@ -119,4 +119,4 @@ A final bounded registry search inspected10045.c and1003e.c, plus the earlier100
 
 ## Binary follow-up
 
-The one community-modified VGNA iOS candidate was checked against the bounded download condition; its1.73GB IPA exceeds250MB, so exact vtable slots remain unread. See [native-binary-followup.md](native-binary-followup.md) for current manifest/HEAD evidence and build/hash mismatch cautions.
+The initial whole-archive size limit left these vtable slots unread at that stage. Later targeted Range extraction resolved the four vtable links; see [native binary follow-up](NATIVE_EVENT_BINARY_2026-09-06.md) for the final result, build identity, and provenance limits.
