@@ -1,0 +1,141 @@
+{
+  "apk": {
+    "version_name": "4.13.4 (147219)",
+    "version_code": 147219,
+    "package": "com.superevilmegacorp.game",
+    "bytes": 30497305,
+    "sha256": "e82a6beed517db32536cd0f85a703d84dda84e1d184c990728dfb7c87d561d2d",
+    "archive_page": "https://www.apkmirror.com/apk/super-evil-megacorp/vainglory/vainglory-4-13-4-147219-release/vainglory-4-13-4-147219-android-apk-download/",
+    "retrieval": "Chrome normal download flow; no installation or execution",
+    "verified_schemes": [
+      "v1",
+      "v2"
+    ],
+    "signer_certificate_sha256": "358a74b85ea8839de3f5d1b87cc84a2906dcd3a40099479ef957819fda54a90b",
+    "publisher_attribution": "Archive labels this signer as Super Evil Megacorp; not a direct current developer-server download or a developer-published hash check",
+    "older_signer_metadata_check": {
+      "version": "4.13.0 (102405)",
+      "page": "https://www.apkmirror.com/apk/super-evil-megacorp/vainglory/vainglory-4-13-0-102405-release/vainglory-4-13-0-102405-android-apk-download/",
+      "certificate_sha256_matches": true,
+      "scope": "Older archive metadata checked; older APK not downloaded or independently verified in this comparison."
+    }
+  },
+  "android_engine": {
+    "zip_member": "lib/arm64-v8a/libGameKindred.so",
+    "bytes": 45062040,
+    "sha256": "cd1b8831f82c469274613fc30f1f1f6e78c788102cdad7db5db2c04b96580a47",
+    "gnu_build_id": "b6ed0857c01ae2162d71fed102493f250973bcdc"
+  },
+  "vgna_engine": {
+    "platform": "iOS Mach-O ARM64, community-modified redistribution",
+    "sha256": "c23b2e9eb201f47694c7e71ab39d2c8c96850beb4ddf489745def23927fcd891"
+  },
+  "android_functions": {
+    "receive_dispatch": {
+      "start": "0x82b85c",
+      "end_exclusive": "0x82d980",
+      "sha256": "78ce6ac7109220f984e832c9cb08394b89f4d7bdd0e428352fab7f480f9cefde"
+    },
+    "queue_apply": {
+      "start": "0xbe2218",
+      "end_exclusive": "0xbe22e0",
+      "sha256": "c32d884a3cadeefe89ed22acbd4f04e959b6f0837ca0039f80beeba448b08344"
+    },
+    "ctor0431": {
+      "start": "0xbfe30c",
+      "end_exclusive": "0xbfe32c",
+      "sha256": "2b04292b6a6fde45dc1b463ffdbf97ef68960e2d5295cd1074dd864c8afad4c0"
+    },
+    "ctor041c": {
+      "start": "0xc041e4",
+      "end_exclusive": "0xc04214",
+      "sha256": "ce923189e35ddda9f486414cc4f9f00031c8945bf80ee9ab38fba253bb098ba9"
+    },
+    "ctor041d": {
+      "start": "0xc043c0",
+      "end_exclusive": "0xc043f4",
+      "sha256": "bb3b8fb8b8a74ce4fd46899b9eb3dad28ac6bdee672cfb462fde99526a09fded"
+    },
+    "ctor042b": {
+      "start": "0xc0542c",
+      "end_exclusive": "0xc0545c",
+      "sha256": "17530fe3a17411a04b8d703325103382267e6286e533f1c55944fb2c98a99a23"
+    },
+    "apply0431": {
+      "start": "0xbfe398",
+      "end_exclusive": "0xbfe3fc",
+      "sha256": "8941bbffafcd5f3b6709c55850ad49ea06ef01df64851e2a1bcf18752207dbd1"
+    },
+    "apply041c_thunk": {
+      "start": "0xc042ec",
+      "end_exclusive": "0xc042f0",
+      "sha256": "788f1512f26f87f558ccda89030f23036527961be061f31e047ad5b93b8aafe2"
+    },
+    "apply041c": {
+      "start": "0xc042f0",
+      "end_exclusive": "0xc04344",
+      "sha256": "e428864f6593180adcff3d3d84bae0587c85ac17fd0d9c6224c99fde2e6c7ed8"
+    },
+    "apply041d": {
+      "start": "0xc04498",
+      "end_exclusive": "0xc04544",
+      "sha256": "a036bab86b0b04566a0cfe5e1ef30235c2ffa7117c6daa073bfe5845d5a1630e"
+    },
+    "apply041d_core": {
+      "start": "0xc04544",
+      "end_exclusive": "0xc045ac",
+      "sha256": "259507e978696a9f5c4b858f96c126585d8a3224fd63ba3a17c12181d566ea48"
+    },
+    "apply042b": {
+      "start": "0xc054a0",
+      "end_exclusive": "0xc055e8",
+      "sha256": "b9e6b111fd47f2534aaea9c745d54328eb06fd1106fa7c0530e03cd81660e789"
+    },
+    "bits_set": {
+      "start": "0xc7d378",
+      "end_exclusive": "0xc7d5a4",
+      "sha256": "c17612fa7ec71ddbad7f579d3b08ef0d2addf0c08da67e99e6247c9125664439"
+    },
+    "state4": {
+      "start": "0xc5df60",
+      "end_exclusive": "0xc5df74",
+      "sha256": "f77b9dcf0c96a2e5dc75fc657561777784f5f26ec4b7d63c74e295d5d6492217"
+    },
+    "attribute_add": {
+      "start": "0xc5f27c",
+      "end_exclusive": "0xc5f358",
+      "sha256": "e7a7f21a102e41b1ca9a11e88ada524d1c1d3ea894cc75fc46c9fc9b2341aed7"
+    },
+    "attribute_set": {
+      "start": "0xc5f478",
+      "end_exclusive": "0xc5f4f8",
+      "sha256": "1de1454615c60803572d1c63296a5a22ef7cb63605c1ac6a81224ad90c85088a"
+    },
+    "resource_add": {
+      "start": "0xc5f6b0",
+      "end_exclusive": "0xc5f6e8",
+      "sha256": "de6dfedb6442e2f917e71f2b801fecda63863afcef41fea4589664e1122eee91"
+    },
+    "resource_set": {
+      "start": "0xc5f70c",
+      "end_exclusive": "0xc5f720",
+      "sha256": "25d219f1b9555f1ba86d3f6eb09226497e87f67149867e631f0544893a98cb71"
+    },
+    "actor_stat_export": {
+      "start": "0x81b34c",
+      "end_exclusive": "0x81df90",
+      "sha256": "5f5ce8ad0c5bf9df6affdb47595721bd3468594c5374b9d7c719ab4fe62a8dae"
+    },
+    "selected_actor": {
+      "start": "0x81e360",
+      "end_exclusive": "0x81e3c4",
+      "sha256": "9eb990830cdd5b18c55f9f38707e0f161d67b364885dc11c1f6586e0b47a7e93"
+    },
+    "float_json_set": {
+      "start": "0xdc3ef0",
+      "end_exclusive": "0xdc3f00",
+      "sha256": "20a4750885076ec2f727e82abef8a2df782173bb79b7f94d041cbce7fa68563d"
+    }
+  },
+  "scope": "Four selected opcode receive/constructor/vtable/apply paths and actor KDA field export; not full-client equivalence, original iOS equivalence, or replay-producer build identity."
+}

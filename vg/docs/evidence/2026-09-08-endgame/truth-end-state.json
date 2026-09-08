@@ -1,0 +1,182 @@
+[
+  {
+    "match": 1,
+    "terminal": [
+      {
+        "time": 1040.2017822265625,
+        "winning_team_byte": 1,
+        "reason": 0,
+        "payload": "000000010000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1028.87109375,
+    "truth_duration": 1028,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 2,
+    "terminal": [
+      {
+        "time": 972.8419799804688,
+        "winning_team_byte": 2,
+        "reason": 0,
+        "payload": "000000020000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 969.3463745117188,
+    "truth_duration": 969,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 3,
+    "terminal": [
+      {
+        "time": 1062.577392578125,
+        "winning_team_byte": 2,
+        "reason": 0,
+        "payload": "000000020000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1036.2705078125,
+    "truth_duration": 1036,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 4,
+    "terminal": [
+      {
+        "time": 1188.9705810546875,
+        "winning_team_byte": 1,
+        "reason": 0,
+        "payload": "000000010000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1163.673095703125,
+    "truth_duration": 1163,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 5,
+    "terminal": [
+      {
+        "time": 1154.935302734375,
+        "winning_team_byte": 1,
+        "reason": 0,
+        "payload": "000000010000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1154.4871826171875,
+    "truth_duration": 1135,
+    "truth_winner": "right",
+    "kda_compared": 27,
+    "kda_matches": 24
+  },
+  {
+    "match": 6,
+    "terminal": [
+      {
+        "time": 1487.453857421875,
+        "winning_team_byte": 1,
+        "reason": 2,
+        "payload": "000000010200"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1573.428466796875,
+    "truth_duration": 1551,
+    "truth_winner": "left",
+    "kda_compared": 27,
+    "kda_matches": 24
+  },
+  {
+    "match": 7,
+    "terminal": [
+      {
+        "time": 1611.257080078125,
+        "winning_team_byte": 2,
+        "reason": 0,
+        "payload": "000000020000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1609.4747314453125,
+    "truth_duration": 1604,
+    "truth_winner": "right",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 8,
+    "terminal": [
+      {
+        "time": 1358.023193359375,
+        "winning_team_byte": 2,
+        "reason": 0,
+        "payload": "000000020000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1355.9967041015625,
+    "truth_duration": 1355,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 9,
+    "terminal": [],
+    "native_status": "mixed_segments",
+    "game_time_at_last_record": null,
+    "truth_duration": 1709,
+    "truth_winner": "left",
+    "kda_compared": 0,
+    "kda_matches": 0
+  },
+  {
+    "match": 10,
+    "terminal": [
+      {
+        "time": 1325.928955078125,
+        "winning_team_byte": 2,
+        "reason": 0,
+        "payload": "000000020000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1295.0330810546875,
+    "truth_duration": 1295,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  },
+  {
+    "match": 11,
+    "terminal": [
+      {
+        "time": 1114.8524169921875,
+        "winning_team_byte": 1,
+        "reason": 0,
+        "payload": "000000010000"
+      }
+    ],
+    "native_status": "accepted",
+    "game_time_at_last_record": 1078.5455322265625,
+    "truth_duration": 1078,
+    "truth_winner": "left",
+    "kda_compared": 30,
+    "kda_matches": 30
+  }
+]

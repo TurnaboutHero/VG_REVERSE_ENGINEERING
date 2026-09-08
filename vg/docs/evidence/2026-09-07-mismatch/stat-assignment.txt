@@ -1,0 +1,33 @@
+
+FUNCTION 0xc5f94c..0xc5f9c8 containing 0xc5f94c
+00c5f94c  e8031faa  mov      x8, xzr
+00c5f950  29d00291  add      x9, x1, #0xb4
+00c5f954  0ab00391  add      x10, x0, #0xec
+00c5f958  eb030032  mov      w11, #1
+00c5f95c  2d8841f9  ldr      x13, [x1, #0x310]
+00c5f960  6c21c89a  lsl      x12, x11, x8
+00c5f964  bf010cea  tst      x13, x12
+00c5f968  40010054  b.eq     #0xc5f990
+00c5f96c  2dc154b8  ldur     w13, [x9, #-0xb4]
+00c5f970  4dc114b8  stur     w13, [x10, #-0xb4]
+00c5f974  2d0140b9  ldr      w13, [x9]
+00c5f978  0ea441f9  ldr      x14, [x0, #0x348]
+00c5f97c  4d0100b9  str      w13, [x10]
+00c5f980  2db540b9  ldr      w13, [x9, #0xb4]
+00c5f984  cc010caa  orr      x12, x14, x12
+00c5f988  4db500b9  str      w13, [x10, #0xb4]
+00c5f98c  0ca401f9  str      x12, [x0, #0x348]
+00c5f990  08050091  add      x8, x8, #1
+00c5f994  29110091  add      x9, x9, #4
+00c5f998  1fb500f1  cmp      x8, #0x2d
+00c5f99c  4a110091  add      x10, x10, #4
+00c5f9a0  e1fdff54  b.ne     #0xc5f95c
+00c5f9a4  e8031faa  mov      x8, xzr
+00c5f9a8  29400b91  add      x9, x1, #0x2d0
+00c5f9ac  0a200c91  add      x10, x0, #0x308
+00c5f9b0  2b6968b8  ldr      w11, [x9, x8]
+00c5f9b4  4b6928b8  str      w11, [x10, x8]
+00c5f9b8  08110091  add      x8, x8, #4
+00c5f9bc  1f0101f1  cmp      x8, #0x40
+00c5f9c0  81ffff54  b.ne     #0xc5f9b0
+00c5f9c4  c0035fd6  ret

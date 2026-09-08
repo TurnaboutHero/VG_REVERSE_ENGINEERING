@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -12,20 +13,30 @@ from vg.core.vgr_parser import VGRParser
 from .gold import decode_gold_from_replay
 from .kda import decode_kda_from_replay
 from .minions import collect_minion_candidates
-from .models import AcceptedPlayerFields, DecoderV2MatchOutput, FieldDecision
+from .models import (AcceptedPlayerFields, DecoderV2MatchOutput, FieldDecision,
+                     GoldExtractionResult, WinnerExtractionResult)
 from .winner import decode_winner_from_replay
 
 
-def decode_match(replay_file: str) -> DecoderV2MatchOutput:
+def decode_match(replay_file: str, *, at_game_time: Optional[float] = None) -> DecoderV2MatchOutput:
     """Decode a replay conservatively, only exporting accepted fields."""
     parser = VGRParser(replay_file, auto_truth=False)
     parsed = parser.parse()
     match_info = parsed["match_info"]
 
-    winner_result = decode_winner_from_replay(replay_file)
-    kda_result = decode_kda_from_replay(replay_file)
-    assessment = winner_result.assessment
-    gold_result = decode_gold_from_replay(replay_file, assessment=assessment)
+    capture = at_game_time is not None
+    if capture:
+        kda_result = decode_kda_from_replay(replay_file, at_game_time=at_game_time)
+        assessment = kda_result.assessment
+        reason = "Capture scope does not establish final winner, gold, or duration."
+        winner_result = WinnerExtractionResult(False, reason, assessment, kda_result.duration_estimate,
+                                               None, None, None)
+        gold_result = GoldExtractionResult(False, reason, assessment)
+    else:
+        winner_result = decode_winner_from_replay(replay_file)
+        kda_result = decode_kda_from_replay(replay_file)
+        assessment = winner_result.assessment
+        gold_result = decode_gold_from_replay(replay_file, assessment=assessment)
 
     players: List[AcceptedPlayerFields] = []
     if kda_result.accepted:
@@ -78,7 +89,7 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
             reason="Withheld: field is still partial in decoder_v2.",
         ),
         "duration_seconds": FieldDecision(
-            value=winner_result.duration_estimate.estimate_seconds,
+            value=None if capture else winner_result.duration_estimate.estimate_seconds,
             claim_status="partial",
             accepted_for_index=False,
             claim_id="duration.approximate",
@@ -106,20 +117,20 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
         accepted_fields["kills"] = FieldDecision(
             value="accepted",
             claim_status="strong",
-            accepted_for_index=True,
-            claim_id="kills.complete_match",
+            accepted_for_index=not capture,
+            claim_id="kills.capture" if capture else "kills.complete_match",
         )
         accepted_fields["deaths"] = FieldDecision(
             value="accepted",
             claim_status="strong",
-            accepted_for_index=True,
-            claim_id="deaths.complete_match",
+            accepted_for_index=not capture,
+            claim_id="deaths.capture" if capture else "deaths.complete_match",
         )
         accepted_fields["assists"] = FieldDecision(
             value="accepted",
             claim_status="strong",
-            accepted_for_index=True,
-            claim_id="assists.complete_match",
+            accepted_for_index=not capture,
+            claim_id="assists.capture" if capture else "assists.complete_match",
         )
     else:
         withheld_fields["kills"] = FieldDecision(
@@ -153,7 +164,7 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
         )
     else:
         withheld_fields["gold"] = FieldDecision(
-            value="partial",
+            value=None if capture else "partial",
             claim_status="strong",
             accepted_for_index=False,
             claim_id="gold.credit_action_06_complete_match",
@@ -161,7 +172,7 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
         )
 
     return DecoderV2MatchOutput(
-        schema_version="decoder_v2.match.v1",
+        schema_version="decoder_v2.capture.v1" if capture else "decoder_v2.match.v1",
         replay_name=parsed["replay_name"],
         replay_file=parsed["replay_file"],
         game_mode=match_info["mode"],
@@ -172,11 +183,27 @@ def decode_match(replay_file: str) -> DecoderV2MatchOutput:
         accepted_fields=accepted_fields,
         withheld_fields=withheld_fields,
         players=tuple(players),
+        scope="capture" if capture else "final",
+        at_game_time=at_game_time,
+        as_of_game_time=kda_result.as_of_game_time,
     )
 
 
-def decode_match_debug(replay_file: str) -> Dict[str, object]:
+def decode_match_debug(replay_file: str, *, at_game_time: Optional[float] = None) -> Dict[str, object]:
     """Decode a replay with research/debug details included."""
+    if at_game_time is not None:
+        safe_output = decode_match(replay_file, at_game_time=at_game_time)
+        kda_result = decode_kda_from_replay(replay_file, at_game_time=at_game_time)
+        return {
+            "schema_version": "decoder_v2.debug_capture.v1",
+            "safe_output": safe_output.to_dict(),
+            "completeness": kda_result.assessment.to_dict(),
+            "duration": None,
+            "winner_debug": None,
+            "kda_debug": kda_result.to_dict(),
+            "gold_debug": None,
+            "minion_candidates": [],
+        }
     safe_output = decode_match(replay_file)
     winner_result = decode_winner_from_replay(replay_file)
     kda_result = decode_kda_from_replay(replay_file)
@@ -205,12 +232,15 @@ def main(argv: Optional[List[str]] = None) -> int:
         help="Output format",
     )
     parser.add_argument("-o", "--output", help="Optional output JSON path")
+    parser.add_argument("--at-game-time", type=float, help="Capture at game-clock seconds; withholds final winner/gold/duration.")
     args = parser.parse_args(argv)
+    if args.at_game_time is not None and (not math.isfinite(args.at_game_time) or args.at_game_time < 0):
+        parser.error("--at-game-time must be finite and non-negative")
 
     if args.format == "debug-json":
-        payload_obj = decode_match_debug(args.replay_file)
+        payload_obj = decode_match_debug(args.replay_file, at_game_time=args.at_game_time)
     else:
-        payload_obj = decode_match(args.replay_file).to_dict()
+        payload_obj = decode_match(args.replay_file, at_game_time=args.at_game_time).to_dict()
 
     payload = json.dumps(payload_obj, indent=2, ensure_ascii=False)
     if args.output:

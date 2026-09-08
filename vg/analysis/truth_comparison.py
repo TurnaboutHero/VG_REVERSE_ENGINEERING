@@ -81,6 +81,22 @@ def load_truth(truth_path: str) -> dict:
         return json.load(f)
 
 
+def compare_player_stats(player, truth):
+    """Compare only available values; unknown is neither a match nor a miss."""
+    comparisons = {}
+    for key, field in (('kill', 'kills'), ('death', 'deaths'),
+                       ('assist', 'assists'), ('mk', 'minion_kills')):
+        expected = truth.get(field)
+        detected = getattr(player, field)
+        available = expected is not None and detected is not None
+        comparisons[key] = {
+            'truth': expected, 'detected': detected,
+            'match': detected == expected if available else None,
+            'diff': detected - expected if available else None,
+        }
+    return comparisons
+
+
 def compare_all(truth_path: str):
     truth_data = load_truth(truth_path)
     matches = truth_data["matches"]
@@ -198,49 +214,27 @@ def compare_all(truth_path: str):
             else:
                 mismatches.append(f"team: {dp.team} != {tp['team']}")
 
-            # Kills
-            if dp.kills == tp["kills"]:
-                stats['kill_all'] += 1
-                if not is_incomplete:
-                    stats['kill'] += 1
-            else:
-                diff = dp.kills - tp["kills"]
-                mismatches.append(f"K: {dp.kills} != {tp['kills']} ({'+' if diff>0 else ''}{diff})")
-                kill_errors.append((mi+1, pname, dp.hero_name, dp.kills, tp["kills"], diff, is_incomplete))
-
-            # Deaths
-            if dp.deaths == tp["deaths"]:
-                stats['death_all'] += 1
-                if not is_incomplete:
-                    stats['death'] += 1
-            else:
-                diff = dp.deaths - tp["deaths"]
-                mismatches.append(f"D: {dp.deaths} != {tp['deaths']} ({'+' if diff>0 else ''}{diff})")
-                death_errors.append((mi+1, pname, dp.hero_name, dp.deaths, tp["deaths"], diff, is_incomplete))
-
-            # Assists
-            truth_assists = tp.get("assists")
-            if truth_assists is not None and dp.assists is not None:
-                stats['assist_all'] += 1 if dp.assists == truth_assists else 0
-                if dp.assists == truth_assists:
-                    if not is_incomplete:
-                        stats['assist'] += 1
-                else:
-                    diff = dp.assists - truth_assists
-                    mismatches.append(f"A: {dp.assists} != {truth_assists} ({'+' if diff>0 else ''}{diff})")
-                    assist_errors.append((mi+1, pname, dp.hero_name, dp.assists, truth_assists, diff, is_incomplete))
-
-            # Minion kills
-            truth_mk = tp.get("minion_kills")
-            if truth_mk is not None:
-                stats['mk_all'] += 1 if dp.minion_kills == truth_mk else 0
-                if dp.minion_kills == truth_mk:
-                    if not is_incomplete:
-                        stats['mk'] += 1
-                else:
-                    diff = dp.minion_kills - truth_mk
-                    mismatches.append(f"MK: {dp.minion_kills} != {truth_mk} ({'+' if diff>0 else ''}{diff})")
-                    mk_errors.append((mi+1, pname, dp.hero_name, dp.minion_kills, truth_mk, diff, is_incomplete))
+            for key, result in compare_player_stats(dp, tp).items():
+                if result['truth'] is None:
+                    continue
+                suffixes = ['_all'] if is_incomplete else ['', '_all']
+                if result['match'] is None:
+                    for suffix in suffixes:
+                        counter = key + '_unavailable' + suffix
+                        stats[counter] = stats.get(counter, 0) + 1
+                    mismatches.append(f"{key}: unavailable (truth={result['truth']})")
+                    continue
+                for suffix in suffixes:
+                    counter = key + '_compared' + suffix
+                    stats[counter] = stats.get(counter, 0) + 1
+                    stats[key + suffix] += int(result['match'])
+                if not result['match']:
+                    diff = result['diff']
+                    mismatches.append(f"{key}: {result['detected']} != {result['truth']} ({diff:+d})")
+                    errors = {'kill': kill_errors, 'death': death_errors,
+                              'assist': assist_errors, 'mk': mk_errors}[key]
+                    errors.append((mi+1, pname, dp.hero_name, result['detected'],
+                                   result['truth'], diff, is_incomplete))
 
             # Gold (gold_earned = positive action 0x06 only, truth = total gold)
             truth_gold = tp.get("gold")
@@ -260,12 +254,6 @@ def compare_all(truth_path: str):
     # ====== SUMMARY ======
     n_complete = stats['players']
     n_all = stats['players_all']
-    n_complete_assists = sum(1 for m in matches for p in m["players"].values()
-                            if "assists" in p and "Incomplete" not in m["replay_file"])
-    n_complete_mk = sum(1 for m in matches for p in m["players"].values()
-                        if "minion_kills" in p and "Incomplete" not in m["replay_file"])
-    n_all_assists = sum(1 for m in matches for p in m["players"].values() if "assists" in p)
-    n_all_mk = sum(1 for m in matches for p in m["players"].values() if "minion_kills" in p)
     n_complete_matches = sum(1 for m in matches if "Incomplete" not in m["replay_file"])
 
     def pct(n, d):
@@ -281,15 +269,19 @@ def compare_all(truth_path: str):
     print(f"  Hero (normalized): {pct(stats['hero'], n_complete)}")
     print(f"  Team Grouping:     {pct(stats['team_group'], n_complete)}  (after swap correction)")
     print(f"  Winner:            {pct(stats['winner'], n_complete_matches)}")
-    print(f"  Kills:             {pct(stats['kill'], n_complete)}")
-    print(f"  Deaths:            {pct(stats['death'], n_complete)}")
-    print(f"  Assists:           {pct(stats['assist'], n_complete_assists)}")
-    print(f"  Minion Kills:      {pct(stats['mk'], n_complete_mk)}")
+    print(f"  Kills:             {pct(stats['kill'], stats.get('kill_compared', 0))}")
+    print(f"  Deaths:            {pct(stats['death'], stats.get('death_compared', 0))}")
+    print(f"  Assists:           {pct(stats['assist'], stats.get('assist_compared', 0))}")
+    print(f"  Minion Kills:      {pct(stats['mk'], stats.get('mk_compared', 0))}")
 
     print(f"\n  Including Incomplete M9 ({len(matches)} matches, {n_all} players):")
     print(f"  {'─'*50}")
-    print(f"  Kills:             {pct(stats['kill_all'], n_all)}")
-    print(f"  Deaths:            {pct(stats['death_all'], n_all)}")
+    print(f"  Kills:             {pct(stats['kill_all'], stats.get('kill_compared_all', 0))}")
+    print(f"  Deaths:            {pct(stats['death_all'], stats.get('death_compared_all', 0))}")
+
+    print("  Unavailable values (all matches): " + ", ".join(
+        f"{key}={stats.get(key + '_unavailable_all', 0)}"
+        for key in ('kill', 'death', 'assist', 'mk')))
 
     print(f"\n  Team Label Swaps: {len(team_swap_matches)}/{len(matches)} matches")
     if team_swap_matches:

@@ -1,0 +1,127 @@
+{
+  "surrender": {
+    "frames": 29,
+    "last_record_time": 289.887451171875,
+    "clock_audit": {
+      "valid": true,
+      "status": "accepted",
+      "reason": "continuous native clock anchors",
+      "first_game_time": 0.0,
+      "last_game_time": 287.7359924316406
+    },
+    "native_state": {
+      "valid": true,
+      "status": "accepted",
+      "reason": "native state observed; match completion not asserted",
+      "players": [
+        {
+          "entity_id": 1500,
+          "kills": 0,
+          "deaths": 0,
+          "assists": 0,
+          "minion_kills": 0
+        }
+      ],
+      "requested_game_time": null,
+      "first_game_time": 0.0,
+      "last_game_time": 287.7359924316406,
+      "as_of_game_time": 287.7359924316406
+    },
+    "terminal_records": [
+      {
+        "frame": 28,
+        "offset": 83128,
+        "record_time": 289.8695983886719,
+        "opcode": "048d",
+        "length": 1616,
+        "decoding_status": "unknown_opcode"
+      },
+      {
+        "frame": 28,
+        "offset": 84752,
+        "record_time": 289.887451171875,
+        "opcode": "03f1",
+        "length": 8,
+        "decoding_status": "unknown_opcode",
+        "payload_hex": "000000020200"
+      }
+    ],
+    "observed_ui": {
+      "time": "4:47",
+      "kda": [
+        0,
+        0,
+        0
+      ],
+      "result": "surrender"
+    }
+  },
+  "combat": {
+    "frames": 121,
+    "last_record_time": 1208.4146728515625,
+    "clock_audit": {
+      "valid": true,
+      "status": "accepted",
+      "reason": "continuous native clock anchors",
+      "first_game_time": 0.0,
+      "last_game_time": 1207.0601806640625
+    },
+    "native_state": {
+      "valid": true,
+      "status": "accepted",
+      "reason": "native state observed; match completion not asserted",
+      "players": [
+        {
+          "entity_id": 1500,
+          "kills": 0,
+          "deaths": 1,
+          "assists": 0,
+          "minion_kills": 0
+        }
+      ],
+      "requested_game_time": null,
+      "first_game_time": 0.0,
+      "last_game_time": 1207.0601806640625,
+      "as_of_game_time": 1207.0601806640625
+    },
+    "terminal_records": [
+      {
+        "frame": 120,
+        "offset": 93762,
+        "record_time": 1208.4146728515625,
+        "opcode": "048d",
+        "length": 1616,
+        "decoding_status": "unknown_opcode"
+      },
+      {
+        "frame": 120,
+        "offset": 95386,
+        "record_time": 1208.4146728515625,
+        "opcode": "03f1",
+        "length": 8,
+        "decoding_status": "decoded",
+        "native_type": "end_match_action",
+        "native_class": "Nuo::Kindred::ActionEndMatch",
+        "native_winning_team_raw": 2,
+        "native_winning_team_id": 2,
+        "native_end_reason": 2,
+        "native_surrender": true,
+        "remaining_hex": "00",
+        "native_evidence": "windows-659f9eed",
+        "native_evidence_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+        "payload_hex": "000000020200"
+      }
+    ],
+    "observed_ui": {
+      "time": "20:07",
+      "kda": [
+        0,
+        1,
+        0
+      ],
+      "level": 12,
+      "displayed_gold": "33.9k",
+      "result": "surrender"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "player_entity_id": 1500,
+  "records": [
+    {
+      "frame": 97,
+      "offset": 100334,
+      "record_time": 978.1154174804688,
+      "game_time": 976.7700805664062,
+      "opcode": "0430",
+      "payload": "000005dc000007d7000000000000",
+      "decoding_status": "unknown_opcode"
+    },
+    {
+      "frame": 97,
+      "offset": 100390,
+      "record_time": 978.1154174804688,
+      "game_time": 976.7700805664062,
+      "opcode": "041c",
+      "payload": "000005dcffffffff3f8000002a000000000000000000",
+      "decoding_status": "decoded",
+      "ref0": 1500,
+      "ref1": 4294967295,
+      "value": 1.0,
+      "value_bits": 1065353216,
+      "code": 42,
+      "remaining_hex": "000000000000000000",
+      "native_evidence": "gamekindred-c23b2e9e",
+      "native_type": "attribute_update",
+      "native_index": 42,
+      "native_layer": 0,
+      "native_operation": "add",
+      "native_stat": "deaths"
+    },
+    {
+      "frame": 97,
+      "offset": 112606,
+      "record_time": 979.9348754882812,
+      "game_time": 978.5895385742188,
+      "opcode": "0431",
+      "payload": "000005dc0000",
+      "decoding_status": "decoded",
+      "ref0": 1500,
+      "remaining_hex": "0000",
+      "native_evidence": "gamekindred-c23b2e9e",
+      "native_type": "actor_state_transition",
+      "native_state_from": 3,
+      "native_state_to": 4,
+      "native_conditional": true,
+      "native_stat": null
+    }
+  ],
+  "screens": {
+    "last_continuous_capture": {
+      "game_time": "16:01",
+      "kda": [
+        0,
+        0,
+        0
+      ]
+    },
+    "later_still": {
+      "game_time": "16:20",
+      "kda": [
+        0,
+        1,
+        0
+      ],
+      "state": "corpse and respawn countdown"
+    },
+    "result": {
+      "game_time": "20:07",
+      "kda": [
+        0,
+        1,
+        0
+      ]
+    }
+  },
+  "limits": [
+    "Death transition is outside continuous capture.",
+    "Subsecond game time is anchor interpolation, not independently observed UI timing.",
+    "Second 0430 field is raw death source; not necessarily credited hero."
+  ]
+}

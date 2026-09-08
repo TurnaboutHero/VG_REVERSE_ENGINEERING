@@ -1,0 +1,1339 @@
+{
+  "replays": 56,
+  "with_end_action": 55,
+  "with_large_message": 55,
+  "end_action_payloads": {
+    "000000010000": 26,
+    "000000020000": 24,
+    "000000010200": 2,
+    "000000020200": 3
+  },
+  "rows": [
+    {
+      "replay": "C01",
+      "records": 227840,
+      "last_record_time": 1029.96484375,
+      "terminal_candidates": [
+        {
+          "ordinal": 227823,
+          "frame": 102,
+          "offset": 85589,
+          "record_time": 1029.96484375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 227824,
+          "frame": 102,
+          "offset": 87213,
+          "record_time": 1029.96484375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C02",
+      "records": 449332,
+      "last_record_time": 1146.404052734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 449314,
+          "frame": 114,
+          "offset": 96227,
+          "record_time": 1146.404052734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 449315,
+          "frame": 114,
+          "offset": 97851,
+          "record_time": 1146.404052734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C03",
+      "records": 319331,
+      "last_record_time": 804.17138671875,
+      "terminal_candidates": [
+        {
+          "ordinal": 319330,
+          "frame": 80,
+          "offset": 84890,
+          "record_time": 804.17138671875,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 319331,
+          "frame": 80,
+          "offset": 86514,
+          "record_time": 804.17138671875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C04",
+      "records": 807001,
+      "last_record_time": 1928.789306640625,
+      "terminal_candidates": [
+        {
+          "ordinal": 807000,
+          "frame": 192,
+          "offset": 159078,
+          "record_time": 1928.7750244140625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 807001,
+          "frame": 192,
+          "offset": 160702,
+          "record_time": 1928.789306640625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C05",
+      "records": 667149,
+      "last_record_time": 1555.82861328125,
+      "terminal_candidates": [
+        {
+          "ordinal": 667140,
+          "frame": 155,
+          "offset": 112313,
+          "record_time": 1555.8148193359375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 667141,
+          "frame": 155,
+          "offset": 113937,
+          "record_time": 1555.82861328125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C06",
+      "records": 603602,
+      "last_record_time": 1450.8056640625,
+      "terminal_candidates": [
+        {
+          "ordinal": 603601,
+          "frame": 145,
+          "offset": 49469,
+          "record_time": 1450.783203125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 603602,
+          "frame": 145,
+          "offset": 51093,
+          "record_time": 1450.8056640625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C07",
+      "records": 610048,
+      "last_record_time": 1465.2933349609375,
+      "terminal_candidates": [
+        {
+          "ordinal": 610028,
+          "frame": 146,
+          "offset": 116252,
+          "record_time": 1465.2933349609375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 610029,
+          "frame": 146,
+          "offset": 117876,
+          "record_time": 1465.2933349609375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C08",
+      "records": 747317,
+      "last_record_time": 1691.0025634765625,
+      "terminal_candidates": [
+        {
+          "ordinal": 747306,
+          "frame": 169,
+          "offset": 66955,
+          "record_time": 1691.0025634765625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 747307,
+          "frame": 169,
+          "offset": 68579,
+          "record_time": 1691.0025634765625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C09",
+      "records": 800525,
+      "last_record_time": 1816.335693359375,
+      "terminal_candidates": [
+        {
+          "ordinal": 800492,
+          "frame": 181,
+          "offset": 111900,
+          "record_time": 1816.335693359375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 800493,
+          "frame": 181,
+          "offset": 113524,
+          "record_time": 1816.335693359375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010200"
+        }
+      ]
+    },
+    {
+      "replay": "C10",
+      "records": 698445,
+      "last_record_time": 1636.6524658203125,
+      "terminal_candidates": [
+        {
+          "ordinal": 698379,
+          "frame": 163,
+          "offset": 133416,
+          "record_time": 1636.6524658203125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 698380,
+          "frame": 163,
+          "offset": 135040,
+          "record_time": 1636.6524658203125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020200"
+        }
+      ]
+    },
+    {
+      "replay": "C11",
+      "records": 484923,
+      "last_record_time": 1136.457275390625,
+      "terminal_candidates": [
+        {
+          "ordinal": 484914,
+          "frame": 113,
+          "offset": 122297,
+          "record_time": 1136.457275390625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 484915,
+          "frame": 113,
+          "offset": 123921,
+          "record_time": 1136.457275390625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C12",
+      "records": 735483,
+      "last_record_time": 1851.4677734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 735481,
+          "frame": 185,
+          "offset": 61943,
+          "record_time": 1851.4677734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 735482,
+          "frame": 185,
+          "offset": 63567,
+          "record_time": 1851.4677734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C13",
+      "records": 737034,
+      "last_record_time": 1913.3984375,
+      "terminal_candidates": [
+        {
+          "ordinal": 737032,
+          "frame": 191,
+          "offset": 71220,
+          "record_time": 1913.3984375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 737033,
+          "frame": 191,
+          "offset": 72844,
+          "record_time": 1913.3984375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C14",
+      "records": 767692,
+      "last_record_time": 1867.0794677734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 767690,
+          "frame": 186,
+          "offset": 118306,
+          "record_time": 1867.0794677734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 767691,
+          "frame": 186,
+          "offset": 119930,
+          "record_time": 1867.0794677734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C15",
+      "records": 490463,
+      "last_record_time": 1160.2015380859375,
+      "terminal_candidates": [
+        {
+          "ordinal": 490455,
+          "frame": 116,
+          "offset": 44149,
+          "record_time": 1160.2015380859375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 490456,
+          "frame": 116,
+          "offset": 45773,
+          "record_time": 1160.2015380859375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C16",
+      "records": 720282,
+      "last_record_time": 1703.6826171875,
+      "terminal_candidates": [
+        {
+          "ordinal": 720254,
+          "frame": 170,
+          "offset": 89778,
+          "record_time": 1703.6826171875,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 720255,
+          "frame": 170,
+          "offset": 91402,
+          "record_time": 1703.6826171875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C17",
+      "records": 879344,
+      "last_record_time": 2153.60986328125,
+      "terminal_candidates": [
+        {
+          "ordinal": 879343,
+          "frame": 215,
+          "offset": 120957,
+          "record_time": 2153.60986328125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 879344,
+          "frame": 215,
+          "offset": 122581,
+          "record_time": 2153.60986328125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C18",
+      "records": 544814,
+      "last_record_time": 1337.480712890625,
+      "terminal_candidates": [
+        {
+          "ordinal": 544812,
+          "frame": 133,
+          "offset": 136855,
+          "record_time": 1337.480712890625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 544813,
+          "frame": 133,
+          "offset": 138479,
+          "record_time": 1337.480712890625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C19",
+      "records": 638276,
+      "last_record_time": 1516.381103515625,
+      "terminal_candidates": [
+        {
+          "ordinal": 638272,
+          "frame": 151,
+          "offset": 144030,
+          "record_time": 1516.381103515625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 638273,
+          "frame": 151,
+          "offset": 145654,
+          "record_time": 1516.381103515625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C20",
+      "records": 473970,
+      "last_record_time": 1226.52099609375,
+      "terminal_candidates": [
+        {
+          "ordinal": 473962,
+          "frame": 122,
+          "offset": 90723,
+          "record_time": 1226.5081787109375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 473963,
+          "frame": 122,
+          "offset": 92347,
+          "record_time": 1226.52099609375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C21",
+      "records": 584438,
+      "last_record_time": 1484.54638671875,
+      "terminal_candidates": [
+        {
+          "ordinal": 584434,
+          "frame": 148,
+          "offset": 83451,
+          "record_time": 1484.536865234375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 584435,
+          "frame": 148,
+          "offset": 85075,
+          "record_time": 1484.54638671875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C22",
+      "records": 635945,
+      "last_record_time": 1584.2501220703125,
+      "terminal_candidates": [
+        {
+          "ordinal": 635944,
+          "frame": 158,
+          "offset": 83428,
+          "record_time": 1584.2501220703125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 635945,
+          "frame": 158,
+          "offset": 85052,
+          "record_time": 1584.2501220703125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C23",
+      "records": 820362,
+      "last_record_time": 1949.7547607421875,
+      "terminal_candidates": [
+        {
+          "ordinal": 820361,
+          "frame": 194,
+          "offset": 199281,
+          "record_time": 1949.7330322265625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 820362,
+          "frame": 194,
+          "offset": 200905,
+          "record_time": 1949.7547607421875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C24",
+      "records": 491199,
+      "last_record_time": 1283.859619140625,
+      "terminal_candidates": [
+        {
+          "ordinal": 491198,
+          "frame": 128,
+          "offset": 88281,
+          "record_time": 1283.844482421875,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 491199,
+          "frame": 128,
+          "offset": 89905,
+          "record_time": 1283.859619140625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C25",
+      "records": 649143,
+      "last_record_time": 1699.929931640625,
+      "terminal_candidates": [
+        {
+          "ordinal": 649141,
+          "frame": 169,
+          "offset": 101836,
+          "record_time": 1699.912353515625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 649142,
+          "frame": 169,
+          "offset": 103460,
+          "record_time": 1699.929931640625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C26",
+      "records": 715053,
+      "last_record_time": 1794.772705078125,
+      "terminal_candidates": [
+        {
+          "ordinal": 715045,
+          "frame": 179,
+          "offset": 98044,
+          "record_time": 1794.7467041015625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 715046,
+          "frame": 179,
+          "offset": 99668,
+          "record_time": 1794.772705078125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C27",
+      "records": 756175,
+      "last_record_time": 1788.21630859375,
+      "terminal_candidates": [
+        {
+          "ordinal": 756163,
+          "frame": 178,
+          "offset": 150136,
+          "record_time": 1788.20703125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 756164,
+          "frame": 178,
+          "offset": 151760,
+          "record_time": 1788.21630859375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C28",
+      "records": 847546,
+      "last_record_time": 2056.436767578125,
+      "terminal_candidates": [
+        {
+          "ordinal": 847535,
+          "frame": 205,
+          "offset": 125171,
+          "record_time": 2056.436767578125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 847536,
+          "frame": 205,
+          "offset": 126795,
+          "record_time": 2056.436767578125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C29",
+      "records": 748557,
+      "last_record_time": 1782.0614013671875,
+      "terminal_candidates": [
+        {
+          "ordinal": 748556,
+          "frame": 178,
+          "offset": 63826,
+          "record_time": 1782.0426025390625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 748557,
+          "frame": 178,
+          "offset": 65450,
+          "record_time": 1782.0614013671875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C30",
+      "records": 596332,
+      "last_record_time": 1498.962646484375,
+      "terminal_candidates": [
+        {
+          "ordinal": 596314,
+          "frame": 149,
+          "offset": 131732,
+          "record_time": 1498.962646484375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 596315,
+          "frame": 149,
+          "offset": 133356,
+          "record_time": 1498.962646484375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C31",
+      "records": 493189,
+      "last_record_time": 1246.0225830078125,
+      "terminal_candidates": [
+        {
+          "ordinal": 493188,
+          "frame": 124,
+          "offset": 129112,
+          "record_time": 1246.0068359375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 493189,
+          "frame": 124,
+          "offset": 130736,
+          "record_time": 1246.0225830078125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C32",
+      "records": 393750,
+      "last_record_time": 970.1404418945312,
+      "terminal_candidates": [
+        {
+          "ordinal": 393749,
+          "frame": 97,
+          "offset": 44308,
+          "record_time": 970.1315307617188,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 393750,
+          "frame": 97,
+          "offset": 45932,
+          "record_time": 970.1404418945312,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C33",
+      "records": 6747,
+      "last_record_time": 65.9027328491211,
+      "terminal_candidates": [
+        {
+          "ordinal": 6740,
+          "frame": 6,
+          "offset": 42377,
+          "record_time": 65.88740539550781,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 6741,
+          "frame": 6,
+          "offset": 44001,
+          "record_time": 65.9027328491211,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020200"
+        }
+      ]
+    },
+    {
+      "replay": "C34",
+      "records": 2956,
+      "last_record_time": 41.806522369384766,
+      "terminal_candidates": [
+        {
+          "ordinal": 2952,
+          "frame": 4,
+          "offset": 21569,
+          "record_time": 41.798526763916016,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 2953,
+          "frame": 4,
+          "offset": 23193,
+          "record_time": 41.806522369384766,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020200"
+        }
+      ]
+    },
+    {
+      "replay": "C35",
+      "records": 524398,
+      "last_record_time": 1325.928955078125,
+      "terminal_candidates": [
+        {
+          "ordinal": 524379,
+          "frame": 132,
+          "offset": 103505,
+          "record_time": 1325.928955078125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 524380,
+          "frame": 132,
+          "offset": 105129,
+          "record_time": 1325.928955078125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C36",
+      "records": 443685,
+      "last_record_time": 1114.8524169921875,
+      "terminal_candidates": [
+        {
+          "ordinal": 443673,
+          "frame": 111,
+          "offset": 126150,
+          "record_time": 1114.8524169921875,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 443674,
+          "frame": 111,
+          "offset": 127774,
+          "record_time": 1114.8524169921875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C37",
+      "records": 490000,
+      "last_record_time": 1154.935302734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 489985,
+          "frame": 115,
+          "offset": 103562,
+          "record_time": 1154.935302734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 489986,
+          "frame": 115,
+          "offset": 105186,
+          "record_time": 1154.935302734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C38",
+      "records": 644614,
+      "last_record_time": 1487.453857421875,
+      "terminal_candidates": [
+        {
+          "ordinal": 644580,
+          "frame": 148,
+          "offset": 135481,
+          "record_time": 1487.4376220703125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 644581,
+          "frame": 148,
+          "offset": 137105,
+          "record_time": 1487.453857421875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010200"
+        }
+      ]
+    },
+    {
+      "replay": "C39",
+      "records": 696037,
+      "last_record_time": 1611.257080078125,
+      "terminal_candidates": [
+        {
+          "ordinal": 696014,
+          "frame": 161,
+          "offset": 57672,
+          "record_time": 1611.257080078125,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 696015,
+          "frame": 161,
+          "offset": 59296,
+          "record_time": 1611.257080078125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C40",
+      "records": 550191,
+      "last_record_time": 1358.023193359375,
+      "terminal_candidates": [
+        {
+          "ordinal": 550187,
+          "frame": 135,
+          "offset": 132394,
+          "record_time": 1358.023193359375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 550188,
+          "frame": 135,
+          "offset": 134018,
+          "record_time": 1358.023193359375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C41",
+      "records": 358331,
+      "last_record_time": 849.9761962890625,
+      "terminal_candidates": []
+    },
+    {
+      "replay": "C42",
+      "records": 443010,
+      "last_record_time": 1062.577392578125,
+      "terminal_candidates": [
+        {
+          "ordinal": 443008,
+          "frame": 106,
+          "offset": 96929,
+          "record_time": 1062.56103515625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 443009,
+          "frame": 106,
+          "offset": 98553,
+          "record_time": 1062.577392578125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C43",
+      "records": 496976,
+      "last_record_time": 1188.9705810546875,
+      "terminal_candidates": [
+        {
+          "ordinal": 496975,
+          "frame": 118,
+          "offset": 192733,
+          "record_time": 1188.9705810546875,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 496976,
+          "frame": 118,
+          "offset": 194357,
+          "record_time": 1188.9705810546875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C44",
+      "records": 419702,
+      "last_record_time": 1040.2017822265625,
+      "terminal_candidates": [
+        {
+          "ordinal": 419700,
+          "frame": 104,
+          "offset": 48386,
+          "record_time": 1040.2017822265625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 419701,
+          "frame": 104,
+          "offset": 50010,
+          "record_time": 1040.2017822265625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C45",
+      "records": 400051,
+      "last_record_time": 972.8419799804688,
+      "terminal_candidates": [
+        {
+          "ordinal": 400050,
+          "frame": 97,
+          "offset": 70355,
+          "record_time": 972.8419799804688,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 400051,
+          "frame": 97,
+          "offset": 71979,
+          "record_time": 972.8419799804688,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C46",
+      "records": 783799,
+      "last_record_time": 1772.698974609375,
+      "terminal_candidates": [
+        {
+          "ordinal": 783798,
+          "frame": 177,
+          "offset": 71683,
+          "record_time": 1772.698974609375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 783799,
+          "frame": 177,
+          "offset": 73307,
+          "record_time": 1772.698974609375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C47",
+      "records": 212359,
+      "last_record_time": 1044.20458984375,
+      "terminal_candidates": [
+        {
+          "ordinal": 212357,
+          "frame": 104,
+          "offset": 44150,
+          "record_time": 1044.20458984375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 212358,
+          "frame": 104,
+          "offset": 45774,
+          "record_time": 1044.20458984375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C48",
+      "records": 261458,
+      "last_record_time": 1283.7008056640625,
+      "terminal_candidates": [
+        {
+          "ordinal": 261457,
+          "frame": 128,
+          "offset": 40876,
+          "record_time": 1283.7008056640625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 261458,
+          "frame": 128,
+          "offset": 42500,
+          "record_time": 1283.7008056640625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C49",
+      "records": 212678,
+      "last_record_time": 901.7570190429688,
+      "terminal_candidates": [
+        {
+          "ordinal": 212676,
+          "frame": 90,
+          "offset": 34889,
+          "record_time": 901.7570190429688,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 212677,
+          "frame": 90,
+          "offset": 36513,
+          "record_time": 901.7570190429688,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C50",
+      "records": 277045,
+      "last_record_time": 1345.07763671875,
+      "terminal_candidates": [
+        {
+          "ordinal": 277040,
+          "frame": 134,
+          "offset": 30857,
+          "record_time": 1345.07763671875,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 277041,
+          "frame": 134,
+          "offset": 32481,
+          "record_time": 1345.07763671875,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C51",
+      "records": 306699,
+      "last_record_time": 1385.685302734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 306691,
+          "frame": 138,
+          "offset": 61005,
+          "record_time": 1385.685302734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 306692,
+          "frame": 138,
+          "offset": 62629,
+          "record_time": 1385.685302734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C52",
+      "records": 242713,
+      "last_record_time": 1166.9556884765625,
+      "terminal_candidates": [
+        {
+          "ordinal": 242712,
+          "frame": 116,
+          "offset": 54210,
+          "record_time": 1166.9556884765625,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 242713,
+          "frame": 116,
+          "offset": 55834,
+          "record_time": 1166.9556884765625,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C53",
+      "records": 645360,
+      "last_record_time": 1562.427734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 645352,
+          "frame": 156,
+          "offset": 88134,
+          "record_time": 1562.427734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 645353,
+          "frame": 156,
+          "offset": 89758,
+          "record_time": 1562.427734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C54",
+      "records": 692763,
+      "last_record_time": 1627.3529052734375,
+      "terminal_candidates": [
+        {
+          "ordinal": 692755,
+          "frame": 162,
+          "offset": 139347,
+          "record_time": 1627.3529052734375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 692756,
+          "frame": 162,
+          "offset": 140971,
+          "record_time": 1627.3529052734375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    },
+    {
+      "replay": "C55",
+      "records": 815356,
+      "last_record_time": 1913.292724609375,
+      "terminal_candidates": [
+        {
+          "ordinal": 815340,
+          "frame": 191,
+          "offset": 92648,
+          "record_time": 1913.292724609375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 815341,
+          "frame": 191,
+          "offset": 94272,
+          "record_time": 1913.292724609375,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000010000"
+        }
+      ]
+    },
+    {
+      "replay": "C56",
+      "records": 667668,
+      "last_record_time": 1614.757080078125,
+      "terminal_candidates": [
+        {
+          "ordinal": 667649,
+          "frame": 161,
+          "offset": 110392,
+          "record_time": 1614.741943359375,
+          "opcode": "048d",
+          "content_length": 1616
+        },
+        {
+          "ordinal": 667650,
+          "frame": 161,
+          "offset": 112016,
+          "record_time": 1614.757080078125,
+          "opcode": "03f1",
+          "content_length": 8,
+          "payload_hex": "000000020000"
+        }
+      ]
+    }
+  ]
+}

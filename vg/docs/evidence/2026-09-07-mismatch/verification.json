@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "repeated_reconciliation_identical": true,
+  "m5_toggle": {
+    "raw_mismatches": 4,
+    "clock_aligned_mismatches": 0
+  },
+  "m6_toggle": {
+    "raw_mismatches": 11,
+    "initial_state_only_mismatches": 4,
+    "clock_only_mismatches": 7,
+    "both_mismatches": 0
+  },
+  "m9_guard": {
+    "discontinuities": 3,
+    "numeric_corrected_scores_emitted": 0
+  },
+  "independent_latest_checkpoint_agreement": true,
+  "files": {
+    "probe.json": "0db6737a7f986ec86e8478c0e6b657cb5bd8ea74147197d00b6cc38d84163ece",
+    "clocks.json": "cd1772533c4572a3f2d88772ce6158cdd18bbfbf3141fef65ce3de9f7b27d765",
+    "reconcile.py": "cf5788fadc78ac02f26a72b8b3839e832841f86c11687016d2a9ac597f0eda29",
+    "reconciled.json": "f69fb0a1c5c30b87916f29d901a9e9b2a5829240626f061f08bbe974614db699"
+  }
+}

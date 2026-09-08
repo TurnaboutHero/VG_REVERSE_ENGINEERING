@@ -1,0 +1,62 @@
+
+FUNCTION 0x188822c..0x18882e4 containing 0x188822c
+0188822c  ff4301d1  sub      sp, sp, #0x50
+01888230  f51300f9  str      x21, [sp, #0x20]
+01888234  f44f03a9  stp      x20, x19, [sp, #0x30]
+01888238  fd7b04a9  stp      x29, x30, [sp, #0x40]
+0188823c  fd030191  add      x29, sp, #0x40
+01888240  54d03bd5  mrs      x20, tpidr_el0
+01888244  881640f9  ldr      x8, [x20, #0x28]
+01888248  f30300aa  mov      x19, x0
+0188824c  15409952  mov      w21, #0xca00
+01888250  e0030032  mov      w0, #1
+01888254  e1230091  add      x1, sp, #8
+01888258  e80f00f9  str      x8, [sp, #0x18]
+0188825c  5573a772  movk     w21, #0x3b9a, lsl #16
+01888260  b81abc97  bl       #0x78ed40
+01888264  ecab40a9  ldp      x12, x10, [sp, #8]
+01888268  682e40a9  ldp      x8, x11, [x19]
+0188826c  49010bcb  sub      x9, x10, x11
+01888270  880108cb  sub      x8, x12, x8
+01888274  8900f8b6  tbz      x9, #0x3f, #0x1888284
+01888278  4901158b  add      x9, x10, x21
+0188827c  080500d1  sub      x8, x8, #1
+01888280  29010bcb  sub      x9, x9, x11
+01888284  4a1000b0  adrp     x10, #0x1a91000
+01888288  406d44fd  ldr      d0, [x10, #0x8d8]
+0188828c  1f2003d5  nop
+01888290  0825159b  madd     x8, x8, x21, x9
+01888294  610a40fd  ldr      d1, [x19, #0x10]
+01888298  0201629e  scvtf    d2, x8
+0188829c  4008601e  fmul     d0, d2, d0
+018882a0  621640fd  ldr      d2, [x19, #0x28]
+018882a4  0138611e  fsub     d1, d0, d1
+018882a8  600a00fd  str      d0, [x19, #0x10]
+018882ac  0010601e  fmov     d0, #2.00000000
+018882b0  2058601e  fmin     d0, d1, d0
+018882b4  4008601e  fmul     d0, d2, d0
+018882b8  6086016d  stp      d0, d1, [x19, #0x18]
+018882bc  881640f9  ldr      x8, [x20, #0x28]
+018882c0  e90f40f9  ldr      x9, [sp, #0x18]
+018882c4  1f0109eb  cmp      x8, x9
+018882c8  c1000054  b.ne     #0x18882e0
+018882cc  fd7b44a9  ldp      x29, x30, [sp, #0x40]
+018882d0  f44f43a9  ldp      x20, x19, [sp, #0x30]
+018882d4  f51340f9  ldr      x21, [sp, #0x20]
+018882d8  ff430191  add      sp, sp, #0x50
+018882dc  c0035fd6  ret
+018882e0  5031bc97  bl       #0x794820
+
+FUNCTION 0x18882f8..0x1888300 containing 0x18882f8
+018882f8  000c40fd  ldr      d0, [x0, #0x18]
+018882fc  c0035fd6  ret
+
+FUNCTION 0x1888300..0x1888308 containing 0x1888300
+01888300  001040fd  ldr      d0, [x0, #0x20]
+01888304  c0035fd6  ret
+
+FUNCTION 0x18883a8..0x18883b8 containing 0x18883a8
+018883a8  e103679e  fmov     d1, xzr
+018883ac  0048611e  fmax     d0, d0, d1
+018883b0  001400fd  str      d0, [x0, #0x28]
+018883b4  c0035fd6  ret

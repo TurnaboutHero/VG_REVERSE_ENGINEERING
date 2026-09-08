@@ -1,0 +1,26 @@
+{
+  "help_exit": 0,
+  "surrender_exit": 0,
+  "surrender_row": {
+    "content_length": 8,
+    "decoding_status": "decoded",
+    "frame_idx": 28,
+    "native_class": "Nuo::Kindred::ActionEndMatch",
+    "native_end_reason": 2,
+    "native_evidence": "windows-659f9eed",
+    "native_evidence_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+    "native_surrender": true,
+    "native_type": "end_match_action",
+    "native_winning_team_id": 2,
+    "native_winning_team_raw": 2,
+    "opcode": 1009,
+    "payload_hex": "000000020200",
+    "record_index": 2318,
+    "record_offset": 84752,
+    "remaining_hex": "00",
+    "timestamp": 289.887451171875
+  },
+  "malformed_exit": 2,
+  "malformed_error": "truncated header",
+  "status": "PASS"
+}

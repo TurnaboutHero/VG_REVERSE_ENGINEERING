@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from vg.core.unified_decoder import UnifiedDecoder, DecodedMatch
+from vg.core.export_matches import _complete_sum
 
 
 def find_replays(directory: Path) -> list:
@@ -69,10 +70,8 @@ def generate_report(matches: list) -> dict:
             h['picks'] += 1
             if match.winner and player.team == match.winner:
                 h['wins'] += 1
-            h['kills'] += player.kills
-            h['deaths'] += player.deaths
-            h['assists'] += (player.assists or 0)
-            h['minion_kills'] += player.minion_kills
+            for metric in ('kills', 'deaths', 'assists', 'minion_kills'):
+                h[metric] = _complete_sum((h[metric], getattr(player, metric)))
             h['gold_earned'] += player.gold_earned
 
     total_matches = len(matches)
@@ -84,17 +83,17 @@ def generate_report(matches: list) -> dict:
             'picks': n,
             'pick_rate': round(n / total_matches * 100, 1),
             'win_rate': round(s['wins'] / n * 100, 1) if n else 0,
-            'avg_kills': round(s['kills'] / n, 1),
-            'avg_deaths': round(s['deaths'] / n, 1),
-            'avg_assists': round(s['assists'] / n, 1),
-            'avg_minion_kills': round(s['minion_kills'] / n, 1),
+            'avg_kills': round(s['kills'] / n, 1) if s['kills'] is not None else None,
+            'avg_deaths': round(s['deaths'] / n, 1) if s['deaths'] is not None else None,
+            'avg_assists': round(s['assists'] / n, 1) if s['assists'] is not None else None,
+            'avg_minion_kills': round(s['minion_kills'] / n, 1) if s['minion_kills'] is not None else None,
             'avg_gold': round(s['gold_earned'] / n),
         })
 
     # === Match Statistics ===
     durations = [m.duration_seconds for m in matches if m.duration_seconds]
     all_players = [p for m in matches for p in m.all_players]
-    total_kills = sum(p.kills for p in all_players)
+    total_kills = _complete_sum(p.kills for p in all_players)
     total_gold = sum(p.gold_earned for p in all_players)
 
     match_stats = {
@@ -103,7 +102,7 @@ def generate_report(matches: list) -> dict:
         'avg_duration_s': round(sum(durations) / len(durations)) if durations else 0,
         'min_duration_s': min(durations) if durations else 0,
         'max_duration_s': max(durations) if durations else 0,
-        'avg_kills_per_match': round(total_kills / total_matches, 1),
+        'avg_kills_per_match': round(total_kills / total_matches, 1) if total_kills is not None else None,
         'avg_gold_per_player': round(total_gold / len(all_players)) if all_players else 0,
         'left_wins': sum(1 for m in matches if m.winner == 'left'),
         'right_wins': sum(1 for m in matches if m.winner == 'right'),
@@ -155,6 +154,10 @@ def generate_report(matches: list) -> dict:
     }
 
 
+def _stat_text(value, width):
+    return f"{'N/A':>{width}}" if value is None else f"{value:{width}.1f}"
+
+
 def print_report(report: dict):
     ms = report.get('match_stats', {})
     print(f"\n{'='*70}")
@@ -201,8 +204,8 @@ def print_report(report: dict):
     print(f"  {'─'*80}")
     for h in heroes[:20]:
         print(f"  {h['hero']:20s} {h['picks']:5d} {h['pick_rate']:5.1f}% {h['win_rate']:5.1f}%"
-              f" {h['avg_kills']:5.1f} {h['avg_deaths']:5.1f} {h['avg_assists']:5.1f}"
-              f" {h['avg_minion_kills']:6.1f} {h['avg_gold']:7d}")
+              f" {_stat_text(h['avg_kills'], 5)} {_stat_text(h['avg_deaths'], 5)} {_stat_text(h['avg_assists'], 5)}"
+              f" {_stat_text(h['avg_minion_kills'], 6)} {h['avg_gold']:7d}")
 
     if len(heroes) > 20:
         print(f"  ... and {len(heroes) - 20} more heroes")

@@ -1,29 +1,18 @@
 """
-KDA Detector - Kill/Death/Assist/Minion detection from Vainglory replay files.
+Legacy KDA candidate extraction from strictly framed Vainglory replay records.
 
-Cross-validated accuracy (10 complete matches, 99 players):
-  Kill:        98.0% (97/99) - with post-game filter (kill_buffer=20s)
-  Death:       97.0% (96/99) - with post-game filter (death_buffer=3s + conditional late-death rescue)
-  Assist:      97.0% (96/99) - credit record flag + same-team + min 2 credits
-  Minion Kill: 87.3% (69/79) - credit record action byte 0x0E (M6 outlier)
-  Combined K+D+A: 97.3% (289/297)
-
-Record structures (Big Endian protocol):
-  Kill:   [18 04 1C] [00 00] [killer_eid BE] [FF FF FF FF] [3F 80 00 00] [29 00]
-          Timestamp: f32 BE at 7 bytes before header
-  Death:  [08 04 31] [00 00] [victim_eid BE] [00 00] [timestamp f32 BE] [00 00 00]
-  Credit: [10 04 1D] [00 00] [eid BE] [value f32 BE] [action_byte]  (12 bytes)
-          After kill header: killer(1.0), then assister(gold), assister(1.0), assister(0.5)
-  Minion: [10 04 1D] [00 00] [eid BE] [3F 80 00 00 = 1.0] [0E]
-          Credit record with value=1.0 and action byte 0x0E = minion last-hit
-
-Assist detection: After each kill, scan credit records within 500 bytes.
-An assist = non-killer player with value==1.0 flag AND same team as killer.
+The candidate labels and counting rules in this module are historical heuristics;
+they are not validated native event names. In particular, opcode 0x041D is a
+generic resource/counter update whose index and mode are preserved below.
 """
+import math
 import struct
-from collections import Counter, defaultdict
+from collections import defaultdict
 from dataclasses import dataclass, field
-from typing import List, Dict, Optional, Set, Tuple
+from typing import List, Dict, Optional, Set
+
+from vg.core.vgr_records import VGRRecord, iter_records
+
 
 KILL_HEADER = bytes([0x18, 0x04, 0x1C])
 DEATH_HEADER = bytes([0x08, 0x04, 0x31])
@@ -32,15 +21,19 @@ CREDIT_HEADER = bytes([0x10, 0x04, 0x1D])
 
 @dataclass
 class CreditRecord:
-    """A credit record following a kill."""
+    """A framed 0x041D update retained by the legacy assist heuristic."""
     eid: int
     value: float
     offset: int = 0
+    action: int = 0
+    mode: int = 0
+    timestamp: Optional[float] = None
+    raw_payload_hex: str = ""
 
 
 @dataclass
 class KillEvent:
-    """A detected kill event."""
+    """A record matching the legacy kill-candidate predicate."""
     killer_eid: int
     timestamp: Optional[float] = None
     frame_idx: int = 0
@@ -50,7 +43,7 @@ class KillEvent:
 
 @dataclass
 class DeathEvent:
-    """A detected death event."""
+    """A record matching the legacy death-candidate predicate."""
     victim_eid: int
     timestamp: float = 0.0
     frame_idx: int = 0
@@ -68,9 +61,20 @@ class KDAResult:
     death_events: List[DeathEvent] = field(default_factory=list)
 
 
+def _matches_kill_structure(record: VGRRecord) -> bool:
+    """Return whether a framed record matches the legacy kill structure."""
+    if record.opcode != 0x041C or record.content_length != 24:
+        return False
+    return (
+        struct.unpack_from(">I", record.payload, 4)[0] == 0xFFFFFFFF
+        and struct.unpack_from(">I", record.payload, 8)[0] == 0x3F800000
+        and record.payload[12] == 0x29
+    )
+
+
 class KDADetector:
     """
-    Detects kills and deaths from VGR replay frame data.
+    Extract legacy KDA candidates from strictly framed VGR replay data.
 
     Usage:
         detector = KDADetector(valid_entity_ids={0x05DC, 0x05DD, ...})
@@ -92,143 +96,83 @@ class KDADetector:
         self._minion_kills: Dict[int, int] = defaultdict(int)  # eid -> count
 
     def process_frame(self, frame_idx: int, data: bytes) -> None:
-        """Process a single frame, extracting kill, death, and minion kill events."""
-        self._scan_kills(frame_idx, data)
-        self._scan_deaths(frame_idx, data)
-        self._scan_minion_kills(data)
+        """Parse one complete frame and extract only framed candidates.
 
-    def _scan_kills(self, frame_idx: int, data: bytes) -> None:
-        """Scan for kill records: [18 04 1C] [00 00] [eid BE] [FF FF FF FF] [3F 80 00 00] [29]"""
-        pos = 0
-        while True:
-            pos = data.find(KILL_HEADER, pos)
-            if pos == -1:
+        Malformed framing raises ``VGRRecordError`` from ``iter_records`` before
+        this detector mutates its accumulated results.
+        """
+        records = list(iter_records(data))
+
+        for record_index, record in enumerate(records):
+            if _matches_kill_structure(record):
+                eid = struct.unpack_from(">I", record.payload, 0)[0]
+                if eid in self.valid_eids:
+                    self._kill_events.append(KillEvent(
+                        killer_eid=eid,
+                        timestamp=record.timestamp,
+                        frame_idx=frame_idx,
+                        file_offset=record.offset + 7,
+                        credits=self._collect_credits(records, record_index),
+                    ))
+                continue
+
+            if record.opcode == 0x0431 and record.content_length == 8:
+                eid = struct.unpack_from(">I", record.payload, 0)[0]
+                if eid in self.valid_eids and record.payload[4:] == b"\x00\x00":
+                    self._death_events.append(DeathEvent(
+                        victim_eid=eid,
+                        timestamp=record.timestamp,
+                        frame_idx=frame_idx,
+                        file_offset=record.offset + 7,
+                    ))
+                continue
+
+            if record.opcode == 0x041D and record.content_length == 16:
+                eid = struct.unpack_from(">I", record.payload, 0)[0]
+                value = struct.unpack_from(">f", record.payload, 4)[0]
+                index = record.payload[8]
+                if (
+                    eid in self.valid_eids
+                    and abs(value - 1.0) < 0.01
+                    and index == 0x0E
+                ):
+                    self._minion_kills[eid] += 1
+
+    def _collect_credits(
+        self, records: List[VGRRecord], kill_index: int
+    ) -> List[CreditRecord]:
+        """Apply the legacy framed-record neighborhood used for assists."""
+        kill_signature_offset = records[kill_index].offset + 7
+        limit = kill_signature_offset + 16 + 500
+        credits: List[CreditRecord] = []
+
+        for record in records[kill_index + 1:]:
+            signature_offset = record.offset + 7
+            if signature_offset >= limit:
                 break
-            if pos + 16 > len(data):
-                pos += 1
-                continue
-
-            # Structural validation
-            if (data[pos+3:pos+5] != b'\x00\x00' or
-                data[pos+7:pos+11] != b'\xFF\xFF\xFF\xFF' or
-                data[pos+11:pos+15] != b'\x3F\x80\x00\x00' or
-                data[pos+15] != 0x29):
-                pos += 1
-                continue
-
-            eid = struct.unpack_from(">H", data, pos + 5)[0]
-            if eid not in self.valid_eids:
-                pos += 1
-                continue
-
-            # Extract timestamp from 7 bytes before header
-            ts = None
-            if pos >= 7:
-                ts = struct.unpack_from(">f", data, pos - 7)[0]
-                if not (0 < ts < 1800):
-                    ts = None
-
-            # Scan credit records following this kill
-            credits = self._scan_credits(data, pos + 16)
-
-            self._kill_events.append(KillEvent(
-                killer_eid=eid,
-                timestamp=ts,
-                frame_idx=frame_idx,
-                file_offset=pos,
-                credits=credits,
-            ))
-            pos += 16  # Skip past this record
-
-    def _scan_credits(self, data: bytes, start_pos: int) -> List[CreditRecord]:
-        """Scan credit records [10 04 1D] after a kill, up to 500 bytes or next kill."""
-        credits = []
-        pos = start_pos
-        max_scan = min(start_pos + 500, len(data))
-
-        while pos < max_scan:
-            # Stop at next validated kill header
-            if (data[pos:pos + 3] == KILL_HEADER and pos + 16 <= len(data)
-                    and data[pos+3:pos+5] == b'\x00\x00'
-                    and data[pos+7:pos+11] == b'\xFF\xFF\xFF\xFF'
-                    and data[pos+11:pos+15] == b'\x3F\x80\x00\x00'
-                    and data[pos+15] == 0x29):
+            if _matches_kill_structure(record):
                 break
+            if record.opcode != 0x041D or record.content_length != 16:
+                continue
 
-            if data[pos:pos + 3] == CREDIT_HEADER:
-                if pos + 9 <= len(data) and data[pos+3:pos+5] == b'\x00\x00':
-                    eid = struct.unpack_from(">H", data, pos + 5)[0]
-                    value = struct.unpack_from(">f", data, pos + 7)[0]
-                    if eid in self.valid_eids and 0 <= value <= 10000:
-                        credits.append(CreditRecord(
-                            eid=eid, value=round(value, 2), offset=pos,
-                        ))
-                    pos += 9
-                    continue
-
-            pos += 1
+            eid = struct.unpack_from(">I", record.payload, 0)[0]
+            value = struct.unpack_from(">f", record.payload, 4)[0]
+            if (
+                eid in self.valid_eids
+                and math.isfinite(value)
+                and 0 <= value <= 10000
+            ):
+                credits.append(CreditRecord(
+                    eid=eid,
+                    value=round(value, 2),
+                    offset=signature_offset,
+                    action=record.payload[8],
+                    mode=record.payload[9],
+                    timestamp=record.timestamp,
+                    raw_payload_hex=record.payload.hex(),
+                ))
 
         return credits
-
-    def _scan_minion_kills(self, data: bytes) -> None:
-        """Scan for minion kill records: [10 04 1D] [00 00] [eid BE] [1.0 f32 BE] [0E]"""
-        pos = 0
-        while True:
-            pos = data.find(CREDIT_HEADER, pos)
-            if pos == -1:
-                break
-            if pos + 12 > len(data):
-                pos += 1
-                continue
-
-            if data[pos+3:pos+5] != b'\x00\x00':
-                pos += 1
-                continue
-
-            eid = struct.unpack_from(">H", data, pos + 5)[0]
-            if eid not in self.valid_eids:
-                pos += 1
-                continue
-
-            # Check value = 1.0 and action byte = 0x0E
-            value = struct.unpack_from(">f", data, pos + 7)[0]
-            action = data[pos + 11]
-
-            if abs(value - 1.0) < 0.01 and action == 0x0E:
-                self._minion_kills[eid] += 1
-
-            pos += 3  # Skip past header to avoid re-matching
-
-    def _scan_deaths(self, frame_idx: int, data: bytes) -> None:
-        """Scan for death records: [08 04 31] [00 00] [eid BE] [00 00] [ts f32 BE]"""
-        pos = 0
-        while True:
-            pos = data.find(DEATH_HEADER, pos)
-            if pos == -1:
-                break
-            if pos + 13 > len(data):
-                pos += 1
-                continue
-
-            # Structural validation
-            if data[pos+3:pos+5] != b'\x00\x00' or data[pos+7:pos+9] != b'\x00\x00':
-                pos += 1
-                continue
-
-            eid = struct.unpack_from(">H", data, pos + 5)[0]
-            ts = struct.unpack_from(">f", data, pos + 9)[0]
-
-            if eid not in self.valid_eids or not (0 < ts < 1800):
-                pos += 1
-                continue
-
-            self._death_events.append(DeathEvent(
-                victim_eid=eid,
-                timestamp=ts,
-                frame_idx=frame_idx,
-                file_offset=pos,
-            ))
-            pos += 1
 
     def get_results(self, game_duration: Optional[float] = None,
                     death_buffer: float = 3.0,

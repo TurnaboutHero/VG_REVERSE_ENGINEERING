@@ -1,0 +1,370 @@
+{
+  "date": "2026-09-08",
+  "executable_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "normal_injection": {
+    "source_frames": 15,
+    "destination_original_frames": 11,
+    "verified_frames": 15,
+    "hash_mismatches": 0,
+    "playback_observed": true,
+    "near_end_seek_used": true,
+    "result_hud": "2:26",
+    "target_files_restored": true
+  },
+  "target1": {
+    "frames": 150,
+    "all_frame_hashes_matched": true,
+    "target_replay_hud_observed": false,
+    "first_snapshot_applied": true,
+    "snapshot_clock": 81.57266235351562,
+    "seconds_snapshot_leave_to_exception": 3.014534,
+    "failure_subsystem": "background texture-spec preparation",
+    "input_type": "Nuo::Concurrency::TaskData<Nuo::Base::Buffer>",
+    "input_payload_null": true,
+    "specific_texture_identified": false,
+    "original_clock_anomaly_cause_confirmed": false
+  },
+  "dump_results": [
+    {
+      "case": "target1-dense",
+      "dump_sha256": "b8eda5596bb69aa451e94aba3254ecf05293c7fc9e4cd3db52cc4a3e9dd44a46",
+      "exception_code": "0xc0000005",
+      "exception_pc_rva": "0x572352",
+      "exception_parameters": [
+        0,
+        0
+      ],
+      "eax_is_zero": true,
+      "frame_pointer_walk": [
+        {
+          "frame": 0,
+          "return_rva": "0xd3bd98"
+        },
+        {
+          "frame": 1,
+          "return_rva": "0x5761ee"
+        },
+        {
+          "frame": 2,
+          "return_rva": "0x5773a0"
+        },
+        {
+          "frame": 3,
+          "return_rva": "0x576305"
+        },
+        {
+          "frame": 4,
+          "return_rva": "0x57858b"
+        },
+        {
+          "frame": 5,
+          "return_rva": "0x5776ca"
+        },
+        {
+          "frame": 6,
+          "return_rva": "0xd6ddb3"
+        }
+      ],
+      "process_id_correlated_to_owned_run": true,
+      "module_timestamp_matches_exact_pe": true,
+      "input_slot_zero": true,
+      "inputs": [
+        {
+          "present": true,
+          "key": "0x815f1c7b",
+          "payload_zero": true,
+          "vtable_rva": "0xe9a3cc"
+        },
+        {
+          "present": false
+        }
+      ],
+      "task_descriptor_available": false
+    },
+    {
+      "case": "target1-narrow",
+      "dump_sha256": "b9d568ec56767b9c4a26f1335271605ee4251532ba1ee17df9ec49eea6545c27",
+      "exception_code": "0xc0000005",
+      "exception_pc_rva": "0x572352",
+      "exception_parameters": [
+        0,
+        0
+      ],
+      "eax_is_zero": true,
+      "frame_pointer_walk": [
+        {
+          "frame": 0,
+          "return_rva": "0xd3bd98"
+        },
+        {
+          "frame": 1,
+          "return_rva": "0x5761ee"
+        },
+        {
+          "frame": 2,
+          "return_rva": "0x5773a0"
+        },
+        {
+          "frame": 3,
+          "return_rva": "0x576305"
+        },
+        {
+          "frame": 4,
+          "return_rva": "0x57858b"
+        },
+        {
+          "frame": 5,
+          "return_rva": "0x5776ca"
+        },
+        {
+          "frame": 6,
+          "return_rva": "0xd6ddb3"
+        }
+      ],
+      "process_id_correlated_to_owned_run": true,
+      "module_timestamp_matches_exact_pe": true,
+      "input_slot_zero": true,
+      "inputs": [
+        {
+          "present": true,
+          "key": "0x815f1c7b",
+          "payload_zero": true,
+          "vtable_rva": "0xe9a3cc"
+        },
+        {
+          "present": false
+        }
+      ],
+      "task_descriptor_available": false
+    }
+  ],
+  "narrow_trace_sha256": "a2f638ff2cda4238bb2629f00e333d965fa2a22406085fee82952c4f67246d29",
+  "narrow_trace_excerpt": [
+    {
+      "type": "send",
+      "payload": {
+        "target_time_ms": 1788873112511,
+        "tag": "hooks_installed",
+        "count": 6,
+        "exit_hooks": 2
+      },
+      "host_elapsed_ms": 1975.067
+    },
+    {
+      "type": "send",
+      "payload": {
+        "target_time_ms": 1788873184966,
+        "tag": "init",
+        "stage": "enter",
+        "counts": {
+          "init": 1
+        },
+        "state": {
+          "clock": null,
+          "index": 14,
+          "file_open": false
+        },
+        "backtrace_rva": [
+          "0xbfacb",
+          "0xeb2d0",
+          "0xc0767",
+          "0xc0c42",
+          "0xc04de",
+          "0xc6ac6",
+          "0xc6974",
+          "0xd6ddb3"
+        ],
+        "selector": 1
+      },
+      "host_elapsed_ms": 74429.95
+    },
+    {
+      "type": "send",
+      "payload": {
+        "target_time_ms": 1788873185050,
+        "tag": "init",
+        "stage": "leave",
+        "success": true,
+        "state": {
+          "clock": null,
+          "index": 0,
+          "file_open": false
+        }
+      },
+      "host_elapsed_ms": 74512.386
+    },
+    {
+      "type": "send",
+      "payload": {
+        "target_time_ms": 1788873192188,
+        "tag": "snapshot",
+        "stage": "enter",
+        "counts": {
+          "init": 1,
+          "open": 154,
+          "transition": 2,
+          "snapshot": 1
+        },
+        "state": {
+          "clock": 0,
+          "index": 0,
+          "file_open": true
+        },
+        "backtrace_rva": [
+          "0xd4436",
+          "0x149470",
+          "0xeb519",
+          "0xc03a8",
+          "0xc6ac6",
+          "0xc6974",
+          "0xd6ddb3"
+        ]
+      },
+      "host_elapsed_ms": 81651.03
+    },
+    {
+      "type": "send",
+      "payload": {
+        "target_time_ms": 1788873192190,
+        "tag": "snapshot",
+        "stage": "leave",
+        "state": {
+          "clock": 81.57266235351562,
+          "index": 0,
+          "file_open": true
+        }
+      },
+      "host_elapsed_ms": 81652.805
+    },
+    {
+      "type": "send",
+      "payload": {
+        "target_time_ms": 1788873195204,
+        "tag": "process_exception",
+        "type": "access-violation",
+        "pc_rva": "0x572352"
+      },
+      "host_elapsed_ms": 84667.339
+    },
+    {
+      "tag": "session_detached",
+      "reason": "process-terminated",
+      "crash_present": false,
+      "host_elapsed_ms": 85652.603
+    },
+    {
+      "tag": "observation_end",
+      "failed": true,
+      "host_elapsed_ms": 85652.783
+    },
+    {
+      "tag": "detached",
+      "host_elapsed_ms": 85653.345
+    }
+  ],
+  "framing": [
+    {
+      "label": "normal",
+      "files": 15,
+      "records": 24604,
+      "largest_message": 1616,
+      "framing_errors": []
+    },
+    {
+      "label": "target1",
+      "files": 150,
+      "records": 596332,
+      "largest_message": 1616,
+      "framing_errors": []
+    }
+  ],
+  "snapshot_audit": [
+    {
+      "label": "normal",
+      "records": 742,
+      "timestamp_errors": [],
+      "snapshots": [
+        {
+          "offset": 337,
+          "outer_time": 0.0,
+          "message_size": 71,
+          "identifier_nul_within_64": true,
+          "mode": "*GameMode_5v5_Practice*",
+          "clock": 0.0,
+          "finite_clock": true,
+          "flag": 1
+        }
+      ],
+      "opcodes_first_3_seconds": {
+        "03ee": 2,
+        "03e9": 1,
+        "046f": 1,
+        "0470": 3,
+        "03f3": 1,
+        "048a": 8,
+        "03f2": 42,
+        "043f": 113,
+        "041f": 6,
+        "048c": 18,
+        "046e": 1,
+        "0471": 1,
+        "041d": 11,
+        "043e": 61,
+        "045c": 2,
+        "046d": 1,
+        "043d": 3,
+        "03ef": 1,
+        "0443": 1,
+        "042b": 102,
+        "0478": 2
+      }
+    },
+    {
+      "label": "target1",
+      "records": 5931,
+      "timestamp_errors": [],
+      "snapshots": [
+        {
+          "offset": 2371,
+          "outer_time": 0.0,
+          "message_size": 71,
+          "identifier_nul_within_64": true,
+          "mode": "*GameMode_5v5_Ranked*",
+          "clock": 81.57266235351562,
+          "finite_clock": true,
+          "flag": 1
+        }
+      ],
+      "opcodes_first_3_seconds": {
+        "03ee": 20,
+        "03e9": 1,
+        "046f": 1,
+        "0470": 1,
+        "03f3": 10,
+        "0488": 9,
+        "048a": 97,
+        "03f2": 61
+      }
+    }
+  ],
+  "installed_depot_verification": {
+    "manifest": "1025581_7750352696555066549",
+    "entries": 48500,
+    "counts": {
+      "verified": 48236,
+      "empty": 6,
+      "directory": 258
+    },
+    "verified_bytes": 3532716015,
+    "errors": [],
+    "elapsed_seconds": 71.13,
+    "read_only": true
+  },
+  "cleanup": {
+    "all_substituted_slots_restored": true,
+    "game_stopped": true,
+    "interactive_tasks_removed": true,
+    "steam_left_open": true,
+    "original_corpus_modified": false
+  }
+}

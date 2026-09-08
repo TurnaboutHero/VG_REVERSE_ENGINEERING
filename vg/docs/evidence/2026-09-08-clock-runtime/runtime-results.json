@@ -1,0 +1,239 @@
+{
+  "startup-01": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788795152416,
+      "count": 7
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 45.288,
+      "counts": {
+        "hooks_installed": 1
+      },
+      "failure": null,
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "probe_errors": [],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "startup-02": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788795700883,
+      "count": 7
+    },
+    {
+      "tag": "cleanup_script_unavailable",
+      "error_message": "Script cleanup failed"
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 141.701,
+      "counts": {
+        "hooks_installed": 1,
+        "cleanup_script_unavailable": 1
+      },
+      "failure": null,
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "probe_errors": [
+        "cleanup_script_unavailable"
+      ],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "startup-03": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788795932760,
+      "count": 7
+    },
+    {
+      "tag": "cleanup_detach_failed",
+      "error_type": "OperationCancelledError",
+      "error_message": "Bounded session detach failed; hook removal unconfirmed"
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 23.192,
+      "counts": {
+        "hooks_installed": 1,
+        "cleanup_detach_failed": 1
+      },
+      "failure": null,
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "cleanup_confirmed": false,
+      "probe_errors": [
+        "cleanup_detach_failed"
+      ],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "startup-04": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788796089243,
+      "count": 7
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 15.71,
+      "counts": {
+        "hooks_installed": 1
+      },
+      "failure": null,
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "cleanup_confirmed": true,
+      "spawn_terminated": true,
+      "probe_errors": [],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "rejected-build-final": [
+    {
+      "tag": "rejected_bytes",
+      "wall_ms": 1788796187413,
+      "hook": "timer"
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 2.718,
+      "counts": {
+        "rejected_bytes": 1
+      },
+      "failure": null,
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "cleanup_confirmed": true,
+      "spawn_terminated": true,
+      "probe_errors": [
+        "rejected_bytes"
+      ],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "existing-process": [
+    {
+      "tag": "runner_error",
+      "error_type": "RuntimeError",
+      "error_message": "Runner operation failed; device details omitted"
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 0.036,
+      "counts": {},
+      "failure": "RuntimeError",
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": false,
+      "cleanup_confirmed": true,
+      "spawn_terminated": false,
+      "probe_errors": [],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "existing_process_check": {
+    "runner_exit": 1,
+    "existing_pid_unchanged": true
+  },
+  "deployment": {
+    "apk_sha256": "e82a6beed517db32536cd0f85a703d84dda84e1d184c990728dfb7c87d561d2d",
+    "installed_apk_hash_equal": true,
+    "engine_sha256": "cd1b8831f82c469274613fc30f1f1f6e78c788102cdad7db5db2c04b96580a47",
+    "frida": "17.17.0",
+    "device": "isolated Android35 ARM64 emulator"
+  },
+  "scope": "Only hook attachment, fail-closed entry guards, ownership guard and cleanup validated; no game clock events observed.",
+  "startup-05-with-obb": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788797202314,
+      "count": 7
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 17.848,
+      "counts": {
+        "hooks_installed": 1
+      },
+      "failure": null,
+      "detached_early": true,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "cleanup_confirmed": true,
+      "spawn_terminated": true,
+      "probe_errors": [],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "startup-06-swiftshader": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788797336355,
+      "count": 7
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 60.938,
+      "counts": {
+        "hooks_installed": 1
+      },
+      "failure": null,
+      "detached_early": false,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "cleanup_confirmed": true,
+      "spawn_terminated": true,
+      "probe_errors": [],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "startup-07-ready": [
+    {
+      "tag": "hooks_installed",
+      "wall_ms": 1788797409441,
+      "count": 7
+    },
+    {
+      "tag": "summary",
+      "elapsed_seconds": 29.66,
+      "counts": {
+        "hooks_installed": 1
+      },
+      "failure": null,
+      "detached_early": true,
+      "observation": "boot_only_or_insufficient_clock_evidence",
+      "native_cause_confirmed": false,
+      "spawn_resumed": true,
+      "cleanup_confirmed": true,
+      "spawn_terminated": true,
+      "probe_errors": [],
+      "identity": "host ELF exact SHA plus all runtime hook-entry byte checks; deployment identity must be independently verified"
+    }
+  ],
+  "obb_followup": {
+    "bytes": 1394159471,
+    "sha256": "bcbe9aff2f161e59eb7f75ab57a124e35ee46ae708b5c933d74e912cba0478fb",
+    "source": "user matching147219 installation; read-only copy",
+    "uninstrumented_crash_reproduced": true,
+    "exception": "IllegalArgumentException at EGLImpl._eglCreateContext via NuoView.java:279",
+    "native_clock_events_observed": false
+  }
+}

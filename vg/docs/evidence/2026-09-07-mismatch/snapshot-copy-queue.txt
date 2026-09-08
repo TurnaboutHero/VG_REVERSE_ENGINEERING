@@ -1,0 +1,10 @@
+
+FUNCTION 0xbe20fc..0xbe2110 containing 0xbe20fc
+00be20fc  080040f9  ldr      x8, [x0]
+00be2100  e1220190  adrp     x1, #0x303e000
+00be2104  21603391  add      x1, x1, #0xcd8
+00be2108  021140f9  ldr      x2, [x8, #0x20]
+00be210c  40001fd6  br       x2
+
+FUNCTION 0xc4d208..0xc4d20c containing 0xc4d208
+00c4d208  01000014  b        #0xc4d20c

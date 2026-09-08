@@ -138,6 +138,11 @@ class ReplaySignalSummary:
     max_player_death_ts: Optional[float]
     max_death_header_ts: Optional[float]
     max_item_ts: Optional[float]
+    native_clock_valid: Optional[bool] = None
+    native_clock_status: Optional[str] = None
+    native_clock_reason: Optional[str] = None
+    first_game_time: Optional[float] = None
+    last_game_time: Optional[float] = None
 
     def to_dict(self) -> Dict[str, object]:
         return asdict(self)
@@ -244,6 +249,9 @@ class KDAExtractionResult:
     assessment: CompletenessAssessment
     duration_estimate: DurationEstimate
     players: Tuple[KDAPlayerSummary, ...] = ()
+    scope: str = "final"
+    at_game_time: Optional[float] = None
+    as_of_game_time: Optional[float] = None
 
     def to_dict(self) -> Dict[str, object]:
         result = asdict(self)
@@ -352,6 +360,9 @@ class DecoderV2MatchOutput:
     accepted_fields: Dict[str, FieldDecision]
     withheld_fields: Dict[str, FieldDecision]
     players: Tuple[AcceptedPlayerFields, ...]
+    scope: str = "final"
+    at_game_time: Optional[float] = None
+    as_of_game_time: Optional[float] = None
 
     def to_dict(self) -> Dict[str, object]:
         result = asdict(self)

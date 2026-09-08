@@ -1,0 +1,57 @@
+{
+  "source_entity_id": 2007,
+  "spawn_records_checked": 121,
+  "spawn_definition_index": 296,
+  "definition_name": "VainCrystal_Away_5v5",
+  "skin_hash_hex": "c10b41da",
+  "skin_name": "Structure_DefaultSkin",
+  "first_spawn": {
+    "frame": 0,
+    "time": 0.0,
+    "opcode": "03f2",
+    "payload": "00000128c10b41da000007d7429600003d75be2900000000bf8000000000000000000000469c4000469c4000000000000000000000000000000000000000000000000000000000000000000000000000000000003f800000010101010101010101010f01010101010000000000000000ffffffff07000001ff0200000000",
+    "strings": []
+  },
+  "definition_manifest_sha256": "7292b885378be83cb8596601bad7d0c7adfaab1e91e23f8ea65601f03136755c",
+  "named_crystal_asset_sha256": "6b18fd1f89f4be61aa7e0f16818510fee30d106e0ed9b93973a2904ead0a9a2a",
+  "definition_table_excerpt": [
+    {
+      "definition_index": 295,
+      "entry_offset": 27956,
+      "name_offset": 27964,
+      "name": "*VainCrystal_Home_5v5*"
+    },
+    {
+      "definition_index": 296,
+      "entry_offset": 28040,
+      "name_offset": 28048,
+      "name": "*VainCrystal_Away_5v5*"
+    },
+    {
+      "definition_index": 297,
+      "entry_offset": 28124,
+      "name_offset": 28132,
+      "name": "*VainNode*"
+    },
+    {
+      "definition_index": 339,
+      "entry_offset": 31920,
+      "name_offset": 31928,
+      "name": "*Turret5v5*"
+    },
+    {
+      "definition_index": 340,
+      "entry_offset": 31992,
+      "name_offset": 32000,
+      "name": "*OuterTurret5v5*"
+    },
+    {
+      "definition_index": 341,
+      "entry_offset": 32076,
+      "name_offset": 32084,
+      "name": "*ArmoryTurret5v5*"
+    }
+  ],
+  "method": "Native CFF INST unmask and PTCH relocation, first architecture definition list indexed by spawn definition ID; matching installed client assets.",
+  "scope": "This recorded practice match; entity 2007 is not a universal cross-match crystal ID."
+}

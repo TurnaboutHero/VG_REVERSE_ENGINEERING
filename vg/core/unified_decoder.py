@@ -232,6 +232,25 @@ def _le_to_be(eid_le: int) -> int:
     return struct.unpack('>H', struct.pack('<H', eid_le))[0]
 
 
+def _assess_core_completeness(
+    duration: Optional[int],
+    recorded_seconds: Optional[int],
+    crystal_ts: Optional[float],
+    duration_est: Optional[float],
+) -> Tuple[Optional[bool], str]:
+    if not duration or not recorded_seconds:
+        return None, "Insufficient timing evidence to assess match completion."
+    if duration / recorded_seconds < COMPLETENESS_THRESHOLD:
+        return False, "Event duration falls short of the recorded span."
+    if (
+        crystal_ts is not None
+        and duration_est is not None
+        and abs(crystal_ts - duration_est) <= 30
+    ):
+        return True, "Terminal crystal candidate agrees with the player-death tail."
+    return None, "Recording coverage alone does not confirm a terminal match end."
+
+
 # An acquire and the cost it was charged for sit within a few hundred bytes of
 # each other. 400 pairs 10479 of the corpus's purchases without ever reaching
 # past a neighbouring purchase.
@@ -591,14 +610,12 @@ class DecodedPlayer:
     hero_name: str
     hero_id: Optional[int]
     entity_id: int                     # Little Endian (original)
-    # When the match's DecodedMatch.data_complete is False these are lower
-    # bounds: the recording stops mid-match so later events were never written.
-    # Checked against truth on the one known truncated match - all 9 players
-    # came in at or under the real figures, none over.
-    kills: int = 0
-    deaths: int = 0
+    # Observed native counters at as_of_game_time, only final when completion
+    # is confirmed. Missing or unsupported state is None, never a zero guess.
+    kills: Optional[int] = None
+    deaths: Optional[int] = None
     assists: Optional[int] = None
-    minion_kills: int = 0
+    minion_kills: Optional[int] = None
     jungle_kills: int = 0  # action 0x0D credit count
     # [(timestamp, x, z)] on the ground plane, only when decode(detect_positions=True)
     positions: List[Tuple[float, float, float]] = field(default_factory=list)
@@ -653,9 +670,13 @@ class DecodedMatch:
     # duration_seconds / recorded_seconds. Near 1.0 when the event stream runs
     # to the end of the recording; well below when the recording outlasts it.
     completeness_ratio: Optional[float] = None
-    # True/False once both durations are known, None while undecidable.
-    # False means kills/deaths/assists are LOWER BOUNDS, not wrong values.
+    # True requires corroborated terminal evidence, False identifies a short
+    # event tail, and None means the available evidence is undecidable.
     data_complete: Optional[bool] = None
+    completeness_reason: str = ""
+    native_stats_status: str = "unavailable"
+    native_stats_reason: str = ""
+    as_of_game_time: Optional[float] = None
     # Detection flags
     kda_detection_used: bool = False
     win_detection_used: bool = False
@@ -692,6 +713,9 @@ class UnifiedDecoder:
                detect_positions: bool = False) -> DecodedMatch:
         """
         Run full decoding pipeline.
+
+        Capture queries belong to decoder_v2.decode_match(at_game_time=...),
+        because items and gold here are decoded over the whole recording.
 
         Args:
             detect_items: If True, also run ItemExtractor (partial accuracy).
@@ -818,33 +842,41 @@ class UnifiedDecoder:
 
         # --- Step 7a: Completeness ---
         # The event stream ending long before the recording does means the tail
-        # of the match was never captured, so every per-player count is short.
-        # Both durations must be known to decide; otherwise stay undecided
-        # rather than calling a replay with no deaths at all "truncated".
+        # was not captured. High recording coverage is necessary, while only
+        # terminal crystal evidence can establish completion. See
+        # vg/docs/COMPLETENESS_EVIDENCE_2026-09-06.md.
         completeness = None
-        data_complete = None
         if duration and recorded_seconds:
             completeness = duration / recorded_seconds
-            data_complete = completeness >= COMPLETENESS_THRESHOLD
+        data_complete, completeness_reason = _assess_core_completeness(
+            duration, recorded_seconds, crystal_ts, duration_est,
+        )
 
-        # --- Step 7b: Apply KDA filter with computed duration ---
-        # Now that we have proper game duration (from crystal death),
-        # filter kills/deaths/assists with post-game ceremony removal.
-        if kda_detector and eid_map_be_kda:
-            results = kda_detector.get_results(
-                game_duration=duration, team_map=team_map_kda,
-            )
-            for eid_be, kda in results.items():
-                player = eid_map_be_kda.get(eid_be)
-                if player:
-                    player.kills = kda.kills
-                    player.deaths = kda.deaths
-                    player.assists = kda.assists
-                    player.minion_kills = kda.minion_kills
+        # Native state is observed at a record-clock cutoff, not a count of messages.
+        from vg.core.native_stats import RecordTime, inspect_native_clock, read_native_stats
+        clock = inspect_native_clock(frames)
+        native = read_native_stats(
+            frames, {_le_to_be(p.entity_id) for p in all_players if p.entity_id},
+            cutoff=RecordTime(duration) if duration is not None else None,
+        )
+        if not clock.valid:
+            data_complete = None
+            completeness_reason = f"Native clock integrity failed ({clock.status}): {clock.reason}"
+        native_by_id = {p.entity_id: p for p in native.players}
+        kda_used = bool(data_complete is True and native.valid and all_players and all(
+            p.entity_id and _le_to_be(p.entity_id) in native_by_id for p in all_players
+        ))
+        if kda_used:
+            for player in all_players:
+                stats = native_by_id[_le_to_be(player.entity_id)]
+                player.kills = stats.kills
+                player.deaths = stats.deaths
+                player.assists = stats.assists
+                player.minion_kills = stats.minion_kills
 
         # KDA-based winner: team with more kills wins (consistent
         # with VGRParser's team label convention).
-        if kda_used:
+        if kda_used and clock.valid and data_complete is True:
             left_kills = sum(p.kills for p in left_team)
             right_kills = sum(p.kills for p in right_team)
             if left_kills > right_kills:
@@ -882,6 +914,10 @@ class UnifiedDecoder:
             recorded_seconds=recorded_seconds,
             completeness_ratio=round(completeness, 3) if completeness else None,
             data_complete=data_complete,
+            completeness_reason=completeness_reason,
+            native_stats_status=native.status,
+            native_stats_reason=native.reason,
+            as_of_game_time=native.as_of_game_time,
             objective_events=objective_events,
             mythic_captures=mythic_captures,
             turret_kills=turret_kills,

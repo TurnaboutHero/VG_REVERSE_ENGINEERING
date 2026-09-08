@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from vg.decoder_v2.completeness import assess_completeness
 from vg.decoder_v2.decode_match import decode_match, decode_match_debug, main
 from vg.decoder_v2.models import (
     AcceptedPlayerFields,
@@ -100,6 +101,78 @@ class TestDecoderV2DecodeMatch(unittest.TestCase):
         self.assertEqual(output.players[0].gold_status, "partial_incomplete_replay")
         self.assertFalse(output.withheld_fields["winner"].accepted_for_index)
         self.assertFalse(output.withheld_fields["gold"].accepted_for_index)
+
+    def test_decode_match_withholds_index_fields_on_uncertain_long_tail(self) -> None:
+        parsed = {
+            "replay_name": "synthetic",
+            "replay_file": "synthetic.0.vgr",
+            "match_info": {"mode": "5v5", "map_name": "Sovereign's Rise", "team_size": 5},
+            "teams": {
+                "left": [{"name": "player1", "team": "left", "entity_id": 1, "hero_name": "Alpha"}],
+                "right": [],
+            },
+        }
+        signals = ReplaySignalSummary(
+            replay_name="synthetic",
+            replay_file="synthetic.0.vgr",
+            frame_count=149,
+            max_frame_index=148,
+            crystal_ts=1221.3,
+            max_kill_ts=1484.4,
+            max_player_death_ts=1486.2,
+            max_death_header_ts=1486.2,
+            max_item_ts=1467.8,
+        )
+        assessment = assess_completeness(signals)
+        duration = DurationEstimate(estimate_seconds=1486, source="max_death", assessment=assessment)
+
+        with patch("vg.decoder_v2.decode_match.VGRParser") as parser_cls, patch(
+            "vg.decoder_v2.decode_match.decode_winner_from_replay"
+        ) as winner_mock, patch(
+            "vg.decoder_v2.decode_match.decode_kda_from_replay"
+        ) as kda_mock, patch(
+            "vg.decoder_v2.decode_match.decode_gold_from_replay"
+        ) as gold_mock:
+            parser_cls.return_value.parse.return_value = parsed
+            winner_mock.return_value = WinnerExtractionResult(
+                accepted=False,
+                reason=assessment.reason,
+                assessment=assessment,
+                duration_estimate=duration,
+                winner=None,
+                left_kills=None,
+                right_kills=None,
+            )
+            kda_mock.return_value = KDAExtractionResult(
+                accepted=False,
+                reason=assessment.reason,
+                assessment=assessment,
+                duration_estimate=duration,
+                players=(),
+            )
+            gold_mock.return_value = GoldExtractionResult(
+                accepted=False,
+                reason=assessment.reason,
+                assessment=assessment,
+                players=(
+                    GoldPlayerSummary(
+                        "player1", "left", "Alpha", 5600,
+                        "partial_completeness_unknown", 5000.0, 0.0, 0.0,
+                    ),
+                ),
+            )
+            output = decode_match("synthetic.0.vgr")
+
+        self.assertEqual(output.completeness_status, "completeness_unknown")
+        self.assertEqual(output.players[0].hero_name, "Alpha")
+        self.assertIsNone(output.players[0].kills)
+        self.assertEqual(output.players[0].gold, 5600)
+        self.assertEqual(output.players[0].gold_status, "partial_completeness_unknown")
+        for field in ("winner", "kills", "deaths", "assists", "gold"):
+            self.assertIn(field, output.withheld_fields)
+            self.assertFalse(output.withheld_fields[field].accepted_for_index)
+        self.assertEqual(output.withheld_fields["duration_seconds"].value, 1486)
+        self.assertFalse(output.withheld_fields["duration_seconds"].accepted_for_index)
 
     def test_decode_match_emits_kda_on_complete(self) -> None:
         parsed = {

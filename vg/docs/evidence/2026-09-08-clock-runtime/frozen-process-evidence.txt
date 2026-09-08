@@ -1,0 +1,4 @@
+09-08 00:41:53.370   544   635 D ActivityManager: freezing 4989 com.superevilmegacorp.game
+09-08 00:44:01.842   544  1787 E ActivityManager: Unable to freeze binder for 4989: -11
+09-08 00:44:01.842   544  1787 I ActivityManager: Killing 4989:com.superevilmegacorp.game/u0a207 (adj 900): stop com.superevilmegacorp.game due to from pid 5181
+09-08 00:44:01.856   346   346 I Zygote  : Process 4989 exited due to signal 9 (Killed)

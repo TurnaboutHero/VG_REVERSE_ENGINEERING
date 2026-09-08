@@ -1,0 +1,12 @@
+{
+  "binary_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "image_base": "00400000",
+  "analysis_mode": "offline read-only existing Ghidra project",
+  "dispatcher": "004cfec0",
+  "constructor": "00819f30",
+  "vtable": "0127c6bc",
+  "copy_and_enqueue": "0092d7d0",
+  "apply": "0094c8f0",
+  "announcement": "00541430",
+  "battlelog": "005b19e0"
+}
