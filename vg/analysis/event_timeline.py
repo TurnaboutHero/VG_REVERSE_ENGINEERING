@@ -21,13 +21,14 @@ NATIVE_EVIDENCE: Final = "gamekindred-c23b2e9e"
 END_MATCH_EVIDENCE_SHA256: Final = "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642"
 END_MATCH_EVIDENCE: Final = "windows-659f9eed"
 ATTRIBUTE_STATS: Final[dict[int, str]] = {0x29: "kills", 0x2A: "deaths"}
-type KnownOpcode = Literal[0x03F1, 0x041C, 0x041D, 0x042B, 0x0431]
-DEFAULT_OPCODES: Final = frozenset({0x03F1, 0x041C, 0x041D, 0x042B, 0x0431})
+type KnownOpcode = Literal[0x03F1, 0x041C, 0x041D, 0x042B, 0x0430, 0x0431]
+DEFAULT_OPCODES: Final = frozenset({0x03F1, 0x041C, 0x041D, 0x042B, 0x0430, 0x0431})
 EXPECTED_CONTENT_LENGTH: Final[dict[KnownOpcode, int]] = {
     0x03F1: 8,
     0x041C: 24,
     0x041D: 16,
     0x042B: 16,
+    0x0430: 16,  # Two opcode bytes plus the observed 14-byte payload.
     0x0431: 8,
 }
 SECTION_NAME: Final = re.compile(r"^(?P<prefix>.+)\.(?P<frame>\d+)\.vgr$")
@@ -45,6 +46,10 @@ class DecodedFields(TypedDict, total=False):
     uninterpreted_bytes: list[int]
     native_evidence: str
     native_evidence_sha256: str
+    native_label: str
+    native_victim_id: int
+    native_source_raw: int
+    native_source_is_sentinel: bool
     native_class: str
     native_winning_team_id: int
     native_winning_team_raw: int
@@ -101,6 +106,8 @@ def _float_fields(payload: memoryview, offset: int) -> tuple[float | None, int]:
 def decode_fields(record: VGRRecord) -> DecodedFields:
     """Decode only structurally confirmed fields for an exact known layout.
 
+    ActorDie preserves the raw death source, not a credited killer. Only the
+    observed 14-byte payload is decoded; its final six bytes remain opaque.
     An end-match action records a queued request, not completed-match proof.
     Reasons 5/6/7 enter validation-error paths and 8 is a no-op in this build.
     native_surrender is only the consumer's reason == 2 boolean; team IDs have
@@ -169,6 +176,22 @@ def decode_fields(record: VGRRecord) -> DecodedFields:
                 "native_evidence": NATIVE_EVIDENCE, "native_type": "indexed_state_bits",
                 "native_index": payload[4], "native_state_bits": payload[5],
                 "native_mask_a": payload[6], "native_mask_b": payload[7],
+            }
+        case 0x0430:
+            victim, source = struct.unpack_from(">II", payload, 0)
+            return {
+                "decoding_status": "decoded",
+                "ref0": victim,
+                "ref1": source,
+                "native_label": "ActionActorDie",
+                "native_class": "Nuo::Kindred::ActionActorDie",
+                "native_type": "actor_die_action",
+                "native_victim_id": victim,
+                "native_source_raw": source,
+                "native_source_is_sentinel": source == 0xFFFFFFFF,
+                "remaining_hex": payload[8:].hex(),
+                "native_evidence": END_MATCH_EVIDENCE,
+                "native_evidence_sha256": END_MATCH_EVIDENCE_SHA256,
             }
         case 0x0431:
             return {
@@ -262,8 +285,8 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Stream verified native VGR event structures as lossless JSONL.")
     parser.add_argument("path", type=Path, help="numbered .vgr replay section")
     parser.add_argument("-o", "--output", type=Path, help="write JSONL to this path")
-    parser.add_argument("--opcode", action="append", type=_integer, help="opcode integer; repeat to select more")
-    parser.add_argument("--entity", action="append", type=_integer, help="ref0/ref1 integer; repeat to select more")
+    parser.add_argument("--opcode", action="append", type=_integer, help="opcode integer; repeat to select more (default includes 0x0430 ActionActorDie)")
+    parser.add_argument("--entity", action="append", type=_integer, help="ref0/ref1 integer, including ActorDie victim/raw source; repeat to select more")
     return parser
 
 
