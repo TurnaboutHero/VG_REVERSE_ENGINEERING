@@ -1,0 +1,133 @@
+{
+  "build_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "manifest_sha256": "7292b885378be83cb8596601bad7d0c7adfaab1e91e23f8ea65601f03136755c",
+  "method": "static PE initialization trace, deterministic native name hash recomputation, and owned-resource decoding",
+  "native_actor_descriptor": {
+    "image_base_hex": "00400000",
+    "initializer_va_hex": "004222f0",
+    "descriptor_va_hex": "020e9974",
+    "descriptor_pointer_global_va_hex": "01a7524c",
+    "type_key_va_hex": "020e9978",
+    "constructor_va_hex": "0112bec0",
+    "key_store_va_hex": "0112bf02",
+    "name": "Actor",
+    "name_va_hex": "01266800",
+    "hash_function_va_hex": "004c4450",
+    "hash_seed_hex": "12345678",
+    "symbol_type_id_hex": "2419fb6c",
+    "serialized_size": 520,
+    "alignment": 4,
+    "factory_callback_va_hex": "00942d90",
+    "actor_config_store_va_hex": "00942daa",
+    "kind_reader_va_hex": "00942480"
+  },
+  "selected_profile": {
+    "architecture": 0,
+    "architecture_code": 1,
+    "version": 12
+  },
+  "native_kind_mapping": {
+    "0": "hero",
+    "2": "structure",
+    "3": "structure",
+    "other": "unknown"
+  },
+  "resources": [
+    {
+      "definition_index": 240,
+      "name": "Hero000",
+      "serialized_name": "*Hero000*",
+      "resource_sha256": "6804f1838b7f6d6b978c771f99de5b9670f55a29815819047fc9fa62f5f62e4e",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 0,
+      "kind": "hero"
+    },
+    {
+      "definition_index": 250,
+      "name": "SAW",
+      "serialized_name": "*SAW*",
+      "resource_sha256": "62be4bc6938c74dad7cfb28ca152ceac0a93fc4886673950b9541d595da81c45",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 0,
+      "kind": "hero"
+    },
+    {
+      "definition_index": 296,
+      "name": "VainCrystal_Away_5v5",
+      "serialized_name": "*VainCrystal_Away_5v5*",
+      "resource_sha256": "6b18fd1f89f4be61aa7e0f16818510fee30d106e0ed9b93973a2904ead0a9a2a",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 2,
+      "kind": "structure"
+    },
+    {
+      "definition_index": 297,
+      "name": "VainNode",
+      "serialized_name": "*VainNode*",
+      "resource_sha256": "a35ebf80a9b7f2697d7d5a705241ea9857222fe468041211e4bc0a69a69a0aff",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 3,
+      "kind": "structure"
+    },
+    {
+      "definition_index": 331,
+      "name": "5v5_Ghostwing",
+      "serialized_name": "*5v5_Ghostwing*",
+      "resource_sha256": "987e9f913c717ba58000809e227d193e9c602401a7e2f11de8a0cabc4654574b",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 4,
+      "kind": "unknown"
+    },
+    {
+      "definition_index": 332,
+      "name": "5v5_Blackclaw_Uncaptured",
+      "serialized_name": "*5v5_Blackclaw_Uncaptured*",
+      "resource_sha256": "12eca36df997c4665a881c3995002943dfb116a97bfe39caa89b070915436828",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 4,
+      "kind": "unknown"
+    },
+    {
+      "definition_index": 339,
+      "name": "Turret5v5",
+      "serialized_name": "*Turret5v5*",
+      "resource_sha256": "7ea648d32471e920da84232f77df023b3b39af815407d6426f042578e541e720",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 3,
+      "kind": "structure"
+    },
+    {
+      "definition_index": 340,
+      "name": "OuterTurret5v5",
+      "serialized_name": "*OuterTurret5v5*",
+      "resource_sha256": "0c873e8f1ad41b8893a60c2f594e3f2b869b2bbf88a90dfbe5d82809552ffbcf",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 3,
+      "kind": "structure"
+    },
+    {
+      "definition_index": 925,
+      "name": "Amael",
+      "serialized_name": "*Amael*",
+      "resource_sha256": "8218834c4da235eebc936dc5e38ae36d9dfcdcda9a329713eb268b9b86fd1ddc",
+      "symbol_type_id_hex": "2419fb6c",
+      "root_offset": 0,
+      "native_kind": 0,
+      "kind": "hero"
+    }
+  ],
+  "limits": [
+    "This is static native-layout and offline resource evidence, not a new runtime-memory observation or screen comparison.",
+    "Hash values identify supplied bytes; pairing with the recording and executable requires independent provenance.",
+    "Native kinds other than 0, 2 and 3 remain unknown.",
+    "Original binaries and resource bytes are not included."
+  ]
+}

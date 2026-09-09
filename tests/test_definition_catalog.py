@@ -50,10 +50,46 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(catalog.lookup(0).name, 'Test')
         self.assertEqual(catalog.lookup(0).serialized_name, '*Test*')
         self.assertEqual(catalog.lookup(0).kind, 'unknown')
+        self.assertIsNone(catalog.lookup(0).kind_evidence)
         self.assertEqual(before, (bytes(m), bytes(e)))
         for index in (-1, 1, 1000000):
             with self.assertRaises(CatalogError):
                 catalog.lookup(index)
+
+    def test_enrichment_is_immutable_and_binds_exact_manifest_name(self):
+        from unittest.mock import patch
+        from tests.test_entity_definition import entity_fixture
+        from vg.core.definition_catalog import enrich_definition
+        m, e, p = fixture()
+        catalog = load_catalog(m, e, p)
+        resource, resource_exe, options = entity_fixture(3)
+        self.assertEqual(e, resource_exe)
+        with patch('vg.core.definition_catalog.supported_build_profile', return_value=p):
+            enriched = enrich_definition(catalog, 0, resource, e, options['resource_sha256'])
+            for wrong in (-1, 1):
+                with self.assertRaises(CatalogError):
+                    enrich_definition(catalog, wrong, resource, e, options['resource_sha256'])
+            wrong_catalog = replace(catalog, definitions=(replace(catalog.lookup(0), serialized_name='Test'),))
+            with self.assertRaisesRegex(CatalogError, 'match manifest'):
+                enrich_definition(wrong_catalog, 0, resource, e, options['resource_sha256'])
+        self.assertEqual(enriched.lookup(0).kind, 'structure')
+        self.assertEqual(enriched.lookup(0).kind_evidence.native_kind, 3)
+        self.assertEqual(enriched.profile, catalog.profile)
+        self.assertEqual(enriched.lookup(0).serialized_name, '*Test*')
+        self.assertEqual(catalog.lookup(0).kind, 'unknown')
+        self.assertIsNone(catalog.lookup(0).kind_evidence)
+
+    def test_enrichment_rejects_unaudited_build_and_layout_profiles(self):
+        from vg.core.definition_catalog import DefinitionCatalog, enrich_definition, SUPPORTED_BUILD_SHA256
+        m, e, p = fixture()
+        catalog = load_catalog(m, e, p)
+        with self.assertRaisesRegex(CatalogError, 'unsupported build'):
+            enrich_definition(catalog, 0, b'', e, '0' * 64)
+        supported = supported_build_profile(SUPPORTED_BUILD_SHA256, p.manifest_sha256)
+        for changes in (dict(version=11), dict(architecture=1), dict(key_table_va=0), dict(definition_count=1)):
+            unsupported = DefinitionCatalog(replace(supported, **changes), catalog.definitions)
+            with self.subTest(changes=changes), self.assertRaisesRegex(CatalogError, 'unsupported entity kind'):
+                enrich_definition(unsupported, 0, b'', e, '0' * 64)
 
     def test_name_bounds_and_encoding(self):
         for name in (b'x' * 40, b'\xff\0', b'\0', b'a\x01\0'):

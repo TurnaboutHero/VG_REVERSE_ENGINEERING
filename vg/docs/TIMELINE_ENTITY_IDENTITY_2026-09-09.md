@@ -22,8 +22,8 @@ The supported profile is the observed Windows PE32 build
 `659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642`.
 Assets are read-only and must not be redistributed. Unsupported profiles, wrong
 hashes, missing assets and invalid catalog structures return exit 2 before the
-output is opened. Output paths that alias an input section or either asset are
-rejected. A malformed later replay record can still leave a partial JSONL stream;
+output is opened. Output paths that alias an input section, manifest, executable or supplied
+Actor resource are rejected. A malformed later replay record can still leave a partial JSONL stream;
 consumers must check the exit code.
 
 For the library, load and validate a `DefinitionCatalog`, then pass it as
@@ -45,8 +45,10 @@ and repeated observations remain explicit.
 
 Unobserved IDs, out-of-range definition indices and the `0xffffffff` sentinel
 remain unresolved. Sentinel references cannot acquire an identity even if a
-spawn happens to contain that integer. Broad `kind` remains `unknown` without
-independent semantic evidence. Owner and credited-player fields remain null;
+spawn happens to contain that integer. Broad `kind` remains `unknown` unless a
+checked Actor resource establishes a supported native kind. Optional resource
+enrichment adds `kind_evidence` with the resource hash, exact serialized name,
+type key, root offset and raw kind; see [Actor-resource kind evidence](ENTITY_RESOURCE_KIND_2026-09-09.md). Owner and credited-player fields remain null;
 the raw death source is not renamed to a credited killer. Only observed spawn
 payload lengths 122/126 for 03f2 and 746/750 for 03f3 are accepted in catalog
 mode; unsupported layouts fail even if those opcodes were filtered out.
@@ -92,4 +94,21 @@ This does not prove that native removal completed at the record timestamp.
 The optional explicit `--opcode 0x040b` selection decodes the entity ID and
 preserves the opaque two-byte tail; the default opcode set stays unchanged.
 See [native lifecycle evidence](ENTITY_LIFECYCLE_2026-09-09.md) and
-[kind provenance still pending](ENTITY_KIND_NATIVE_2026-09-09.md).
+[native kind provenance](ENTITY_KIND_NATIVE_2026-09-09.md).
+
+## Subsequent Actor-resource evidence
+
+Repeatable `--entity-resource INDEX PATH SHA256` arguments enrich selected
+definitions after the four catalog flags validate the paired manifest and build.
+The native Actor type key and factory/root relationship are now established
+statically. Native kind 0 maps to `hero`, 2/3 to `structure`, and all other values
+remain `unknown` with the raw integer preserved. Definitions without a supplied
+resource remain unknown. See [resource contract and validation](ENTITY_RESOURCE_KIND_2026-09-09.md).
+
+The Windows CLI read the same 121-section recording with nine checked resources.
+The 20 selected ActorDie rows preserved their raw values exactly against both
+the un-enriched run and the prior baseline. At section 97, offset 100334, the
+prior Amael observation has `kind: "hero"`; the crystal source observation has
+`kind: "structure"` and native kind 2. Credited-player fields remain null. This
+follow-up passed 376 full-suite tests and the CLI/library checks documented in
+the resource contract. It did not add a screen or live-state assertion.

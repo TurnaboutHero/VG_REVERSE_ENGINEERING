@@ -17,7 +17,7 @@ from vg.analysis.native_event_fields import (
     NATIVE_EVIDENCE, NATIVE_EVIDENCE_SHA256, decode_fields,
 )
 from vg.core.definition_catalog import (
-    CatalogError, DefinitionCatalog, load_catalog, supported_build_profile,
+    CatalogError, DefinitionCatalog, enrich_definition, load_catalog, supported_build_profile,
 )
 from vg.core.entity_identity import EntityResolver
 from vg.core.vgr_records import VGRRecord, VGRRecordError, iter_records
@@ -175,6 +175,9 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--executable", type=Path, help="user-owned paired game executable")
     parser.add_argument("--build-sha256", help="expected executable hash and asserted recording build")
     parser.add_argument("--manifest-sha256", help="expected hash of the independently paired manifest")
+    parser.add_argument("--entity-resource", nargs=3, action="append",
+                        metavar=("INDEX", "PATH", "SHA256"),
+                        help="enrich one definition from an owned actor CFF resource; repeat for more")
     return parser
 
 
@@ -184,11 +187,26 @@ def main(argv: Sequence[str] | None = None) -> int:
         sections = _discover_sections(args.path)
         catalog = None
         catalog_args = (args.manifest, args.executable, args.build_sha256, args.manifest_sha256)
-        if any(value is not None for value in catalog_args):
+        resource_paths: list[Path] = []
+        if any(value is not None for value in catalog_args) or args.entity_resource:
             if not all(value is not None for value in catalog_args):
                 raise CatalogError("catalog mode requires --manifest, --executable, --build-sha256 and --manifest-sha256")
             profile = supported_build_profile(args.build_sha256, args.manifest_sha256)
-            catalog = load_catalog(args.manifest.read_bytes(), args.executable.read_bytes(), profile)
+            executable = args.executable.read_bytes()
+            catalog = load_catalog(args.manifest.read_bytes(), executable, profile)
+            seen_indices: set[int] = set()
+            for raw_index, raw_path, resource_hash in args.entity_resource or []:
+                try:
+                    index = int(raw_index, 0)
+                except ValueError as error:
+                    raise CatalogError(f"invalid entity resource index: {raw_index}") from error
+                if index in seen_indices:
+                    raise CatalogError(f"duplicate entity resource index: {index}")
+                seen_indices.add(index)
+                resource_path = Path(raw_path)
+                resource_paths.append(resource_path)
+                catalog = enrich_definition(catalog, index, resource_path.read_bytes(), executable,
+                                            resource_hash)
         if args.output is not None:
             output_path = args.output.resolve()
             output_match = SECTION_NAME.fullmatch(args.output.name)
@@ -207,7 +225,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     reason="output names a sibling input .vgr section",
                 )
             output_exists = args.output.exists()
-            for asset in (args.manifest, args.executable):
+            for asset in (args.manifest, args.executable, *resource_paths):
                 if asset is not None and (
                     output_path == asset.resolve()
                     or (output_exists and args.output.samefile(asset))

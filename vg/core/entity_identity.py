@@ -1,7 +1,7 @@
 """Recording-scoped spawn and destroy-action evidence, not actor lifetimes."""
 from dataclasses import dataclass
 import struct
-from .definition_catalog import CatalogError, DefinitionCatalog
+from .definition_catalog import CatalogError, DefinitionCatalog, EntityKindEvidence
 from .vgr_records import VGRRecord
 
 
@@ -27,6 +27,7 @@ class SpawnIdentity:
     owner_entity_id: int | None = None
     credited_player_id: int | None = None
     previous_destroy_observation: int | None = None
+    kind_evidence: EntityKindEvidence | None = None
 
 
 @dataclass(frozen=True)
@@ -110,8 +111,10 @@ class EntityResolver:
         try:
             definition = self.catalog.lookup(index)
             name, kind, status = definition.name, definition.kind, 'resolved'
+            kind_evidence = definition.kind_evidence
         except CatalogError:
             name, kind, status = None, 'unknown', 'definition_index_out_of_range'
+            kind_evidence = None
         previous = self._latest.get(entity)
         destroy = self._latest_destroy.get(entity)
         after_destroy = destroy is not None and (
@@ -131,6 +134,7 @@ class EntityResolver:
             self.catalog.profile.manifest_sha256,
             previous_destroy_observation=(destroy.observation
                                           if destroy is not None and after_destroy else None),
+            kind_evidence=kind_evidence,
         )
         self._latest[entity] = identity
         return identity
