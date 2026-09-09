@@ -97,9 +97,10 @@ def iter_timeline(
 ) -> Iterator[TimelineRow]:
     """Yield selected records in numeric frame and original record order.
 
-    Optional identities are prior spawn observations, never current life or
-    kill-credit claims. build_sha256 asserts this recording's build; the VGR
-    stream itself cannot authenticate its originating executable.
+    Optional identities retain prior spawn observations and separate lifecycle
+    action evidence, never current life or kill-credit claims. build_sha256
+    asserts this recording's build; the VGR stream itself cannot authenticate
+    its originating executable.
     """
     selected_opcodes = DEFAULT_OPCODES if opcodes is None else frozenset(opcodes)
     selected_entities = None if entity_ids is None else frozenset(entity_ids)
@@ -143,7 +144,7 @@ def iter_timeline(
                         continue
                     entity = fields[ref]
                     prior = None if entity == 0xFFFFFFFF else resolver.latest_observed(entity)
-                    row[ref + "_identity"] = (
+                    identity = (
                         {"evidence_scope": "prior_spawn_observation", **asdict(prior)}
                         if prior is not None else {
                             "recording_id": recording_id, "entity_id": entity,
@@ -152,6 +153,8 @@ def iter_timeline(
                             "definition_name": None, "kind": "unknown",
                             "owner_entity_id": None, "credited_player_id": None,
                         })
+                    identity["lifecycle"] = asdict(resolver.lifecycle_evidence(entity))
+                    row[ref + "_identity"] = identity
             yield row
 
 

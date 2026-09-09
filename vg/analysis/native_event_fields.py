@@ -9,10 +9,11 @@ NATIVE_EVIDENCE: Final = "gamekindred-c23b2e9e"
 END_MATCH_EVIDENCE_SHA256: Final = "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642"
 END_MATCH_EVIDENCE: Final = "windows-659f9eed"
 ATTRIBUTE_STATS: Final[dict[int, str]] = {0x29: "kills", 0x2A: "deaths"}
-type KnownOpcode = Literal[0x03F1, 0x041C, 0x041D, 0x042B, 0x0430, 0x0431]
+type KnownOpcode = Literal[0x03F1, 0x040B, 0x041C, 0x041D, 0x042B, 0x0430, 0x0431]
 DEFAULT_OPCODES: Final = frozenset({0x03F1, 0x041C, 0x041D, 0x042B, 0x0430, 0x0431})
 EXPECTED_CONTENT_LENGTH: Final[dict[KnownOpcode, int]] = {
     0x03F1: 8,
+    0x040B: 8,
     0x041C: 24,
     0x041D: 16,
     0x042B: 16,
@@ -56,7 +57,7 @@ class DecodedFields(TypedDict, total=False):
 
 
 def _is_known_opcode(opcode: int) -> TypeGuard[KnownOpcode]:
-    return opcode in DEFAULT_OPCODES
+    return opcode in EXPECTED_CONTENT_LENGTH
 
 
 def _float_fields(payload: memoryview, offset: int) -> tuple[float | None, int]:
@@ -98,6 +99,17 @@ def decode_fields(record: VGRRecord) -> DecodedFields:
                 "native_end_reason": payload[4],
                 "native_surrender": payload[4] == 2,
                 "remaining_hex": payload[5:].hex(),
+                "native_evidence": END_MATCH_EVIDENCE,
+                "native_evidence_sha256": END_MATCH_EVIDENCE_SHA256,
+            }
+        case 0x040B:
+            return {
+                "decoding_status": "decoded",
+                "ref0": struct.unpack_from(">I", payload, 0)[0],
+                "native_label": "ActionEntityDestroy",
+                "native_class": "Nuo::Kindred::ActionEntityDestroy",
+                "native_type": "entity_destroy_action",
+                "remaining_hex": payload[4:].hex(),
                 "native_evidence": END_MATCH_EVIDENCE,
                 "native_evidence_sha256": END_MATCH_EVIDENCE_SHA256,
             }

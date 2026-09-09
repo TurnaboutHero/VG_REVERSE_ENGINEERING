@@ -1,7 +1,8 @@
 import struct
 import unittest
+from dataclasses import FrozenInstanceError
 from vg.core.definition_catalog import BuildProfile, Definition, DefinitionCatalog, CatalogError
-from vg.core.entity_identity import EntityResolver
+from vg.core.entity_identity import DestroyObservation, EntityResolver
 from vg.core.vgr_records import VGRRecord
 
 
@@ -9,6 +10,11 @@ def record(offset, index=0, entity=2007, opcode=0x03f2, payload=None):
     size = 746 if opcode == 0x03f3 else 122
     data = (struct.pack('>III', index, 0xc10b41da, entity) + bytes(size - 12)) if payload is None else payload
     return VGRRecord(offset, 1.0, len(data)+2, opcode, memoryview(data))
+
+
+def destroy_record(offset, entity=2007, payload=None):
+    data = struct.pack('>I', entity) + b'\xaa\x55' if payload is None else payload
+    return VGRRecord(offset, 2.5, len(data)+2, 0x040b, memoryview(data))
 
 
 class EntityTests(unittest.TestCase):
@@ -70,6 +76,89 @@ class EntityTests(unittest.TestCase):
         for length in (12, 122, 745, 747, 749, 751):
             with self.assertRaises(ValueError):
                 self.resolver().observe(record(0, opcode=0x03f3, payload=bytes(length)))
+
+    def test_destroy_preserves_historical_spawn_and_immutable_evidence(self):
+        resolver = self.resolver()
+        spawn = resolver.observe(record(12))
+        before = resolver.lifecycle_evidence(2007)
+        destroy = resolver.observe(destroy_record(0), section=1)
+        self.assertIsInstance(destroy, DestroyObservation)
+        self.assertIs(resolver.latest_observed(2007), spawn)
+        self.assertEqual(destroy.previous_spawn_observation, spawn.observation)
+        self.assertEqual((destroy.section, destroy.record_offset, destroy.timestamp), (1, 0, 2.5))
+        self.assertEqual(destroy.raw_payload_hex, '000007d7aa55')
+        self.assertEqual(destroy.build_sha256, 'a'*64)
+        self.assertEqual(destroy.manifest_sha256, 'b'*64)
+        self.assertEqual(before.status, 'spawn_observed')
+        self.assertIsNone(before.latest_destroy_observation)
+        evidence = resolver.lifecycle_evidence(2007)
+        self.assertEqual(evidence.status, 'destroy_action_observed')
+        self.assertEqual(evidence.latest_spawn_observation, spawn.observation)
+        self.assertIs(evidence.latest_destroy_observation, destroy)
+        with self.assertRaises(FrozenInstanceError):
+            destroy.entity_id = 1
+        with self.assertRaises(FrozenInstanceError):
+            evidence.status = 'alive'
+
+    def test_destroy_without_spawn_then_spawn_links_action_only(self):
+        resolver = self.resolver()
+        self.assertEqual(resolver.lifecycle_evidence(2007).status, 'unobserved')
+        destroy = resolver.observe(destroy_record(0))
+        self.assertIsNone(destroy.previous_spawn_observation)
+        self.assertIsNone(resolver.latest_observed(2007))
+        self.assertIsNone(resolver.lifecycle_evidence(2007).latest_spawn_observation)
+        spawn = resolver.observe(record(1))
+        self.assertEqual(spawn.transition, 'spawn_after_destroy_observation')
+        self.assertIsNone(spawn.previous_observation)
+        self.assertEqual(spawn.previous_destroy_observation, destroy.observation)
+        self.assertEqual(resolver.lifecycle_evidence(2007).status, 'spawn_observed')
+
+    def test_spawn_after_destroy_and_repeated_spawn_keep_observation_boundaries(self):
+        resolver = self.resolver()
+        first = resolver.observe(record(0))
+        resolver.observe(destroy_record(1))
+        latest_destroy = resolver.observe(destroy_record(2))
+        spawn = resolver.observe(record(3, index=1))
+        self.assertEqual(spawn.transition, 'spawn_after_destroy_observation')
+        self.assertEqual(spawn.previous_observation, first.observation)
+        self.assertEqual(spawn.previous_destroy_observation, latest_destroy.observation)
+        repeated = resolver.observe(record(4, index=1))
+        self.assertEqual(repeated.transition, 'repeated_spawn_lifetime_unknown')
+        self.assertIsNone(repeated.previous_destroy_observation)
+        self.assertIs(resolver.lifecycle_evidence(2007).latest_destroy_observation, latest_destroy)
+        changed = resolver.observe(record(5, index=0))
+        self.assertEqual(changed.transition, 'definition_changed')
+
+    def test_death_and_state_transition_do_not_close_spawn_evidence(self):
+        resolver = self.resolver()
+        spawn = resolver.observe(record(0))
+        for offset, opcode in enumerate((0x0430, 0x0431), start=1):
+            self.assertIsNone(resolver.observe(record(offset, opcode=opcode)))
+            self.assertIs(resolver.latest_observed(2007), spawn)
+            self.assertEqual(resolver.lifecycle_evidence(2007).status, 'spawn_observed')
+            self.assertIsNone(resolver.lifecycle_evidence(2007).latest_destroy_observation)
+
+    def test_destroy_layout_rejects_unobserved_lengths_and_length_mismatch(self):
+        for length in (0, 3, 4, 5, 7, 8, 10):
+            with self.subTest(length=length), self.assertRaisesRegex(ValueError, 'destroy-action layout'):
+                self.resolver().observe(destroy_record(0, payload=bytes(length)))
+        valid = destroy_record(0)
+        mismatch = VGRRecord(0, valid.timestamp, 7, valid.opcode, valid.payload)
+        with self.assertRaisesRegex(ValueError, 'destroy-action layout'):
+            self.resolver().observe(mismatch)
+
+    def test_destroy_is_recording_scoped_and_sentinel_never_resolves(self):
+        a, b = self.resolver(), self.resolver('recording-b')
+        a.observe(destroy_record(0))
+        self.assertEqual(a.lifecycle_evidence(2007).status, 'destroy_action_observed')
+        self.assertEqual(b.lifecycle_evidence(2007).status, 'unobserved')
+        for observed in (record(1, entity=0xFFFFFFFF), destroy_record(2, entity=0xFFFFFFFF)):
+            self.assertIsNone(a.observe(observed))
+        self.assertIsNone(a.latest_observed(0xFFFFFFFF))
+        sentinel = a.lifecycle_evidence(0xFFFFFFFF)
+        self.assertEqual(sentinel.status, 'unobserved')
+        self.assertIsNone(sentinel.latest_spawn_observation)
+        self.assertIsNone(sentinel.latest_destroy_observation)
 
 
 if __name__ == '__main__':

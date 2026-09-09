@@ -82,3 +82,14 @@ The two implementation modules contain 203 and 149 nonblank, noncomment,
 non-docstring lines respectively. These paths are evidence artifacts, not bundled assets.
 Screen comparison for two entity types and exact lifetime semantics remain
 separate acceptance work. No native-stat or final-completeness policy changed.
+
+## Subsequent lifecycle evidence
+
+The resolver now also observes the exact six-byte payload of `040b`
+`ActionEntityDestroy`. Historical spawn identity is retained, with separate
+lifecycle evidence for a destruction action and a later spawn observation.
+This does not prove that native removal completed at the record timestamp.
+The optional explicit `--opcode 0x040b` selection decodes the entity ID and
+preserves the opaque two-byte tail; the default opcode set stays unchanged.
+See [native lifecycle evidence](ENTITY_LIFECYCLE_2026-09-09.md) and
+[kind provenance still pending](ENTITY_KIND_NATIVE_2026-09-09.md).
