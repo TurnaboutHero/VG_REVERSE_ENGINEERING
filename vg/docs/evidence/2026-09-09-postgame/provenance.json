@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "analysis_date": "2026-09-09",
+  "decoder_base_commit": "018dfd227abc704ad3c281bacd9b203af2d2e108",
+  "binary_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "source_artifacts": {
+    "compare/marker-corpus.json": {
+      "sha256": "8dc4e9a4eded0dd193e8c6fb5d2461293d2b1937165b8fc147bd111b4d7d1390",
+      "bytes": 6003167
+    },
+    "compare/score-marker-relations.json": {
+      "sha256": "31ff93afe1b336e39102fda2bf351f78048dd6b7ba2653aa7aba2d3f5c1fd629",
+      "bytes": 88797
+    },
+    "compare/marker-summary.json": {
+      "sha256": "a828314b00467df52e49f71fb753859ae663937246a29d8ac2b1294233c0eca7",
+      "bytes": 66866
+    },
+    "compare/score-marker-summary.json": {
+      "sha256": "a089cd7c08ca57b5e0ed0e1866aab21af9412831bc746b6576db0532a91a7920",
+      "bytes": 10023
+    },
+    "compare/C02-window.json": {
+      "sha256": "fa12a5b078fe9ab28bb6dfcae253e75fb01962b1db879f6b5d360c2063b0b080",
+      "bytes": 3623755
+    },
+    "compare/C16-window.json": {
+      "sha256": "2cc2e4acb1a42c492e3e814604001c61240ed612c4274790bb8346c3e606d5f9",
+      "bytes": 4852485
+    },
+    "compare/validation.json": {
+      "sha256": "487f61d3f218f1eb44b16bee7860e9c72f8e44d3c11e745050ba5d93c2c24807",
+      "bytes": 1432
+    },
+    "root-verification.json": {
+      "sha256": "611bfa6ab9824287af65fa2f2f06bf31609eede55e78cbd0e8966104902fb653",
+      "bytes": 356
+    },
+    "manifest.json": {
+      "sha256": "d6aae7b9d54c9f4640d10c5c4bd4b09aa2bf7b157eb2d275e7d3d9819743c9cc",
+      "bytes": 8885
+    },
+    "0452-machine-code.txt": {
+      "sha256": "3c76111dba756d44ec7fd3e1cd89edd408922caf0ed14073dd111c4287c2fee6",
+      "bytes": 3407
+    },
+    "0452-callback-machine-code.txt": {
+      "sha256": "9cbd3dfeae70c02179ffe7974020776a0e12f233769c9a42830bc7f93a363336",
+      "bytes": 719
+    },
+    "registration-static/assembly-006f0b20.txt": {
+      "sha256": "4db2d1c989e3d6a50638f2fc481f7f88e1753001877a51923c8525f23e2261d4",
+      "bytes": 2003
+    },
+    "original-report.md": {
+      "sha256": "9c8576551a52d0206d14af240eb0b3445940c1e076cf4b8b0b1e2da1bfc9b3d4",
+      "bytes": 7000
+    },
+    "compare/extract.py": {
+      "sha256": "7b657942754214cab32ccbde14463fcbae30ca4f31b3ae87559343da25369ce1",
+      "bytes": 5640
+    },
+    "compare/scan_markers.py": {
+      "sha256": "a62459e517dcf7365967f5443da09283291b9e4af4ea39df5e3ea51a4dc80b52",
+      "bytes": 3985
+    },
+    "compare/scan_score_relations.py": {
+      "sha256": "4075cf1b831a9040d867b6b58b18e4b96031d91b8fca50a3899e15e6360f95e6",
+      "bytes": 4084
+    },
+    "compare/findings.md": {
+      "sha256": "fa8c4eeb1910daae21fed9866bb408a8d84d76cf622977db67b7d7ee59a47ef6",
+      "bytes": 8652
+    },
+    "native-findings.md": {
+      "sha256": "8fc5a5b9fbae14f8534009ca018ffbaf80949dd8bfcea0389a597e66c59dd252",
+      "bytes": 3058
+    }
+  },
+  "source_artifact_scope": "Hashes identify privately retained source artifacts. Names are logical relative labels, not public download links. original-report.md denotes the original local Korean report.",
+  "published_derivative_scope": "Allowlisted aggregate counts, numeric in-record identifiers, selected locators, native addresses and bounded instructions. No account identity, original replay bytes, executable or full decompile.",
+  "transformation": [
+    "Read full JSON sources and cross-check provenance anchors before selecting fields.",
+    "Retain all 56 aggregate rows, all 39 unmatched deaths and all 14 same-timestamp score operations.",
+    "Retain selected C02/C16 controls, omitting hero names and raw payload representations.",
+    "Represent all-zero marker payload as a boolean plus payload length.",
+    "Hash each full per-recording section list as UTF-8 compact sorted-key JSON without a final newline.",
+    "Remove personal path headers and unrelated nearest-symbol annotations from bounded native instruction excerpts.",
+    "Rewrite report references and explicitly separate internal consistency from full replay reanalysis and gameplay validation."
+  ],
+  "source_scan_validation": {
+    "recordings": 56,
+    "sections": 7870,
+    "records": 30729156,
+    "source_hashes_match_prior": true,
+    "source_hashes_unchanged": true,
+    "all39_unpaired_after0452": true,
+    "same_timestamp_score_operations_after_marker": 14,
+    "strictly_later_score_operations": 0,
+    "unsupported_selected_stat_layouts": 0
+  },
+  "published_files": {
+    "corpus-summary.json": {
+      "sha256": "ac3f8b2577ff13da980989e3b91691e6b700dc91c19af053c764926c517a77db",
+      "bytes": 121221
+    },
+    "native-evidence.json": {
+      "sha256": "1ad415238e3a8deb776e17c7fda761447aadba96827d253526cd9df978e158dc",
+      "bytes": 2222
+    },
+    "native-instructions.txt": {
+      "sha256": "58dfc8112e0820a6a52ef009a44d0e8c5188edfbeca3d639f7d09334c465f42c",
+      "bytes": 3761
+    },
+    "record-locators.json": {
+      "sha256": "b6e3281ecc8b72a45abf4f75d0fd56086bf526756530f12348a89ff2cf0dca1b",
+      "bytes": 58486
+    },
+    "verify.py": {
+      "sha256": "9ba99df6d072e2afa89497a8d1bcb947308f8f5a19efdcec42a4266d2eca9999",
+      "bytes": 7500
+    },
+    "../../POSTGAME_OFFLINE_2026-09-09.md": {
+      "sha256": "6ab09b478bb5c4de2ce20a3321099b0dd954facd8c37d863c1e5b3fd49890438",
+      "bytes": 11510
+    }
+  }
+}

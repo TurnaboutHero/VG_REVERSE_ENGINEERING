@@ -1,0 +1,37 @@
+  case 0x48c:
+    bStack_e44 = 0;
+    bStack_e43 = 0;
+    uStack_e42 = 0;
+    bStack_e40 = 0;
+    bStack_e3f = 0;
+    bStack_e3e = 0;
+    bStack_e3d = 0;
+    memmove(&bStack_e44,param_1,8);
+    fVar24 = (float10)FUN_004cfda0(CONCAT13(bStack_e3f,CONCAT12(bStack_e40,uStack_e42)));
+    fVar10 = (float)fVar24;
+    uStack_e42 = SUB42(fVar10,0);
+    bStack_e40 = (byte)((uint)fVar10 >> 0x10);
+    bStack_e3f = (byte)((uint)fVar10 >> 0x18);
+    FUN_0052a750(CONCAT22(uStack_e42,CONCAT11(bStack_e43,bStack_e44)),
+                 CONCAT13(bStack_e3b,CONCAT12(bStack_e3c,CONCAT11(bStack_e3d,bStack_e3e))),
+                 CONCAT13(bStack_e40,CONCAT21(uStack_e42,bStack_e43)),
+                 CONCAT13(bStack_e3a,CONCAT12(bStack_e3b,CONCAT11(bStack_e3c,bStack_e3d))),fVar10);
+    local_8 = 0x66;
+    bStack_24 = 1;
+    FUN_0092c240(&uStack_30);
+    local_3d6 = (float)CONCAT22(local_3d6._2_2_,(undefined2)local_3d6);
+    local_3ce = (float)CONCAT22(local_3ce._2_2_,(undefined2)local_3ce);
+    local_3ca = (float)CONCAT22(local_3ca._2_2_,(undefined2)local_3ca);
+    local_396 = (float)CONCAT22(local_396._2_2_,(undefined2)local_396);
+    local_392 = (float)CONCAT22(local_392._2_2_,(undefined2)local_392);
+    local_376 = (float)CONCAT22(local_376._2_2_,(undefined2)local_376);
+    local_372 = (float)CONCAT22(local_372._2_2_,(undefined2)local_372);
+    local_362 = (float)CONCAT22(local_362._2_2_,(undefined2)local_362);
+    local_35e = (float)CONCAT22(local_35e._2_2_,(undefined2)local_35e);
+    local_326 = (float)CONCAT22(local_326._2_2_,(undefined2)local_326);
+    local_322 = (float)CONCAT22(local_322._2_2_,(undefined2)local_322);
+    local_31a = (float)CONCAT22(local_31a._2_2_,(undefined2)local_31a);
+    local_316 = (float)CONCAT22(local_316._2_2_,(undefined2)local_316);
+    local_2ae = (float)CONCAT22(local_2ae._2_2_,(undefined2)local_2ae);
+    local_2aa = (float)CONCAT22(local_2aa._2_2_,(undefined2)local_2aa);
+    break;

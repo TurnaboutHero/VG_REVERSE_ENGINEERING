@@ -1,0 +1,21 @@
+  case 0x45c:
+    memset(local_e0 + 0xd,0,0x60);
+    memmove(local_e0 + 0xd,param_1,0x60);
+    pfVar23 = local_e0 + 0xd;
+    iVar8 = 0x10;
+    do {
+      fVar10 = (float)Ordinal_14(*pfVar23);
+      *pfVar23 = fVar10;
+      pfVar23 = (float *)((int)pfVar23 + 6);
+      iVar8 = iVar8 + -1;
+    } while (iVar8 != 0);
+    pcVar17 = acStack_a7;
+    iVar8 = 0x10;
+    do {
+      if (pcVar17[-1] != '\0') {
+        FUN_0095e850(*(undefined4 *)(pcVar17 + -5),*pcVar17 != '\0');
+      }
+      pcVar17 = pcVar17 + 6;
+      iVar8 = iVar8 + -1;
+    } while (iVar8 != 0);
+    break;

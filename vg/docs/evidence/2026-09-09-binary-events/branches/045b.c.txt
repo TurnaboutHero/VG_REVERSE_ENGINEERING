@@ -1,0 +1,52 @@
+  case 0x45b:
+    memset(local_c6c,0,0x856);
+    memmove(local_c6c,param_1,0x856);
+    fVar24 = (float10)FUN_004cfda0(local_41c);
+    local_41c = (float)fVar24;
+    fVar24 = (float10)FUN_004cfda0(local_420);
+    uVar7 = 0;
+    local_420 = (float)fVar24;
+    do {
+      uVar11 = Ordinal_14(auStack_c68[uVar7]);
+      auStack_c68[uVar7] = uVar11;
+      uVar7 = uVar7 + 1;
+    } while (uVar7 < 4);
+    local_e30 = 1.4013e-44;
+    puVar22 = local_b5b;
+    do {
+      uVar5 = Ordinal_15(*puVar22);
+      *puVar22 = uVar5;
+      uVar5 = Ordinal_15(puVar22[1]);
+      local_e30 = (float)((int)local_e30 + -1);
+      puVar22[1] = uVar5;
+      puVar22 = puVar22 + 0x53;
+    } while (local_e30 != 0.0);
+    puVar13 = local_c54;
+    local_e30 = 1.4013e-44;
+    do {
+      iVar8 = 6;
+      do {
+        uVar11 = Ordinal_14(*puVar13);
+        *puVar13 = uVar11;
+        puVar13 = puVar13 + 1;
+        iVar8 = iVar8 + -1;
+      } while (iVar8 != 0);
+      local_e30 = (float)((int)local_e30 + -1);
+    } while (local_e30 != 0.0);
+    FUN_00569010(local_c6c);
+    local_3d6 = (float)CONCAT22(local_3d6._2_2_,(undefined2)local_3d6);
+    local_3ce = (float)CONCAT22(local_3ce._2_2_,(undefined2)local_3ce);
+    local_3ca = (float)CONCAT22(local_3ca._2_2_,(undefined2)local_3ca);
+    local_396 = (float)CONCAT22(local_396._2_2_,(undefined2)local_396);
+    local_392 = (float)CONCAT22(local_392._2_2_,(undefined2)local_392);
+    local_376 = (float)CONCAT22(local_376._2_2_,(undefined2)local_376);
+    local_372 = (float)CONCAT22(local_372._2_2_,(undefined2)local_372);
+    local_362 = (float)CONCAT22(local_362._2_2_,(undefined2)local_362);
+    local_35e = (float)CONCAT22(local_35e._2_2_,(undefined2)local_35e);
+    local_326 = (float)CONCAT22(local_326._2_2_,(undefined2)local_326);
+    local_322 = (float)CONCAT22(local_322._2_2_,(undefined2)local_322);
+    local_31a = (float)CONCAT22(local_31a._2_2_,(undefined2)local_31a);
+    local_316 = (float)CONCAT22(local_316._2_2_,(undefined2)local_316);
+    local_2ae = (float)CONCAT22(local_2ae._2_2_,(undefined2)local_2ae);
+    local_2aa = (float)CONCAT22(local_2aa._2_2_,(undefined2)local_2aa);
+    break;

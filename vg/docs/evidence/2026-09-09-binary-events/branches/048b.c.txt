@@ -1,0 +1,81 @@
+  case 0x48b:
+    bStack_1c = 0;
+    bStack_1b = 0;
+    bStack_1a = 0;
+    bStack_19 = 0;
+    bStack_24 = 0;
+    bStack_23 = 0;
+    uStack_22 = 0;
+    bStack_20 = 0;
+    bStack_1f = 0;
+    uStack_1e = 0;
+    uStack_34 = 0;
+    uStack_30 = 0;
+    uStack_2f = 0;
+    uStack_2e = 0;
+    uStack_2c = 0;
+    uStack_2b = 0;
+    uStack_2a = 0;
+    uStack_28 = 0;
+    bStack_27 = 0;
+    uStack_26 = 0;
+    bStack_18 = 0;
+    memmove(&uStack_34,param_1,0x1d);
+    uStack_34 = Ordinal_14(uStack_34);
+    uVar11 = Ordinal_14(CONCAT22(uStack_26,CONCAT11(bStack_27,uStack_28)));
+    uStack_28 = (undefined1)uVar11;
+    bStack_27 = (byte)((uint)uVar11 >> 8);
+    uStack_26 = (undefined2)((uint)uVar11 >> 0x10);
+    uVar11 = Ordinal_14();
+    uStack_2c = (undefined1)uVar11;
+    uStack_2b = (undefined1)((uint)uVar11 >> 8);
+    uStack_2a = (undefined2)((uint)uVar11 >> 0x10);
+    uVar11 = Ordinal_14(CONCAT22(uStack_2e,CONCAT11(uStack_2f,uStack_30)));
+    uStack_30 = (undefined1)uVar11;
+    uStack_2f = (undefined1)((uint)uVar11 >> 8);
+    uStack_2e = (undefined2)((uint)uVar11 >> 0x10);
+    FUN_0081e800();
+    FUN_0081ba70();
+    iVar8 = CONCAT22(uStack_26,CONCAT11(bStack_27,uStack_28));
+    local_8 = 0x4a;
+    if (iVar8 != DAT_01265f20) {
+      FUN_005fa520(iVar8);
+    }
+    switch(bStack_24) {
+    case 1:
+      FUN_0095cb20(CONCAT13(bStack_20,CONCAT21(uStack_22,bStack_23)));
+      local_74 = (float)CONCAT31(local_74._1_3_,1);
+      FUN_0092c240(&local_80);
+      break;
+    case 2:
+      FUN_0095cae0(CONCAT13(bStack_20,CONCAT21(uStack_22,bStack_23)));
+      local_74 = (float)CONCAT31(local_74._1_3_,1);
+      FUN_0092c240(&local_80);
+      break;
+    case 3:
+      FUN_0095cb00(CONCAT13(bStack_20,CONCAT21(uStack_22,bStack_23)));
+      local_74 = (float)CONCAT31(local_74._1_3_,1);
+      FUN_0092c240(&local_80);
+      break;
+    case 5:
+      FUN_0095cab0(&bStack_23);
+    default:
+      local_74 = (float)CONCAT31(local_74._1_3_,1);
+      FUN_0092c240(&local_80);
+      local_3d6 = (float)CONCAT22(local_3d6._2_2_,(undefined2)local_3d6);
+      local_3ce = (float)CONCAT22(local_3ce._2_2_,(undefined2)local_3ce);
+      local_3ca = (float)CONCAT22(local_3ca._2_2_,(undefined2)local_3ca);
+      local_396 = (float)CONCAT22(local_396._2_2_,(undefined2)local_396);
+      local_392 = (float)CONCAT22(local_392._2_2_,(undefined2)local_392);
+      local_376 = (float)CONCAT22(local_376._2_2_,(undefined2)local_376);
+      local_372 = (float)CONCAT22(local_372._2_2_,(undefined2)local_372);
+      local_362 = (float)CONCAT22(local_362._2_2_,(undefined2)local_362);
+      local_35e = (float)CONCAT22(local_35e._2_2_,(undefined2)local_35e);
+      local_326 = (float)CONCAT22(local_326._2_2_,(undefined2)local_326);
+      local_322 = (float)CONCAT22(local_322._2_2_,(undefined2)local_322);
+      local_31a = (float)CONCAT22(local_31a._2_2_,(undefined2)local_31a);
+      local_316 = (float)CONCAT22(local_316._2_2_,(undefined2)local_316);
+      local_2ae = (float)CONCAT22(local_2ae._2_2_,(undefined2)local_2ae);
+      local_2aa = (float)CONCAT22(local_2aa._2_2_,(undefined2)local_2aa);
+    }
+    break;

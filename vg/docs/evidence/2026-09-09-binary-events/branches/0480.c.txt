@@ -1,0 +1,28 @@
+  case 0x480:
+    memset(&local_a0,0,0x52);
+    memmove(&local_a0,param_1,0x52);
+    uVar11 = Ordinal_14(CONCAT13(local_50,CONCAT12(bStack_51,CONCAT11(bStack_52,bStack_53))));
+    bStack_53 = (byte)uVar11;
+    bStack_52 = (byte)((uint)uVar11 >> 8);
+    bStack_51 = (byte)((uint)uVar11 >> 0x10);
+    local_50 = (byte)((uint)uVar11 >> 0x18);
+    local_a0 = (float)Ordinal_14(local_a0);
+    local_98 = (float)Ordinal_14();
+    local_9c = (float)Ordinal_14(local_9c);
+    FUN_005690a0(&local_a0);
+    local_3d6 = (float)CONCAT22(local_3d6._2_2_,(undefined2)local_3d6);
+    local_3ce = (float)CONCAT22(local_3ce._2_2_,(undefined2)local_3ce);
+    local_3ca = (float)CONCAT22(local_3ca._2_2_,(undefined2)local_3ca);
+    local_396 = (float)CONCAT22(local_396._2_2_,(undefined2)local_396);
+    local_392 = (float)CONCAT22(local_392._2_2_,(undefined2)local_392);
+    local_376 = (float)CONCAT22(local_376._2_2_,(undefined2)local_376);
+    local_372 = (float)CONCAT22(local_372._2_2_,(undefined2)local_372);
+    local_362 = (float)CONCAT22(local_362._2_2_,(undefined2)local_362);
+    local_35e = (float)CONCAT22(local_35e._2_2_,(undefined2)local_35e);
+    local_326 = (float)CONCAT22(local_326._2_2_,(undefined2)local_326);
+    local_322 = (float)CONCAT22(local_322._2_2_,(undefined2)local_322);
+    local_31a = (float)CONCAT22(local_31a._2_2_,(undefined2)local_31a);
+    local_316 = (float)CONCAT22(local_316._2_2_,(undefined2)local_316);
+    local_2ae = (float)CONCAT22(local_2ae._2_2_,(undefined2)local_2ae);
+    local_2aa = (float)CONCAT22(local_2aa._2_2_,(undefined2)local_2aa);
+    break;

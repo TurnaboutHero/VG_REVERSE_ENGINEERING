@@ -1,0 +1,5 @@
+  case 0x46c:
+    local_e30 = (float)((uint)local_e30 & 0xffffff);
+    memmove((void *)((int)&local_e30 + 3),param_1,1);
+    FUN_00568c90((int)&local_e30 + 3);
+    goto LAB_004d4fe0;

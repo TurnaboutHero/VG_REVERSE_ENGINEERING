@@ -1,0 +1,3198 @@
+{
+  "source": "private-dispatcher-decompilation-004cfec0.c",
+  "source_sha256": "a2525a87e23194c9ac702464ae7c8740abf01a4460878ce565eb13b57e73bb1e",
+  "scope": "Lexical calls are candidate references; shared-label tails are conservatively retained, not path feasibility proof.",
+  "rows": [
+    {
+      "opcode": "0000",
+      "source_line_start": 391,
+      "source_line_end": 411,
+      "snippet": "branches/0000.c.txt",
+      "body_sha256": "5a9fdf924a1877c2883a79816795127671ca0f5498362b8c18e24a684c5086e6",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_004eaf50"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_004eaf50"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0006",
+      "source_line_start": 429,
+      "source_line_end": 493,
+      "snippet": "branches/0006.c.txt",
+      "body_sha256": "ed408ab8af1031b63b3b16b2e02207d6f39f563d93595104ac2e7f984547170a",
+      "direct_source_calls": [
+        "FUN_00457390",
+        "FUN_004ead10",
+        "FUN_0093bc70",
+        "FUN_009448b0",
+        "FUN_0095bed0",
+        "FUN_009988a0",
+        "FUN_011b8432"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00457390",
+        "FUN_004ead10",
+        "FUN_0093bc70",
+        "FUN_009448b0",
+        "FUN_0095bed0",
+        "FUN_009988a0",
+        "FUN_011b8432"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03e9",
+      "source_line_start": 301,
+      "source_line_end": 389,
+      "snippet": "branches/03e9.c.txt",
+      "body_sha256": "bfefdc5c14838a24d2faaaffbd1cb4289797310ec76f67e96baed6f28f14a848",
+      "direct_source_calls": [
+        "FUN_00457390",
+        "FUN_004bf5e0",
+        "FUN_004c0de0",
+        "FUN_004ca2f0",
+        "FUN_0081e800",
+        "FUN_0081e940",
+        "FUN_0081f450",
+        "FUN_00859360",
+        "FUN_00940e40",
+        "FUN_009448b0",
+        "FUN_0095ca70",
+        "FUN_0095d910",
+        "FUN_011b8432"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00457390",
+        "FUN_004bf5e0",
+        "FUN_004c0de0",
+        "FUN_004ca2f0",
+        "FUN_0081e800",
+        "FUN_0081e940",
+        "FUN_0081f450",
+        "FUN_00859360",
+        "FUN_00940e40",
+        "FUN_009448b0",
+        "FUN_0095ca70",
+        "FUN_0095d910",
+        "FUN_011b8432"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_e0 + 0xb,param_1,0x65"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03ea",
+      "source_line_start": 514,
+      "source_line_end": 522,
+      "snippet": "branches/03ea.c.txt",
+      "body_sha256": "90ab9a37069b90ac7c479de8c5651aad861c3cd0dac77cca85c6ad041a1e057a",
+      "direct_source_calls": [
+        "FUN_00944430",
+        "FUN_0095e6d0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00944430",
+        "FUN_0095e6d0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03eb",
+      "source_line_start": 523,
+      "source_line_end": 531,
+      "snippet": "branches/03eb.c.txt",
+      "body_sha256": "7bd0a61f176c44ec600454531b3d993245e517e840bb05dfb38515dc2b422a0a",
+      "direct_source_calls": [
+        "FUN_00944430",
+        "FUN_0095e7f0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00944430",
+        "FUN_0095e7f0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03ec",
+      "source_line_start": 532,
+      "source_line_end": 540,
+      "snippet": "branches/03ec.c.txt",
+      "body_sha256": "6e5a6d82effd7d8d106f756092d06d3a2e7c69ab9e9c961192381cf0fe4f4e15",
+      "direct_source_calls": [
+        "FUN_00944430",
+        "FUN_0095e6d0",
+        "FUN_0095e7f0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00944430",
+        "FUN_0095e6d0",
+        "FUN_0095e7f0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d4fe0"
+      ]
+    },
+    {
+      "opcode": "03ed",
+      "source_line_start": 541,
+      "source_line_end": 577,
+      "snippet": "branches/03ed.c.txt",
+      "body_sha256": "840c4ac9393aff16798d93a4af1542f970e60926209a39d974f1199394549cba",
+      "direct_source_calls": [
+        "FUN_004b53d0",
+        "FUN_00589460",
+        "FUN_0081e940",
+        "FUN_0081f450",
+        "FUN_00859360",
+        "FUN_00944430",
+        "FUN_009448b0",
+        "FUN_0095e8f0",
+        "FUN_0096d310"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004b53d0",
+        "FUN_00589460",
+        "FUN_0081e940",
+        "FUN_0081f450",
+        "FUN_00859360",
+        "FUN_00944430",
+        "FUN_009448b0",
+        "FUN_0095e8f0",
+        "FUN_0096d310"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_94,param_1,0x48"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03ee",
+      "source_line_start": 578,
+      "source_line_end": 593,
+      "snippet": "branches/03ee.c.txt",
+      "body_sha256": "238c8ab37f6cdc2141dc6041f60595fb58d2281445eb6ee181e4f167db5d6533",
+      "direct_source_calls": [
+        "FUN_004d52a0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004d52a0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_1d4,param_1,0xd8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03ef",
+      "source_line_start": 594,
+      "source_line_end": 600,
+      "snippet": "branches/03ef.c.txt",
+      "body_sha256": "cf53c927963712d99d2a0cc6516125c92e14938072940e06fa44f9dcc9731e8d",
+      "direct_source_calls": [
+        "FUN_0081c400",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c400",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03f0",
+      "source_line_start": 601,
+      "source_line_end": 607,
+      "snippet": "branches/03f0.c.txt",
+      "body_sha256": "16f0bb2547e502099bdc16ed4d4c70b65b28e8dc0870ae7b4014daf8fc86898e",
+      "direct_source_calls": [
+        "FUN_0081c3d0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c3d0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03f1",
+      "source_line_start": 608,
+      "source_line_end": 618,
+      "snippet": "branches/03f1.c.txt",
+      "body_sha256": "419b1293abd55d61491da081d5237ef64fdea8a9a8717d4822873a5756ba85df",
+      "direct_source_calls": [
+        "FUN_0081a680"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a680",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,5"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "03f2",
+      "source_line_start": 619,
+      "source_line_end": 722,
+      "snippet": "branches/03f2.c.txt",
+      "body_sha256": "8027598d751b509a6001b26a1283d271f61b822c59821a088959bc9ccb7fc352",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a750",
+        "FUN_0081c640",
+        "FUN_0081e800",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a750",
+        "FUN_0081c640",
+        "FUN_0081e800",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_e0 + 5,param_1,0x7a"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03f3",
+      "source_line_start": 723,
+      "source_line_end": 945,
+      "snippet": "branches/03f3.c.txt",
+      "body_sha256": "d6024b05dd305aa4368f1bf3566634c175f2c2303322f607247a5aa15ae87177",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_004d5930"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_004d5930"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_3e8,param_1,0x2ea"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03f8",
+      "source_line_start": 946,
+      "source_line_end": 979,
+      "snippet": "branches/03f8.c.txt",
+      "body_sha256": "ba3a8f2e699e001e4e07366cca8d7ed64477f316a22911428507d057101a7f58",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081bc80",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081bc80",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,9"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03f9",
+      "source_line_start": 980,
+      "source_line_end": 1026,
+      "snippet": "branches/03f9.c.txt",
+      "body_sha256": "a122df632e20cc5ced05f68ba7b2847593bafb4071505fd2852ca5e20f5d3632",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081bd50",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081bd50",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0xe"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03fa",
+      "source_line_start": 1027,
+      "source_line_end": 1082,
+      "snippet": "branches/03fa.c.txt",
+      "body_sha256": "5b7dbce4f2b5c5b9e996d435524929002ebdbf4be9de21871367e7f3a1a8b765",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081bcc0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081bcc0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x14"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03fb",
+      "source_line_start": 1083,
+      "source_line_end": 1132,
+      "snippet": "branches/03fb.c.txt",
+      "body_sha256": "fb0a588b7d41fb022cc915a3ba1c4a58561ace3de2d482912196d87f42491192",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081c470",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081c470",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03fc",
+      "source_line_start": 1133,
+      "source_line_end": 1189,
+      "snippet": "branches/03fc.c.txt",
+      "body_sha256": "95194105a601b158c7e3dca200eba28a450d0108aba51311cabf70ac6663991b",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052a600",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052a600",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03fd",
+      "source_line_start": 1190,
+      "source_line_end": 1217,
+      "snippet": "branches/03fd.c.txt",
+      "body_sha256": "8ae4141f6ff93517a9bd5eabcd9d6326a347f6f702dbceac5c30af9429853b99",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00529a80",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00529a80",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,9"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03fe",
+      "source_line_start": 1218,
+      "source_line_end": 1274,
+      "snippet": "branches/03fe.c.txt",
+      "body_sha256": "7beab76118033d6131a7227cfce6055ae52dcf5ec0556f2e22e8be7df259be8c",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_005298e0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_005298e0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "03ff",
+      "source_line_start": 1275,
+      "source_line_end": 1297,
+      "snippet": "branches/03ff.c.txt",
+      "body_sha256": "ee011206fd13eb642961f1515ee0ea15f20f0ddb34ca82236bfef18b15683828",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052ab20",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052ab20",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,10"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0400",
+      "source_line_start": 1298,
+      "source_line_end": 1320,
+      "snippet": "branches/0400.c.txt",
+      "body_sha256": "84641ef8ac485c3ee7bda9781b13256c17b23c8a6cf2be81f9585afbd03bbc66",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052ac40",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052ac40",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,9"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0401",
+      "source_line_start": 1321,
+      "source_line_end": 1372,
+      "snippet": "branches/0401.c.txt",
+      "body_sha256": "6db60e9cf91b8f5ca461404cdfe877dff1b879a0a86be3fe7f3c9823f5ac5905",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a9a0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a9a0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0x10"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0402",
+      "source_line_start": 1373,
+      "source_line_end": 1408,
+      "snippet": "branches/0402.c.txt",
+      "body_sha256": "764e6eb04c480c2f6c0318e2981815f8208e666a4b1326112b5d59028eed421b",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a130",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a130",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0x10"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0403",
+      "source_line_start": 1409,
+      "source_line_end": 1467,
+      "snippet": "branches/0403.c.txt",
+      "body_sha256": "aadf30331a5bde07487866c7ed6a9e07e69c366426befe0de3650944d2e8eba9",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a180",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a180",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x15"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0404",
+      "source_line_start": 1468,
+      "source_line_end": 1513,
+      "snippet": "branches/0404.c.txt",
+      "body_sha256": "a3393070c2c303df42c3c799934c8bd52ff4d1a6fb1a041b0013e52a244159f5",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00529240",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00529240",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0xf"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0405",
+      "source_line_start": 1514,
+      "source_line_end": 1564,
+      "snippet": "branches/0405.c.txt",
+      "body_sha256": "f56119c4183c917c74b7ea8578e5144f09d624d12d6c877d110c99ded30119fe",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00529380",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00529380",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x15"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0406",
+      "source_line_start": 1565,
+      "source_line_end": 1644,
+      "snippet": "branches/0406.c.txt",
+      "body_sha256": "d692def9ccf3da4fb880e052fccb10f0ec0ab94b286686944967f46cf92bfd14",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a1d0",
+        "FUN_0092c240",
+        "FUN_0095cca0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a1d0",
+        "FUN_0092c240",
+        "FUN_0095cca0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_34,param_1,0x20"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0407",
+      "source_line_start": 1645,
+      "source_line_end": 1696,
+      "snippet": "branches/0407.c.txt",
+      "body_sha256": "9eee7c1b3f369a046befbfe4a2840716c711aeba26ecd556bbeccc9347d4ee3e",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a2f0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a2f0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0x10"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0408",
+      "source_line_start": 1697,
+      "source_line_end": 1710,
+      "snippet": "branches/0408.c.txt",
+      "body_sha256": "deea7c4942910286d74233f9b7c82bb6a15a093033fa3331526e79da5f6e8af3",
+      "direct_source_calls": [
+        "FUN_00529110"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00529110",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,6"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0409",
+      "source_line_start": 1711,
+      "source_line_end": 1760,
+      "snippet": "branches/0409.c.txt",
+      "body_sha256": "aa3e67a4db6dc53493a2fb77517ebb0c5efb6a6bd6df62e819838d58ae4a7c1f",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081c580",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081c580",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "040a",
+      "source_line_start": 1761,
+      "source_line_end": 1817,
+      "snippet": "branches/040a.c.txt",
+      "body_sha256": "81ad717b3a9dc679d50304a2604af3b8a4539fad8359a6683974763f5993aac1",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052af50",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052af50",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "040b",
+      "source_line_start": 1818,
+      "source_line_end": 1826,
+      "snippet": "branches/040b.c.txt",
+      "body_sha256": "93a80bc15e3721b33ff922e6ea40844784c83c8daf3a2484d6017f419b686d67",
+      "direct_source_calls": [
+        "FUN_0081a6c0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a6c0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "040d",
+      "source_line_start": 1827,
+      "source_line_end": 1861,
+      "snippet": "branches/040d.c.txt",
+      "body_sha256": "29e6e05e2dd8b65eeffe972076a2554aee61bc4b5242c5dbc672a30ceb566793",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081ab10",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081ab10",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "040e",
+      "source_line_start": 1862,
+      "source_line_end": 1911,
+      "snippet": "branches/040e.c.txt",
+      "body_sha256": "87d8aefa0db9be74b7506a1de8606f0d09fe556482a9b5e3a3c619a2bdd7aefe",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081aa90",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081aa90",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e58,param_1,0x1c"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "040f",
+      "source_line_start": 1912,
+      "source_line_end": 1964,
+      "snippet": "branches/040f.c.txt",
+      "body_sha256": "f37a061be850fdcd7a1071b545a26d24b52ed4dbf60607808feaafb4da456959",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a9e0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a9e0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_7c,param_1,0x2c"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0410",
+      "source_line_start": 1965,
+      "source_line_end": 2007,
+      "snippet": "branches/0410.c.txt",
+      "body_sha256": "9617cf495843510eeb7e43d7943bf2c4e873d4f2c2565248f26c46ea65230cdb",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a5f0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a5f0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&fStack_e4c,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0415",
+      "source_line_start": 2008,
+      "source_line_end": 2033,
+      "snippet": "branches/0415.c.txt",
+      "body_sha256": "fea3ba2f745e90edb0ac2af1b517a30506b8176020ae06b22718d59673e48922",
+      "direct_source_calls": [
+        "FUN_0081bf10",
+        "FUN_0081bfd0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081bf10",
+        "FUN_0081bfd0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,9"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0416",
+      "source_line_start": 2034,
+      "source_line_end": 2083,
+      "snippet": "branches/0416.c.txt",
+      "body_sha256": "f609b5f7bc5bf42faeb1e0c505f13b5d58a706b3e90dc03fa789e02ae261ac0e",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081beb0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081beb0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0417",
+      "source_line_start": 2084,
+      "source_line_end": 2138,
+      "snippet": "branches/0417.c.txt",
+      "body_sha256": "56e1bd8fac2675521abfe840e5da54ee1c82af181a4a2eeb4b0fb7ab828f0390",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081bf70",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081bf70",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x15"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0418",
+      "source_line_start": 2139,
+      "source_line_end": 2153,
+      "snippet": "branches/0418.c.txt",
+      "body_sha256": "0861639a69d8caa6cfcdaac97962bb9e8f8181a33efd910b2964f1abab542760",
+      "direct_source_calls": [
+        "FUN_0081c030"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c030",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0419",
+      "source_line_start": 2154,
+      "source_line_end": 2217,
+      "snippet": "branches/0419.c.txt",
+      "body_sha256": "60e41fe943d46bac6a5dc2da96649c277db5fbbc3b30492b33808c2f24e02226",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00529bd0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00529bd0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x18"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "041a",
+      "source_line_start": 2218,
+      "source_line_end": 2241,
+      "snippet": "branches/041a.c.txt",
+      "body_sha256": "ab7c0cd78bb2a8cf4677d2005119c55bf9a22ec32b0d5d3871e9df3cf4ca7820",
+      "direct_source_calls": [
+        "FUN_0081bda0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081bda0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0xd"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "041b",
+      "source_line_start": 2242,
+      "source_line_end": 2256,
+      "snippet": "branches/041b.c.txt",
+      "body_sha256": "bd39d34730f65303e395899dd5064e92646b38068226379c44ffd5b9b1bfa300",
+      "direct_source_calls": [
+        "FUN_0081a370"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a370",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "041c",
+      "source_line_start": 2257,
+      "source_line_end": 2285,
+      "snippet": "branches/041c.c.txt",
+      "body_sha256": "159c1060c549a2c90f71e12dcb9e965bc55c08be7082ce9dba9ab62755f9846c",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081b910",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081b910",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0xf"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "041d",
+      "source_line_start": 2286,
+      "source_line_end": 2317,
+      "snippet": "branches/041d.c.txt",
+      "body_sha256": "a0ea26ff501e007e04873d46a4f921f516bfeb7f083a0d076929de950966c8a1",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081b960",
+        "FUN_0092c240",
+        "FUN_0092d2f0",
+        "FUN_0095ff00"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081b960",
+        "FUN_0092c240",
+        "FUN_0092d2f0",
+        "FUN_0095ff00"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "041e",
+      "source_line_start": 2318,
+      "source_line_end": 2350,
+      "snippet": "branches/041e.c.txt",
+      "body_sha256": "dfe50a8defc0c7eacba2fed2eb3c94bf79bf150160277a3f28d34afb00d78856",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081b6b0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081b6b0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0x10"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "041f",
+      "source_line_start": 2351,
+      "source_line_end": 2367,
+      "snippet": "branches/041f.c.txt",
+      "body_sha256": "1cfc04a85bf8ce9cb14b3fff8e36894051ae7288162ca1d366eefe6c025f09d8",
+      "direct_source_calls": [
+        "FUN_0081bbb0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081bbb0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0420",
+      "source_line_start": 2368,
+      "source_line_end": 2412,
+      "snippet": "branches/0420.c.txt",
+      "body_sha256": "3770aee6922362ff29b6cc8b78b476a51ba0fe4978fd185c2344edb6861ec4cb",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a500",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a500",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e58,param_1,0x1d"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0421",
+      "source_line_start": 2413,
+      "source_line_end": 2464,
+      "snippet": "branches/0421.c.txt",
+      "body_sha256": "eb547e4cf4c8d7322ee67f28ba493c1f93d720f0ef4edd66ea8d9b18f9fdbdc6",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a450",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a450",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_30,param_1,0x19"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0422",
+      "source_line_start": 2465,
+      "source_line_end": 2531,
+      "snippet": "branches/0422.c.txt",
+      "body_sha256": "bb0188eb8cd4619ff07dacf860f36ecd584b723b3c34cf2b5822165a9daf231c",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081a3f0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081a3f0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x18"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0423",
+      "source_line_start": 2532,
+      "source_line_end": 2540,
+      "snippet": "branches/0423.c.txt",
+      "body_sha256": "4c303624c2e7a3d223a06f65aeea38895b5b9bc8988fa9f1bd88622aa66358ca",
+      "direct_source_calls": [
+        "FUN_0081a5c0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a5c0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0425",
+      "source_line_start": 2541,
+      "source_line_end": 2549,
+      "snippet": "branches/0425.c.txt",
+      "body_sha256": "505ddd84f13dd3fef42f09585b775b2ffa631474e964acf6228660159a49abd2",
+      "direct_source_calls": [
+        "FUN_005296f0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_005296f0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0427",
+      "source_line_start": 2550,
+      "source_line_end": 2566,
+      "snippet": "branches/0427.c.txt",
+      "body_sha256": "5c3eff4a75e8bba95d09e3b02e375f4485962d884d1cfe41f77a768cbfea311c",
+      "direct_source_calls": [
+        "FUN_0081bde0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081bde0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,9"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0428",
+      "source_line_start": 2567,
+      "source_line_end": 2594,
+      "snippet": "branches/0428.c.txt",
+      "body_sha256": "a641e632d94278d29935625f9e357b5e786d0b0a072d019e9d0e566691f914c8",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081bb60",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081bb60",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0xd"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0429",
+      "source_line_start": 2595,
+      "source_line_end": 2620,
+      "snippet": "branches/0429.c.txt",
+      "body_sha256": "5b176b8ca755d2f6e74f2e4ed0f12761fc488a6033766eb1fd30e767c7ac7b54",
+      "direct_source_calls": [
+        "FUN_0081b8d0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081b8d0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_24,param_1,0xd"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "042b",
+      "source_line_start": 2621,
+      "source_line_end": 2636,
+      "snippet": "branches/042b.c.txt",
+      "body_sha256": "36da049516739d3a4c802ac13953b3032699d4ddfedb1a6a62a861835e18907c",
+      "direct_source_calls": [
+        "FUN_0081bc30"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081bc30",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "042c",
+      "source_line_start": 2637,
+      "source_line_end": 2651,
+      "snippet": "branches/042c.c.txt",
+      "body_sha256": "a83de3d649c7eecd03e51122d530a07c55ff735838e67fc92d65e08d4cb337a8",
+      "direct_source_calls": [
+        "FUN_005297f0",
+        "FUN_0081e5c0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_005297f0",
+        "FUN_0081e5c0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,6"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "042e",
+      "source_line_start": 2652,
+      "source_line_end": 2691,
+      "snippet": "branches/042e.c.txt",
+      "body_sha256": "23359647a00f98607fa4cdca0be23a7e9265e239bc99cd28afe0f4a601a28b9f",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081bd10",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081bd10",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "042f",
+      "source_line_start": 2692,
+      "source_line_end": 2700,
+      "snippet": "branches/042f.c.txt",
+      "body_sha256": "e3977f66ed1723c4ff7b29893eb7b06c3705bb62d30898fb2bf07a6752649360",
+      "direct_source_calls": [
+        "FUN_00819fb0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00819fb0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0430",
+      "source_line_start": 2701,
+      "source_line_end": 2715,
+      "snippet": "branches/0430.c.txt",
+      "body_sha256": "37d512d170aa9638cb1948e64dabf8c46c39395941c0a3781db829cb28698006",
+      "direct_source_calls": [
+        "FUN_00819f30"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00819f30",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0431",
+      "source_line_start": 2716,
+      "source_line_end": 2724,
+      "snippet": "branches/0431.c.txt",
+      "body_sha256": "40a54fa4e6f3c7e714581586c723e04756ec039e04d7b2e8f6e6d2c9dee86b2d",
+      "direct_source_calls": [
+        "FUN_00819f00",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00819f00",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0432",
+      "source_line_start": 2725,
+      "source_line_end": 2774,
+      "snippet": "branches/0432.c.txt",
+      "body_sha256": "69049ef9ec7e9b1cef297a27f4ac434009601fe53ca502c0413bd8e5276e80fe",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00819f70",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00819f70",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&fStack_e48,param_1,0x10"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0433",
+      "source_line_start": 2775,
+      "source_line_end": 2795,
+      "snippet": "branches/0433.c.txt",
+      "body_sha256": "54ec2d9971c07785044eec6ecde9c2acdb8af7e0cd9c9d93b8de24bb9df5e460",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081c430"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081c430",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0434",
+      "source_line_start": 2796,
+      "source_line_end": 2810,
+      "snippet": "branches/0434.c.txt",
+      "body_sha256": "ad4c7ee5a9917c946666cb1ae4c5fffb5948f0ab3afb450dd9f54f97c34e33f5",
+      "direct_source_calls": [
+        "FUN_0081b840"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081b840",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0435",
+      "source_line_start": 2811,
+      "source_line_end": 2850,
+      "snippet": "branches/0435.c.txt",
+      "body_sha256": "0911e4a184fc6f613d0aa21df1dda4372fd67cf60e9a54537311916a83e8a774",
+      "direct_source_calls": [
+        "FUN_0081b880",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081b880",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x18"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0437",
+      "source_line_start": 2851,
+      "source_line_end": 2859,
+      "snippet": "branches/0437.c.txt",
+      "body_sha256": "2c73d3fbf634bde8db460228ecaa2cd71b8fc2732d776bd5bd891e33a8db1566",
+      "direct_source_calls": [
+        "FUN_0081c070",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c070",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0439",
+      "source_line_start": 2860,
+      "source_line_end": 2874,
+      "snippet": "branches/0439.c.txt",
+      "body_sha256": "b8c637e369accc63beb672a9c0a5b3e10d640428f820152fe9c524fa84d14a6e",
+      "direct_source_calls": [
+        "FUN_0081a270"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a270",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "043a",
+      "source_line_start": 2875,
+      "source_line_end": 2889,
+      "snippet": "branches/043a.c.txt",
+      "body_sha256": "e455b7b0e0e34c0a42d506b0d4e288de3da7d5aad7a139cbaf990391691a0211",
+      "direct_source_calls": [
+        "FUN_0081aba0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081aba0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "043b",
+      "source_line_start": 2890,
+      "source_line_end": 2904,
+      "snippet": "branches/043b.c.txt",
+      "body_sha256": "598ea393c4f21786ad0fa3de7976fcb0bf3da5862afe6acc86ef99390587472a",
+      "direct_source_calls": [
+        "FUN_0081a640"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a640",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "043c",
+      "source_line_start": 2905,
+      "source_line_end": 2922,
+      "snippet": "branches/043c.c.txt",
+      "body_sha256": "50e8600789da20969f139f85f927d0190e7fd56e17f9b52602917b7024d553f1",
+      "direct_source_calls": [
+        "FUN_0081a2b0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a2b0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,10"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "043d",
+      "source_line_start": 2923,
+      "source_line_end": 2943,
+      "snippet": "branches/043d.c.txt",
+      "body_sha256": "515e4a3aa9bfa32b7b38e6dc59544a23ae64f2e6dedf6dbbd0b8af60da9181b1",
+      "direct_source_calls": [
+        "FUN_0081abe0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081abe0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "043e",
+      "source_line_start": 2944,
+      "source_line_end": 2988,
+      "snippet": "branches/043e.c.txt",
+      "body_sha256": "9e686ac37e3403ddbc99d61f6ba1936d3ee4d5a70147431e465a451e78883132",
+      "direct_source_calls": [
+        "FUN_004cfde0",
+        "FUN_00819fe0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfde0",
+        "FUN_00819fe0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x10"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "043f",
+      "source_line_start": 2989,
+      "source_line_end": 3058,
+      "snippet": "branches/043f.c.txt",
+      "body_sha256": "3a84040f41c8e0cfe5c58cc0ed89a7c1b0dc54460f8d210a1284c5a86a4ae718",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_004cfde0",
+        "FUN_00819fe0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_004cfde0",
+        "FUN_00819fe0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_38,param_1,0x22"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0440",
+      "source_line_start": 3059,
+      "source_line_end": 3078,
+      "snippet": "branches/0440.c.txt",
+      "body_sha256": "b2b9ffbfc24f03c0338e9f0f82e215ea58ce0f6cda11126ce9a1a05c43c9e9d7",
+      "direct_source_calls": [
+        "FUN_0081c390",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c390",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,10"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0441",
+      "source_line_start": 3079,
+      "source_line_end": 3105,
+      "snippet": "branches/0441.c.txt",
+      "body_sha256": "78563eb1e9b3b238b5f61f23153a17ad69522b244c0bf4ef59219f90d69db72f",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081b9b0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081b9b0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0442",
+      "source_line_start": 3106,
+      "source_line_end": 3126,
+      "snippet": "branches/0442.c.txt",
+      "body_sha256": "c8dcb7fba103848ca0edbbdfaf8421e14ef4d25826053b97077190674f9c01d3",
+      "direct_source_calls": [
+        "FUN_0081b9f0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081b9f0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0443",
+      "source_line_start": 3127,
+      "source_line_end": 3148,
+      "snippet": "branches/0443.c.txt",
+      "body_sha256": "4520821e877cccc20af13f5f57f121558c30f8bd88da9a2368b00850dcd368c8",
+      "direct_source_calls": [
+        "FUN_0081ba30",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081ba30",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0444",
+      "source_line_start": 3149,
+      "source_line_end": 3169,
+      "snippet": "branches/0444.c.txt",
+      "body_sha256": "9dcc1373dfb0217ca06939e9000756c948cff012bc5c5945537c27947f82121a",
+      "direct_source_calls": [
+        "FUN_0081bbf0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081bbf0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0445",
+      "source_line_start": 3170,
+      "source_line_end": 3184,
+      "snippet": "branches/0445.c.txt",
+      "body_sha256": "2237d39105f7018427b7756c3c30dc3da362119d506b68015210cadddfd07d1c",
+      "direct_source_calls": [
+        "FUN_0081a330"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a330",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0446",
+      "source_line_start": 3185,
+      "source_line_end": 3199,
+      "snippet": "branches/0446.c.txt",
+      "body_sha256": "817d3a9b281ae63574b9ee9021f2a18ecc0c0bc10cb2b4dd575611c57a762563",
+      "direct_source_calls": [
+        "FUN_0081c5d0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c5d0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0447",
+      "source_line_start": 3200,
+      "source_line_end": 3220,
+      "snippet": "branches/0447.c.txt",
+      "body_sha256": "0fb4a77da0cf05ab339dae41285b488ce74e1536f6d56e3597057e3779d6c00b",
+      "direct_source_calls": [
+        "FUN_0081a580",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a580",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,0xc"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "044b",
+      "source_line_start": 3221,
+      "source_line_end": 3238,
+      "snippet": "branches/044b.c.txt",
+      "body_sha256": "6b601eb089f7b97d25d73f388555c216e6818751def068d76c8b1b47adf827d1",
+      "direct_source_calls": [
+        "FUN_0081a3b0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a3b0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,10"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "044c",
+      "source_line_start": 3239,
+      "source_line_end": 3280,
+      "snippet": "branches/044c.c.txt",
+      "body_sha256": "dc6e513bb1106a543c3db40fb1905e967b21031c7327804b287737d156da2b78",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081b740",
+        "FUN_0081b790",
+        "FUN_0081b7f0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081b740",
+        "FUN_0081b790",
+        "FUN_0081b7f0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e7c,param_1,0x15"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "044d",
+      "source_line_start": 3281,
+      "source_line_end": 3295,
+      "snippet": "branches/044d.c.txt",
+      "body_sha256": "b3ff53193747b66d74c83f4ea0cfb18077df7ad33be0fd259f1808ccb98c5158",
+      "direct_source_calls": [
+        "FUN_0081c200"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c200",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "044e",
+      "source_line_start": 3296,
+      "source_line_end": 3334,
+      "snippet": "branches/044e.c.txt",
+      "body_sha256": "b6c9d0790e0ff8d6816dfd377f0d7c2b1b4a3487cdf2bcd0952658e1b56ae081",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081be50",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081be50",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_e54,param_1,0x16"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "044f",
+      "source_line_start": 3335,
+      "source_line_end": 3372,
+      "snippet": "branches/044f.c.txt",
+      "body_sha256": "791bd5fc49754492f7c51d5d51f0cf152281c3f0ea9e4ffbcf71d442d91057f8",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_005294c0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_005294c0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_28,param_1,0x11"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0451",
+      "source_line_start": 3373,
+      "source_line_end": 3384,
+      "snippet": "branches/0451.c.txt",
+      "body_sha256": "d6dd265df454e73c3864be1ef1a7a70539aab1c3de4b3baa6afa6e7c0eac050d",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00549d20",
+        "FUN_00549e20",
+        "FUN_00549e30"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00549d20",
+        "FUN_00549e20",
+        "FUN_00549e30"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0452",
+      "source_line_start": 3385,
+      "source_line_end": 3445,
+      "snippet": "branches/0452.c.txt",
+      "body_sha256": "b8b1e5b28e0f3b6530c0e5cf08b1fd96a5fd7c293ef785030aa0ec319dbfadc6",
+      "direct_source_calls": [
+        "FUN_004cfd30",
+        "FUN_00966080"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfd30",
+        "FUN_00966080"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [
+        "method_onPacket_LevelControllerOnEnterPostGame"
+      ],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": [
+        "LAB_004d4085"
+      ]
+    },
+    {
+      "opcode": "0453",
+      "source_line_start": 3446,
+      "source_line_end": 3473,
+      "snippet": "branches/0453.c.txt",
+      "body_sha256": "529b5f8f894a636f3e7ae27308eea627873b5f8d83186fc1f6cd60bb018b5937",
+      "direct_source_calls": [
+        "FUN_00568dc0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00568dc0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_34,param_1,0x20"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": [
+        "LAB_004d4fe0"
+      ]
+    },
+    {
+      "opcode": "0454",
+      "source_line_start": 3474,
+      "source_line_end": 3494,
+      "snippet": "branches/0454.c.txt",
+      "body_sha256": "2aa87ce79a75e48057fa64efeb6d3803b3dcaf680b325eff1009da0f538be93e",
+      "direct_source_calls": [
+        "FUN_00568df0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00568df0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_90,param_1,0x44"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0459",
+      "source_line_start": 3495,
+      "source_line_end": 3528,
+      "snippet": "branches/0459.c.txt",
+      "body_sha256": "c8f996fa6f583ef613479d0ff0ab71111c7ffa55be74a116067c4cbb0187b8a6",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00569030"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00569030"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e2c,param_1,0xa18"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "045a",
+      "source_line_start": 3529,
+      "source_line_end": 3562,
+      "snippet": "branches/045a.c.txt",
+      "body_sha256": "097d326c3a648be917c4cdea01a012bd6a0cdfdecbccdcda893d46e9fde43076",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00568ff0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00568ff0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e2c,param_1,0xa18"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "045b",
+      "source_line_start": 3563,
+      "source_line_end": 3614,
+      "snippet": "branches/045b.c.txt",
+      "body_sha256": "d1fba89566b1bdda0459cb11880bd4bfbe3212b332a11a660b6cadcb6ff9f4be",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_00569010"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_00569010"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_c6c,param_1,0x856"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14",
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "045c",
+      "source_line_start": 3615,
+      "source_line_end": 3635,
+      "snippet": "branches/045c.c.txt",
+      "body_sha256": "630a70dec99f9075b3425559a9d34fedef6848af67a249bcc851f264f3a40621",
+      "direct_source_calls": [
+        "FUN_0095e850"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0095e850"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_e0 + 0xd,param_1,0x60"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "046c",
+      "source_line_start": 3636,
+      "source_line_end": 3640,
+      "snippet": "branches/046c.c.txt",
+      "body_sha256": "8d2dcafab2be99188204627a31b9532f773afd0c6cf44494e1eecd7146a3309a",
+      "direct_source_calls": [
+        "FUN_00568c90"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00568c90"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": [
+        "LAB_004d4fe0"
+      ]
+    },
+    {
+      "opcode": "046f",
+      "source_line_start": 3641,
+      "source_line_end": 3685,
+      "snippet": "branches/046f.c.txt",
+      "body_sha256": "5960d1c68ddddf7e1c896b9ba0ca77aca964a655471263801961f2dd3503923e",
+      "direct_source_calls": [
+        "FUN_00456d80",
+        "FUN_00457390",
+        "FUN_004cfda0",
+        "FUN_00549470",
+        "FUN_00549e20"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00456d80",
+        "FUN_00457390",
+        "FUN_004cfda0",
+        "FUN_00549470",
+        "FUN_00549e20"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_94,param_1,0x45"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0470",
+      "source_line_start": 3686,
+      "source_line_end": 3709,
+      "snippet": "branches/0470.c.txt",
+      "body_sha256": "c97448d991979140119e21c02e57270eff9c1a854ac483492c6a6fa79b6d9177",
+      "direct_source_calls": [
+        "FUN_004bfdc0",
+        "FUN_004c0de0",
+        "FUN_00548bf0",
+        "FUN_00549e20"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004bfdc0",
+        "FUN_004c0de0",
+        "FUN_00548bf0",
+        "FUN_00549e20"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0471",
+      "source_line_start": 3710,
+      "source_line_end": 3734,
+      "snippet": "branches/0471.c.txt",
+      "body_sha256": "f8706f75aba5ae2713b37cb44d495e11806ca1ededccf6fd27b3c4943ec11b0a",
+      "direct_source_calls": [
+        "FUN_0095e940"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0095e940"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,5"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0473",
+      "source_line_start": 3735,
+      "source_line_end": 3768,
+      "snippet": "branches/0473.c.txt",
+      "body_sha256": "138e55ac35d5c836d2355d905b32530f1d11720dcb7f7564999b72bbda10a05e",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081c500",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081c500",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e4,param_1,0x97"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0475",
+      "source_line_start": 3769,
+      "source_line_end": 3792,
+      "snippet": "branches/0475.c.txt",
+      "body_sha256": "a07be0fd227ea3b529cdcccf540eaba7c2712a0dbd0167f85cd8c684c63112fa",
+      "direct_source_calls": [
+        "FUN_0081be20",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081be20",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0476",
+      "source_line_start": 3793,
+      "source_line_end": 3817,
+      "snippet": "branches/0476.c.txt",
+      "body_sha256": "6c6eb99637dd7fe5ba565338837d0d44dd113c7d2f1f97285b2d5ea02202647b",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0081c350",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0081c350",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0477",
+      "source_line_start": 3818,
+      "source_line_end": 3828,
+      "snippet": "branches/0477.c.txt",
+      "body_sha256": "9bed92522dfafdfe9843fefb7872d2e8bcedbb0bef7d841f04e0eb678b510703",
+      "direct_source_calls": [
+        "FUN_0081c2d0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c2d0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,5"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0478",
+      "source_line_start": 3829,
+      "source_line_end": 3867,
+      "snippet": "branches/0478.c.txt",
+      "body_sha256": "173be726be0573c8438ff85bcd9dc4d566ae9e41c8ef8819501d34c1c33b4398",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052a860",
+        "FUN_0081e930",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052a860",
+        "FUN_0081e930",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_4c,param_1,9"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0479",
+      "source_line_start": 3868,
+      "source_line_end": 3930,
+      "snippet": "branches/0479.c.txt",
+      "body_sha256": "57f5363989bb9cef7ecc251ec48f6ba32817bfba7ff1d83ad6bd70797fd0a09c",
+      "direct_source_calls": [
+        "FUN_00450920",
+        "FUN_00456d80",
+        "FUN_004c0d00",
+        "FUN_004c0de0",
+        "FUN_009988a0",
+        "FUN_0099c230"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_00450920",
+        "FUN_00456d80",
+        "FUN_004c0d00",
+        "FUN_004c0de0",
+        "FUN_009988a0",
+        "FUN_0099c230"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_90,param_1,0x42"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_15"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "047a",
+      "source_line_start": 3931,
+      "source_line_end": 3948,
+      "snippet": "branches/047a.c.txt",
+      "body_sha256": "60717063ed2937b57d6b94943d4a87c5f84634a49f7bd7b8a3dc804fc1605b41",
+      "direct_source_calls": [],
+      "calls_including_shared_labels": [],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "047c",
+      "source_line_start": 3949,
+      "source_line_end": 3970,
+      "snippet": "branches/047c.c.txt",
+      "body_sha256": "53a40c2b02e808c9bf1c18bd136ecfb34fbd9ef89c68e72f82d15f672d6e24bf",
+      "direct_source_calls": [
+        "FUN_004bfdc0",
+        "FUN_004c0de0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004bfdc0",
+        "FUN_004c0de0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "047d",
+      "source_line_start": 3971,
+      "source_line_end": 3993,
+      "snippet": "branches/047d.c.txt",
+      "body_sha256": "e285ddd1b80e554c6ac1cb51edf6902f5381a1f3e69fc20bfcd145f16ec22919",
+      "direct_source_calls": [
+        "FUN_0052b060",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0052b060",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "047e",
+      "source_line_start": 3994,
+      "source_line_end": 4010,
+      "snippet": "branches/047e.c.txt",
+      "body_sha256": "45deec4631f9c693cdea6c92d195795fbcbadb658f54132a0e31f3ac7847f6f8",
+      "direct_source_calls": [
+        "FUN_0052aa30"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0052aa30",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "047f",
+      "source_line_start": 4011,
+      "source_line_end": 4059,
+      "snippet": "branches/047f.c.txt",
+      "body_sha256": "43d62bb30815a7cba6710fd739bca517c50e21e1b9a5c5489c79ef8641f31ebe",
+      "direct_source_calls": [
+        "FUN_005430a0",
+        "FUN_00543c70",
+        "FUN_00548860",
+        "FUN_00549e20",
+        "FUN_00857970",
+        "FUN_0095f490"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_005430a0",
+        "FUN_00543c70",
+        "FUN_00548860",
+        "FUN_00549e20",
+        "FUN_00857970",
+        "FUN_0095f490"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0480",
+      "source_line_start": 4060,
+      "source_line_end": 4087,
+      "snippet": "branches/0480.c.txt",
+      "body_sha256": "67907af078a44fd3ff0149bdf6844972d033536b57aa9098ea8b035cb5aed5da",
+      "direct_source_calls": [
+        "FUN_005690a0"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_005690a0"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_a0,param_1,0x52"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0481",
+      "source_line_start": 4088,
+      "source_line_end": 4098,
+      "snippet": "branches/0481.c.txt",
+      "body_sha256": "a56dcbd8afbe0bada912d2820ad70be20a4630aad0b2abb2045de503dd7ca371",
+      "direct_source_calls": [
+        "FUN_0081a960"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a960",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,6"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0482",
+      "source_line_start": 4099,
+      "source_line_end": 4105,
+      "snippet": "branches/0482.c.txt",
+      "body_sha256": "7c4ec86ea63ecaf6e0df4c35343bb60af281ccee035fb4e89f8761c085979d20",
+      "direct_source_calls": [
+        "FUN_0081c610"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c610",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d0359"
+      ]
+    },
+    {
+      "opcode": "0483",
+      "source_line_start": 4106,
+      "source_line_end": 4130,
+      "snippet": "branches/0483.c.txt",
+      "body_sha256": "2ac3dbef3921dc376d318bb78a6a327ab0a1a8af9b90229372dc7de5f9833b50",
+      "direct_source_calls": [
+        "FUN_0081b710",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081b710",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&local_e30,param_1,4"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0487",
+      "source_line_start": 4131,
+      "source_line_end": 4162,
+      "snippet": "branches/0487.c.txt",
+      "body_sha256": "eb04dcde0d0d48ca1fc3264ea2544d9345e1f99ffeea1d2c731fc263e4f5f32b",
+      "direct_source_calls": [
+        "FUN_0081c240",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c240",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_e0 + 0xb,param_1,99"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0488",
+      "source_line_start": 4163,
+      "source_line_end": 4173,
+      "snippet": "branches/0488.c.txt",
+      "body_sha256": "a2cae7756ed1a72dae72252ccfbd938acd02b3021c8e674754b584551305e124",
+      "direct_source_calls": [
+        "FUN_0081c310"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c310",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,5"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": [
+        "LAB_004d030c"
+      ]
+    },
+    {
+      "opcode": "0489",
+      "source_line_start": 4174,
+      "source_line_end": 4197,
+      "snippet": "branches/0489.c.txt",
+      "body_sha256": "3d80a065390ab15510b28f6bcbbc5829d112973c25c37766baa258ea27e2981c",
+      "direct_source_calls": [
+        "FUN_0081c4c0",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081c4c0",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,10"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "048a",
+      "source_line_start": 4198,
+      "source_line_end": 4252,
+      "snippet": "branches/048a.c.txt",
+      "body_sha256": "37668d3636cdcb49e5d042176b573b41eaaea731baf3d5f701f28fc338e8b156",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052ad40",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052ad40",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_2c,param_1,0x16"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0",
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "048b",
+      "source_line_start": 4253,
+      "source_line_end": 4333,
+      "snippet": "branches/048b.c.txt",
+      "body_sha256": "e71ccaecb7c0305f43b00acb380a9b6191b3248efa90902f9db81facb9a89186",
+      "direct_source_calls": [
+        "FUN_005fa520",
+        "FUN_0081ba70",
+        "FUN_0081e800",
+        "FUN_0092c240",
+        "FUN_0095cab0",
+        "FUN_0095cae0",
+        "FUN_0095cb00",
+        "FUN_0095cb20"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_005fa520",
+        "FUN_0081ba70",
+        "FUN_0081e800",
+        "FUN_0092c240",
+        "FUN_0095cab0",
+        "FUN_0095cae0",
+        "FUN_0095cb00",
+        "FUN_0095cb20"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&uStack_34,param_1,0x1d"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "048c",
+      "source_line_start": 4334,
+      "source_line_end": 4370,
+      "snippet": "branches/048c.c.txt",
+      "body_sha256": "468d01cf5d827e5d7dd96279089e45855db76d302feba95f1d2efd03e5f10e73",
+      "direct_source_calls": [
+        "FUN_004cfda0",
+        "FUN_0052a750",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004cfda0",
+        "FUN_0052a750",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e44,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "FUN_004cfda0"
+      ],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "048d",
+      "source_line_start": 4371,
+      "source_line_end": 4394,
+      "snippet": "branches/048d.c.txt",
+      "body_sha256": "d1caec6b00e3c7fb935bb06bc1a955bde3a614fd3a11fcde70247e9c153429c1",
+      "direct_source_calls": [
+        "FUN_004c3a70"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_004c3a70"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "local_a60, (void *)CONCAT13(bStack_e39,CONCAT12(bStack_e3a,CONCAT11(bStack_e3b,bStack_e3c))),0x64c"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": [
+        "LAB_004d4fe0"
+      ]
+    },
+    {
+      "opcode": "048f",
+      "source_line_start": 4395,
+      "source_line_end": 4419,
+      "snippet": "branches/048f.c.txt",
+      "body_sha256": "9cfde1947f63b91a07b7b47aead3b9e80651c3bee5a2e2d0b38f0197d68ae67f",
+      "direct_source_calls": [
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [
+        "Nuo::Kindred::ActionRejectBuyItem_Client"
+      ],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "(void *)((int)&local_e30 + 3),param_1,1"
+      ],
+      "byte_order_helpers": [],
+      "shared_labels_followed": []
+    },
+    {
+      "opcode": "0490",
+      "source_line_start": 4420,
+      "source_line_end": 4451,
+      "snippet": "branches/0490.c.txt",
+      "body_sha256": "1c3e25730c9b964c3b35dafd8006b52eb72989a7c00f3bd5a70cca3f32756732",
+      "direct_source_calls": [
+        "FUN_0081a230",
+        "FUN_0092c240"
+      ],
+      "calls_including_shared_labels": [
+        "FUN_0081a230",
+        "FUN_0092c240"
+      ],
+      "inline_vtable_names": [],
+      "packet_callbacks": [],
+      "memmove_arguments": [
+        "&bStack_e40,param_1,8"
+      ],
+      "byte_order_helpers": [
+        "Ordinal_14"
+      ],
+      "shared_labels_followed": []
+    }
+  ],
+  "source_distribution": "Original complete decompilation is not distributed. Source line numbers and SHA-256 refer to that private artifact; extracted branch bodies are distributed under branches/."
+}

@@ -1,0 +1,692 @@
+{
+  "schema": "native-outbound-candidates-v1",
+  "executable_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "native_inventory_sha256": "55f55639bf60cac2beef5e1e53022a9b907dad1eacab8d63ead21fea5b414b29",
+  "scope": "All18 formatter variants found via the12 request-like Action classes not directly constructed by incoming dispatcher; not a claim that all possible outbound functions have been classified",
+  "rows": [
+    {
+      "opcode": "03f4",
+      "native_class": "Nuo::Kindred::ActionRequestMoveTo_Client::vftable",
+      "vtable_address": "0121aa18",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a420",
+        "004d6540",
+        "004cf8f0"
+      ],
+      "variant_condition": "object+0x1d == 0 and object+0x1c == 0",
+      "source_call_edges": [
+        {
+          "caller": "0052a420",
+          "callee": "004d6540",
+          "source": "decompiled/0052a420.c",
+          "lines": [
+            25
+          ]
+        },
+        {
+          "caller": "004d6540",
+          "callee": "004cf8f0",
+          "source": "decompiled/004d6540.c",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "serializer": "004cf8f0",
+      "opcode_push_address": "004cf913",
+      "length_push_address": "004cf90c",
+      "length_prefix_value": 10,
+      "payload_bytes": 8,
+      "plain_frame_bytes": 12,
+      "assembly_source": "packet-formatters/004cf8f0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "03f5",
+      "native_class": "Nuo::Kindred::ActionRequestMoveTo_Client::vftable",
+      "vtable_address": "0121aa18",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a420",
+        "004d6490",
+        "004cf6f0"
+      ],
+      "variant_condition": "object+0x1d == 0 and object+0x1c != 0",
+      "source_call_edges": [
+        {
+          "caller": "0052a420",
+          "callee": "004d6490",
+          "source": "decompiled/0052a420.c",
+          "lines": [
+            22
+          ]
+        },
+        {
+          "caller": "004d6490",
+          "callee": "004cf6f0",
+          "source": "decompiled/004d6490.c",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "serializer": "004cf6f0",
+      "opcode_push_address": "004cf713",
+      "length_push_address": "004cf70c",
+      "length_prefix_value": 10,
+      "payload_bytes": 8,
+      "plain_frame_bytes": 12,
+      "assembly_source": "packet-formatters/004cf6f0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "03f6",
+      "native_class": "Nuo::Kindred::ActionRequestMoveTo_Client::vftable",
+      "vtable_address": "0121aa18",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a420",
+        "004d63f0",
+        "004cf4f0"
+      ],
+      "variant_condition": "object+0x1d != 0",
+      "source_call_edges": [
+        {
+          "caller": "0052a420",
+          "callee": "004d63f0",
+          "source": "decompiled/0052a420.c",
+          "lines": [
+            28
+          ]
+        },
+        {
+          "caller": "004d63f0",
+          "callee": "004cf4f0",
+          "source": "decompiled/004d63f0.c",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "serializer": "004cf4f0",
+      "opcode_push_address": "004cf513",
+      "length_push_address": "004cf50c",
+      "length_prefix_value": 10,
+      "payload_bytes": 8,
+      "plain_frame_bytes": 12,
+      "assembly_source": "packet-formatters/004cf4f0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0411",
+      "native_class": "Nuo::Kindred::ActionRequestActivateAbility::vftable",
+      "vtable_address": "0127cb58",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0094c1a0",
+        "0095c230",
+        "008181c0"
+      ],
+      "variant_condition": "object+0x28 mode 0 or 3",
+      "source_call_edges": [
+        {
+          "caller": "0094c1a0",
+          "callee": "0095c230",
+          "source": "decompiled/0094c1a0.c",
+          "lines": [
+            24
+          ]
+        },
+        {
+          "caller": "0095c230",
+          "callee": "008181c0",
+          "source": "packet-formatters/0095c230.c",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "serializer": "008181c0",
+      "opcode_push_address": "008181e3",
+      "length_push_address": "008181dc",
+      "length_prefix_value": 7,
+      "payload_bytes": 5,
+      "plain_frame_bytes": 9,
+      "assembly_source": "packet-formatters/008181c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0412",
+      "native_class": "Nuo::Kindred::ActionRequestActivateAbility::vftable",
+      "vtable_address": "0127cb58",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0094c1a0",
+        "008182c0"
+      ],
+      "variant_condition": "object+0x28 mode 1",
+      "source_call_edges": [
+        {
+          "caller": "0094c1a0",
+          "callee": "008182c0",
+          "source": "decompiled/0094c1a0.c",
+          "lines": [
+            35
+          ]
+        }
+      ],
+      "serializer": "008182c0",
+      "opcode_push_address": "008182e3",
+      "length_push_address": "008182dc",
+      "length_prefix_value": 15,
+      "payload_bytes": 13,
+      "plain_frame_bytes": 17,
+      "assembly_source": "packet-formatters/008182c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0413",
+      "native_class": "Nuo::Kindred::ActionRequestActivateAbility::vftable",
+      "vtable_address": "0127cb58",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0094c1a0",
+        "008183c0"
+      ],
+      "variant_condition": "object+0x28 mode 2",
+      "source_call_edges": [
+        {
+          "caller": "0094c1a0",
+          "callee": "008183c0",
+          "source": "decompiled/0094c1a0.c",
+          "lines": [
+            48
+          ]
+        }
+      ],
+      "serializer": "008183c0",
+      "opcode_push_address": "008183e3",
+      "length_push_address": "008183dc",
+      "length_prefix_value": 19,
+      "payload_bytes": 17,
+      "plain_frame_bytes": 21,
+      "assembly_source": "packet-formatters/008183c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0414",
+      "native_class": "Nuo::Kindred::ActionRequestCancelAbility_Client::vftable",
+      "vtable_address": "0121a9c8",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a140",
+        "004d6470",
+        "004cf5f0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a140",
+          "callee": "004d6470",
+          "source": "decompiled/0052a140.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "004d6470",
+          "callee": "004cf5f0",
+          "source": "decompiled/004d6470.c",
+          "lines": [
+            8
+          ]
+        }
+      ],
+      "serializer": "004cf5f0",
+      "opcode_push_address": "004cf613",
+      "length_push_address": "004cf60c",
+      "length_prefix_value": 4,
+      "payload_bytes": 2,
+      "plain_frame_bytes": 6,
+      "assembly_source": "packet-formatters/004cf5f0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0424",
+      "native_class": "Nuo::Kindred::ActionRequestModifyBasicAttackTarget::vftable",
+      "vtable_address": "0121aa04",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a320",
+        "004d6510",
+        "004cf7f0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a320",
+          "callee": "004d6510",
+          "source": "decompiled/0052a320.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "004d6510",
+          "callee": "004cf7f0",
+          "source": "decompiled/004d6510.c",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "serializer": "004cf7f0",
+      "opcode_push_address": "004cf813",
+      "length_push_address": "004cf80c",
+      "length_prefix_value": 7,
+      "payload_bytes": 5,
+      "plain_frame_bytes": 9,
+      "assembly_source": "packet-formatters/004cf7f0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0436",
+      "native_class": "Nuo::Kindred::ActionRequestUpgradeAbility_Client::vftable",
+      "vtable_address": "0121aa40",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a5f0",
+        "004d6600",
+        "004cfbf0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a5f0",
+          "callee": "004d6600",
+          "source": "decompiled/0052a5f0.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "004d6600",
+          "callee": "004cfbf0",
+          "source": "decompiled/004d6600.c",
+          "lines": [
+            8
+          ]
+        }
+      ],
+      "serializer": "004cfbf0",
+      "opcode_push_address": "004cfc13",
+      "length_push_address": "004cfc0c",
+      "length_prefix_value": 3,
+      "payload_bytes": 1,
+      "plain_frame_bytes": 5,
+      "assembly_source": "packet-formatters/004cfbf0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0438",
+      "native_class": "Nuo::Kindred::ActionReorderItem::vftable",
+      "vtable_address": "0127cb44",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0094c0b0",
+        "008180c0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0094c0b0",
+          "callee": "008180c0",
+          "source": "decompiled/0094c0b0.c",
+          "lines": [
+            53
+          ]
+        }
+      ],
+      "serializer": "008180c0",
+      "opcode_push_address": "008180e3",
+      "length_push_address": "008180dc",
+      "length_prefix_value": 8,
+      "payload_bytes": 6,
+      "plain_frame_bytes": 10,
+      "assembly_source": "packet-formatters/008180c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0448",
+      "native_class": "Nuo::Kindred::ActionRequestActivateItem::vftable",
+      "vtable_address": "0121a9b4",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "00529ff0",
+        "0095bda0",
+        "00813dc0"
+      ],
+      "variant_condition": "object+0x24 mode 3",
+      "source_call_edges": [
+        {
+          "caller": "00529ff0",
+          "callee": "0095bda0",
+          "source": "decompiled/00529ff0.c",
+          "lines": [
+            9
+          ]
+        },
+        {
+          "caller": "0095bda0",
+          "callee": "00813dc0",
+          "source": "decompiled/0095bda0.c",
+          "lines": [
+            8
+          ]
+        }
+      ],
+      "serializer": "00813dc0",
+      "opcode_push_address": "00813de3",
+      "length_push_address": "00813ddc",
+      "length_prefix_value": 6,
+      "payload_bytes": 4,
+      "plain_frame_bytes": 8,
+      "assembly_source": "packet-formatters/00813dc0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0449",
+      "native_class": "Nuo::Kindred::ActionRequestActivateItem::vftable",
+      "vtable_address": "0121a9b4",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "00529ff0",
+        "0095bea0",
+        "00813fc0"
+      ],
+      "variant_condition": "object+0x24 mode 0",
+      "source_call_edges": [
+        {
+          "caller": "00529ff0",
+          "callee": "0095bea0",
+          "source": "decompiled/00529ff0.c",
+          "lines": [
+            13
+          ]
+        },
+        {
+          "caller": "0095bea0",
+          "callee": "00813fc0",
+          "source": "decompiled/0095bea0.c",
+          "lines": [
+            10
+          ]
+        }
+      ],
+      "serializer": "00813fc0",
+      "opcode_push_address": "00813fe3",
+      "length_push_address": "00813fdc",
+      "length_prefix_value": 10,
+      "payload_bytes": 8,
+      "plain_frame_bytes": 12,
+      "assembly_source": "packet-formatters/00813fc0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "044a",
+      "native_class": "Nuo::Kindred::ActionRequestActivateItem::vftable",
+      "vtable_address": "0121a9b4",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "00529ff0",
+        "0095bdd0",
+        "00813ec0"
+      ],
+      "variant_condition": "object+0x24 mode 1",
+      "source_call_edges": [
+        {
+          "caller": "00529ff0",
+          "callee": "0095bdd0",
+          "source": "decompiled/00529ff0.c",
+          "lines": [
+            17
+          ]
+        },
+        {
+          "caller": "0095bdd0",
+          "callee": "00813ec0",
+          "source": "decompiled/0095bdd0.c",
+          "lines": [
+            20
+          ]
+        }
+      ],
+      "serializer": "00813ec0",
+      "opcode_push_address": "00813ee3",
+      "length_push_address": "00813edc",
+      "length_prefix_value": 18,
+      "payload_bytes": 16,
+      "plain_frame_bytes": 20,
+      "assembly_source": "packet-formatters/00813ec0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0472",
+      "native_class": "Nuo::Kindred::ActionSetSurrenderStateRequest::vftable",
+      "vtable_address": "0121aa90",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a9a0",
+        "0095c2b0",
+        "008187c0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a9a0",
+          "callee": "0095c2b0",
+          "source": "decompiled/0052a9a0.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "0095c2b0",
+          "callee": "008187c0",
+          "source": "decompiled/0095c2b0.c",
+          "lines": [
+            8
+          ]
+        }
+      ],
+      "serializer": "008187c0",
+      "opcode_push_address": "008187e3",
+      "length_push_address": "008187dc",
+      "length_prefix_value": 3,
+      "payload_bytes": 1,
+      "plain_frame_bytes": 5,
+      "assembly_source": "packet-formatters/008187c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0474",
+      "native_class": "Nuo::Kindred::ActionSpectatorExitMatchRequest::vftable",
+      "vtable_address": "0121aaa4",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052aa20",
+        "00818ac0"
+      ],
+      "variant_condition": "slot4 is thunk_FUN_0095c2d0",
+      "source_call_edges": [
+        {
+          "caller": "0052aa20",
+          "callee": "00818ac0",
+          "source": "decompiled/0052aa20.c",
+          "lines": [
+            5
+          ]
+        }
+      ],
+      "serializer": "00818ac0",
+      "opcode_push_address": "00818ae3",
+      "length_push_address": "00818adc",
+      "length_prefix_value": 3,
+      "payload_bytes": 1,
+      "plain_frame_bytes": 5,
+      "assembly_source": "packet-formatters/00818ac0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0484",
+      "native_class": "Nuo::Kindred::ActionRequestEquipTalent::vftable",
+      "vtable_address": "0121a9dc",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a1e0",
+        "0095c260",
+        "008184c0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a1e0",
+          "callee": "0095c260",
+          "source": "decompiled/0052a1e0.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "0095c260",
+          "callee": "008184c0",
+          "source": "decompiled/0095c260.c",
+          "lines": [
+            6
+          ]
+        }
+      ],
+      "serializer": "008184c0",
+      "opcode_push_address": "008184e3",
+      "length_push_address": "008184dc",
+      "length_prefix_value": 6,
+      "payload_bytes": 4,
+      "plain_frame_bytes": 8,
+      "assembly_source": "packet-formatters/008184c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0485",
+      "native_class": "Nuo::Kindred::ActionRequestRecommendedBuildPath::vftable",
+      "vtable_address": "0121aa2c",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a560",
+        "004d65c0",
+        "004cf9f0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a560",
+          "callee": "004d65c0",
+          "source": "decompiled/0052a560.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "004d65c0",
+          "callee": "004cf9f0",
+          "source": "decompiled/004d65c0.c",
+          "lines": [
+            8
+          ]
+        }
+      ],
+      "serializer": "004cf9f0",
+      "opcode_push_address": "004cfa13",
+      "length_push_address": "004cfa0c",
+      "length_prefix_value": 3,
+      "payload_bytes": 1,
+      "plain_frame_bytes": 5,
+      "assembly_source": "packet-formatters/004cf9f0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    },
+    {
+      "opcode": "0486",
+      "native_class": "Nuo::Kindred::ActionRequestLevelLogicEvent_Client::vftable",
+      "vtable_address": "0121a9f0",
+      "virtual_slot_offset": 4,
+      "function_chain": [
+        "0052a280",
+        "0095c280",
+        "008185c0"
+      ],
+      "variant_condition": null,
+      "source_call_edges": [
+        {
+          "caller": "0052a280",
+          "callee": "0095c280",
+          "source": "decompiled/0052a280.c",
+          "lines": [
+            5
+          ]
+        },
+        {
+          "caller": "0095c280",
+          "callee": "008185c0",
+          "source": "decompiled/0095c280.c",
+          "lines": [
+            8
+          ]
+        }
+      ],
+      "serializer": "008185c0",
+      "opcode_push_address": "008185e3",
+      "length_push_address": "008185dc",
+      "length_prefix_value": 6,
+      "payload_bytes": 4,
+      "plain_frame_bytes": 8,
+      "assembly_source": "packet-formatters/008185c0.asm",
+      "evidence_tier": "native request class slot4 -> packet formatter with exact opcode constant",
+      "runtime_direction_verified": false,
+      "validation_needed": "Trigger one corresponding local action, capture emitted bytes and replay records, verify opcode, IDs, variant flags and accepted/rejected outcomes; request emission does not prove successful execution"
+    }
+  ]
+}

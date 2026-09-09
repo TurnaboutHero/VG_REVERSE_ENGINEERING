@@ -1,0 +1,9 @@
+  case 0x42f:
+    local_e30 = 0.0;
+    memmove(&local_e30,param_1,4);
+    uVar11 = Ordinal_14(local_e30);
+    FUN_00819fb0(uVar11);
+    local_8 = 0x25;
+    bStack_1c = 1;
+    FUN_0092c240(&uStack_28);
+    break;

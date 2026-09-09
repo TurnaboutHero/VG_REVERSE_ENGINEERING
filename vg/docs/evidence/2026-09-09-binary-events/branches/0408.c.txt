@@ -1,0 +1,14 @@
+  case 0x408:
+    bStack_e44 = 0;
+    bStack_e43 = 0;
+    uStack_e42 = 0;
+    bStack_e40 = 0;
+    bStack_e3f = 0;
+    memmove(&bStack_e44,param_1,6);
+    uVar11 = Ordinal_14(CONCAT22(uStack_e42,CONCAT11(bStack_e43,bStack_e44)));
+    bStack_44 = (byte)uVar11;
+    bStack_43 = (byte)((uint)uVar11 >> 8);
+    uStack_42 = (undefined2)((uint)uVar11 >> 0x10);
+    FUN_00529110();
+    local_8 = 0x11;
+    goto LAB_004d030c;

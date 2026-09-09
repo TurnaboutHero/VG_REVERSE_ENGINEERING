@@ -1,0 +1,84 @@
+Bounded instruction excerpts, transformed from private evidence.
+Addresses are preferred-image virtual addresses; unrelated LLVM nearest-symbol annotations were removed.
+
+LLVM dispatcher
+  4d4037: 6a 01                        	pushl	$0x1
+  4d4039: 8d 85 d7 f1 ff ff            	leal	-0xe29(%ebp), %eax
+  4d403f: 56                           	pushl	%esi
+  4d4040: 50                           	pushl	%eax
+  4d4041: e8 63 6d ce 00               	calll	0x11bada9
+  4d4046: 68 2c 5f 21 01               	pushl	$0x1215f2c              # imm = 0x1215F2C
+  4d404b: e8 e0 bc ff ff               	calll	0x4cfd30
+  4d4050: 83 c4 10                     	addl	$0x10, %esp
+  4d4053: 8b f8                        	movl	%eax, %edi
+  4d4055: e8 26 20 49 00               	calll	0x966080
+  4d405a: 8b 40 04                     	movl	0x4(%eax), %eax
+  4d405d: 8b f0                        	movl	%eax, %esi
+  4d405f: 8b 4e 04                     	movl	0x4(%esi), %ecx
+  4d4062: 80 79 0d 00                  	cmpb	$0x0, 0xd(%ecx)
+  4d4066: 75 1d                        	jne	0x4d4085
+  4d4068: 39 79 10                     	cmpl	%edi, 0x10(%ecx)
+  4d406b: 73 05                        	jae	0x4d4072
+  4d406d: 8b 49 08                     	movl	0x8(%ecx), %ecx
+  4d4070: eb 04                        	jmp	0x4d4076
+  4d4072: 8b f1                        	movl	%ecx, %esi
+  4d4074: 8b 09                        	movl	(%ecx), %ecx
+  4d4076: 80 79 0d 00                  	cmpb	$0x0, 0xd(%ecx)
+  4d407a: 74 ec                        	je	0x4d4068
+  4d407c: 3b f0                        	cmpl	%eax, %esi
+  4d407e: 74 05                        	je	0x4d4085
+  4d4080: 3b 7e 10                     	cmpl	0x10(%esi), %edi
+  4d4083: 73 02                        	jae	0x4d4087
+  4d4085: 8b f0                        	movl	%eax, %esi
+  4d4087: 3b f0                        	cmpl	%eax, %esi
+  4d4089: 0f 84 54 0f 00 00            	je	0x4d4fe3
+  4d408f: 33 ff                        	xorl	%edi, %edi
+  4d4091: 39 7e 14                     	cmpl	%edi, 0x14(%esi)
+  4d4094: 0f 86 49 0f 00 00            	jbe	0x4d4fe3
+  4d409a: 66 0f 1f 44 00 00            	nopw	(%eax,%eax)
+  4d40a0: 8b 46 1c                     	movl	0x1c(%esi), %eax
+  4d40a3: ff 34 f8                     	pushl	(%eax,%edi,8)
+  4d40a6: 8b 44 f8 04                  	movl	0x4(%eax,%edi,8), %eax
+  4d40aa: ff d0                        	calll	*%eax
+  4d40ac: 47                           	incl	%edi
+  4d40ad: 83 c4 04                     	addl	$0x4, %esp
+  4d40b0: 3b 7e 14                     	cmpl	0x14(%esi), %edi
+  4d40b3: 72 eb                        	jb	0x4d40a0
+  4d40b5: e9 29 0f 00 00               	jmp	0x4d4fe3
+
+LLVM known callback
+  6f0b10: 55                           	pushl	%ebp
+  6f0b11: 8b ec                        	movl	%esp, %ebp
+  6f0b13: 8b 45 08                     	movl	0x8(%ebp), %eax
+  6f0b16: 80 48 18 03                  	orb	$0x3, 0x18(%eax)
+  6f0b1a: 5d                           	popl	%ebp
+  6f0b1b: c3                           	retl
+
+Ghidra registration
+006f0b7d MOV dword ptr [ESI],0x1249a28
+006f0b83 MOV ECX,0x1215f2c
+006f0b88 MOV dword ptr [ESI + 0x8],0x0
+006f0b8f MOV EDX,0x811c9dc5
+006f0b94 MOV EAX,[0x020ec6fc]
+006f0b99 MOV dword ptr [ESI + 0xc],EAX
+006f0b9c MOV AL,byte ptr [ESI + 0x18]
+006f0b9f AND AL,0xf1
+006f0ba1 MOV dword ptr [EBP + -0x4],0x1
+006f0ba8 OR AL,0x1
+006f0baa MOV dword ptr [ESI + 0x10],0x0
+006f0bb1 MOV byte ptr [ESI + 0x18],AL
+006f0bb4 MOV AL,0x6d
+006f0bb6 MOVSX EAX,AL
+006f0bb9 LEA ECX,[ECX + 0x1]
+006f0bbc XOR EAX,EDX
+006f0bbe IMUL EDX,EAX,0x1000193
+006f0bc4 MOV AL,byte ptr [ECX]
+006f0bc6 TEST AL,AL
+006f0bc8 JNZ 0x006f0bb6
+006f0bca PUSH 0x0
+006f0bcc PUSH 0x6f0b10
+006f0bd1 PUSH EDX
+006f0bd2 PUSH ESI
+006f0bd3 CALL 0x00966080
+006f0bd8 MOV ECX,EAX
+006f0bda CALL 0x00971bc0

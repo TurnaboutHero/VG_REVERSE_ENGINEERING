@@ -1,0 +1,6 @@
+{
+  "script_sha256": "4de74614e01b3ce1af6f084c204980822b549542f76413d7171559d70032942c",
+  "compile": "pass",
+  "help_exit": 0,
+  "missing_required_arguments_exit": 2
+}
