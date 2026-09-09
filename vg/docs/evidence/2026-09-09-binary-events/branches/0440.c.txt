@@ -1,0 +1,20 @@
+  case 0x440:
+    bStack_44 = 0;
+    bStack_43 = 0;
+    local_4c = 0;
+    bStack_48 = 0;
+    bStack_47 = 0;
+    uStack_46 = 0;
+    memmove(&local_4c,param_1,10);
+    uVar11 = Ordinal_14(local_4c);
+    bStack_e3c = (byte)uVar11;
+    bStack_e3b = (byte)((uint)uVar11 >> 8);
+    bStack_e3a = (byte)((uint)uVar11 >> 0x10);
+    bStack_e39 = (byte)((uint)uVar11 >> 0x18);
+    Ordinal_15(CONCAT22(uStack_46,CONCAT11(bStack_47,bStack_48)));
+    Ordinal_14();
+    FUN_0081c390();
+    local_8 = 0x45;
+    bStack_24 = 1;
+    FUN_0092c240(&uStack_30);
+    break;

@@ -1,0 +1,45 @@
+  case 0x46f:
+    memset(&local_94,0,0x45);
+    memmove(&local_94,param_1,0x45);
+    fVar24 = (float10)FUN_004cfda0(CONCAT13(bStack_51,
+                                            CONCAT12(bStack_52,CONCAT11(bStack_53,local_54))));
+    pcVar17 = (char *)&local_94;
+    bStack_1c = 0;
+    bStack_1b = 0;
+    bStack_1a = 0;
+    bStack_19 = 0;
+    fVar10 = (float)fVar24;
+    local_54 = SUB41(fVar10,0);
+    bStack_53 = (byte)((uint)fVar10 >> 8);
+    bStack_52 = (byte)((uint)fVar10 >> 0x10);
+    bStack_51 = (byte)((uint)fVar10 >> 0x18);
+    bStack_18 = 0xf;
+    bStack_17 = 0;
+    bStack_16 = 0;
+    bStack_15 = 0;
+    uStack_2c = 0;
+    do {
+      cVar3 = *pcVar17;
+      pcVar17 = pcVar17 + 1;
+    } while (cVar3 != '\0');
+    FUN_00457390(&local_94,(int)pcVar17 - ((int)&local_94 + 1));
+    local_8 = 0x5a;
+    FUN_00549e20();
+    FUN_00549470();
+    FUN_00456d80();
+    local_3d6 = (float)CONCAT22(local_3d6._2_2_,(undefined2)local_3d6);
+    local_3ce = (float)CONCAT22(local_3ce._2_2_,(undefined2)local_3ce);
+    local_3ca = (float)CONCAT22(local_3ca._2_2_,(undefined2)local_3ca);
+    local_396 = (float)CONCAT22(local_396._2_2_,(undefined2)local_396);
+    local_392 = (float)CONCAT22(local_392._2_2_,(undefined2)local_392);
+    local_376 = (float)CONCAT22(local_376._2_2_,(undefined2)local_376);
+    local_372 = (float)CONCAT22(local_372._2_2_,(undefined2)local_372);
+    local_362 = (float)CONCAT22(local_362._2_2_,(undefined2)local_362);
+    local_35e = (float)CONCAT22(local_35e._2_2_,(undefined2)local_35e);
+    local_326 = (float)CONCAT22(local_326._2_2_,(undefined2)local_326);
+    local_322 = (float)CONCAT22(local_322._2_2_,(undefined2)local_322);
+    local_31a = (float)CONCAT22(local_31a._2_2_,(undefined2)local_31a);
+    local_316 = (float)CONCAT22(local_316._2_2_,(undefined2)local_316);
+    local_2ae = (float)CONCAT22(local_2ae._2_2_,(undefined2)local_2ae);
+    local_2aa = (float)CONCAT22(local_2aa._2_2_,(undefined2)local_2aa);
+    break;

@@ -1,0 +1,37 @@
+  case 0x3ed:
+    memset(&local_94,0,0x48);
+    memmove(&local_94,param_1,0x48);
+    uVar11 = Ordinal_14(CONCAT13(bStack_51,CONCAT12(bStack_52,CONCAT11(bStack_53,local_54))));
+    local_54 = (byte)uVar11;
+    bStack_53 = (byte)((uint)uVar11 >> 8);
+    bStack_52 = (byte)((uint)uVar11 >> 0x10);
+    bStack_51 = (byte)((uint)uVar11 >> 0x18);
+    uVar11 = Ordinal_14(CONCAT13(uStack_4d,CONCAT12(uStack_4e,CONCAT11(uStack_4f,local_50))));
+    local_50 = (byte)uVar11;
+    uStack_4f = (undefined1)((uint)uVar11 >> 8);
+    uStack_4e = (undefined1)((uint)uVar11 >> 0x10);
+    uStack_4d = (undefined1)((uint)uVar11 >> 0x18);
+    cVar3 = FUN_009448b0();
+    if (cVar3 == '\0') {
+      FUN_00589460();
+      local_8 = 0x2d;
+      FUN_0096d310(&local_94);
+      cVar3 = FUN_00944430(CONCAT13(uStack_4d,CONCAT12(uStack_4e,CONCAT11(uStack_4f,local_50))));
+      if (cVar3 == '\0') {
+        FUN_0081e940();
+        auStack_1b2._2_4_ = CONCAT13(uStack_4d,CONCAT12(uStack_4e,CONCAT11(uStack_4f,local_50)));
+        local_8 = CONCAT31(local_8._1_3_,0x2e);
+        FUN_004b53d0(&bStack_e44);
+        FUN_00859360(local_1b4);
+        FUN_0081f450();
+      }
+      else {
+        FUN_0095e8f0(CONCAT13(uStack_4d,CONCAT12(uStack_4e,CONCAT11(uStack_4f,local_50))),
+                     &bStack_e44);
+      }
+      _Memory = (void *)CONCAT13(bStack_e39,CONCAT12(bStack_e3a,CONCAT11(bStack_e3b,bStack_e3c)));
+      if (_Memory != (void *)0x0) {
+        free(_Memory);
+      }
+    }
+    break;

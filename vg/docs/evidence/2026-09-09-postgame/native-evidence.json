@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "build_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "platform": "Windows PE32",
+  "preferred_image_base": "00400000",
+  "scope": "Static identification in one executable, not evidence that each recording used this producer build or that a callback executed.",
+  "dispatcher": "004cfec0",
+  "opcode": "0452",
+  "payload_copy_start": "004d4037",
+  "payload_copy_call": "004d4041",
+  "payload_bytes_copied": 1,
+  "callback_key": "method_onPacket_LevelControllerOnEnterPostGame",
+  "callback_key_address": "01215f2c",
+  "hash_function": "004cfd30",
+  "hash_algorithm": "FNV-1a32",
+  "callback_key_hash": "07b2a736",
+  "registry_accessor": "00966080",
+  "registry_global": "020e74a0",
+  "callback_call_site": "004d40aa",
+  "callback_argument": "stored context pointer; copied payload byte is not forwarded by this recovered loop",
+  "known_registration": {
+    "constructor": "006f0b20",
+    "class": "Nuo::Kindred::KindredHUDQuickMessageMenuMC",
+    "vtable": "01249a28",
+    "registration_function": "00971bc0",
+    "registration_call_site": "006f0bda",
+    "callback": "006f0b10",
+    "effect": "OR byte at controller +0x18 with 3"
+  },
+  "adjacent_candidates": [
+    {
+      "opcode": "03ef",
+      "constructor": "0081c400",
+      "class": "ActionStartMatch",
+      "vtable": "0127cc08"
+    },
+    {
+      "opcode": "03f0",
+      "constructor": "0081c3d0",
+      "class": "ActionShowMatchPrepSequence",
+      "vtable": "0127cc1c"
+    }
+  ],
+  "limitations": [
+    "The observed VGR payload is six zero bytes; the recovered dispatcher copies one byte and does not interpret the remaining five in this branch.",
+    "Missing registry entry or empty subscriber list skips callback execution.",
+    "Known callback is a HUD flag write; it does not prove a server score-production gate, final KDA cutoff, UI transition time or cause of missing increment.",
+    "Dynamic registrations, generated keys and all callback side effects were not exhausted.",
+    "No ActionEndMatch is constructed and queued in the recovered 0452 branch; this does not describe all downstream callbacks.",
+    "No game execution or live memory attachment was used for this evidence."
+  ]
+}

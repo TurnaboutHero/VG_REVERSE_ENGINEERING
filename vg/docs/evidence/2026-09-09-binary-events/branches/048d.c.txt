@@ -1,0 +1,24 @@
+  case 0x48d:
+    memset(local_a60,0,0x64c);
+    puVar13 = local_760;
+    local_e30 = 0.0;
+    do {
+      fVar10 = local_e30;
+      uVar11 = Ordinal_8(DAT_01265f20);
+      local_a60[(int)fVar10] = uVar11;
+      auStack_a20[(int)fVar10] = DAT_01265f1a;
+      iVar8 = 10;
+      do {
+        uVar11 = Ordinal_8(DAT_01265f28);
+        *puVar13 = uVar11;
+        puVar13 = puVar13 + 1;
+        iVar8 = iVar8 + -1;
+      } while (iVar8 != 0);
+      local_e30 = (float)((int)local_e30 + 1);
+    } while ((int)local_e30 < 0x10);
+    local_434 = CONCAT11(DAT_01265f1a,DAT_01265f1a);
+    memmove(local_a60,
+            (void *)CONCAT13(bStack_e39,CONCAT12(bStack_e3a,CONCAT11(bStack_e3b,bStack_e3c))),0x64c)
+    ;
+    FUN_004c3a70(local_a60);
+    goto LAB_004d4fe0;

@@ -1,0 +1,2184 @@
+{
+  "schema_version": 1,
+  "identity_scope": "Only recording-local numeric entity references are retained; they are not account identities. Hero names, account names, file paths and raw payload bytes are omitted.",
+  "unmatched_deaths": [
+    {
+      "corpus": "C01",
+      "marker": {
+        "seq": 226444,
+        "frame": 102,
+        "offset": 47661,
+        "timestamp": 1023.8897705078125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 227421,
+        "frame": 102,
+        "offset": 74733,
+        "timestamp": 1028.331298828125,
+        "opcode": 1072,
+        "native_victim_id": 1504,
+        "native_source_raw": 1505,
+        "native_source_is_sentinel": false,
+        "ref0": 1504,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 4.4415283203125,
+        "record_position_delta": 977
+      }
+    },
+    {
+      "corpus": "C03",
+      "marker": {
+        "seq": 316663,
+        "frame": 79,
+        "offset": 131183,
+        "timestamp": 798.0962524414062,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 319213,
+        "frame": 80,
+        "offset": 81618,
+        "timestamp": 803.872802734375,
+        "opcode": 1072,
+        "native_victim_id": 1502,
+        "native_source_raw": 1504,
+        "native_source_is_sentinel": false,
+        "ref0": 1502,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.77655029296875,
+        "record_position_delta": 2550
+      }
+    },
+    {
+      "corpus": "C05",
+      "marker": {
+        "seq": 664104,
+        "frame": 154,
+        "offset": 170862,
+        "timestamp": 1549.78759765625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 665148,
+        "frame": 155,
+        "offset": 55361,
+        "timestamp": 1550.50537109375,
+        "opcode": 1072,
+        "native_victim_id": 1503,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1503,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 0.7177734375,
+        "record_position_delta": 1044
+      }
+    },
+    {
+      "corpus": "C13",
+      "marker": {
+        "seq": 734392,
+        "frame": 190,
+        "offset": 127974,
+        "timestamp": 1907.3060302734375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 736332,
+        "frame": 191,
+        "offset": 53076,
+        "timestamp": 1910.990478515625,
+        "opcode": 1072,
+        "native_victim_id": 1500,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1500,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.6844482421875,
+        "record_position_delta": 1940
+      }
+    },
+    {
+      "corpus": "C16",
+      "marker": {
+        "seq": 717170,
+        "frame": 169,
+        "offset": 147296,
+        "timestamp": 1697.6822509765625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 717869,
+        "frame": 169,
+        "offset": 167104,
+        "timestamp": 1699.3516845703125,
+        "opcode": 1072,
+        "native_victim_id": 1504,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1504,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 1.66943359375,
+        "record_position_delta": 699
+      }
+    },
+    {
+      "corpus": "C17",
+      "marker": {
+        "seq": 874426,
+        "frame": 214,
+        "offset": 162942,
+        "timestamp": 2147.62255859375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 878000,
+        "frame": 215,
+        "offset": 83533,
+        "timestamp": 2151.390869140625,
+        "opcode": 1072,
+        "native_victim_id": 1504,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1504,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.768310546875,
+        "record_position_delta": 3574
+      }
+    },
+    {
+      "corpus": "C17",
+      "marker": {
+        "seq": 874426,
+        "frame": 214,
+        "offset": 162942,
+        "timestamp": 2147.62255859375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 879026,
+        "frame": 215,
+        "offset": 111973,
+        "timestamp": 2153.01318359375,
+        "opcode": 1072,
+        "native_victim_id": 1503,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1503,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.390625,
+        "record_position_delta": 4600
+      }
+    },
+    {
+      "corpus": "C18",
+      "marker": {
+        "seq": 542460,
+        "frame": 133,
+        "offset": 72039,
+        "timestamp": 1331.4508056640625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 543620,
+        "frame": 133,
+        "offset": 103927,
+        "timestamp": 1333.974365234375,
+        "opcode": 1072,
+        "native_victim_id": 1503,
+        "native_source_raw": 1505,
+        "native_source_is_sentinel": false,
+        "ref0": 1503,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 2.5235595703125,
+        "record_position_delta": 1160
+      }
+    },
+    {
+      "corpus": "C19",
+      "marker": {
+        "seq": 635017,
+        "frame": 151,
+        "offset": 52222,
+        "timestamp": 1510.318603515625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 637038,
+        "frame": 151,
+        "offset": 109542,
+        "timestamp": 1514.007080078125,
+        "opcode": 1072,
+        "native_victim_id": 1505,
+        "native_source_raw": 1501,
+        "native_source_is_sentinel": false,
+        "ref0": 1505,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.6884765625,
+        "record_position_delta": 2021
+      }
+    },
+    {
+      "corpus": "C21",
+      "marker": {
+        "seq": 581983,
+        "frame": 147,
+        "offset": 115568,
+        "timestamp": 1478.526611328125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 584416,
+        "frame": 148,
+        "offset": 82987,
+        "timestamp": 1484.4273681640625,
+        "opcode": 1072,
+        "native_victim_id": 1506,
+        "native_source_raw": 1503,
+        "native_source_is_sentinel": false,
+        "ref0": 1506,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.9007568359375,
+        "record_position_delta": 2433
+      }
+    },
+    {
+      "corpus": "C23",
+      "marker": {
+        "seq": 817173,
+        "frame": 194,
+        "offset": 109665,
+        "timestamp": 1943.67626953125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 819664,
+        "frame": 194,
+        "offset": 179985,
+        "timestamp": 1947.9891357421875,
+        "opcode": 1072,
+        "native_victim_id": 1506,
+        "native_source_raw": 1505,
+        "native_source_is_sentinel": false,
+        "ref0": 1506,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 4.3128662109375,
+        "record_position_delta": 2491
+      }
+    },
+    {
+      "corpus": "C23",
+      "marker": {
+        "seq": 817173,
+        "frame": 194,
+        "offset": 109665,
+        "timestamp": 1943.67626953125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 819902,
+        "frame": 194,
+        "offset": 186769,
+        "timestamp": 1948.3990478515625,
+        "opcode": 1072,
+        "native_victim_id": 1504,
+        "native_source_raw": 1503,
+        "native_source_is_sentinel": false,
+        "ref0": 1504,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 4.7227783203125,
+        "record_position_delta": 2729
+      }
+    },
+    {
+      "corpus": "C24",
+      "marker": {
+        "seq": 488082,
+        "frame": 127,
+        "offset": 137718,
+        "timestamp": 1277.79248046875,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 490290,
+        "frame": 128,
+        "offset": 62337,
+        "timestamp": 1281.701171875,
+        "opcode": 1072,
+        "native_victim_id": 1507,
+        "native_source_raw": 95876,
+        "native_source_is_sentinel": false,
+        "ref0": 1507,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.90869140625,
+        "record_position_delta": 2208
+      }
+    },
+    {
+      "corpus": "C26",
+      "marker": {
+        "seq": 711881,
+        "frame": 178,
+        "offset": 143167,
+        "timestamp": 1788.7099609375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 714198,
+        "frame": 179,
+        "offset": 75300,
+        "timestamp": 1792.264404296875,
+        "opcode": 1072,
+        "native_victim_id": 1502,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1502,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.554443359375,
+        "record_position_delta": 2317
+      }
+    },
+    {
+      "corpus": "C26",
+      "marker": {
+        "seq": 711881,
+        "frame": 178,
+        "offset": 143167,
+        "timestamp": 1788.7099609375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 714829,
+        "frame": 179,
+        "offset": 92340,
+        "timestamp": 1793.914306640625,
+        "opcode": 1072,
+        "native_victim_id": 1503,
+        "native_source_raw": 1505,
+        "native_source_is_sentinel": false,
+        "ref0": 1503,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.204345703125,
+        "record_position_delta": 2948
+      }
+    },
+    {
+      "corpus": "C27",
+      "marker": {
+        "seq": 753241,
+        "frame": 178,
+        "offset": 68848,
+        "timestamp": 1782.12255859375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 754318,
+        "frame": 178,
+        "offset": 99936,
+        "timestamp": 1784.4189453125,
+        "opcode": 1072,
+        "native_victim_id": 1504,
+        "native_source_raw": 1508,
+        "native_source_is_sentinel": false,
+        "ref0": 1504,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 2.29638671875,
+        "record_position_delta": 1077
+      }
+    },
+    {
+      "corpus": "C28",
+      "marker": {
+        "seq": 845046,
+        "frame": 205,
+        "offset": 56323,
+        "timestamp": 2050.36181640625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 846939,
+        "frame": 205,
+        "offset": 108611,
+        "timestamp": 2054.83251953125,
+        "opcode": 1072,
+        "native_victim_id": 1500,
+        "native_source_raw": 1503,
+        "native_source_is_sentinel": false,
+        "ref0": 1500,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 4.470703125,
+        "record_position_delta": 1893
+      }
+    },
+    {
+      "corpus": "C28",
+      "marker": {
+        "seq": 845046,
+        "frame": 205,
+        "offset": 56323,
+        "timestamp": 2050.36181640625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 847184,
+        "frame": 205,
+        "offset": 115307,
+        "timestamp": 2055.43505859375,
+        "opcode": 1072,
+        "native_victim_id": 1509,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1509,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.0732421875,
+        "record_position_delta": 2138
+      }
+    },
+    {
+      "corpus": "C29",
+      "marker": {
+        "seq": 744930,
+        "frame": 177,
+        "offset": 133384,
+        "timestamp": 1776.0462646484375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 747153,
+        "frame": 177,
+        "offset": 199384,
+        "timestamp": 1779.86767578125,
+        "opcode": 1072,
+        "native_victim_id": 1501,
+        "native_source_raw": 1508,
+        "native_source_is_sentinel": false,
+        "ref0": 1501,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.8214111328125,
+        "record_position_delta": 2223
+      }
+    },
+    {
+      "corpus": "C29",
+      "marker": {
+        "seq": 744930,
+        "frame": 177,
+        "offset": 133384,
+        "timestamp": 1776.0462646484375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 748315,
+        "frame": 178,
+        "offset": 57314,
+        "timestamp": 1781.088134765625,
+        "opcode": 1072,
+        "native_victim_id": 1508,
+        "native_source_raw": 1502,
+        "native_source_is_sentinel": false,
+        "ref0": 1508,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.0418701171875,
+        "record_position_delta": 3385
+      }
+    },
+    {
+      "corpus": "C32",
+      "marker": {
+        "seq": 391425,
+        "frame": 96,
+        "offset": 97866,
+        "timestamp": 964.119384765625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 391514,
+        "frame": 96,
+        "offset": 100170,
+        "timestamp": 964.3279418945312,
+        "opcode": 1072,
+        "native_victim_id": 1506,
+        "native_source_raw": 83694,
+        "native_source_is_sentinel": false,
+        "ref0": 1506,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 0.20855712890625,
+        "record_position_delta": 89
+      }
+    },
+    {
+      "corpus": "C32",
+      "marker": {
+        "seq": 391425,
+        "frame": 96,
+        "offset": 97866,
+        "timestamp": 964.119384765625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 392032,
+        "frame": 96,
+        "offset": 114322,
+        "timestamp": 965.6652221679688,
+        "opcode": 1072,
+        "native_victim_id": 1505,
+        "native_source_raw": 1503,
+        "native_source_is_sentinel": false,
+        "ref0": 1505,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 1.54583740234375,
+        "record_position_delta": 607
+      }
+    },
+    {
+      "corpus": "C35",
+      "marker": {
+        "seq": 521550,
+        "frame": 131,
+        "offset": 161979,
+        "timestamp": 1319.8531494140625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 522804,
+        "frame": 132,
+        "offset": 59985,
+        "timestamp": 1321.188720703125,
+        "opcode": 1072,
+        "native_victim_id": 1505,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1505,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 1.3355712890625,
+        "record_position_delta": 1254
+      }
+    },
+    {
+      "corpus": "C35",
+      "marker": {
+        "seq": 521550,
+        "frame": 131,
+        "offset": 161979,
+        "timestamp": 1319.8531494140625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 523160,
+        "frame": 132,
+        "offset": 69721,
+        "timestamp": 1322.021728515625,
+        "opcode": 1072,
+        "native_victim_id": 1501,
+        "native_source_raw": 1502,
+        "native_source_is_sentinel": false,
+        "ref0": 1501,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 2.1685791015625,
+        "record_position_delta": 1610
+      }
+    },
+    {
+      "corpus": "C36",
+      "marker": {
+        "seq": 439612,
+        "frame": 110,
+        "offset": 132529,
+        "timestamp": 1108.7744140625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 443544,
+        "frame": 111,
+        "offset": 122462,
+        "timestamp": 1114.553466796875,
+        "opcode": 1072,
+        "native_victim_id": 1502,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1502,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.779052734375,
+        "record_position_delta": 3932
+      }
+    },
+    {
+      "corpus": "C37",
+      "marker": {
+        "seq": 486904,
+        "frame": 114,
+        "offset": 155454,
+        "timestamp": 1148.906494140625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 489309,
+        "frame": 115,
+        "offset": 84970,
+        "timestamp": 1152.6829833984375,
+        "opcode": 1072,
+        "native_victim_id": 1509,
+        "native_source_raw": 1504,
+        "native_source_is_sentinel": false,
+        "ref0": 1509,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.7764892578125,
+        "record_position_delta": 2405
+      }
+    },
+    {
+      "corpus": "C42",
+      "marker": {
+        "seq": 438278,
+        "frame": 105,
+        "offset": 180951,
+        "timestamp": 1056.56103515625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 439202,
+        "frame": 105,
+        "offset": 206263,
+        "timestamp": 1057.9014892578125,
+        "opcode": 1072,
+        "native_victim_id": 1500,
+        "native_source_raw": 1501,
+        "native_source_is_sentinel": false,
+        "ref0": 1500,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 1.3404541015625,
+        "record_position_delta": 924
+      }
+    },
+    {
+      "corpus": "C42",
+      "marker": {
+        "seq": 438278,
+        "frame": 105,
+        "offset": 180951,
+        "timestamp": 1056.56103515625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 440506,
+        "frame": 105,
+        "offset": 242543,
+        "timestamp": 1059.6866455078125,
+        "opcode": 1072,
+        "native_victim_id": 1505,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1505,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.1256103515625,
+        "record_position_delta": 2228
+      }
+    },
+    {
+      "corpus": "C43",
+      "marker": {
+        "seq": 493474,
+        "frame": 118,
+        "offset": 95781,
+        "timestamp": 1182.875244140625,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 496440,
+        "frame": 118,
+        "offset": 178109,
+        "timestamp": 1187.768310546875,
+        "opcode": 1072,
+        "native_victim_id": 1504,
+        "native_source_raw": 1505,
+        "native_source_is_sentinel": false,
+        "ref0": 1504,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 4.89306640625,
+        "record_position_delta": 2966
+      }
+    },
+    {
+      "corpus": "C44",
+      "marker": {
+        "seq": 416059,
+        "frame": 103,
+        "offset": 102665,
+        "timestamp": 1034.16845703125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 417960,
+        "frame": 103,
+        "offset": 155801,
+        "timestamp": 1037.761474609375,
+        "opcode": 1072,
+        "native_victim_id": 1509,
+        "native_source_raw": 1508,
+        "native_source_is_sentinel": false,
+        "ref0": 1509,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.593017578125,
+        "record_position_delta": 1901
+      }
+    },
+    {
+      "corpus": "C45",
+      "marker": {
+        "seq": 397322,
+        "frame": 96,
+        "offset": 163600,
+        "timestamp": 966.827880859375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 398335,
+        "frame": 96,
+        "offset": 192344,
+        "timestamp": 969.3689575195312,
+        "opcode": 1072,
+        "native_victim_id": 1507,
+        "native_source_raw": 1502,
+        "native_source_is_sentinel": false,
+        "ref0": 1507,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 2.54107666015625,
+        "record_position_delta": 1013
+      }
+    },
+    {
+      "corpus": "C46",
+      "marker": {
+        "seq": 781038,
+        "frame": 176,
+        "offset": 163655,
+        "timestamp": 1766.676513671875,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 783144,
+        "frame": 177,
+        "offset": 53891,
+        "timestamp": 1770.701904296875,
+        "opcode": 1072,
+        "native_victim_id": 1508,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1508,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 4.025390625,
+        "record_position_delta": 2106
+      }
+    },
+    {
+      "corpus": "C51",
+      "marker": {
+        "seq": 304940,
+        "frame": 137,
+        "offset": 86603,
+        "timestamp": 1379.6004638671875,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 305386,
+        "frame": 138,
+        "offset": 25677,
+        "timestamp": 1380.2813720703125,
+        "opcode": 1072,
+        "native_victim_id": 1503,
+        "native_source_raw": 1505,
+        "native_source_is_sentinel": false,
+        "ref0": 1503,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 0.680908203125,
+        "record_position_delta": 446
+      }
+    },
+    {
+      "corpus": "C53",
+      "marker": {
+        "seq": 641474,
+        "frame": 155,
+        "offset": 149554,
+        "timestamp": 1556.3330078125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 642024,
+        "frame": 155,
+        "offset": 164786,
+        "timestamp": 1557.25390625,
+        "opcode": 1072,
+        "native_victim_id": 1509,
+        "native_source_raw": 1503,
+        "native_source_is_sentinel": false,
+        "ref0": 1509,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 0.9208984375,
+        "record_position_delta": 550
+      }
+    },
+    {
+      "corpus": "C53",
+      "marker": {
+        "seq": 641474,
+        "frame": 155,
+        "offset": 149554,
+        "timestamp": 1556.3330078125,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 642713,
+        "frame": 155,
+        "offset": 184410,
+        "timestamp": 1558.788818359375,
+        "opcode": 1072,
+        "native_victim_id": 1500,
+        "native_source_raw": 1507,
+        "native_source_is_sentinel": false,
+        "ref0": 1500,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 2.455810546875,
+        "record_position_delta": 1239
+      }
+    },
+    {
+      "corpus": "C54",
+      "marker": {
+        "seq": 689934,
+        "frame": 162,
+        "offset": 61955,
+        "timestamp": 1621.3192138671875,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 690536,
+        "frame": 162,
+        "offset": 78467,
+        "timestamp": 1622.548828125,
+        "opcode": 1072,
+        "native_victim_id": 1502,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1502,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 1.2296142578125,
+        "record_position_delta": 602
+      }
+    },
+    {
+      "corpus": "C54",
+      "marker": {
+        "seq": 689934,
+        "frame": 162,
+        "offset": 61955,
+        "timestamp": 1621.3192138671875,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 691694,
+        "frame": 162,
+        "offset": 110339,
+        "timestamp": 1624.6588134765625,
+        "opcode": 1072,
+        "native_victim_id": 1506,
+        "native_source_raw": 142711,
+        "native_source_is_sentinel": false,
+        "ref0": 1506,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 3.339599609375,
+        "record_position_delta": 1760
+      }
+    },
+    {
+      "corpus": "C55",
+      "marker": {
+        "seq": 811900,
+        "frame": 190,
+        "offset": 132199,
+        "timestamp": 1907.1663818359375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 812156,
+        "frame": 190,
+        "offset": 139647,
+        "timestamp": 1907.7239990234375,
+        "opcode": 1072,
+        "native_victim_id": 1505,
+        "native_source_raw": 1503,
+        "native_source_is_sentinel": false,
+        "ref0": 1505,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 0.5576171875,
+        "record_position_delta": 256
+      }
+    },
+    {
+      "corpus": "C55",
+      "marker": {
+        "seq": 811900,
+        "frame": 190,
+        "offset": 132199,
+        "timestamp": 1907.1663818359375,
+        "opcode": 1106,
+        "payload_length": 6,
+        "payload_all_zero": true
+      },
+      "action": {
+        "seq": 815153,
+        "frame": 191,
+        "offset": 87784,
+        "timestamp": 1912.7646484375,
+        "opcode": 1072,
+        "native_victim_id": 1501,
+        "native_source_raw": 1506,
+        "native_source_is_sentinel": false,
+        "ref0": 1501,
+        "native_type": "actor_die_action"
+      },
+      "relation": {
+        "seq_relation": "after",
+        "timestamp_relation": "after",
+        "record_time_delta": 5.5982666015625,
+        "record_position_delta": 3253
+      }
+    }
+  ],
+  "same_timestamp_score_operations_after_marker": [
+    {
+      "corpus": "C02",
+      "seq": 447583,
+      "frame": 114,
+      "offset": 48531,
+      "timestamp": 1140.3792724609375,
+      "opcode": 1053,
+      "ref0": 1507,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C02",
+      "seq": 447597,
+      "frame": 114,
+      "offset": 48923,
+      "timestamp": 1140.3792724609375,
+      "opcode": 1053,
+      "ref0": 1507,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C02",
+      "seq": 447608,
+      "frame": 114,
+      "offset": 49243,
+      "timestamp": 1140.3792724609375,
+      "opcode": 1053,
+      "ref0": 1507,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C02",
+      "seq": 447623,
+      "frame": 114,
+      "offset": 49659,
+      "timestamp": 1140.3792724609375,
+      "opcode": 1053,
+      "ref0": 1507,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C16",
+      "seq": 717175,
+      "frame": 169,
+      "offset": 147424,
+      "timestamp": 1697.6822509765625,
+      "opcode": 1052,
+      "ref0": 1506,
+      "value": 1.0,
+      "native_type": "attribute_update",
+      "native_index": 42,
+      "native_layer": 0,
+      "native_operation": "add",
+      "native_stat": "deaths",
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C16",
+      "seq": 717181,
+      "frame": 169,
+      "offset": 147576,
+      "timestamp": 1697.6822509765625,
+      "opcode": 1052,
+      "ref0": 1504,
+      "value": 1.0,
+      "native_type": "attribute_update",
+      "native_index": 41,
+      "native_layer": 0,
+      "native_operation": "add",
+      "native_stat": "kills",
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C16",
+      "seq": 717185,
+      "frame": 169,
+      "offset": 147680,
+      "timestamp": 1697.6822509765625,
+      "opcode": 1053,
+      "ref0": 1500,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 11,
+      "native_operation": "add",
+      "native_stat": "assists",
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C28",
+      "seq": 845057,
+      "frame": 205,
+      "offset": 56587,
+      "timestamp": 2050.36181640625,
+      "opcode": 1053,
+      "ref0": 1509,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C28",
+      "seq": 845064,
+      "frame": 205,
+      "offset": 56763,
+      "timestamp": 2050.36181640625,
+      "opcode": 1053,
+      "ref0": 1509,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C28",
+      "seq": 845072,
+      "frame": 205,
+      "offset": 56963,
+      "timestamp": 2050.36181640625,
+      "opcode": 1053,
+      "ref0": 1509,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C30",
+      "seq": 594354,
+      "frame": 149,
+      "offset": 79804,
+      "timestamp": 1492.88134765625,
+      "opcode": 1053,
+      "ref0": 1506,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C31",
+      "seq": 489560,
+      "frame": 123,
+      "offset": 215629,
+      "timestamp": 1239.9166259765625,
+      "opcode": 1053,
+      "ref0": 1509,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C31",
+      "seq": 489572,
+      "frame": 123,
+      "offset": 215973,
+      "timestamp": 1239.9166259765625,
+      "opcode": 1053,
+      "ref0": 1509,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C31",
+      "seq": 489584,
+      "frame": 123,
+      "offset": 216317,
+      "timestamp": 1239.9166259765625,
+      "opcode": 1053,
+      "ref0": 1509,
+      "value": 1.0,
+      "native_type": "resource_update",
+      "native_index": 14,
+      "native_operation": "add",
+      "native_stat": null,
+      "seq_relation": "after",
+      "timestamp_relation": "same",
+      "record_time_delta": 0.0
+    }
+  ],
+  "marker_to_048d_relations": [
+    {
+      "corpus": "C01",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0750732421875,
+      "record_position_delta": 1378
+    },
+    {
+      "corpus": "C02",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0247802734375,
+      "record_position_delta": 1735
+    },
+    {
+      "corpus": "C03",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.07513427734375,
+      "record_position_delta": 2666
+    },
+    {
+      "corpus": "C04",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.053466796875,
+      "record_position_delta": 2607
+    },
+    {
+      "corpus": "C05",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0272216796875,
+      "record_position_delta": 3035
+    },
+    {
+      "corpus": "C06",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 5.99072265625,
+      "record_position_delta": 2839
+    },
+    {
+      "corpus": "C07",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0618896484375,
+      "record_position_delta": 3468
+    },
+    {
+      "corpus": "C08",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.075439453125,
+      "record_position_delta": 3551
+    },
+    {
+      "corpus": "C11",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.038330078125,
+      "record_position_delta": 2495
+    },
+    {
+      "corpus": "C12",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.10205078125,
+      "record_position_delta": 2825
+    },
+    {
+      "corpus": "C13",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0924072265625,
+      "record_position_delta": 2639
+    },
+    {
+      "corpus": "C14",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0855712890625,
+      "record_position_delta": 2072
+    },
+    {
+      "corpus": "C15",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0504150390625,
+      "record_position_delta": 2529
+    },
+    {
+      "corpus": "C16",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0003662109375,
+      "record_position_delta": 3083
+    },
+    {
+      "corpus": "C17",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 5.9873046875,
+      "record_position_delta": 4916
+    },
+    {
+      "corpus": "C18",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0299072265625,
+      "record_position_delta": 2351
+    },
+    {
+      "corpus": "C19",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0625,
+      "record_position_delta": 3254
+    },
+    {
+      "corpus": "C20",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0587158203125,
+      "record_position_delta": 1454
+    },
+    {
+      "corpus": "C21",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.01025390625,
+      "record_position_delta": 2450
+    },
+    {
+      "corpus": "C22",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.1324462890625,
+      "record_position_delta": 2689
+    },
+    {
+      "corpus": "C23",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0567626953125,
+      "record_position_delta": 3187
+    },
+    {
+      "corpus": "C24",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.052001953125,
+      "record_position_delta": 3115
+    },
+    {
+      "corpus": "C25",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0194091796875,
+      "record_position_delta": 1081
+    },
+    {
+      "corpus": "C26",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0367431640625,
+      "record_position_delta": 3163
+    },
+    {
+      "corpus": "C27",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.08447265625,
+      "record_position_delta": 2921
+    },
+    {
+      "corpus": "C28",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.074951171875,
+      "record_position_delta": 2488
+    },
+    {
+      "corpus": "C29",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 5.996337890625,
+      "record_position_delta": 3625
+    },
+    {
+      "corpus": "C30",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.081298828125,
+      "record_position_delta": 1964
+    },
+    {
+      "corpus": "C31",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0902099609375,
+      "record_position_delta": 3631
+    },
+    {
+      "corpus": "C32",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.01214599609375,
+      "record_position_delta": 2323
+    },
+    {
+      "corpus": "C35",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0758056640625,
+      "record_position_delta": 2828
+    },
+    {
+      "corpus": "C36",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0780029296875,
+      "record_position_delta": 4060
+    },
+    {
+      "corpus": "C37",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.02880859375,
+      "record_position_delta": 3080
+    },
+    {
+      "corpus": "C39",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.1033935546875,
+      "record_position_delta": 3044
+    },
+    {
+      "corpus": "C40",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.084228515625,
+      "record_position_delta": 2257
+    },
+    {
+      "corpus": "C42",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0,
+      "record_position_delta": 4729
+    },
+    {
+      "corpus": "C43",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0953369140625,
+      "record_position_delta": 3500
+    },
+    {
+      "corpus": "C44",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0333251953125,
+      "record_position_delta": 3640
+    },
+    {
+      "corpus": "C45",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.01409912109375,
+      "record_position_delta": 2727
+    },
+    {
+      "corpus": "C46",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0224609375,
+      "record_position_delta": 2759
+    },
+    {
+      "corpus": "C47",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0728759765625,
+      "record_position_delta": 1302
+    },
+    {
+      "corpus": "C48",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.03076171875,
+      "record_position_delta": 1220
+    },
+    {
+      "corpus": "C49",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.02935791015625,
+      "record_position_delta": 1413
+    },
+    {
+      "corpus": "C50",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0238037109375,
+      "record_position_delta": 727
+    },
+    {
+      "corpus": "C51",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0848388671875,
+      "record_position_delta": 1750
+    },
+    {
+      "corpus": "C52",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.014892578125,
+      "record_position_delta": 837
+    },
+    {
+      "corpus": "C53",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.0947265625,
+      "record_position_delta": 3877
+    },
+    {
+      "corpus": "C54",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.03369140625,
+      "record_position_delta": 2820
+    },
+    {
+      "corpus": "C55",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.1263427734375,
+      "record_position_delta": 3439
+    },
+    {
+      "corpus": "C56",
+      "seq_relation": "after",
+      "timestamp_relation": "after",
+      "record_time_delta": 6.1053466796875,
+      "record_position_delta": 3416
+    }
+  ],
+  "controls": {
+    "C02": {
+      "record_count": 449332,
+      "sections": 115,
+      "window_seconds": 15,
+      "window_records": 5583,
+      "terminal_048d": {
+        "seq": 449313,
+        "frame": 114,
+        "offset": 96227,
+        "timestamp": 1146.404052734375,
+        "opcode": 1165,
+        "payload_length": 1614
+      },
+      "window_player_deaths": 0,
+      "definition_manifest_sha256": "7292b885378be83cb8596601bad7d0c7adfaab1e91e23f8ea65601f03136755c",
+      "build_pairing_is_assumed_for_recording": true,
+      "selected_rows": [
+        {
+          "seq": 447578,
+          "frame": 114,
+          "offset": 48411,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 447583,
+          "frame": 114,
+          "offset": 48531,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1053,
+          "payload_length": 14,
+          "ref0": 1507,
+          "value": 1.0,
+          "native_type": "resource_update",
+          "native_index": 14,
+          "native_operation": "add",
+          "native_stat": null
+        },
+        {
+          "seq": 447597,
+          "frame": 114,
+          "offset": 48923,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1053,
+          "payload_length": 14,
+          "ref0": 1507,
+          "value": 1.0,
+          "native_type": "resource_update",
+          "native_index": 14,
+          "native_operation": "add",
+          "native_stat": null
+        },
+        {
+          "seq": 447608,
+          "frame": 114,
+          "offset": 49243,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1053,
+          "payload_length": 14,
+          "ref0": 1507,
+          "value": 1.0,
+          "native_type": "resource_update",
+          "native_index": 14,
+          "native_operation": "add",
+          "native_stat": null
+        },
+        {
+          "seq": 447623,
+          "frame": 114,
+          "offset": 49659,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1053,
+          "payload_length": 14,
+          "ref0": 1507,
+          "value": 1.0,
+          "native_type": "resource_update",
+          "native_index": 14,
+          "native_operation": "add",
+          "native_stat": null
+        },
+        {
+          "seq": 447632,
+          "frame": 114,
+          "offset": 49923,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 2007,
+          "native_source_raw": 1509,
+          "native_source_is_sentinel": false,
+          "ref0": 2007,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 447127,
+            "frame": 114,
+            "offset": 28876,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 296,
+            "entity_id": 2007,
+            "definition_name": "VainCrystal_Away_5v5",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 447862,
+          "frame": 114,
+          "offset": 56283,
+          "timestamp": 1140.9774169921875,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 90193,
+          "native_source_raw": 1502,
+          "native_source_is_sentinel": false,
+          "ref0": 90193,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 446999,
+            "frame": 114,
+            "offset": 14805,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 337,
+            "entity_id": 90193,
+            "definition_name": "5v5_Minion_Siege",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 448080,
+          "frame": 114,
+          "offset": 62107,
+          "timestamp": 1141.677490234375,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 90194,
+          "native_source_raw": 1507,
+          "native_source_is_sentinel": false,
+          "ref0": 90194,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 446997,
+            "frame": 114,
+            "offset": 14654,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 337,
+            "entity_id": 90194,
+            "definition_name": "5v5_Minion_Siege",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 448522,
+          "frame": 114,
+          "offset": 74219,
+          "timestamp": 1143.174560546875,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 90081,
+          "native_source_raw": 1509,
+          "native_source_is_sentinel": false,
+          "ref0": 90081,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 447009,
+            "frame": 114,
+            "offset": 15673,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 336,
+            "entity_id": 90081,
+            "definition_name": "5v5_Minion_Melee",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 448531,
+          "frame": 114,
+          "offset": 74451,
+          "timestamp": 1143.174560546875,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 90285,
+          "native_source_raw": 1509,
+          "native_source_is_sentinel": false,
+          "ref0": 90285,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 447014,
+            "frame": 114,
+            "offset": 16220,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 335,
+            "entity_id": 90285,
+            "definition_name": "5v5_Minion_Range",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 448708,
+          "frame": 114,
+          "offset": 79203,
+          "timestamp": 1143.7637939453125,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 89989,
+          "native_source_raw": 1502,
+          "native_source_is_sentinel": false,
+          "ref0": 89989,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 447020,
+            "frame": 114,
+            "offset": 16786,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 336,
+            "entity_id": 89989,
+            "definition_name": "5v5_Minion_Melee",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 448947,
+          "frame": 114,
+          "offset": 85755,
+          "timestamp": 1144.7822265625,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 90195,
+          "native_source_raw": 1502,
+          "native_source_is_sentinel": false,
+          "ref0": 90195,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 446996,
+            "frame": 114,
+            "offset": 14522,
+            "timestamp": 1140.0108642578125,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 337,
+            "entity_id": 90195,
+            "definition_name": "5v5_Minion_Siege",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        }
+      ]
+    },
+    "C16": {
+      "record_count": 720282,
+      "sections": 171,
+      "window_seconds": 15,
+      "window_records": 8059,
+      "terminal_048d": {
+        "seq": 720253,
+        "frame": 170,
+        "offset": 89778,
+        "timestamp": 1703.6826171875,
+        "opcode": 1165,
+        "payload_length": 1614
+      },
+      "window_player_deaths": 2,
+      "definition_manifest_sha256": "7292b885378be83cb8596601bad7d0c7adfaab1e91e23f8ea65601f03136755c",
+      "build_pairing_is_assumed_for_recording": true,
+      "selected_rows": [
+        {
+          "seq": 713091,
+          "frame": 169,
+          "offset": 7714,
+          "timestamp": 1690.0047607421875,
+          "opcode": 1011,
+          "payload_length": 746,
+          "native_layer": 0,
+          "entity_id": 1504,
+          "snapshot_deaths": 7.0
+        },
+        {
+          "seq": 717170,
+          "frame": 169,
+          "offset": 147296,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 717171,
+          "frame": 169,
+          "offset": 147312,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 1506,
+          "native_source_raw": 1504,
+          "native_source_is_sentinel": false,
+          "ref0": 1506,
+          "native_type": "actor_die_action"
+        },
+        {
+          "seq": 717175,
+          "frame": 169,
+          "offset": 147424,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1052,
+          "payload_length": 22,
+          "ref0": 1506,
+          "value": 1.0,
+          "native_type": "attribute_update",
+          "native_index": 42,
+          "native_layer": 0,
+          "native_operation": "add",
+          "native_stat": "deaths"
+        },
+        {
+          "seq": 717181,
+          "frame": 169,
+          "offset": 147576,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1052,
+          "payload_length": 22,
+          "ref0": 1504,
+          "value": 1.0,
+          "native_type": "attribute_update",
+          "native_index": 41,
+          "native_layer": 0,
+          "native_operation": "add",
+          "native_stat": "kills"
+        },
+        {
+          "seq": 717185,
+          "frame": 169,
+          "offset": 147680,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1053,
+          "payload_length": 14,
+          "ref0": 1500,
+          "value": 1.0,
+          "native_type": "resource_update",
+          "native_index": 11,
+          "native_operation": "add",
+          "native_stat": "assists"
+        },
+        {
+          "seq": 717189,
+          "frame": 169,
+          "offset": 147776,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 2007,
+          "native_source_raw": 1508,
+          "native_source_is_sentinel": false,
+          "ref0": 2007,
+          "native_type": "actor_die_action",
+          "prior_spawn": {
+            "seq": 713338,
+            "frame": 169,
+            "offset": 32337,
+            "timestamp": 1690.0047607421875,
+            "opcode": 1010,
+            "payload_length": 122,
+            "definition_index": 296,
+            "entity_id": 2007,
+            "definition_name": "VainCrystal_Away_5v5",
+            "kind": "unknown_without_resource_check",
+            "scope": "latest_prior_spawn_build_pairing_assumed"
+          }
+        },
+        {
+          "seq": 717869,
+          "frame": 169,
+          "offset": 167104,
+          "timestamp": 1699.3516845703125,
+          "opcode": 1072,
+          "payload_length": 14,
+          "native_victim_id": 1504,
+          "native_source_raw": 1507,
+          "native_source_is_sentinel": false,
+          "ref0": 1504,
+          "native_type": "actor_die_action"
+        },
+        {
+          "seq": 718184,
+          "frame": 170,
+          "offset": 7714,
+          "timestamp": 1700.0089111328125,
+          "opcode": 1011,
+          "payload_length": 746,
+          "native_layer": 0,
+          "entity_id": 1504,
+          "snapshot_deaths": 7.0
+        }
+      ]
+    }
+  }
+}

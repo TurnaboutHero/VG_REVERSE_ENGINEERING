@@ -1,0 +1,15 @@
+  case 0x42c:
+    bStack_e40 = 0;
+    bStack_e3f = 0;
+    bStack_e3e = 0;
+    bStack_e3d = 0;
+    bStack_e3c = 0;
+    bStack_e3b = 0;
+    memmove(&bStack_e40,param_1,6);
+    Ordinal_14(CONCAT13(bStack_e3d,CONCAT12(bStack_e3e,CONCAT11(bStack_e3f,bStack_e40))));
+    FUN_0081e5c0();
+    local_e30 = (float)CONCAT31(local_e30._1_3_,(byte)local_e30 ^ ((byte)local_e30 ^ bStack_e3b) & 3
+                               );
+    FUN_005297f0();
+    local_8 = 0x53;
+    goto LAB_004d030c;

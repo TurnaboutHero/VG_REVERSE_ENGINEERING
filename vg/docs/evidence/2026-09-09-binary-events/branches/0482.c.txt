@@ -1,0 +1,7 @@
+  case 0x482:
+    local_e30 = 0.0;
+    memmove(&local_e30,param_1,4);
+    uVar11 = Ordinal_14(local_e30);
+    FUN_0081c610(uVar11);
+    local_8 = 1;
+    goto LAB_004d0359;

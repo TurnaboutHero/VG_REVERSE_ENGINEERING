@@ -1,0 +1,35 @@
+  case 0x40d:
+    bStack_18 = 0;
+    uStack_28 = 0;
+    bStack_27 = 0;
+    uStack_26 = 0;
+    bStack_24 = 0;
+    bStack_23 = 0;
+    uStack_22 = 0;
+    bStack_20 = 0;
+    bStack_1f = 0;
+    uStack_1e = 0;
+    bStack_1c = 0;
+    bStack_1b = 0;
+    bStack_1a = 0;
+    bStack_19 = 0;
+    memmove(&uStack_28,param_1,0x11);
+    uVar11 = Ordinal_14(CONCAT22(uStack_26,CONCAT11(bStack_27,uStack_28)));
+    uVar12 = Ordinal_14(CONCAT22(uStack_22,CONCAT11(bStack_23,bStack_24)));
+    fVar24 = (float10)FUN_004cfda0();
+    fVar10 = (float)fVar24;
+    bStack_20 = SUB41(fVar10,0);
+    bStack_1f = (byte)((uint)fVar10 >> 8);
+    uStack_1e = (undefined2)((uint)fVar10 >> 0x10);
+    uVar5 = Ordinal_15();
+    bStack_44 = (byte)uVar12;
+    bStack_43 = (byte)((uint)uVar12 >> 8);
+    uStack_42 = (undefined2)((uint)uVar12 >> 0x10);
+    FUN_0081ab10(CONCAT13(bStack_17,CONCAT12(bStack_18,CONCAT11(bStack_19,bStack_1a))),
+                 CONCAT13(bStack_16,CONCAT12(bStack_17,CONCAT11(bStack_18,bStack_19))),
+                 CONCAT13(bStack_15,CONCAT12(bStack_16,CONCAT11(bStack_17,bStack_18))),uVar5,
+                 &bStack_44,uVar11,CONCAT22(uStack_1e,CONCAT11(bStack_1f,bStack_20)));
+    local_8 = 0x2f;
+    local_90 = (float)CONCAT31(local_90._1_3_,1);
+    FUN_0092c240(&local_9c);
+    break;

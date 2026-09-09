@@ -1,0 +1,12 @@
+  case 0x451:
+    local_e30 = 0.0;
+    memmove(&local_e30,param_1,4);
+    fVar24 = (float10)FUN_004cfda0(local_e30);
+    local_e30 = (float)fVar24;
+    cVar3 = FUN_00549e30();
+    if (cVar3 != '\0') {
+      fVar10 = local_e30;
+      FUN_00549e20(local_e30);
+      FUN_00549d20(fVar10);
+    }
+    break;

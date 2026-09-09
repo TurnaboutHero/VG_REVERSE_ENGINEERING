@@ -1,0 +1,18 @@
+{
+  "verdict": "PASS",
+  "recording_count": 56,
+  "section_count": 7870,
+  "record_count": 30729156,
+  "observed_opcode_count": 85,
+  "distinct_opcode_payload_length_pairs": 93,
+  "exemplar_sections_read_again": 34,
+  "checks": [
+    "All aggregate and per-recording count and length histograms reconcile.",
+    "All opcode-length exemplars match direct big-endian binary header reads.",
+    "All exemplar source section hashes match provenance.",
+    "All corpus IDs and native clock statuses retain the prior scope."
+  ],
+  "summary_sha256": "4123a4250c5fe30c8dac5073a217f2225a6e9bd9198b54bc1517e6b754346040",
+  "provenance_sha256": "a4e844a070c7104a007b82639cf2234ea698984282779cfde1f43dffffbd30af",
+  "verifier_sha256": "190af8d1a4da660f3621e6cd62460588c5715bb50ef72e78d3e081e70dc6a63c"
+}

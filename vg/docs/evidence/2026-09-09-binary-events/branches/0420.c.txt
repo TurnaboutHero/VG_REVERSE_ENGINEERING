@@ -1,0 +1,45 @@
+  case 0x420:
+    bStack_e40 = 0;
+    bStack_e3f = 0;
+    bStack_e3e = 0;
+    bStack_e3d = 0;
+    fStack_e48 = 0.0;
+    bStack_e44 = 0;
+    bStack_e43 = 0;
+    uStack_e42 = 0;
+    local_e58 = 0;
+    uStack_e54 = 0;
+    fStack_e50 = 0.0;
+    fStack_e4c = 0.0;
+    bStack_e3c = 0;
+    memmove(&local_e58,param_1,0x1d);
+    uVar11 = Ordinal_14(local_e58);
+    uVar12 = Ordinal_14(uStack_e54);
+    fVar24 = (float10)FUN_004cfda0(fStack_e50);
+    fStack_e50 = (float)fVar24;
+    fVar24 = (float10)FUN_004cfda0(fStack_e4c);
+    fStack_e4c = (float)fVar24;
+    fVar24 = (float10)FUN_004cfda0(fStack_e48);
+    fStack_e48 = (float)fVar24;
+    fVar24 = (float10)FUN_004cfda0(CONCAT22(uStack_e42,CONCAT11(bStack_e43,bStack_e44)));
+    fVar10 = (float)fVar24;
+    bStack_e44 = SUB41(fVar10,0);
+    bStack_e43 = (byte)((uint)fVar10 >> 8);
+    uStack_e42 = (undefined2)((uint)fVar10 >> 0x10);
+    fVar24 = (float10)FUN_004cfda0(CONCAT13(bStack_e3d,
+                                            CONCAT12(bStack_e3e,CONCAT11(bStack_e3f,bStack_e40))));
+    bStack_18 = SUB41(fStack_e4c,0);
+    bStack_17 = (byte)((uint)fStack_e4c >> 8);
+    bStack_16 = (byte)((uint)fStack_e4c >> 0x10);
+    bStack_15 = (byte)((uint)fStack_e4c >> 0x18);
+    fVar10 = (float)fVar24;
+    bStack_e40 = SUB41(fVar10,0);
+    bStack_e3f = (byte)((uint)fVar10 >> 8);
+    bStack_e3e = (byte)((uint)fVar10 >> 0x10);
+    bStack_e3d = (byte)((uint)fVar10 >> 0x18);
+    FUN_0081a500(uVar11,uVar12,fStack_e50,fStack_e4c,fStack_e48,bStack_e3c,
+                 CONCAT22(uStack_e42,CONCAT11(bStack_e43,bStack_e44)),fVar10);
+    local_8 = 0x37;
+    local_8c = (float)CONCAT31(local_8c._1_3_,1);
+    FUN_0092c240(&local_98);
+    break;

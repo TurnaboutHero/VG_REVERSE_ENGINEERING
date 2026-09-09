@@ -1,0 +1,7 @@
+  case 0x3f0:
+    memmove((void *)((int)&local_e30 + 3),param_1,1);
+    FUN_0081c3d0();
+    local_8 = 0x21;
+    bStack_18 = 1;
+    FUN_0092c240(&bStack_24);
+    break;

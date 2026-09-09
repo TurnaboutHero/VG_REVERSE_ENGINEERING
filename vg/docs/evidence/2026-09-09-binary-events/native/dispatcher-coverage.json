@@ -1,0 +1,1086 @@
+{
+  "schema": "native-dispatcher-coverage-v1",
+  "executable_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "dispatcher_source_sha256": "a2525a87e23194c9ac702464ae7c8740abf01a4460878ce565eb13b57e73bb1e",
+  "image_base": "00400000",
+  "source": "Raw PE bytes, with u16 range and low-branch bounds from dispatcher assembly",
+  "dispatcher": "004cfec0",
+  "low_branch_handlers": [
+    {
+      "opcode": "0000",
+      "target": "004d0064"
+    },
+    {
+      "opcode": "0006",
+      "target": "004cff7f"
+    },
+    {
+      "opcode": "03e9",
+      "target": "004d00b2"
+    }
+  ],
+  "jump_index_table": "004d51e4",
+  "jump_target_table": "004d5000",
+  "default_target": "004d4fe3",
+  "jump_table": [
+    {
+      "opcode": "03ea",
+      "jump_index": 0,
+      "target": "004d4547",
+      "default_target": false
+    },
+    {
+      "opcode": "03eb",
+      "jump_index": 1,
+      "target": "004d4592",
+      "default_target": false
+    },
+    {
+      "opcode": "03ec",
+      "jump_index": 2,
+      "target": "004d45dd",
+      "default_target": false
+    },
+    {
+      "opcode": "03ed",
+      "jump_index": 3,
+      "target": "004d2662",
+      "default_target": false
+    },
+    {
+      "opcode": "03ee",
+      "jump_index": 4,
+      "target": "004d274e",
+      "default_target": false
+    },
+    {
+      "opcode": "03ef",
+      "jump_index": 5,
+      "target": "004d15db",
+      "default_target": false
+    },
+    {
+      "opcode": "03f0",
+      "jump_index": 6,
+      "target": "004d1611",
+      "default_target": false
+    },
+    {
+      "opcode": "03f1",
+      "jump_index": 7,
+      "target": "004d1647",
+      "default_target": false
+    },
+    {
+      "opcode": "03f2",
+      "jump_index": 8,
+      "target": "004d1693",
+      "default_target": false
+    },
+    {
+      "opcode": "03f3",
+      "jump_index": 9,
+      "target": "004d1a94",
+      "default_target": false
+    },
+    {
+      "opcode": "03f4",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "03f5",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "03f6",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "03f7",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "03f8",
+      "jump_index": 10,
+      "target": "004d03f3",
+      "default_target": false
+    },
+    {
+      "opcode": "03f9",
+      "jump_index": 11,
+      "target": "004d0fb3",
+      "default_target": false
+    },
+    {
+      "opcode": "03fa",
+      "jump_index": 12,
+      "target": "004d0499",
+      "default_target": false
+    },
+    {
+      "opcode": "03fb",
+      "jump_index": 13,
+      "target": "004d1070",
+      "default_target": false
+    },
+    {
+      "opcode": "03fc",
+      "jump_index": 14,
+      "target": "004d112d",
+      "default_target": false
+    },
+    {
+      "opcode": "03fd",
+      "jump_index": 15,
+      "target": "004d055a",
+      "default_target": false
+    },
+    {
+      "opcode": "03fe",
+      "jump_index": 16,
+      "target": "004d05e4",
+      "default_target": false
+    },
+    {
+      "opcode": "03ff",
+      "jump_index": 17,
+      "target": "004d06a9",
+      "default_target": false
+    },
+    {
+      "opcode": "0400",
+      "jump_index": 18,
+      "target": "004d0732",
+      "default_target": false
+    },
+    {
+      "opcode": "0401",
+      "jump_index": 19,
+      "target": "004d07b0",
+      "default_target": false
+    },
+    {
+      "opcode": "0402",
+      "jump_index": 20,
+      "target": "004d085e",
+      "default_target": false
+    },
+    {
+      "opcode": "0403",
+      "jump_index": 21,
+      "target": "004d08f4",
+      "default_target": false
+    },
+    {
+      "opcode": "0404",
+      "jump_index": 22,
+      "target": "004d09d5",
+      "default_target": false
+    },
+    {
+      "opcode": "0405",
+      "jump_index": 23,
+      "target": "004d0a99",
+      "default_target": false
+    },
+    {
+      "opcode": "0406",
+      "jump_index": 24,
+      "target": "004d0b73",
+      "default_target": false
+    },
+    {
+      "opcode": "0407",
+      "jump_index": 25,
+      "target": "004d0c7c",
+      "default_target": false
+    },
+    {
+      "opcode": "0408",
+      "jump_index": 26,
+      "target": "004d0d2a",
+      "default_target": false
+    },
+    {
+      "opcode": "0409",
+      "jump_index": 27,
+      "target": "004d0d7e",
+      "default_target": false
+    },
+    {
+      "opcode": "040a",
+      "jump_index": 28,
+      "target": "004d0e3b",
+      "default_target": false
+    },
+    {
+      "opcode": "040b",
+      "jump_index": 29,
+      "target": "004d23fb",
+      "default_target": false
+    },
+    {
+      "opcode": "040c",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "040d",
+      "jump_index": 30,
+      "target": "004d282a",
+      "default_target": false
+    },
+    {
+      "opcode": "040e",
+      "jump_index": 31,
+      "target": "004d28c5",
+      "default_target": false
+    },
+    {
+      "opcode": "040f",
+      "jump_index": 32,
+      "target": "004d29fc",
+      "default_target": false
+    },
+    {
+      "opcode": "0410",
+      "jump_index": 33,
+      "target": "004d2b78",
+      "default_target": false
+    },
+    {
+      "opcode": "0411",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0412",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0413",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0414",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0415",
+      "jump_index": 34,
+      "target": "004d11f2",
+      "default_target": false
+    },
+    {
+      "opcode": "0416",
+      "jump_index": 35,
+      "target": "004d1284",
+      "default_target": false
+    },
+    {
+      "opcode": "0417",
+      "jump_index": 36,
+      "target": "004d1339",
+      "default_target": false
+    },
+    {
+      "opcode": "0418",
+      "jump_index": 37,
+      "target": "004d13ff",
+      "default_target": false
+    },
+    {
+      "opcode": "0419",
+      "jump_index": 38,
+      "target": "004d144a",
+      "default_target": false
+    },
+    {
+      "opcode": "041a",
+      "jump_index": 39,
+      "target": "004d1520",
+      "default_target": false
+    },
+    {
+      "opcode": "041b",
+      "jump_index": 40,
+      "target": "004d1590",
+      "default_target": false
+    },
+    {
+      "opcode": "041c",
+      "jump_index": 41,
+      "target": "004d2c5c",
+      "default_target": false
+    },
+    {
+      "opcode": "041d",
+      "jump_index": 42,
+      "target": "004d2cf4",
+      "default_target": false
+    },
+    {
+      "opcode": "041e",
+      "jump_index": 43,
+      "target": "004d2db0",
+      "default_target": false
+    },
+    {
+      "opcode": "041f",
+      "jump_index": 44,
+      "target": "004d2e44",
+      "default_target": false
+    },
+    {
+      "opcode": "0420",
+      "jump_index": 45,
+      "target": "004d2ea1",
+      "default_target": false
+    },
+    {
+      "opcode": "0421",
+      "jump_index": 46,
+      "target": "004d2ff3",
+      "default_target": false
+    },
+    {
+      "opcode": "0422",
+      "jump_index": 47,
+      "target": "004d30bc",
+      "default_target": false
+    },
+    {
+      "opcode": "0423",
+      "jump_index": 48,
+      "target": "004d319f",
+      "default_target": false
+    },
+    {
+      "opcode": "0424",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0425",
+      "jump_index": 49,
+      "target": "004d3ac2",
+      "default_target": false
+    },
+    {
+      "opcode": "0426",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0427",
+      "jump_index": 50,
+      "target": "004d3b0f",
+      "default_target": false
+    },
+    {
+      "opcode": "0428",
+      "jump_index": 51,
+      "target": "004d3b77",
+      "default_target": false
+    },
+    {
+      "opcode": "0429",
+      "jump_index": 52,
+      "target": "004d3bf7",
+      "default_target": false
+    },
+    {
+      "opcode": "042a",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "042b",
+      "jump_index": 53,
+      "target": "004d3c65",
+      "default_target": false
+    },
+    {
+      "opcode": "042c",
+      "jump_index": 54,
+      "target": "004d3cbb",
+      "default_target": false
+    },
+    {
+      "opcode": "042d",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "042e",
+      "jump_index": 55,
+      "target": "004d0f00",
+      "default_target": false
+    },
+    {
+      "opcode": "042f",
+      "jump_index": 56,
+      "target": "004d2448",
+      "default_target": false
+    },
+    {
+      "opcode": "0430",
+      "jump_index": 57,
+      "target": "004d2495",
+      "default_target": false
+    },
+    {
+      "opcode": "0431",
+      "jump_index": 58,
+      "target": "004d24e0",
+      "default_target": false
+    },
+    {
+      "opcode": "0432",
+      "jump_index": 59,
+      "target": "004d252d",
+      "default_target": false
+    },
+    {
+      "opcode": "0433",
+      "jump_index": 60,
+      "target": "004d25fc",
+      "default_target": false
+    },
+    {
+      "opcode": "0434",
+      "jump_index": 61,
+      "target": "004d31ec",
+      "default_target": false
+    },
+    {
+      "opcode": "0435",
+      "jump_index": 62,
+      "target": "004d3237",
+      "default_target": false
+    },
+    {
+      "opcode": "0436",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0437",
+      "jump_index": 63,
+      "target": "004d32c3",
+      "default_target": false
+    },
+    {
+      "opcode": "0438",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0439",
+      "jump_index": 64,
+      "target": "004d3310",
+      "default_target": false
+    },
+    {
+      "opcode": "043a",
+      "jump_index": 65,
+      "target": "004d335b",
+      "default_target": false
+    },
+    {
+      "opcode": "043b",
+      "jump_index": 66,
+      "target": "004d33a6",
+      "default_target": false
+    },
+    {
+      "opcode": "043c",
+      "jump_index": 67,
+      "target": "004d33f1",
+      "default_target": false
+    },
+    {
+      "opcode": "043d",
+      "jump_index": 68,
+      "target": "004d3471",
+      "default_target": false
+    },
+    {
+      "opcode": "043e",
+      "jump_index": 69,
+      "target": "004d34d8",
+      "default_target": false
+    },
+    {
+      "opcode": "043f",
+      "jump_index": 70,
+      "target": "004d357d",
+      "default_target": false
+    },
+    {
+      "opcode": "0440",
+      "jump_index": 71,
+      "target": "004d367a",
+      "default_target": false
+    },
+    {
+      "opcode": "0441",
+      "jump_index": 72,
+      "target": "004d36e9",
+      "default_target": false
+    },
+    {
+      "opcode": "0442",
+      "jump_index": 73,
+      "target": "004d3776",
+      "default_target": false
+    },
+    {
+      "opcode": "0443",
+      "jump_index": 74,
+      "target": "004d37dd",
+      "default_target": false
+    },
+    {
+      "opcode": "0444",
+      "jump_index": 75,
+      "target": "004d3846",
+      "default_target": false
+    },
+    {
+      "opcode": "0445",
+      "jump_index": 76,
+      "target": "004d39c5",
+      "default_target": false
+    },
+    {
+      "opcode": "0446",
+      "jump_index": 77,
+      "target": "004d3a10",
+      "default_target": false
+    },
+    {
+      "opcode": "0447",
+      "jump_index": 78,
+      "target": "004d3a5b",
+      "default_target": false
+    },
+    {
+      "opcode": "0448",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0449",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "044a",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "044b",
+      "jump_index": 79,
+      "target": "004d3dc6",
+      "default_target": false
+    },
+    {
+      "opcode": "044c",
+      "jump_index": 80,
+      "target": "004d3e39",
+      "default_target": false
+    },
+    {
+      "opcode": "044d",
+      "jump_index": 81,
+      "target": "004d3f89",
+      "default_target": false
+    },
+    {
+      "opcode": "044e",
+      "jump_index": 82,
+      "target": "004d462d",
+      "default_target": false
+    },
+    {
+      "opcode": "044f",
+      "jump_index": 83,
+      "target": "004d472a",
+      "default_target": false
+    },
+    {
+      "opcode": "0450",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0451",
+      "jump_index": 84,
+      "target": "004d3fd4",
+      "default_target": false
+    },
+    {
+      "opcode": "0452",
+      "jump_index": 85,
+      "target": "004d4037",
+      "default_target": false
+    },
+    {
+      "opcode": "0453",
+      "jump_index": 86,
+      "target": "004d40ba",
+      "default_target": false
+    },
+    {
+      "opcode": "0454",
+      "jump_index": 87,
+      "target": "004d40df",
+      "default_target": false
+    },
+    {
+      "opcode": "0455",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0456",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0457",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0458",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0459",
+      "jump_index": 88,
+      "target": "004d4127",
+      "default_target": false
+    },
+    {
+      "opcode": "045a",
+      "jump_index": 89,
+      "target": "004d41cd",
+      "default_target": false
+    },
+    {
+      "opcode": "045b",
+      "jump_index": 90,
+      "target": "004d4272",
+      "default_target": false
+    },
+    {
+      "opcode": "045c",
+      "jump_index": 91,
+      "target": "004d4443",
+      "default_target": false
+    },
+    {
+      "opcode": "045d",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "045e",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "045f",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0460",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0461",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0462",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0463",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0464",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0465",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0466",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0467",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0468",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0469",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "046a",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "046b",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "046c",
+      "jump_index": 92,
+      "target": "004d4374",
+      "default_target": false
+    },
+    {
+      "opcode": "046d",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "046e",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "046f",
+      "jump_index": 93,
+      "target": "004d439b",
+      "default_target": false
+    },
+    {
+      "opcode": "0470",
+      "jump_index": 94,
+      "target": "004d44b8",
+      "default_target": false
+    },
+    {
+      "opcode": "0471",
+      "jump_index": 95,
+      "target": "004d44fc",
+      "default_target": false
+    },
+    {
+      "opcode": "0472",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0473",
+      "jump_index": 96,
+      "target": "004d47b4",
+      "default_target": false
+    },
+    {
+      "opcode": "0474",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0475",
+      "jump_index": 97,
+      "target": "004d4891",
+      "default_target": false
+    },
+    {
+      "opcode": "0476",
+      "jump_index": 98,
+      "target": "004d48e6",
+      "default_target": false
+    },
+    {
+      "opcode": "0477",
+      "jump_index": 99,
+      "target": "004d494b",
+      "default_target": false
+    },
+    {
+      "opcode": "0478",
+      "jump_index": 100,
+      "target": "004d3d2f",
+      "default_target": false
+    },
+    {
+      "opcode": "0479",
+      "jump_index": 101,
+      "target": "004d499d",
+      "default_target": false
+    },
+    {
+      "opcode": "047a",
+      "jump_index": 102,
+      "target": "004d4a5b",
+      "default_target": false
+    },
+    {
+      "opcode": "047b",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "047c",
+      "jump_index": 103,
+      "target": "004d4a72",
+      "default_target": false
+    },
+    {
+      "opcode": "047d",
+      "jump_index": 104,
+      "target": "004d4aaa",
+      "default_target": false
+    },
+    {
+      "opcode": "047e",
+      "jump_index": 105,
+      "target": "004d4af0",
+      "default_target": false
+    },
+    {
+      "opcode": "047f",
+      "jump_index": 106,
+      "target": "004d4b47",
+      "default_target": false
+    },
+    {
+      "opcode": "0480",
+      "jump_index": 107,
+      "target": "004d4d42",
+      "default_target": false
+    },
+    {
+      "opcode": "0481",
+      "jump_index": 108,
+      "target": "004d02c3",
+      "default_target": false
+    },
+    {
+      "opcode": "0482",
+      "jump_index": 109,
+      "target": "004d0321",
+      "default_target": false
+    },
+    {
+      "opcode": "0483",
+      "jump_index": 110,
+      "target": "004d036e",
+      "default_target": false
+    },
+    {
+      "opcode": "0484",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0485",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0486",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "0487",
+      "jump_index": 111,
+      "target": "004d4bd8",
+      "default_target": false
+    },
+    {
+      "opcode": "0488",
+      "jump_index": 112,
+      "target": "004d4c78",
+      "default_target": false
+    },
+    {
+      "opcode": "0489",
+      "jump_index": 113,
+      "target": "004d4db0",
+      "default_target": false
+    },
+    {
+      "opcode": "048a",
+      "jump_index": 114,
+      "target": "004d4e16",
+      "default_target": false
+    },
+    {
+      "opcode": "048b",
+      "jump_index": 115,
+      "target": "004d38ad",
+      "default_target": false
+    },
+    {
+      "opcode": "048c",
+      "jump_index": 116,
+      "target": "004d4cc4",
+      "default_target": false
+    },
+    {
+      "opcode": "048d",
+      "jump_index": 117,
+      "target": "004d4ee8",
+      "default_target": false
+    },
+    {
+      "opcode": "048e",
+      "jump_index": 120,
+      "target": "004d4fe3",
+      "default_target": true
+    },
+    {
+      "opcode": "048f",
+      "jump_index": 118,
+      "target": "004d4f99",
+      "default_target": false
+    },
+    {
+      "opcode": "0490",
+      "jump_index": 119,
+      "target": "004d03a8",
+      "default_target": false
+    }
+  ],
+  "explicit_c_cases": 120,
+  "machine_handled_switch_opcodes": 120,
+  "case_machine_symmetric_difference": [],
+  "all_handled_count": 123,
+  "all_unhandled_u16_count": 65413,
+  "default_in_switch": [
+    "03f4",
+    "03f5",
+    "03f6",
+    "03f7",
+    "040c",
+    "0411",
+    "0412",
+    "0413",
+    "0414",
+    "0424",
+    "0426",
+    "042a",
+    "042d",
+    "0436",
+    "0438",
+    "0448",
+    "0449",
+    "044a",
+    "0450",
+    "0455",
+    "0456",
+    "0457",
+    "0458",
+    "045d",
+    "045e",
+    "045f",
+    "0460",
+    "0461",
+    "0462",
+    "0463",
+    "0464",
+    "0465",
+    "0466",
+    "0467",
+    "0468",
+    "0469",
+    "046a",
+    "046b",
+    "046d",
+    "046e",
+    "0472",
+    "0474",
+    "047b",
+    "0484",
+    "0485",
+    "0486",
+    "048e"
+  ],
+  "low_unhandled": "0001-0005,0007-03e8",
+  "high_unhandled": "0491-ffff",
+  "scope": "One known u16 network-order dispatcher; other protocols and executable versions are outside this evidence"
+}

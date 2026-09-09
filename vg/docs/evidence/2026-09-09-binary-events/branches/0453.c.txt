@@ -1,0 +1,28 @@
+  case 0x453:
+    uStack_34 = 0;
+    uStack_30 = 0;
+    uStack_2f = 0;
+    uStack_2e = 0;
+    uStack_2c = 0;
+    uStack_2b = 0;
+    uStack_2a = 0;
+    uStack_28 = 0;
+    bStack_27 = 0;
+    uStack_26 = 0;
+    bStack_24 = 0;
+    bStack_23 = 0;
+    uStack_22 = 0;
+    bStack_20 = 0;
+    bStack_1f = 0;
+    uStack_1e = 0;
+    bStack_1c = 0;
+    bStack_1b = 0;
+    bStack_1a = 0;
+    bStack_19 = 0;
+    bStack_18 = 0;
+    bStack_17 = 0;
+    bStack_16 = 0;
+    bStack_15 = 0;
+    memmove(&uStack_34,param_1,0x20);
+    FUN_00568dc0(&uStack_34);
+    goto LAB_004d4fe0;

@@ -1,0 +1,9 @@
+{
+  "executable_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "iat_address": "0120a648",
+  "dll": "WS2_32.dll",
+  "ordinal": 9,
+  "import_name": null,
+  "ghidra_name": "Ordinal_9",
+  "semantic_name_used": "htons"
+}

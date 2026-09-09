@@ -1,0 +1,7 @@
+# Preserve hashed research snapshots across Git autocrlf settings.
+vg-binary-event-candidates-2026-09-09* -text
+POSTGAME_OFFLINE_2026-09-09.md -text
+evidence/2026-09-09-binary-events/** -text
+evidence/2026-09-09-postgame/** -text
+# Original corpus JSON was recorded with CRLF; retain its evidence hashes.
+evidence/2026-09-09-binary-events/corpus/*.json whitespace=cr-at-eol

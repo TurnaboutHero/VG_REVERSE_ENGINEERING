@@ -8,6 +8,8 @@ This project reverse-engineers the VGR replay binary format to extract match dat
 
 ### Current event evidence (2026-09-09)
 
+Latest offline research: the [161-code binary candidate inventory and validation plans](vg/docs/vg-binary-event-candidates-2026-09-09.md) preserves named and unresolved candidates, observed payload variants, and native/corpus evidence. The [0452 postgame follow-up](vg/docs/POSTGAME_OFFLINE_2026-09-09.md) separates callback evidence from final-score acceptance. These publications add research evidence, not newly validated gameplay semantics or changes to final-stat extraction.
+
 See the [event catalog](vg/docs/EVENT_CATALOG_2026-09-08.md), [endgame boundary investigation](vg/docs/ENDGAME_BOUNDARY_2026-09-08.md), [death action and crystal-source proof](vg/docs/DEATH_EVENTS_2026-09-09.md), and [next implementation plan](docs/plans/2026-09-09-event-semantics-next.md). Native `0x03f1` end actions are available in the timeline; `0x0430` death labels and generic source classification are verified research queued for implementation. Final-match acceptance remains gated. The legacy achievement table below contains historical claims and is not a substitute for those scoped validation records.
 
 ### Key Achievements

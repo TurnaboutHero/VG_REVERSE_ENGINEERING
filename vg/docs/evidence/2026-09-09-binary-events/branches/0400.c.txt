@@ -1,0 +1,23 @@
+  case 0x400:
+    memmove(&local_4c,param_1,9);
+    fVar24 = (float10)FUN_004cfda0(CONCAT13(bStack_48,local_4c._1_3_));
+    local_4c._1_3_ = SUB43((float)fVar24,0);
+    bStack_48 = (byte)((uint)(float)fVar24 >> 0x18);
+    fVar24 = (float10)FUN_004cfda0(CONCAT13(bStack_44,CONCAT21(uStack_46,bStack_47)));
+    bStack_e40 = (byte)((uint)local_4c >> 8);
+    bStack_e3f = (byte)((uint)local_4c >> 0x10);
+    bStack_e3e = (byte)((uint)local_4c >> 0x18);
+    bStack_e3d = bStack_48;
+    fVar10 = (float)fVar24;
+    bStack_47 = SUB41(fVar10,0);
+    uStack_46 = (undefined2)((uint)fVar10 >> 8);
+    bStack_44 = (byte)((uint)fVar10 >> 0x18);
+    bStack_e3b = (byte)((uint)fVar10 >> 8);
+    bStack_e3a = (byte)((uint)fVar10 >> 0x10);
+    bStack_e3c = bStack_47;
+    bStack_e39 = bStack_44;
+    FUN_0052ac40(local_4c,&bStack_e40);
+    local_8 = 9;
+    bStack_24 = 1;
+    FUN_0092c240(&uStack_30);
+    break;

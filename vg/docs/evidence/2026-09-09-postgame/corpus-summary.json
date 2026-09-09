@@ -1,0 +1,4417 @@
+{
+  "schema_version": 1,
+  "scope": "Anonymized aggregate derivative; corpus identifiers follow private source manifest order, not M-number order.",
+  "record_locators": "seq is global zero-based framing order; frame is numeric source section; offset is byte offset; timestamp is raw record-envelope time, not UI time or native callback time.",
+  "source_manifest_sha256": "b6e999face51fe703681d0a14a629915161e0d50e63ec33493707b386c1c9c44",
+  "all_input_hashes_match_prior": true,
+  "all_input_hashes_unchanged": true,
+  "summary": {
+    "recordings": 56,
+    "sections": 7870,
+    "records": 30729156,
+    "marker_0452_recordings": 50,
+    "without_0452": [
+      "C09",
+      "C10",
+      "C33",
+      "C34",
+      "C38",
+      "C41"
+    ],
+    "marker_counts": {
+      "03ef": 51,
+      "03f0": 0,
+      "0452": 50
+    },
+    "selected_score_operations": 54170,
+    "score_operations_without_marker": 4408,
+    "strictly_later_score_operations": 0,
+    "unsupported_selected_stat_layouts": 0,
+    "matched_deaths_in_marker_recordings": 2026,
+    "matched_deaths_without_marker": 156,
+    "unmatched_deaths_after_marker": 39,
+    "unmatched_death_delta_seconds": {
+      "min": 0.20855712890625,
+      "max": 5.9007568359375
+    },
+    "marker_to_048d_delta_seconds": {
+      "min": 5.9873046875,
+      "max": 6.1324462890625
+    },
+    "operation_counts": [
+      {
+        "opcode": 1052,
+        "index": 41,
+        "layer": 0,
+        "operation": "add",
+        "count": 2192
+      },
+      {
+        "opcode": 1052,
+        "index": 42,
+        "layer": 0,
+        "operation": "add",
+        "count": 2182
+      },
+      {
+        "opcode": 1053,
+        "index": 11,
+        "layer": null,
+        "operation": "add",
+        "count": 3633
+      },
+      {
+        "opcode": 1053,
+        "index": 14,
+        "layer": null,
+        "operation": "add",
+        "count": 46163
+      }
+    ]
+  },
+  "rows": [
+    {
+      "corpus": "C01",
+      "sections": 103,
+      "records": 227840,
+      "prior_report_sha256": "76770d4905c4218b4c747d39f4a877c83ef03fb0bb998c652dbaf5410f565671",
+      "section_manifest_sha256": "b950566e25a17f1f528f45f1add90dd2fc4acb19a2301cb1081deda04276539a",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1024.5578002929688
+      },
+      "markers": [
+        {
+          "seq": 842,
+          "frame": 0,
+          "offset": 36829,
+          "timestamp": 5.40747594833374,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 226444,
+          "frame": 102,
+          "offset": 47661,
+          "timestamp": 1023.8897705078125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 451
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 15
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 15
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 23
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 398
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 15
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C02",
+      "sections": 115,
+      "records": 449332,
+      "prior_report_sha256": "2f4c825551a11711d757ec76fac248d8dd808b191f841d05f769af052985d966",
+      "section_manifest_sha256": "22d41f8e9186575e9a4f1ab15b85dd1acab35417c4d414235b1a1d620ed33957",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1135.89404296875
+      },
+      "markers": [
+        {
+          "seq": 2398,
+          "frame": 1,
+          "offset": 26081,
+          "timestamp": 10.527563095092773,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 447578,
+          "frame": 114,
+          "offset": 48411,
+          "timestamp": 1140.3792724609375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "after",
+          "timestamp_relation": "same",
+          "count": 4
+        },
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 889
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 38
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 38
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 71
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 746
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 38
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C03",
+      "sections": 81,
+      "records": 319331,
+      "prior_report_sha256": "3690544bbc7cc5f2aa83da2e46b7693398207b7f34f9b9e83bfda281844d473a",
+      "section_manifest_sha256": "9b02f97c726ee19428391ba7fda1e3b9c38acd720620602297d648ab626e2bcd",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 342.0738830566406,
+        "last_game_time": 1146.240234375
+      },
+      "markers": [
+        {
+          "seq": 316663,
+          "frame": 79,
+          "offset": 131183,
+          "timestamp": 798.0962524414062,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 602
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 33
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 33
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 46
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 490
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 33
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C04",
+      "sections": 193,
+      "records": 807001,
+      "prior_report_sha256": "2ba7f6b7514cbeef584ffa1b342b23bd299a2915ec6666fe7db685ac5c8f931d",
+      "section_manifest_sha256": "dd22718935dddee92869b3eaaaf5887bff964b3040ce10cd21d654c624a5278a",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1895.6634521484375
+      },
+      "markers": [
+        {
+          "seq": 5556,
+          "frame": 3,
+          "offset": 38345,
+          "timestamp": 33.12981033325195,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 804392,
+          "frame": 192,
+          "offset": 86686,
+          "timestamp": 1922.7215576171875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1344
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 56
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 56
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 118
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1114
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 56
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C05",
+      "sections": 156,
+      "records": 667149,
+      "prior_report_sha256": "07e97247d491c1305422d8d9cf0d1311ab421a10df6f0306c714d512700dab46",
+      "section_manifest_sha256": "51e96eebc1941197876f06ad879b1c9d53e0033312493192d9e75d1773209951",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1552.572998046875
+      },
+      "markers": [
+        {
+          "seq": 1110,
+          "frame": 0,
+          "offset": 54061,
+          "timestamp": 3.4827511310577393,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 664104,
+          "frame": 154,
+          "offset": 170862,
+          "timestamp": 1549.78759765625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1175
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 49
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 49
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 75
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1002
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 49
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C06",
+      "sections": 146,
+      "records": 603602,
+      "prior_report_sha256": "db6dbea92fffef7261cf853c6e18f473fb13dc5f95366c18e6d5adacef4d170b",
+      "section_manifest_sha256": "9e4baf8f23cb525fc1dd9d63b67aaa7311d2ae54c2ef3015515e4fd4e1650b72",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1437.7469482421875
+      },
+      "markers": [
+        {
+          "seq": 2707,
+          "frame": 1,
+          "offset": 36305,
+          "timestamp": 13.051639556884766,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 600761,
+          "frame": 144,
+          "offset": 106314,
+          "timestamp": 1444.79248046875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1066
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 46
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 46
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 72
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 902
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 46
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C07",
+      "sections": 147,
+      "records": 610048,
+      "prior_report_sha256": "e8bdfd7b4e61910e8e0b5b23d3fda5a0f9ea797a2bd916ca1b511f6979a180e8",
+      "section_manifest_sha256": "8b7ce0e87f1feaa7d09abe14c04a2b9f3953d5a3d7da8aafa7f2f7b2e593a000",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1455.025634765625
+      },
+      "markers": [
+        {
+          "seq": 2323,
+          "frame": 1,
+          "offset": 24505,
+          "timestamp": 10.260395050048828,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 606559,
+          "frame": 145,
+          "offset": 137610,
+          "timestamp": 1459.2314453125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1136
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 53
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 53
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 101
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 929
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 53
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C08",
+      "sections": 170,
+      "records": 747317,
+      "prior_report_sha256": "d20b780fccd3a94bd135ca7bc5c61a68d7734f62317b4a1007e3e3060217982d",
+      "section_manifest_sha256": "e3cab3a346b0cd7aa50dd75a38b6dc910d5d2f024706cedf4c9899e7caeb5904",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1676.572998046875
+      },
+      "markers": [
+        {
+          "seq": 2660,
+          "frame": 1,
+          "offset": 43229,
+          "timestamp": 14.41843032836914,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 743754,
+          "frame": 168,
+          "offset": 128037,
+          "timestamp": 1684.9271240234375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 934
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 48
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 44
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 72
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 770
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 44
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C09",
+      "sections": 182,
+      "records": 800525,
+      "prior_report_sha256": "7c0715eac3b4120d23303fbbcdeab7ce5cdce4e484edafe2af9b2a91d3dd8b84",
+      "section_manifest_sha256": "0f81ba69d5270d74ed5305565371d8f7b35799c673deb7f27f085c809de51c9c",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1798.89990234375
+      },
+      "markers": [
+        {
+          "seq": 3165,
+          "frame": 1,
+          "offset": 56577,
+          "timestamp": 17.434795379638672,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 67
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 67
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 124
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1120
+        }
+      ],
+      "matched_death_relations_to_0452": [],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C10",
+      "sections": 164,
+      "records": 698445,
+      "prior_report_sha256": "d673a794f715d7144a6b5f84d3b40d895ce2e188d5454728f154f67304b67dd2",
+      "section_manifest_sha256": "7f6eac0b5c2c15b758d43ec9a1c1ad203cee247601554eb2bdfc1f5ce9b73754",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1628.2581787109375
+      },
+      "markers": [
+        {
+          "seq": 1863,
+          "frame": 0,
+          "offset": 79725,
+          "timestamp": 8.41492748260498,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 46
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 46
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 83
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1041
+        }
+      ],
+      "matched_death_relations_to_0452": [],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C11",
+      "sections": 114,
+      "records": 484923,
+      "prior_report_sha256": "7fde0e9a785ceb049585bdf27571b1619aed188115fd3e486b7d1db10c3616c5",
+      "section_manifest_sha256": "6cef4f903654d9a7dee10856bd88ddf9baab8401793c44378d33247edbeb34f0",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1121.3453369140625
+      },
+      "markers": [
+        {
+          "seq": 2746,
+          "frame": 1,
+          "offset": 45577,
+          "timestamp": 15.11833381652832,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 482418,
+          "frame": 113,
+          "offset": 52585,
+          "timestamp": 1130.4189453125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 793
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 20
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 20
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 717
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 20
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C12",
+      "sections": 186,
+      "records": 735483,
+      "prior_report_sha256": "e1b4f2d82dcc1e2e3d0e5843e57954d094ae431f176f6e93bc361d4ba3addd62",
+      "section_manifest_sha256": "730ae707460d2f13de812193056f9b21aab85a52db5d13515e7b47e8564a2ac5",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1844.912353515625
+      },
+      "markers": [
+        {
+          "seq": 1304,
+          "frame": 0,
+          "offset": 60605,
+          "timestamp": 6.543406963348389,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 732655,
+          "frame": 184,
+          "offset": 97833,
+          "timestamp": 1845.36572265625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1362
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 64
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 59
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 55
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1184
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 59
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C13",
+      "sections": 192,
+      "records": 737034,
+      "prior_report_sha256": "52d2077ae161547e41a3a2e2d706a92d6f9fafeb9b70ae6d93c1f4214902f739",
+      "section_manifest_sha256": "573a2dd5f1ee2dcf334fd4a31a897e6eade692151a52c035e00682c3eade221e",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1891.2681884765625
+      },
+      "markers": [
+        {
+          "seq": 4027,
+          "frame": 2,
+          "offset": 32517,
+          "timestamp": 22.1148738861084,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 734392,
+          "frame": 190,
+          "offset": 127974,
+          "timestamp": 1907.3060302734375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 992
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 50
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 49
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 86
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 807
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 49
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C14",
+      "sections": 187,
+      "records": 767692,
+      "prior_report_sha256": "8e96bc6996855221120313fce2c4e0943ab52635bd0b36bc0d5578c7f581d76b",
+      "section_manifest_sha256": "e5c4fb061c56bd450b71253274e64547df03b3845a5cbcc1a782f23cd7b28f18",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1844.39013671875
+      },
+      "markers": [
+        {
+          "seq": 3769,
+          "frame": 2,
+          "offset": 35509,
+          "timestamp": 22.682809829711914,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 765617,
+          "frame": 186,
+          "offset": 59530,
+          "timestamp": 1860.993896484375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1283
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 52
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 52
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 95
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1084
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 52
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C15",
+      "sections": 117,
+      "records": 490463,
+      "prior_report_sha256": "ed763edaa8f5021b85e6e8baae343aa56623fb4d608b0319323c950e3b206ce7",
+      "section_manifest_sha256": "744b88988f50aa4681c8f7751ac70840d5ebbe9f248d3fc3ed40d3703c83bdd8",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1136.51220703125
+      },
+      "markers": [
+        {
+          "seq": 4353,
+          "frame": 2,
+          "offset": 41321,
+          "timestamp": 23.693553924560547,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 487925,
+          "frame": 115,
+          "offset": 99554,
+          "timestamp": 1154.151123046875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 885
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 29
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 29
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 43
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 784
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 29
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C16",
+      "sections": 171,
+      "records": 720282,
+      "prior_report_sha256": "1cdba67c4a336074b929b02e47f4efec2eb5ec79bed943193a3cb8ed7de82d82",
+      "section_manifest_sha256": "4d5fbd0ae76b34e16aaab4edaddcd3acb83dac5e523ec3e74dca4d3935cf7f28",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1675.6412353515625
+      },
+      "markers": [
+        {
+          "seq": 4811,
+          "frame": 2,
+          "offset": 58821,
+          "timestamp": 28.049968719482422,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 717170,
+          "frame": 169,
+          "offset": 147296,
+          "timestamp": 1697.6822509765625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "after",
+          "timestamp_relation": "same",
+          "count": 3
+        },
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1202
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 65
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 65
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 128
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 947
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "after",
+          "timestamp_relation": "same",
+          "count": 1
+        },
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 64
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C17",
+      "sections": 216,
+      "records": 879344,
+      "prior_report_sha256": "7b4744404bfc9fc9766f5cad9ffef0971b112663a9a92ddabe8b99c84b0dfb77",
+      "section_manifest_sha256": "fee03aa3f6cd8aeeda0e2501cdc41db0184499d5a121f196fb9f56e530486e7b",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 2128.779296875
+      },
+      "markers": [
+        {
+          "seq": 4341,
+          "frame": 2,
+          "offset": 45533,
+          "timestamp": 24.807483673095703,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 874426,
+          "frame": 214,
+          "offset": 162942,
+          "timestamp": 2147.62255859375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1306
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 59
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 59
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 109
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1079
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 59
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C18",
+      "sections": 134,
+      "records": 544814,
+      "prior_report_sha256": "23eab843645529ed3f9f5d12705ec8f1bbe4a3a967f0a58bd6b6aba2a78ad748",
+      "section_manifest_sha256": "15cc7a21de2802a6aba6a8a6f61e499a52631a370fba4144ebf4f25c00074c3f",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1313.1080322265625
+      },
+      "markers": [
+        {
+          "seq": 4018,
+          "frame": 2,
+          "offset": 42053,
+          "timestamp": 24.39512825012207,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 542460,
+          "frame": 133,
+          "offset": 72039,
+          "timestamp": 1331.4508056640625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 815
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 24
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 41
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 719
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 31
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C19",
+      "sections": 152,
+      "records": 638276,
+      "prior_report_sha256": "1a77d82581b583d202f1e736122df1f929124b4a1eb042af53e636a7ef08d05a",
+      "section_manifest_sha256": "047cc4b3fadd5e140f5d1c89c55ebd6281bdf27ca458c1aa5e33b76b8798e21a",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1505.688720703125
+      },
+      "markers": [
+        {
+          "seq": 2179,
+          "frame": 1,
+          "offset": 26421,
+          "timestamp": 10.688669204711914,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 635017,
+          "frame": 151,
+          "offset": 52222,
+          "timestamp": 1510.318603515625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1172
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 73
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 73
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 106
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 920
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 73
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C20",
+      "sections": 123,
+      "records": 473970,
+      "prior_report_sha256": "55f8582dccc04af04c0fa45da8f33941e5ebe322a45f42b00b01ff99432db8fb",
+      "section_manifest_sha256": "574d2994a50ba04fd4705e1347f488417bbd7a3be1b6e718e3da702f2c49b473",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1220.3609619140625
+      },
+      "markers": [
+        {
+          "seq": 1611,
+          "frame": 0,
+          "offset": 71189,
+          "timestamp": 6.1601667404174805,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 472507,
+          "frame": 122,
+          "offset": 50867,
+          "timestamp": 1220.449462890625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 969
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 45
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 47
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 63
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 814
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 47
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C21",
+      "sections": 149,
+      "records": 584438,
+      "prior_report_sha256": "2452afd11be63ab2000793e8fd33f22906dd3c9542eb779ed6f1e4dca94461ef",
+      "section_manifest_sha256": "f05290c5837e3ff62753daea5ba06a7603236ab3ac265a4218cf0ea6c90c1cac",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1474.3265380859375
+      },
+      "markers": [
+        {
+          "seq": 2864,
+          "frame": 1,
+          "offset": 25737,
+          "timestamp": 10.230305671691895,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 581983,
+          "frame": 147,
+          "offset": 115568,
+          "timestamp": 1478.526611328125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1180
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 71
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 71
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 92
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 946
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 71
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C22",
+      "sections": 159,
+      "records": 635945,
+      "prior_report_sha256": "10e48c14f38821af163d59042ef7078742de1cced0172309e37a1490c207315b",
+      "section_manifest_sha256": "80c7b91790da84511058a1f1c10c21432c75b6068b275787abc9066b231b982a",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1580.119384765625
+      },
+      "markers": [
+        {
+          "seq": 1628,
+          "frame": 0,
+          "offset": 70589,
+          "timestamp": 4.118027687072754,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 633254,
+          "frame": 157,
+          "offset": 114591,
+          "timestamp": 1578.11767578125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1023
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 54
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 48
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 68
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 853
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 48
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C23",
+      "sections": 195,
+      "records": 820362,
+      "prior_report_sha256": "850819a3b8f8117a9f4257ce707660ff15f98615f8eefad54526ab0400a95914",
+      "section_manifest_sha256": "93887b84e8e2afb2f7eb01105d5ceb99347defa812678eddb794c305e99e5070",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1937.6595458984375
+      },
+      "markers": [
+        {
+          "seq": 2981,
+          "frame": 1,
+          "offset": 33097,
+          "timestamp": 12.120172500610352,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 817173,
+          "frame": 194,
+          "offset": 109665,
+          "timestamp": 1943.67626953125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1358
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 44
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 44
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 71
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1199
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 44
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C24",
+      "sections": 129,
+      "records": 491199,
+      "prior_report_sha256": "76bdaa126f565a6cfa848d883910fe5d313a82d52ee3e070af7bb86d3c3557b3",
+      "section_manifest_sha256": "098622a4365de2ac88bac0877a0c96e2aec64b3502e9e450f6d83ebee355720a",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1273.0194091796875
+      },
+      "markers": [
+        {
+          "seq": 2738,
+          "frame": 1,
+          "offset": 27957,
+          "timestamp": 10.862775802612305,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 488082,
+          "frame": 127,
+          "offset": 137718,
+          "timestamp": 1277.79248046875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 953
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 54
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 827
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 36
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C25",
+      "sections": 170,
+      "records": 649143,
+      "prior_report_sha256": "aa048d8f0315f26427b81186ed5e43d547398d4abcf804a7f280d5cef60f814f",
+      "section_manifest_sha256": "b570d0de6f83565420984278182931f30de43928aa6eb36112e6cd0f2657fcdd",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1692.315185546875
+      },
+      "markers": [
+        {
+          "seq": 2254,
+          "frame": 0,
+          "offset": 94605,
+          "timestamp": 7.605106830596924,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 648059,
+          "frame": 169,
+          "offset": 73444,
+          "timestamp": 1693.8929443359375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1362
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 49
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 49
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 87
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1177
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 49
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C26",
+      "sections": 180,
+      "records": 715053,
+      "prior_report_sha256": "ba31e57b3a712bc52df7894385f4896a37e0280be0b31d9b2165686131189381",
+      "section_manifest_sha256": "4e4d91945aae03ce590022dae52f63857fe77c557a7c3c39131dc1b5a73e57b4",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1788.5927734375
+      },
+      "markers": [
+        {
+          "seq": 2475,
+          "frame": 0,
+          "offset": 102373,
+          "timestamp": 6.161733627319336,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 711881,
+          "frame": 178,
+          "offset": 143167,
+          "timestamp": 1788.7099609375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1278
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 69
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 69
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 75
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1065
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 69
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C27",
+      "sections": 179,
+      "records": 756175,
+      "prior_report_sha256": "414553e3fd06f92973410348715848b92d632b247dc6a7b785e7c17a4f4dddb3",
+      "section_manifest_sha256": "ebe3fff4dc20c2446f40b193705437a5c6533c6db6704b4bf8245e569953c724",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1779.5672607421875
+      },
+      "markers": [
+        {
+          "seq": 2249,
+          "frame": 0,
+          "offset": 93533,
+          "timestamp": 8.65095043182373,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 753241,
+          "frame": 178,
+          "offset": 68848,
+          "timestamp": 1782.12255859375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1235
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 40
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 40
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 87
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1068
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 40
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C28",
+      "sections": 206,
+      "records": 847546,
+      "prior_report_sha256": "fd73e353dc8c757450ef7d48c9c41a3309d5536a41210008495a72798766c722",
+      "section_manifest_sha256": "16c9da8a28a49e4123390eae667710fcc4d30a405c4b65112321d9e8175c2113",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 2043.1522216796875
+      },
+      "markers": [
+        {
+          "seq": 3105,
+          "frame": 1,
+          "offset": 38425,
+          "timestamp": 13.288616180419922,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 845046,
+          "frame": 205,
+          "offset": 56323,
+          "timestamp": 2050.36181640625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "after",
+          "timestamp_relation": "same",
+          "count": 3
+        },
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1481
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 58
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 58
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 89
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1279
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 58
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C29",
+      "sections": 179,
+      "records": 748557,
+      "prior_report_sha256": "3cef7d234f77a077b53484aa04e061e8e58287a2e7fa180bbb4354ee0bbbb49b",
+      "section_manifest_sha256": "5da09e253d630f1ce75eb343eca67d271ac0a8bd451e7747cf3b78084b14da2c",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1767.0009765625
+      },
+      "markers": [
+        {
+          "seq": 3353,
+          "frame": 1,
+          "offset": 46213,
+          "timestamp": 15.066732406616211,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 744930,
+          "frame": 177,
+          "offset": 133384,
+          "timestamp": 1776.0462646484375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1271
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 52
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 50
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 77
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1092
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 50
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C30",
+      "sections": 150,
+      "records": 596332,
+      "prior_report_sha256": "3f991d48026cdbdb94f3b9894609a7b7bbfd6e63a1955e4bf9d98802e68f69c7",
+      "section_manifest_sha256": "48c526f2cddac7499f7c221fa58408abdc8e01796a3a2b234c8ad6ebb856bf5c",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": false,
+        "status": "unsupported_clock",
+        "reason": "frames 0 -> 1: game clock delta 16.730141, record delta 10.015263",
+        "first_game_time": null,
+        "last_game_time": null
+      },
+      "markers": [
+        {
+          "seq": 594349,
+          "frame": 149,
+          "offset": 79684,
+          "timestamp": 1492.88134765625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "after",
+          "timestamp_relation": "same",
+          "count": 1
+        },
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1282
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 63
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 63
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 88
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1069
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 63
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C31",
+      "sections": 125,
+      "records": 493189,
+      "prior_report_sha256": "ba9b44e7aed07bea289b98f48ebf2e5460c0f53d08d8e755b19f9f066b17b843",
+      "section_manifest_sha256": "da73b168856e3d19dbaad5f1a1e1bea5677d9af31f75e9c819c5f072d9a0e6bd",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1243.8770751953125
+      },
+      "markers": [
+        {
+          "seq": 1325,
+          "frame": 0,
+          "offset": 60909,
+          "timestamp": 3.4150679111480713,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 489556,
+          "frame": 123,
+          "offset": 215533,
+          "timestamp": 1239.9166259765625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "after",
+          "timestamp_relation": "same",
+          "count": 3
+        },
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 968
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 25
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 25
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 41
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 880
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 25
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C32",
+      "sections": 98,
+      "records": 393750,
+      "prior_report_sha256": "4db65f05bf7c4d54de7e2f5295e49878bfd073f2165fc69f6a3e5585ade2306c",
+      "section_manifest_sha256": "3ca8d3e6bcf07983e44ddce10b0a4605f84e4f4497d10f2166d65ce089f8c0ec",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 959.88818359375
+      },
+      "markers": [
+        {
+          "seq": 2318,
+          "frame": 1,
+          "offset": 25689,
+          "timestamp": 10.248659133911133,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 391425,
+          "frame": 96,
+          "offset": 97866,
+          "timestamp": 964.119384765625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 673
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 24
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 21
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 50
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 578
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 21
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C33",
+      "sections": 7,
+      "records": 6747,
+      "prior_report_sha256": "acef3d7ea79955128754eac3c2c87e607bbd1568d729b1b9d1311bfb6a8d7754",
+      "section_manifest_sha256": "31c9d8294f3a80ffcb8808609528bc4d8dbf01dbe5e4846784b54d42fcb16f96",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 64.65896987915039
+      },
+      "markers": [
+        {
+          "seq": 192,
+          "frame": 0,
+          "offset": 11523,
+          "timestamp": 1.1776787042617798,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [],
+      "selected_operation_counts": [],
+      "matched_death_relations_to_0452": [],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C34",
+      "sections": 5,
+      "records": 2956,
+      "prior_report_sha256": "bad89f1f85e244d1c97205dc7c5f5e1ff275d0fb5a35e65acbf36d0ef81a29ff",
+      "section_manifest_sha256": "04cd996d63de336c7d88982a9c8d7aff2f778ef29795bfe807d68cd69cef18ae",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 39.87332534790039
+      },
+      "markers": [
+        {
+          "seq": 201,
+          "frame": 0,
+          "offset": 11843,
+          "timestamp": 1.9314359426498413,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 1
+        }
+      ],
+      "matched_death_relations_to_0452": [],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C35",
+      "sections": 133,
+      "records": 524398,
+      "prior_report_sha256": "71d69bb8e01cbe88a845c48c948bc82b8de2a5c9543d68a6ddcb716011b90416",
+      "section_manifest_sha256": "bdd4c11d9edffbc0e221dd07538fa8788e88d8883a1fb59249aa3c933fbc05fa",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1295.0330810546875
+      },
+      "markers": [
+        {
+          "seq": 5246,
+          "frame": 3,
+          "offset": 28329,
+          "timestamp": 30.908641815185547,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 521550,
+          "frame": 131,
+          "offset": 161979,
+          "timestamp": 1319.8531494140625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 903
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 30
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 30
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 49
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 794
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 30
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C36",
+      "sections": 112,
+      "records": 443685,
+      "prior_report_sha256": "bd3a71d924bc171a860ed7cfe7863046b355926e4e77c243c232f89a8c9efd1f",
+      "section_manifest_sha256": "8d834d3952822f6cd6da272bceab0569524157ee2ac4ced641ce519452f69697",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1078.5455322265625
+      },
+      "markers": [
+        {
+          "seq": 6330,
+          "frame": 3,
+          "offset": 51513,
+          "timestamp": 36.300296783447266,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 439612,
+          "frame": 110,
+          "offset": 132529,
+          "timestamp": 1108.7744140625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 835
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 45
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 45
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 83
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 662
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 45
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C37",
+      "sections": 116,
+      "records": 490000,
+      "prior_report_sha256": "77ca85322b78b53b5d30d078b70e5298e2ea9127fce820e6a98c1e288578ec76",
+      "section_manifest_sha256": "2e6978476d258209aa240c07740e1c16dd7cc685f9d90a0eb2b7cc3bb481152e",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1154.4871826171875
+      },
+      "markers": [
+        {
+          "seq": 1250,
+          "frame": 0,
+          "offset": 58989,
+          "timestamp": 4.023221969604492,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 486904,
+          "frame": 114,
+          "offset": 155454,
+          "timestamp": 1148.906494140625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 931
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 16
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 16
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 34
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 865
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 16
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C38",
+      "sections": 149,
+      "records": 644614,
+      "prior_report_sha256": "bba9e5cc3fdd0315e303d7905b74c0c4e8b3ec698f1c58a9996a74f33b955773",
+      "section_manifest_sha256": "21baaa061832c45a51af1eca90ad14aa0fe273656036ede920d569056540e5d6",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 85.89332580566406,
+        "last_game_time": 1573.428466796875
+      },
+      "markers": [],
+      "selected_score_relations": [],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 61
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1031
+        }
+      ],
+      "matched_death_relations_to_0452": [],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C39",
+      "sections": 162,
+      "records": 696037,
+      "prior_report_sha256": "9002c6ca94165370107b211cbfd1d98c669df81366bcbffc1e4c7626c39b9f9f",
+      "section_manifest_sha256": "132a1cc0e1457aa3144045275d73d4d1b4b7f3886d6bcfda6124c8ecdafd2c9b",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1609.4747314453125
+      },
+      "markers": [
+        {
+          "seq": 1440,
+          "frame": 0,
+          "offset": 65781,
+          "timestamp": 4.0345988273620605,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 692969,
+          "frame": 160,
+          "offset": 120372,
+          "timestamp": 1605.1536865234375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1281
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 39
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 39
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 96
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1107
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 39
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C40",
+      "sections": 136,
+      "records": 550191,
+      "prior_report_sha256": "c7d25894b81cf6afe7ed4fdb0bd85ee36af23b0b89346bf7bbde7a15ff822f3f",
+      "section_manifest_sha256": "c306717a6b0d243813d7ba54ea552ccd936373594cdf5d029fc125931c0a3e1c",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1355.9967041015625
+      },
+      "markers": [
+        {
+          "seq": 1140,
+          "frame": 0,
+          "offset": 55277,
+          "timestamp": 4.0238356590271,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 547929,
+          "frame": 135,
+          "offset": 70090,
+          "timestamp": 1351.93896484375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1078
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 75
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 931
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 36
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C41",
+      "sections": 85,
+      "records": 358331,
+      "prior_report_sha256": "b6335ba04180c62999cef0451891df3d3c84d54024b3d2315a8abd8995148a6f",
+      "section_manifest_sha256": "661c1b5f5be087a2317a10c81e98e07c7f8f513b2ea62662eb555c691d060a87",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": false,
+        "status": "mixed_segments",
+        "reason": "frames 6 -> 7: game clock delta -1111.087502, record delta 10.012943",
+        "first_game_time": null,
+        "last_game_time": null
+      },
+      "markers": [],
+      "selected_score_relations": [],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 11
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 11
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 34
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 603
+        }
+      ],
+      "matched_death_relations_to_0452": [],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C42",
+      "sections": 107,
+      "records": 443010,
+      "prior_report_sha256": "3c0a84bb060ca7a9cc0540eef82a697fc8c235243ee8338c67553831f586057d",
+      "section_manifest_sha256": "d50eaaff90e8f197950fad18e7c999fd8085139457866a799aa8f4e34ada95ac",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1036.2705078125
+      },
+      "markers": [
+        {
+          "seq": 5010,
+          "frame": 2,
+          "offset": 50881,
+          "timestamp": 26.272863388061523,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 438278,
+          "frame": 105,
+          "offset": 180951,
+          "timestamp": 1056.56103515625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 790
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 22
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 22
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 59
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 687
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 22
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C43",
+      "sections": 119,
+      "records": 496976,
+      "prior_report_sha256": "1a8b2950e4e3a2390ce6f425adff7524a9e40149ad1027554b638e839d295be1",
+      "section_manifest_sha256": "13ab9a6967a785929bc575bf41d0a31b444b9d04ece4c3653e7dcd65b60dc01f",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1163.673095703125
+      },
+      "markers": [
+        {
+          "seq": 4725,
+          "frame": 2,
+          "offset": 45289,
+          "timestamp": 25.305335998535156,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 493474,
+          "frame": 118,
+          "offset": 95781,
+          "timestamp": 1182.875244140625,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 895
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 33
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 33
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 66
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 763
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 33
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C44",
+      "sections": 105,
+      "records": 419702,
+      "prior_report_sha256": "1797300f30a94ed4b4e8b75291df607cb3acdacc5a75d8f044a36e7a41fd6f7d",
+      "section_manifest_sha256": "f9527cea4bb0980bd92bae9c4a57ed22e8254f3631f806bd1513f6d2c3f675ee",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1028.87109375
+      },
+      "markers": [
+        {
+          "seq": 2908,
+          "frame": 1,
+          "offset": 29297,
+          "timestamp": 11.311530113220215,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 416059,
+          "frame": 103,
+          "offset": 102665,
+          "timestamp": 1034.16845703125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 818
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 15
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 15
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 21
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 767
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 15
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C45",
+      "sections": 98,
+      "records": 400051,
+      "prior_report_sha256": "bb1b167502093fddeca0401a842bc9d0f8a655f9e0b2cd9a1ff6a29f9289de60",
+      "section_manifest_sha256": "7d6efe3eb5df3e1854a77e545f3d543eed5ed39c175bb3db76c3b7773a60708d",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 969.3463745117188
+      },
+      "markers": [
+        {
+          "seq": 1485,
+          "frame": 0,
+          "offset": 67093,
+          "timestamp": 4.038800239562988,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 397322,
+          "frame": 96,
+          "offset": 163600,
+          "timestamp": 966.827880859375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 729
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 16
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 16
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 30
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 667
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 16
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C46",
+      "sections": 178,
+      "records": 783799,
+      "prior_report_sha256": "071d1fa07e292cbca707ad7566ee5bb15743eea077ea9d32c0a46c2af80cc35b",
+      "section_manifest_sha256": "8914eb53515baf29a2ba9152202d42303af3967d821766f75a1bd165133eb3d5",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1770.609375
+      },
+      "markers": [
+        {
+          "seq": 1431,
+          "frame": 0,
+          "offset": 64581,
+          "timestamp": 3.8856375217437744,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 781038,
+          "frame": 176,
+          "offset": 163655,
+          "timestamp": 1766.676513671875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1259
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 62
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1125
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 36
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C47",
+      "sections": 105,
+      "records": 212359,
+      "prior_report_sha256": "71dd5799fc0341e631fd93dad0bda5b1f9fff7bc50d92040863c84d4f3e757f8",
+      "section_manifest_sha256": "347eeac13d9937238517ae73e92fe7953f610b6bf489d98d04322dbfea8e8251",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1042.0919189453125
+      },
+      "markers": [
+        {
+          "seq": 666,
+          "frame": 0,
+          "offset": 30869,
+          "timestamp": 2.4678680896759033,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 211054,
+          "frame": 103,
+          "offset": 67440,
+          "timestamp": 1038.1317138671875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 475
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 15
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 15
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 25
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 420
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 15
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C48",
+      "sections": 129,
+      "records": 261458,
+      "prior_report_sha256": "d320abbf6390d5de690668d2eae6f5d26c6c7b59f2c4677e8c852bd6e9280bf6",
+      "section_manifest_sha256": "0a3610e78e057cb7d0516767f8fdbebb792948ca88746fd3802d5230a0d8a548",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 108.86750793457031,
+        "last_game_time": 1393.3336181640625
+      },
+      "markers": [
+        {
+          "seq": 260236,
+          "frame": 127,
+          "offset": 60685,
+          "timestamp": 1277.6700439453125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 582
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 47
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 473
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 31
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C49",
+      "sections": 91,
+      "records": 212678,
+      "prior_report_sha256": "1622647791f3229bc4f665fdf398986bd10e2d65b521c447e04bc3c401442180",
+      "section_manifest_sha256": "39880c467f9820eb264c5bb2e9fcf96fa3861c789ca03db62b78ccc94038c53b",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 899.608154296875
+      },
+      "markers": [
+        {
+          "seq": 581,
+          "frame": 0,
+          "offset": 27493,
+          "timestamp": 2.7269840240478516,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 211262,
+          "frame": 89,
+          "offset": 53023,
+          "timestamp": 895.7276611328125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 390
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 13
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 13
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 18
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 346
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 13
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C50",
+      "sections": 135,
+      "records": 277045,
+      "prior_report_sha256": "a6341d63a649aa4cfd8623607aad1900ece21a5885825fd0f3f64c0c5c6ffd99",
+      "section_manifest_sha256": "780af0979f6496c636bcfc2078fd3c06ee9e643270baeef7e523fa19c25f7ee1",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1343.010986328125
+      },
+      "markers": [
+        {
+          "seq": 624,
+          "frame": 0,
+          "offset": 28421,
+          "timestamp": 2.2009410858154297,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 276312,
+          "frame": 133,
+          "offset": 71338,
+          "timestamp": 1339.0538330078125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 589
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 23
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 23
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 41
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 502
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 23
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C51",
+      "sections": 139,
+      "records": 306699,
+      "prior_report_sha256": "02220632bc134cf9a5aa257ba5f4275bbc2223d6f7d05eb790c16d1ad8db3cee",
+      "section_manifest_sha256": "c676a946973aa3bc1542e9ebf505825705c957d48c4e5f18465f84b1ab5c4d6a",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1383.4937744140625
+      },
+      "markers": [
+        {
+          "seq": 1647,
+          "frame": 0,
+          "offset": 63589,
+          "timestamp": 2.1624374389648438,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 304940,
+          "frame": 137,
+          "offset": 86603,
+          "timestamp": 1379.6004638671875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 593
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 37
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 37
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 40
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 479
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 37
+        }
+      ],
+      "unmatched_death_count_after_0452": 1,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C52",
+      "sections": 117,
+      "records": 242713,
+      "prior_report_sha256": "db384c317fce4540def0f9d0b3238ccd44678721f90db936ca7ee6dbb161cf91",
+      "section_manifest_sha256": "1c8d6496c7443f034cf4efc1101359eab79894eaa2cbf50ce00bd328b9b54def",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": false,
+        "status": "unsupported_clock",
+        "reason": "frames 0 -> 1: game clock delta 21.140392, record delta 10.006122",
+        "first_game_time": null,
+        "last_game_time": null
+      },
+      "markers": [
+        {
+          "seq": 816,
+          "frame": 0,
+          "offset": 35893,
+          "timestamp": 2.205073356628418,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 241874,
+          "frame": 116,
+          "offset": 30370,
+          "timestamp": 1160.9407958984375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 521
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 31
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 37
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 422
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 31
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C53",
+      "sections": 157,
+      "records": 645360,
+      "prior_report_sha256": "b97153a37d5ddbfb93363b921306016be59871f16be9fd322274398b10661bbc",
+      "section_manifest_sha256": "2b46661b4d255d9366b7c3fed07d587c94c7d325c2a1a1018cfbf2db951a55f5",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1560.227294921875
+      },
+      "markers": [
+        {
+          "seq": 1647,
+          "frame": 0,
+          "offset": 73357,
+          "timestamp": 3.993384838104248,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 641474,
+          "frame": 155,
+          "offset": 149554,
+          "timestamp": 1556.3330078125,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1109
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 36
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 47
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 990
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 36
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C54",
+      "sections": 163,
+      "records": 692763,
+      "prior_report_sha256": "70c1260309099fcf0f4111389d16cbcc60f66f8da5cfa8493bc4a3e18dd7f1b2",
+      "section_manifest_sha256": "cfa9fc1fb7985a8ef930264cf9c9ea001f4e508d4e4fb17164fbfcf4ddc8005e",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1613.6734619140625
+      },
+      "markers": [
+        {
+          "seq": 2827,
+          "frame": 1,
+          "offset": 41605,
+          "timestamp": 13.667458534240723,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 689934,
+          "frame": 162,
+          "offset": 61955,
+          "timestamp": 1621.3192138671875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1134
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 57
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 57
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 101
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 919
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 57
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C55",
+      "sections": 192,
+      "records": 815356,
+      "prior_report_sha256": "7c56b0696cd3385a00506daf3fd077c909d2536d3b796b7fdd8e10c52a88d9dd",
+      "section_manifest_sha256": "eed62bae769d8b86613a1f90185c32c1131397386bc4d552bbb5baf090966561",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1909.71044921875
+      },
+      "markers": [
+        {
+          "seq": 1927,
+          "frame": 0,
+          "offset": 81213,
+          "timestamp": 4.137500286102295,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 811900,
+          "frame": 190,
+          "offset": 132199,
+          "timestamp": 1907.1663818359375,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1386
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 58
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 58
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 113
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 1157
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 58
+        }
+      ],
+      "unmatched_death_count_after_0452": 2,
+      "unsupported_selected_player_stat_layout_count": 0
+    },
+    {
+      "corpus": "C56",
+      "sections": 162,
+      "records": 667668,
+      "prior_report_sha256": "7d91bbe963afda9bf9556d90f48385c0b566f38fd5793a199da4de22581f4978",
+      "section_manifest_sha256": "8cd78178b5dc50f07f074ab74134d8f32c2739c6bee5cdfef2a90b784f5ec628",
+      "section_manifest_hash_format": "SHA-256 of UTF-8 compact JSON with sorted keys, no final newline; fields number, sha256, bytes in original section order",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1595.29443359375
+      },
+      "markers": [
+        {
+          "seq": 3257,
+          "frame": 1,
+          "offset": 63093,
+          "timestamp": 19.484256744384766,
+          "opcode": 1007,
+          "payload_length": 6,
+          "payload_all_zero": true
+        },
+        {
+          "seq": 664232,
+          "frame": 160,
+          "offset": 161266,
+          "timestamp": 1608.6365966796875,
+          "opcode": 1106,
+          "payload_length": 6,
+          "payload_all_zero": true
+        }
+      ],
+      "selected_score_relations": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 1010
+        }
+      ],
+      "selected_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 41,
+          "layer": 0,
+          "operation": "add",
+          "count": 44
+        },
+        {
+          "opcode": 1052,
+          "index": 42,
+          "layer": 0,
+          "operation": "add",
+          "count": 45
+        },
+        {
+          "opcode": 1053,
+          "index": 11,
+          "layer": null,
+          "operation": "add",
+          "count": 68
+        },
+        {
+          "opcode": 1053,
+          "index": 14,
+          "layer": null,
+          "operation": "add",
+          "count": 853
+        }
+      ],
+      "matched_death_relations_to_0452": [
+        {
+          "seq_relation": "before",
+          "timestamp_relation": "before",
+          "count": 45
+        }
+      ],
+      "unmatched_death_count_after_0452": 0,
+      "unsupported_selected_player_stat_layout_count": 0
+    }
+  ]
+}

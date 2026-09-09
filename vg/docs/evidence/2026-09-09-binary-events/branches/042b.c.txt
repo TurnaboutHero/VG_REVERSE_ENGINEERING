@@ -1,0 +1,16 @@
+  case 0x42b:
+    bStack_e44 = 0;
+    bStack_e43 = 0;
+    uStack_e42 = 0;
+    bStack_e40 = 0;
+    bStack_e3f = 0;
+    bStack_e3e = 0;
+    bStack_e3d = 0;
+    memmove(&bStack_e44,param_1,8);
+    uVar11 = Ordinal_14(CONCAT22(uStack_e42,CONCAT11(bStack_e43,bStack_e44)));
+    FUN_0081bc30(uVar11,CONCAT13(bStack_e3d,CONCAT12(bStack_e3e,CONCAT11(bStack_e3f,bStack_e40))),
+                 CONCAT13(bStack_e3c,CONCAT12(bStack_e3d,CONCAT11(bStack_e3e,bStack_e3f))),
+                 CONCAT13(bStack_e3b,CONCAT12(bStack_e3c,CONCAT11(bStack_e3d,bStack_e3e))),
+                 CONCAT13(bStack_e3a,CONCAT12(bStack_e3b,CONCAT11(bStack_e3c,bStack_e3d))));
+    local_8 = 0x52;
+    goto LAB_004d030c;
