@@ -1,0 +1,4322 @@
+{
+  "scope": "fresh read-only traversal of original corpus; no game or final-result validation",
+  "summary": {
+    "recordings": 56,
+    "sections": 7870,
+    "records": 30729156,
+    "counts": {
+      "player_actor_die": 2221,
+      "death_add_one": 2182,
+      "exact_pairs": 2157,
+      "window_pairs": 25,
+      "unmatched_actions": 39,
+      "unmatched_increments": 0,
+      "ambiguous_actions": 0,
+      "ambiguous_increments": 0,
+      "unsupported_semantics": 0
+    },
+    "clock_statuses": {
+      "accepted": 53,
+      "unsupported_clock": 2,
+      "mixed_segments": 1
+    },
+    "previous_cohort_count": 39,
+    "old_cohort_exact_locations_equal": true,
+    "new_locations": [],
+    "missing_old_locations": [],
+    "previous_provenance_sections_matched": 4139,
+    "input_hashes_unchanged": true,
+    "gui_actions": 0,
+    "fresh_report_sha256": "4f374ce7264f787745476753a83232118c1d52cca91b7b02376d58f0cc6937cd",
+    "affected_recordings": 28,
+    "actions_before_048d": 39,
+    "death_to_048d_seconds": {
+      "count": 39,
+      "min": 0.1094970703125,
+      "median": 2.407958984375,
+      "max": 5.8035888671875
+    },
+    "death_to_03f1_seconds": {
+      "count": 39,
+      "min": 0.1190185546875,
+      "median": 2.407958984375,
+      "max": 5.8125
+    },
+    "cases_with_later_player_score_operations": 0,
+    "cases_with_later_unsupported_semantics": 0,
+    "cases_with_unchanged_known_layer0_deaths": 39,
+    "later_victim_snapshots": 11,
+    "later_snapshots_with_unchanged_layer0_deaths": 11,
+    "cases_with_later_victim_stat_operations": 39,
+    "cases_with_later_0431": 27,
+    "adjacent_048d_03f1_pairs": 55,
+    "same_time_048d_03f1_pairs": 37,
+    "positive_048d_03f1_delta": {
+      "count": 18,
+      "min": 0.00799560546875,
+      "median": 0.015232086181640625,
+      "max": 0.0260009765625
+    },
+    "case_end_reasons": {
+      "0": 39
+    },
+    "last_operation_to_048d_affected": {
+      "count": 28,
+      "min": 6.0003662109375,
+      "median": 10.59405517578125,
+      "max": 38.18017578125
+    },
+    "last_operation_to_048d_unaffected": {
+      "count": 26,
+      "min": 3.0438232421875,
+      "median": 11.160737991333008,
+      "max": 21.6468505859375
+    }
+  },
+  "cases": [
+    {
+      "corpus": "C01",
+      "victim": 1504,
+      "frame": 102,
+      "record_offset": 74733,
+      "seq": 227421,
+      "record_timestamp": 1028.331298828125,
+      "seconds_before_048d": 1.633544921875,
+      "records_before_048d": 401,
+      "seconds_before_03f1": 1.633544921875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 3,
+      "eof_layer0_deaths": 3,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 4,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C03",
+      "victim": 1502,
+      "frame": 80,
+      "record_offset": 81618,
+      "seq": 319213,
+      "record_timestamp": 803.872802734375,
+      "seconds_before_048d": 0.298583984375,
+      "records_before_048d": 116,
+      "seconds_before_03f1": 0.298583984375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 3,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C05",
+      "victim": 1503,
+      "frame": 155,
+      "record_offset": 55361,
+      "seq": 665148,
+      "record_timestamp": 1550.50537109375,
+      "seconds_before_048d": 5.3094482421875,
+      "records_before_048d": 1991,
+      "seconds_before_03f1": 5.3232421875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "corpus": "C13",
+      "victim": 1500,
+      "frame": 191,
+      "record_offset": 53076,
+      "seq": 736332,
+      "record_timestamp": 1910.990478515625,
+      "seconds_before_048d": 2.407958984375,
+      "records_before_048d": 699,
+      "seconds_before_03f1": 2.407958984375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C16",
+      "victim": 1504,
+      "frame": 169,
+      "record_offset": 167104,
+      "seq": 717869,
+      "record_timestamp": 1699.3516845703125,
+      "seconds_before_048d": 4.3309326171875,
+      "records_before_048d": 2384,
+      "seconds_before_03f1": 4.3309326171875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 7,
+      "eof_layer0_deaths": 7,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 718184,
+          "frame": 170,
+          "offset": 7714,
+          "timestamp": 1700.0089111328125,
+          "opcode": 1011,
+          "entity_id": 1504,
+          "layer": 0,
+          "deaths": 7.0,
+          "deaths_bits": 1088421888,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 4,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "corpus": "C17",
+      "victim": 1504,
+      "frame": 215,
+      "record_offset": 83533,
+      "seq": 878000,
+      "record_timestamp": 2151.390869140625,
+      "seconds_before_048d": 2.218994140625,
+      "records_before_048d": 1342,
+      "seconds_before_03f1": 2.218994140625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C17",
+      "victim": 1503,
+      "frame": 215,
+      "record_offset": 111973,
+      "seq": 879026,
+      "record_timestamp": 2153.01318359375,
+      "seconds_before_048d": 0.5966796875,
+      "records_before_048d": 316,
+      "seconds_before_03f1": 0.5966796875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 7,
+      "eof_layer0_deaths": 7,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C18",
+      "victim": 1503,
+      "frame": 133,
+      "record_offset": 103927,
+      "seq": 543620,
+      "record_timestamp": 1333.974365234375,
+      "seconds_before_048d": 3.50634765625,
+      "records_before_048d": 1191,
+      "seconds_before_03f1": 3.50634765625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 7,
+      "eof_layer0_deaths": 7,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 3,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C19",
+      "victim": 1505,
+      "frame": 151,
+      "record_offset": 109542,
+      "seq": 637038,
+      "record_timestamp": 1514.007080078125,
+      "seconds_before_048d": 2.3740234375,
+      "records_before_048d": 1233,
+      "seconds_before_03f1": 2.3740234375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 4,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C21",
+      "victim": 1506,
+      "frame": 148,
+      "record_offset": 82987,
+      "seq": 584416,
+      "record_timestamp": 1484.4273681640625,
+      "seconds_before_048d": 0.1094970703125,
+      "records_before_048d": 17,
+      "seconds_before_03f1": 0.1190185546875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C23",
+      "victim": 1506,
+      "frame": 194,
+      "record_offset": 179985,
+      "seq": 819664,
+      "record_timestamp": 1947.9891357421875,
+      "seconds_before_048d": 1.743896484375,
+      "records_before_048d": 696,
+      "seconds_before_03f1": 1.765625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C23",
+      "victim": 1504,
+      "frame": 194,
+      "record_offset": 186769,
+      "seq": 819902,
+      "record_timestamp": 1948.3990478515625,
+      "seconds_before_048d": 1.333984375,
+      "records_before_048d": 458,
+      "seconds_before_03f1": 1.355712890625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 13,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 15,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C24",
+      "victim": 1507,
+      "frame": 128,
+      "record_offset": 62337,
+      "seq": 490290,
+      "record_timestamp": 1281.701171875,
+      "seconds_before_048d": 2.143310546875,
+      "records_before_048d": 907,
+      "seconds_before_03f1": 2.158447265625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 0,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 3,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 25,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 13,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C26",
+      "victim": 1502,
+      "frame": 179,
+      "record_offset": 75300,
+      "seq": 714198,
+      "record_timestamp": 1792.264404296875,
+      "seconds_before_048d": 2.4822998046875,
+      "records_before_048d": 846,
+      "seconds_before_03f1": 2.50830078125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C26",
+      "victim": 1503,
+      "frame": 179,
+      "record_offset": 92340,
+      "seq": 714829,
+      "record_timestamp": 1793.914306640625,
+      "seconds_before_048d": 0.8323974609375,
+      "records_before_048d": 215,
+      "seconds_before_03f1": 0.8583984375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 8,
+      "eof_layer0_deaths": 8,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C27",
+      "victim": 1504,
+      "frame": 178,
+      "record_offset": 99936,
+      "seq": 754318,
+      "record_timestamp": 1784.4189453125,
+      "seconds_before_048d": 3.7880859375,
+      "records_before_048d": 1844,
+      "seconds_before_03f1": 3.79736328125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 3,
+      "eof_layer0_deaths": 3,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "corpus": "C28",
+      "victim": 1500,
+      "frame": 205,
+      "record_offset": 108611,
+      "seq": 846939,
+      "record_timestamp": 2054.83251953125,
+      "seconds_before_048d": 1.604248046875,
+      "records_before_048d": 595,
+      "seconds_before_03f1": 1.604248046875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 3,
+      "eof_layer0_deaths": 3,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 3,
+          "layer": null,
+          "operation": "add",
+          "count": 16
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C28",
+      "victim": 1509,
+      "frame": 205,
+      "record_offset": 115307,
+      "seq": 847184,
+      "record_timestamp": 2055.43505859375,
+      "seconds_before_048d": 1.001708984375,
+      "records_before_048d": 350,
+      "seconds_before_03f1": 1.001708984375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 2,
+      "eof_layer0_deaths": 2,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 13,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C29",
+      "victim": 1501,
+      "frame": 177,
+      "record_offset": 199384,
+      "seq": 747153,
+      "record_timestamp": 1779.86767578125,
+      "seconds_before_048d": 2.1749267578125,
+      "records_before_048d": 1402,
+      "seconds_before_03f1": 2.1937255859375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 747258,
+          "frame": 178,
+          "offset": 3494,
+          "timestamp": 1780.0135498046875,
+          "opcode": 1011,
+          "entity_id": 1501,
+          "layer": 0,
+          "deaths": 4.0,
+          "deaths_bits": 1082130432,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C29",
+      "victim": 1508,
+      "frame": 178,
+      "record_offset": 57314,
+      "seq": 748315,
+      "record_timestamp": 1781.088134765625,
+      "seconds_before_048d": 0.9544677734375,
+      "records_before_048d": 240,
+      "seconds_before_03f1": 0.9732666015625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C32",
+      "victim": 1506,
+      "frame": 96,
+      "record_offset": 100170,
+      "seq": 391514,
+      "record_timestamp": 964.3279418945312,
+      "seconds_before_048d": 5.8035888671875,
+      "records_before_048d": 2234,
+      "seconds_before_03f1": 5.8125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 1,
+      "eof_layer0_deaths": 1,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 393228,
+          "frame": 97,
+          "offset": 9738,
+          "timestamp": 970.0070190429688,
+          "opcode": 1011,
+          "entity_id": 1506,
+          "layer": 0,
+          "deaths": 1.0,
+          "deaths_bits": 1065353216,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 15,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 18,
+          "layer": 1,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 0,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "corpus": "C32",
+      "victim": 1505,
+      "frame": 96,
+      "record_offset": 114322,
+      "seq": 392032,
+      "record_timestamp": 965.6652221679688,
+      "seconds_before_048d": 4.46630859375,
+      "records_before_048d": 1716,
+      "seconds_before_03f1": 4.4752197265625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 1,
+      "eof_layer0_deaths": 1,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 393213,
+          "frame": 97,
+          "offset": 8534,
+          "timestamp": 970.0070190429688,
+          "opcode": 1011,
+          "entity_id": 1505,
+          "layer": 0,
+          "deaths": 1.0,
+          "deaths_bits": 1065353216,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 0,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 5,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 8,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "corpus": "C35",
+      "victim": 1505,
+      "frame": 132,
+      "record_offset": 59985,
+      "seq": 522804,
+      "record_timestamp": 1321.188720703125,
+      "seconds_before_048d": 4.740234375,
+      "records_before_048d": 1574,
+      "seconds_before_03f1": 4.740234375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 0,
+      "eof_layer0_deaths": 0,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 8,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "corpus": "C35",
+      "victim": 1501,
+      "frame": 132,
+      "record_offset": 69721,
+      "seq": 523160,
+      "record_timestamp": 1322.021728515625,
+      "seconds_before_048d": 3.9072265625,
+      "records_before_048d": 1218,
+      "seconds_before_03f1": 3.9072265625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 3,
+          "layer": null,
+          "operation": "set",
+          "count": 39
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C36",
+      "victim": 1502,
+      "frame": 111,
+      "record_offset": 122462,
+      "seq": 443544,
+      "record_timestamp": 1114.553466796875,
+      "seconds_before_048d": 0.2989501953125,
+      "records_before_048d": 128,
+      "seconds_before_03f1": 0.2989501953125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C37",
+      "victim": 1509,
+      "frame": 115,
+      "record_offset": 84970,
+      "seq": 489309,
+      "record_timestamp": 1152.6829833984375,
+      "seconds_before_048d": 2.2523193359375,
+      "records_before_048d": 675,
+      "seconds_before_03f1": 2.2523193359375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 1,
+      "eof_layer0_deaths": 1,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "corpus": "C42",
+      "victim": 1500,
+      "frame": 105,
+      "record_offset": 206263,
+      "seq": 439202,
+      "record_timestamp": 1057.9014892578125,
+      "seconds_before_048d": 4.6595458984375,
+      "records_before_048d": 3805,
+      "seconds_before_03f1": 4.6759033203125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 440644,
+          "frame": 106,
+          "offset": 2450,
+          "timestamp": 1060.0048828125,
+          "opcode": 1011,
+          "entity_id": 1500,
+          "layer": 0,
+          "deaths": 6.0,
+          "deaths_bits": 1086324736,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 8,
+          "layer": 1,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "corpus": "C42",
+      "victim": 1505,
+      "frame": 105,
+      "record_offset": 242543,
+      "seq": 440506,
+      "record_timestamp": 1059.6866455078125,
+      "seconds_before_048d": 2.8743896484375,
+      "records_before_048d": 2501,
+      "seconds_before_03f1": 2.8907470703125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 1,
+      "eof_layer0_deaths": 1,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 440723,
+          "frame": 106,
+          "offset": 8572,
+          "timestamp": 1060.0048828125,
+          "opcode": 1011,
+          "entity_id": 1505,
+          "layer": 0,
+          "deaths": 1.0,
+          "deaths_bits": 1065353216,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C43",
+      "victim": 1504,
+      "frame": 118,
+      "record_offset": 178109,
+      "seq": 496440,
+      "record_timestamp": 1187.768310546875,
+      "seconds_before_048d": 1.2022705078125,
+      "records_before_048d": 534,
+      "seconds_before_03f1": 1.2022705078125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C44",
+      "victim": 1509,
+      "frame": 103,
+      "record_offset": 155801,
+      "seq": 417960,
+      "record_timestamp": 1037.761474609375,
+      "seconds_before_048d": 2.4403076171875,
+      "records_before_048d": 1739,
+      "seconds_before_03f1": 2.4403076171875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 2,
+      "eof_layer0_deaths": 2,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 419151,
+          "frame": 104,
+          "offset": 13426,
+          "timestamp": 1040.0069580078125,
+          "opcode": 1011,
+          "entity_id": 1509,
+          "layer": 0,
+          "deaths": 2.0,
+          "deaths_bits": 1073741824,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C45",
+      "victim": 1507,
+      "frame": 96,
+      "record_offset": 192344,
+      "seq": 398335,
+      "record_timestamp": 969.3689575195312,
+      "seconds_before_048d": 3.4730224609375,
+      "records_before_048d": 1714,
+      "seconds_before_03f1": 3.4730224609375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 2,
+      "eof_layer0_deaths": 2,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 398657,
+          "frame": 97,
+          "offset": 10833,
+          "timestamp": 970.0026245117188,
+          "opcode": 1011,
+          "entity_id": 1507,
+          "layer": 0,
+          "deaths": 2.0,
+          "deaths_bits": 1073741824,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C46",
+      "victim": 1508,
+      "frame": 177,
+      "record_offset": 53891,
+      "seq": 783144,
+      "record_timestamp": 1770.701904296875,
+      "seconds_before_048d": 1.9970703125,
+      "records_before_048d": 653,
+      "seconds_before_03f1": 1.9970703125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "corpus": "C51",
+      "victim": 1503,
+      "frame": 138,
+      "record_offset": 25677,
+      "seq": 305386,
+      "record_timestamp": 1380.2813720703125,
+      "seconds_before_048d": 5.4039306640625,
+      "records_before_048d": 1304,
+      "seconds_before_03f1": 5.4039306640625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 18,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 3,
+          "layer": null,
+          "operation": "add",
+          "count": 54
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "corpus": "C53",
+      "victim": 1509,
+      "frame": 155,
+      "record_offset": 164786,
+      "seq": 642024,
+      "record_timestamp": 1557.25390625,
+      "seconds_before_048d": 5.173828125,
+      "records_before_048d": 3327,
+      "seconds_before_03f1": 5.173828125,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 643464,
+          "frame": 156,
+          "offset": 13599,
+          "timestamp": 1560.0269775390625,
+          "opcode": 1011,
+          "entity_id": 1509,
+          "layer": 0,
+          "deaths": 5.0,
+          "deaths_bits": 1084227584,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 10
+        },
+        {
+          "opcode": 1053,
+          "index": 13,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "corpus": "C53",
+      "victim": 1500,
+      "frame": 155,
+      "record_offset": 184410,
+      "seq": 642713,
+      "record_timestamp": 1558.788818359375,
+      "seconds_before_048d": 3.638916015625,
+      "records_before_048d": 2638,
+      "seconds_before_03f1": 3.638916015625,
+      "end_reason": 0,
+      "pre_layer0_deaths": 1,
+      "eof_layer0_deaths": 1,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 643318,
+          "frame": 156,
+          "offset": 2450,
+          "timestamp": 1560.0269775390625,
+          "opcode": 1011,
+          "entity_id": 1500,
+          "layer": 0,
+          "deaths": 1.0,
+          "deaths_bits": 1065353216,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 15,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 4
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "corpus": "C54",
+      "victim": 1502,
+      "frame": 162,
+      "record_offset": 78467,
+      "seq": 690536,
+      "record_timestamp": 1622.548828125,
+      "seconds_before_048d": 4.8040771484375,
+      "records_before_048d": 2218,
+      "seconds_before_03f1": 4.8040771484375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 5
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "corpus": "C54",
+      "victim": 1506,
+      "frame": 162,
+      "record_offset": 110339,
+      "seq": 691694,
+      "record_timestamp": 1624.6588134765625,
+      "seconds_before_048d": 2.694091796875,
+      "records_before_048d": 1060,
+      "seconds_before_03f1": 2.694091796875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 5,
+      "eof_layer0_deaths": 5,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 4,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 33,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 35,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "corpus": "C55",
+      "victim": 1505,
+      "frame": 190,
+      "record_offset": 139647,
+      "seq": 812156,
+      "record_timestamp": 1907.7239990234375,
+      "seconds_before_048d": 5.5687255859375,
+      "records_before_048d": 3183,
+      "seconds_before_03f1": 5.5687255859375,
+      "end_reason": 0,
+      "pre_layer0_deaths": 4,
+      "eof_layer0_deaths": 4,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [
+        {
+          "seq": 813168,
+          "frame": 191,
+          "offset": 8809,
+          "timestamp": 1910.0177001953125,
+          "opcode": 1011,
+          "entity_id": 1505,
+          "layer": 0,
+          "deaths": 4.0,
+          "deaths_bits": 1082130432,
+          "payload_length": 746
+        }
+      ],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 18,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 2,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "corpus": "C55",
+      "victim": 1501,
+      "frame": 191,
+      "record_offset": 87784,
+      "seq": 815153,
+      "record_timestamp": 1912.7646484375,
+      "seconds_before_048d": 0.528076171875,
+      "records_before_048d": 186,
+      "seconds_before_03f1": 0.528076171875,
+      "end_reason": 0,
+      "pre_layer0_deaths": 6,
+      "eof_layer0_deaths": 6,
+      "pre_layer0_status": "observed_layer0_only",
+      "eof_layer0_status": "observed_layer0_only",
+      "later_player_score_operations": 0,
+      "later_unsupported_semantics": 0,
+      "later_victim_snapshots": [],
+      "later_victim_stat_operation_counts": [
+        {
+          "opcode": 1052,
+          "index": 7,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 13,
+          "layer": 1,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1052,
+          "index": 15,
+          "layer": 2,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 6,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        },
+        {
+          "opcode": 1053,
+          "index": 8,
+          "layer": null,
+          "operation": "add",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "last_score_operation_to_048d": [
+    {
+      "corpus": "C01",
+      "affected": true,
+      "operation_to_048d_seconds": 10.7171630859375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C02",
+      "affected": false,
+      "operation_to_048d_seconds": 6.0247802734375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C03",
+      "affected": true,
+      "operation_to_048d_seconds": 7.176025390625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C04",
+      "affected": false,
+      "operation_to_048d_seconds": 13.0364990234375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C05",
+      "affected": true,
+      "operation_to_048d_seconds": 7.526123046875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C06",
+      "affected": false,
+      "operation_to_048d_seconds": 16.3314208984375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C07",
+      "affected": false,
+      "operation_to_048d_seconds": 16.2742919921875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C08",
+      "affected": false,
+      "operation_to_048d_seconds": 6.4613037109375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C09",
+      "affected": false,
+      "operation_to_048d_seconds": 12.3587646484375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C10",
+      "affected": false,
+      "operation_to_048d_seconds": 8.552490234375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C11",
+      "affected": false,
+      "operation_to_048d_seconds": 21.6468505859375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C12",
+      "affected": false,
+      "operation_to_048d_seconds": 13.154052734375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C13",
+      "affected": true,
+      "operation_to_048d_seconds": 6.8812255859375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C14",
+      "affected": false,
+      "operation_to_048d_seconds": 8.9395751953125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C15",
+      "affected": false,
+      "operation_to_048d_seconds": 8.3822021484375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C16",
+      "affected": true,
+      "operation_to_048d_seconds": 6.0003662109375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C17",
+      "affected": true,
+      "operation_to_048d_seconds": 38.18017578125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C18",
+      "affected": true,
+      "operation_to_048d_seconds": 6.9461669921875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C19",
+      "affected": true,
+      "operation_to_048d_seconds": 9.1551513671875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C20",
+      "affected": false,
+      "operation_to_048d_seconds": 20.5771484375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C21",
+      "affected": true,
+      "operation_to_048d_seconds": 18.9761962890625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C22",
+      "affected": false,
+      "operation_to_048d_seconds": 19.3297119140625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C23",
+      "affected": true,
+      "operation_to_048d_seconds": 10.781005859375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C24",
+      "affected": true,
+      "operation_to_048d_seconds": 9.818359375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C25",
+      "affected": false,
+      "operation_to_048d_seconds": 7.6728515625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C26",
+      "affected": true,
+      "operation_to_048d_seconds": 10.470947265625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C27",
+      "affected": true,
+      "operation_to_048d_seconds": 6.587158203125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C28",
+      "affected": true,
+      "operation_to_048d_seconds": 6.074951171875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C29",
+      "affected": true,
+      "operation_to_048d_seconds": 11.1778564453125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C30",
+      "affected": false,
+      "operation_to_048d_seconds": 6.081298828125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C31",
+      "affected": false,
+      "operation_to_048d_seconds": 6.0902099609375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C32",
+      "affected": true,
+      "operation_to_048d_seconds": 6.31610107421875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C33",
+      "affected": false,
+      "operation_to_048d_seconds": null,
+      "operation_before_048d": null
+    },
+    {
+      "corpus": "C34",
+      "affected": false,
+      "operation_to_048d_seconds": 10.976016998291016,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C35",
+      "affected": true,
+      "operation_to_048d_seconds": 12.4117431640625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C36",
+      "affected": true,
+      "operation_to_048d_seconds": 13.09375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C37",
+      "affected": true,
+      "operation_to_048d_seconds": 7.0325927734375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C38",
+      "affected": false,
+      "operation_to_048d_seconds": 3.0438232421875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C39",
+      "affected": false,
+      "operation_to_048d_seconds": 9.0753173828125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C40",
+      "affected": false,
+      "operation_to_048d_seconds": 11.345458984375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C42",
+      "affected": true,
+      "operation_to_048d_seconds": 6.149658203125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C43",
+      "affected": true,
+      "operation_to_048d_seconds": 25.8118896484375,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C44",
+      "affected": true,
+      "operation_to_048d_seconds": 8.4381103515625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C45",
+      "affected": true,
+      "operation_to_048d_seconds": 10.82623291015625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C46",
+      "affected": true,
+      "operation_to_048d_seconds": 10.855712890625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C47",
+      "affected": false,
+      "operation_to_048d_seconds": 7.48876953125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C48",
+      "affected": false,
+      "operation_to_048d_seconds": 17.0947265625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C49",
+      "affected": false,
+      "operation_to_048d_seconds": 17.40789794921875,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C50",
+      "affected": false,
+      "operation_to_048d_seconds": 11.9923095703125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C51",
+      "affected": true,
+      "operation_to_048d_seconds": 26.812744140625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C52",
+      "affected": false,
+      "operation_to_048d_seconds": 16.4801025390625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C53",
+      "affected": true,
+      "operation_to_048d_seconds": 19.221923828125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C54",
+      "affected": true,
+      "operation_to_048d_seconds": 11.6583251953125,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C55",
+      "affected": true,
+      "operation_to_048d_seconds": 18.7115478515625,
+      "operation_before_048d": true
+    },
+    {
+      "corpus": "C56",
+      "affected": false,
+      "operation_to_048d_seconds": 8.5758056640625,
+      "operation_before_048d": true
+    }
+  ],
+  "paired_terminal_positions": [
+    {
+      "corpus": "C01",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C02",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C03",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C04",
+      "record_distance": 1,
+      "record_time_delta": 0.0142822265625
+    },
+    {
+      "corpus": "C05",
+      "record_distance": 1,
+      "record_time_delta": 0.0137939453125
+    },
+    {
+      "corpus": "C06",
+      "record_distance": 1,
+      "record_time_delta": 0.0224609375
+    },
+    {
+      "corpus": "C07",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C08",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C09",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C10",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C11",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C12",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C13",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C14",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C15",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C16",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C17",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C18",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C19",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C20",
+      "record_distance": 1,
+      "record_time_delta": 0.0128173828125
+    },
+    {
+      "corpus": "C21",
+      "record_distance": 1,
+      "record_time_delta": 0.009521484375
+    },
+    {
+      "corpus": "C22",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C23",
+      "record_distance": 1,
+      "record_time_delta": 0.021728515625
+    },
+    {
+      "corpus": "C24",
+      "record_distance": 1,
+      "record_time_delta": 0.01513671875
+    },
+    {
+      "corpus": "C25",
+      "record_distance": 1,
+      "record_time_delta": 0.017578125
+    },
+    {
+      "corpus": "C26",
+      "record_distance": 1,
+      "record_time_delta": 0.0260009765625
+    },
+    {
+      "corpus": "C27",
+      "record_distance": 1,
+      "record_time_delta": 0.00927734375
+    },
+    {
+      "corpus": "C28",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C29",
+      "record_distance": 1,
+      "record_time_delta": 0.018798828125
+    },
+    {
+      "corpus": "C30",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C31",
+      "record_distance": 1,
+      "record_time_delta": 0.0157470703125
+    },
+    {
+      "corpus": "C32",
+      "record_distance": 1,
+      "record_time_delta": 0.0089111328125
+    },
+    {
+      "corpus": "C33",
+      "record_distance": 1,
+      "record_time_delta": 0.01532745361328125
+    },
+    {
+      "corpus": "C34",
+      "record_distance": 1,
+      "record_time_delta": 0.00799560546875
+    },
+    {
+      "corpus": "C35",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C36",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C37",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C38",
+      "record_distance": 1,
+      "record_time_delta": 0.0162353515625
+    },
+    {
+      "corpus": "C39",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C40",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C42",
+      "record_distance": 1,
+      "record_time_delta": 0.016357421875
+    },
+    {
+      "corpus": "C43",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C44",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C45",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C46",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C47",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C48",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C49",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C50",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C51",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C52",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C53",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C54",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C55",
+      "record_distance": 1,
+      "record_time_delta": 0.0
+    },
+    {
+      "corpus": "C56",
+      "record_distance": 1,
+      "record_time_delta": 0.01513671875
+    }
+  ],
+  "corpus": [
+    {
+      "corpus": "C01",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1024.5578002929688
+      },
+      "counts": {
+        "player_actor_die": 16,
+        "death_add_one": 15,
+        "exact_pairs": 15,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 103,
+      "record_count": 227840,
+      "sha256": "76770d4905c4218b4c747d39f4a877c83ef03fb0bb998c652dbaf5410f565671"
+    },
+    {
+      "corpus": "C02",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1135.89404296875
+      },
+      "counts": {
+        "player_actor_die": 38,
+        "death_add_one": 38,
+        "exact_pairs": 37,
+        "window_pairs": 1,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 115,
+      "record_count": 449332,
+      "sha256": "2f4c825551a11711d757ec76fac248d8dd808b191f841d05f769af052985d966"
+    },
+    {
+      "corpus": "C03",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 342.0738830566406,
+        "last_game_time": 1146.240234375
+      },
+      "counts": {
+        "player_actor_die": 34,
+        "death_add_one": 33,
+        "exact_pairs": 33,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 81,
+      "record_count": 319331,
+      "sha256": "3690544bbc7cc5f2aa83da2e46b7693398207b7f34f9b9e83bfda281844d473a"
+    },
+    {
+      "corpus": "C04",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1895.6634521484375
+      },
+      "counts": {
+        "player_actor_die": 56,
+        "death_add_one": 56,
+        "exact_pairs": 56,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 193,
+      "record_count": 807001,
+      "sha256": "2ba7f6b7514cbeef584ffa1b342b23bd299a2915ec6666fe7db685ac5c8f931d"
+    },
+    {
+      "corpus": "C05",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1552.572998046875
+      },
+      "counts": {
+        "player_actor_die": 50,
+        "death_add_one": 49,
+        "exact_pairs": 48,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 156,
+      "record_count": 667149,
+      "sha256": "07e97247d491c1305422d8d9cf0d1311ab421a10df6f0306c714d512700dab46"
+    },
+    {
+      "corpus": "C06",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1437.7469482421875
+      },
+      "counts": {
+        "player_actor_die": 46,
+        "death_add_one": 46,
+        "exact_pairs": 45,
+        "window_pairs": 1,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 146,
+      "record_count": 603602,
+      "sha256": "db6dbea92fffef7261cf853c6e18f473fb13dc5f95366c18e6d5adacef4d170b"
+    },
+    {
+      "corpus": "C07",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1455.025634765625
+      },
+      "counts": {
+        "player_actor_die": 53,
+        "death_add_one": 53,
+        "exact_pairs": 53,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 147,
+      "record_count": 610048,
+      "sha256": "e8bdfd7b4e61910e8e0b5b23d3fda5a0f9ea797a2bd916ca1b511f6979a180e8"
+    },
+    {
+      "corpus": "C08",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1676.572998046875
+      },
+      "counts": {
+        "player_actor_die": 44,
+        "death_add_one": 44,
+        "exact_pairs": 43,
+        "window_pairs": 1,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 170,
+      "record_count": 747317,
+      "sha256": "d20b780fccd3a94bd135ca7bc5c61a68d7734f62317b4a1007e3e3060217982d"
+    },
+    {
+      "corpus": "C09",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1798.89990234375
+      },
+      "counts": {
+        "player_actor_die": 67,
+        "death_add_one": 67,
+        "exact_pairs": 66,
+        "window_pairs": 1,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 182,
+      "record_count": 800525,
+      "sha256": "7c0715eac3b4120d23303fbbcdeab7ce5cdce4e484edafe2af9b2a91d3dd8b84"
+    },
+    {
+      "corpus": "C10",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1628.2581787109375
+      },
+      "counts": {
+        "player_actor_die": 46,
+        "death_add_one": 46,
+        "exact_pairs": 46,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 164,
+      "record_count": 698445,
+      "sha256": "d673a794f715d7144a6b5f84d3b40d895ce2e188d5454728f154f67304b67dd2"
+    },
+    {
+      "corpus": "C11",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1121.3453369140625
+      },
+      "counts": {
+        "player_actor_die": 20,
+        "death_add_one": 20,
+        "exact_pairs": 20,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 114,
+      "record_count": 484923,
+      "sha256": "7fde0e9a785ceb049585bdf27571b1619aed188115fd3e486b7d1db10c3616c5"
+    },
+    {
+      "corpus": "C12",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1844.912353515625
+      },
+      "counts": {
+        "player_actor_die": 59,
+        "death_add_one": 59,
+        "exact_pairs": 59,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 186,
+      "record_count": 735483,
+      "sha256": "e1b4f2d82dcc1e2e3d0e5843e57954d094ae431f176f6e93bc361d4ba3addd62"
+    },
+    {
+      "corpus": "C13",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1891.2681884765625
+      },
+      "counts": {
+        "player_actor_die": 50,
+        "death_add_one": 49,
+        "exact_pairs": 48,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 192,
+      "record_count": 737034,
+      "sha256": "52d2077ae161547e41a3a2e2d706a92d6f9fafeb9b70ae6d93c1f4214902f739"
+    },
+    {
+      "corpus": "C14",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1844.39013671875
+      },
+      "counts": {
+        "player_actor_die": 52,
+        "death_add_one": 52,
+        "exact_pairs": 52,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 187,
+      "record_count": 767692,
+      "sha256": "8e96bc6996855221120313fce2c4e0943ab52635bd0b36bc0d5578c7f581d76b"
+    },
+    {
+      "corpus": "C15",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1136.51220703125
+      },
+      "counts": {
+        "player_actor_die": 29,
+        "death_add_one": 29,
+        "exact_pairs": 29,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 117,
+      "record_count": 490463,
+      "sha256": "ed763edaa8f5021b85e6e8baae343aa56623fb4d608b0319323c950e3b206ce7"
+    },
+    {
+      "corpus": "C16",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1675.6412353515625
+      },
+      "counts": {
+        "player_actor_die": 66,
+        "death_add_one": 65,
+        "exact_pairs": 65,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 171,
+      "record_count": 720282,
+      "sha256": "1cdba67c4a336074b929b02e47f4efec2eb5ec79bed943193a3cb8ed7de82d82"
+    },
+    {
+      "corpus": "C17",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 2128.779296875
+      },
+      "counts": {
+        "player_actor_die": 61,
+        "death_add_one": 59,
+        "exact_pairs": 58,
+        "window_pairs": 1,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 216,
+      "record_count": 879344,
+      "sha256": "7b4744404bfc9fc9766f5cad9ffef0971b112663a9a92ddabe8b99c84b0dfb77"
+    },
+    {
+      "corpus": "C18",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1313.1080322265625
+      },
+      "counts": {
+        "player_actor_die": 32,
+        "death_add_one": 31,
+        "exact_pairs": 30,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 134,
+      "record_count": 544814,
+      "sha256": "23eab843645529ed3f9f5d12705ec8f1bbe4a3a967f0a58bd6b6aba2a78ad748"
+    },
+    {
+      "corpus": "C19",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1505.688720703125
+      },
+      "counts": {
+        "player_actor_die": 74,
+        "death_add_one": 73,
+        "exact_pairs": 72,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 152,
+      "record_count": 638276,
+      "sha256": "1a77d82581b583d202f1e736122df1f929124b4a1eb042af53e636a7ef08d05a"
+    },
+    {
+      "corpus": "C20",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1220.3609619140625
+      },
+      "counts": {
+        "player_actor_die": 47,
+        "death_add_one": 47,
+        "exact_pairs": 47,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 123,
+      "record_count": 473970,
+      "sha256": "55f8582dccc04af04c0fa45da8f33941e5ebe322a45f42b00b01ff99432db8fb"
+    },
+    {
+      "corpus": "C21",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1474.3265380859375
+      },
+      "counts": {
+        "player_actor_die": 72,
+        "death_add_one": 71,
+        "exact_pairs": 71,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 149,
+      "record_count": 584438,
+      "sha256": "2452afd11be63ab2000793e8fd33f22906dd3c9542eb779ed6f1e4dca94461ef"
+    },
+    {
+      "corpus": "C22",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1580.119384765625
+      },
+      "counts": {
+        "player_actor_die": 48,
+        "death_add_one": 48,
+        "exact_pairs": 48,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 159,
+      "record_count": 635945,
+      "sha256": "10e48c14f38821af163d59042ef7078742de1cced0172309e37a1490c207315b"
+    },
+    {
+      "corpus": "C23",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1937.6595458984375
+      },
+      "counts": {
+        "player_actor_die": 46,
+        "death_add_one": 44,
+        "exact_pairs": 40,
+        "window_pairs": 4,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 195,
+      "record_count": 820362,
+      "sha256": "850819a3b8f8117a9f4257ce707660ff15f98615f8eefad54526ab0400a95914"
+    },
+    {
+      "corpus": "C24",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1273.0194091796875
+      },
+      "counts": {
+        "player_actor_die": 37,
+        "death_add_one": 36,
+        "exact_pairs": 35,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 129,
+      "record_count": 491199,
+      "sha256": "76bdaa126f565a6cfa848d883910fe5d313a82d52ee3e070af7bb86d3c3557b3"
+    },
+    {
+      "corpus": "C25",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1692.315185546875
+      },
+      "counts": {
+        "player_actor_die": 49,
+        "death_add_one": 49,
+        "exact_pairs": 48,
+        "window_pairs": 1,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 170,
+      "record_count": 649143,
+      "sha256": "aa048d8f0315f26427b81186ed5e43d547398d4abcf804a7f280d5cef60f814f"
+    },
+    {
+      "corpus": "C26",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1788.5927734375
+      },
+      "counts": {
+        "player_actor_die": 71,
+        "death_add_one": 69,
+        "exact_pairs": 69,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 180,
+      "record_count": 715053,
+      "sha256": "ba31e57b3a712bc52df7894385f4896a37e0280be0b31d9b2165686131189381"
+    },
+    {
+      "corpus": "C27",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1779.5672607421875
+      },
+      "counts": {
+        "player_actor_die": 41,
+        "death_add_one": 40,
+        "exact_pairs": 39,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 179,
+      "record_count": 756175,
+      "sha256": "414553e3fd06f92973410348715848b92d632b247dc6a7b785e7c17a4f4dddb3"
+    },
+    {
+      "corpus": "C28",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 2043.1522216796875
+      },
+      "counts": {
+        "player_actor_die": 60,
+        "death_add_one": 58,
+        "exact_pairs": 58,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 206,
+      "record_count": 847546,
+      "sha256": "fd73e353dc8c757450ef7d48c9c41a3309d5536a41210008495a72798766c722"
+    },
+    {
+      "corpus": "C29",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1767.0009765625
+      },
+      "counts": {
+        "player_actor_die": 52,
+        "death_add_one": 50,
+        "exact_pairs": 50,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 179,
+      "record_count": 748557,
+      "sha256": "3cef7d234f77a077b53484aa04e061e8e58287a2e7fa180bbb4354ee0bbbb49b"
+    },
+    {
+      "corpus": "C30",
+      "clock": {
+        "valid": false,
+        "status": "unsupported_clock",
+        "reason": "frames 0 -> 1: game clock delta 16.730141, record delta 10.015263",
+        "first_game_time": null,
+        "last_game_time": null
+      },
+      "counts": {
+        "player_actor_die": 63,
+        "death_add_one": 63,
+        "exact_pairs": 63,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 150,
+      "record_count": 596332,
+      "sha256": "3f991d48026cdbdb94f3b9894609a7b7bbfd6e63a1955e4bf9d98802e68f69c7"
+    },
+    {
+      "corpus": "C31",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1243.8770751953125
+      },
+      "counts": {
+        "player_actor_die": 25,
+        "death_add_one": 25,
+        "exact_pairs": 25,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 125,
+      "record_count": 493189,
+      "sha256": "ba9b44e7aed07bea289b98f48ebf2e5460c0f53d08d8e755b19f9f066b17b843"
+    },
+    {
+      "corpus": "C32",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 959.88818359375
+      },
+      "counts": {
+        "player_actor_die": 23,
+        "death_add_one": 21,
+        "exact_pairs": 21,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 98,
+      "record_count": 393750,
+      "sha256": "4db65f05bf7c4d54de7e2f5295e49878bfd073f2165fc69f6a3e5585ade2306c"
+    },
+    {
+      "corpus": "C33",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 64.65896987915039
+      },
+      "counts": {
+        "player_actor_die": 0,
+        "death_add_one": 0,
+        "exact_pairs": 0,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 7,
+      "record_count": 6747,
+      "sha256": "acef3d7ea79955128754eac3c2c87e607bbd1568d729b1b9d1311bfb6a8d7754"
+    },
+    {
+      "corpus": "C34",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 39.87332534790039
+      },
+      "counts": {
+        "player_actor_die": 1,
+        "death_add_one": 1,
+        "exact_pairs": 1,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 5,
+      "record_count": 2956,
+      "sha256": "bad89f1f85e244d1c97205dc7c5f5e1ff275d0fb5a35e65acbf36d0ef81a29ff"
+    },
+    {
+      "corpus": "C35",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1295.0330810546875
+      },
+      "counts": {
+        "player_actor_die": 32,
+        "death_add_one": 30,
+        "exact_pairs": 30,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 133,
+      "record_count": 524398,
+      "sha256": "71d69bb8e01cbe88a845c48c948bc82b8de2a5c9543d68a6ddcb716011b90416"
+    },
+    {
+      "corpus": "C36",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1078.5455322265625
+      },
+      "counts": {
+        "player_actor_die": 46,
+        "death_add_one": 45,
+        "exact_pairs": 45,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 112,
+      "record_count": 443685,
+      "sha256": "bd3a71d924bc171a860ed7cfe7863046b355926e4e77c243c232f89a8c9efd1f"
+    },
+    {
+      "corpus": "C37",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1154.4871826171875
+      },
+      "counts": {
+        "player_actor_die": 17,
+        "death_add_one": 16,
+        "exact_pairs": 16,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 116,
+      "record_count": 490000,
+      "sha256": "77ca85322b78b53b5d30d078b70e5298e2ea9127fce820e6a98c1e288578ec76"
+    },
+    {
+      "corpus": "C38",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 85.89332580566406,
+        "last_game_time": 1573.428466796875
+      },
+      "counts": {
+        "player_actor_die": 31,
+        "death_add_one": 31,
+        "exact_pairs": 30,
+        "window_pairs": 1,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 149,
+      "record_count": 644614,
+      "sha256": "bba9e5cc3fdd0315e303d7905b74c0c4e8b3ec698f1c58a9996a74f33b955773"
+    },
+    {
+      "corpus": "C39",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1609.4747314453125
+      },
+      "counts": {
+        "player_actor_die": 39,
+        "death_add_one": 39,
+        "exact_pairs": 39,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 162,
+      "record_count": 696037,
+      "sha256": "9002c6ca94165370107b211cbfd1d98c669df81366bcbffc1e4c7626c39b9f9f"
+    },
+    {
+      "corpus": "C40",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1355.9967041015625
+      },
+      "counts": {
+        "player_actor_die": 36,
+        "death_add_one": 36,
+        "exact_pairs": 34,
+        "window_pairs": 2,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 136,
+      "record_count": 550191,
+      "sha256": "c7d25894b81cf6afe7ed4fdb0bd85ee36af23b0b89346bf7bbde7a15ff822f3f"
+    },
+    {
+      "corpus": "C41",
+      "clock": {
+        "valid": false,
+        "status": "mixed_segments",
+        "reason": "frames 6 -> 7: game clock delta -1111.087502, record delta 10.012943",
+        "first_game_time": null,
+        "last_game_time": null
+      },
+      "counts": {
+        "player_actor_die": 11,
+        "death_add_one": 11,
+        "exact_pairs": 11,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 85,
+      "record_count": 358331,
+      "sha256": "b6335ba04180c62999cef0451891df3d3c84d54024b3d2315a8abd8995148a6f"
+    },
+    {
+      "corpus": "C42",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1036.2705078125
+      },
+      "counts": {
+        "player_actor_die": 24,
+        "death_add_one": 22,
+        "exact_pairs": 20,
+        "window_pairs": 2,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 107,
+      "record_count": 443010,
+      "sha256": "3c0a84bb060ca7a9cc0540eef82a697fc8c235243ee8338c67553831f586057d"
+    },
+    {
+      "corpus": "C43",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1163.673095703125
+      },
+      "counts": {
+        "player_actor_die": 34,
+        "death_add_one": 33,
+        "exact_pairs": 32,
+        "window_pairs": 1,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 119,
+      "record_count": 496976,
+      "sha256": "1a8b2950e4e3a2390ce6f425adff7524a9e40149ad1027554b638e839d295be1"
+    },
+    {
+      "corpus": "C44",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1028.87109375
+      },
+      "counts": {
+        "player_actor_die": 16,
+        "death_add_one": 15,
+        "exact_pairs": 15,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 105,
+      "record_count": 419702,
+      "sha256": "1797300f30a94ed4b4e8b75291df607cb3acdacc5a75d8f044a36e7a41fd6f7d"
+    },
+    {
+      "corpus": "C45",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 969.3463745117188
+      },
+      "counts": {
+        "player_actor_die": 17,
+        "death_add_one": 16,
+        "exact_pairs": 16,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 98,
+      "record_count": 400051,
+      "sha256": "bb1b167502093fddeca0401a842bc9d0f8a655f9e0b2cd9a1ff6a29f9289de60"
+    },
+    {
+      "corpus": "C46",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1770.609375
+      },
+      "counts": {
+        "player_actor_die": 37,
+        "death_add_one": 36,
+        "exact_pairs": 36,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 178,
+      "record_count": 783799,
+      "sha256": "071d1fa07e292cbca707ad7566ee5bb15743eea077ea9d32c0a46c2af80cc35b"
+    },
+    {
+      "corpus": "C47",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1042.0919189453125
+      },
+      "counts": {
+        "player_actor_die": 15,
+        "death_add_one": 15,
+        "exact_pairs": 15,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 105,
+      "record_count": 212359,
+      "sha256": "71dd5799fc0341e631fd93dad0bda5b1f9fff7bc50d92040863c84d4f3e757f8"
+    },
+    {
+      "corpus": "C48",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 108.86750793457031,
+        "last_game_time": 1393.3336181640625
+      },
+      "counts": {
+        "player_actor_die": 31,
+        "death_add_one": 31,
+        "exact_pairs": 31,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 129,
+      "record_count": 261458,
+      "sha256": "d320abbf6390d5de690668d2eae6f5d26c6c7b59f2c4677e8c852bd6e9280bf6"
+    },
+    {
+      "corpus": "C49",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 899.608154296875
+      },
+      "counts": {
+        "player_actor_die": 13,
+        "death_add_one": 13,
+        "exact_pairs": 13,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 91,
+      "record_count": 212678,
+      "sha256": "1622647791f3229bc4f665fdf398986bd10e2d65b521c447e04bc3c401442180"
+    },
+    {
+      "corpus": "C50",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1343.010986328125
+      },
+      "counts": {
+        "player_actor_die": 23,
+        "death_add_one": 23,
+        "exact_pairs": 23,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 135,
+      "record_count": 277045,
+      "sha256": "a6341d63a649aa4cfd8623607aad1900ece21a5885825fd0f3f64c0c5c6ffd99"
+    },
+    {
+      "corpus": "C51",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1383.4937744140625
+      },
+      "counts": {
+        "player_actor_die": 38,
+        "death_add_one": 37,
+        "exact_pairs": 37,
+        "window_pairs": 0,
+        "unmatched_actions": 1,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 139,
+      "record_count": 306699,
+      "sha256": "02220632bc134cf9a5aa257ba5f4275bbc2223d6f7d05eb790c16d1ad8db3cee"
+    },
+    {
+      "corpus": "C52",
+      "clock": {
+        "valid": false,
+        "status": "unsupported_clock",
+        "reason": "frames 0 -> 1: game clock delta 21.140392, record delta 10.006122",
+        "first_game_time": null,
+        "last_game_time": null
+      },
+      "counts": {
+        "player_actor_die": 31,
+        "death_add_one": 31,
+        "exact_pairs": 31,
+        "window_pairs": 0,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 117,
+      "record_count": 242713,
+      "sha256": "db384c317fce4540def0f9d0b3238ccd44678721f90db936ca7ee6dbb161cf91"
+    },
+    {
+      "corpus": "C53",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1560.227294921875
+      },
+      "counts": {
+        "player_actor_die": 38,
+        "death_add_one": 36,
+        "exact_pairs": 36,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 157,
+      "record_count": 645360,
+      "sha256": "b97153a37d5ddbfb93363b921306016be59871f16be9fd322274398b10661bbc"
+    },
+    {
+      "corpus": "C54",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1613.6734619140625
+      },
+      "counts": {
+        "player_actor_die": 59,
+        "death_add_one": 57,
+        "exact_pairs": 57,
+        "window_pairs": 0,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 163,
+      "record_count": 692763,
+      "sha256": "70c1260309099fcf0f4111389d16cbcc60f66f8da5cfa8493bc4a3e18dd7f1b2"
+    },
+    {
+      "corpus": "C55",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1909.71044921875
+      },
+      "counts": {
+        "player_actor_die": 60,
+        "death_add_one": 58,
+        "exact_pairs": 57,
+        "window_pairs": 1,
+        "unmatched_actions": 2,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 192,
+      "record_count": 815356,
+      "sha256": "7c56b0696cd3385a00506daf3fd077c909d2536d3b796b7fdd8e10c52a88d9dd"
+    },
+    {
+      "corpus": "C56",
+      "clock": {
+        "valid": true,
+        "status": "accepted",
+        "reason": "continuous native clock anchors",
+        "first_game_time": 0.0,
+        "last_game_time": 1595.29443359375
+      },
+      "counts": {
+        "player_actor_die": 45,
+        "death_add_one": 45,
+        "exact_pairs": 43,
+        "window_pairs": 2,
+        "unmatched_actions": 0,
+        "unmatched_increments": 0,
+        "ambiguous_actions": 0,
+        "ambiguous_increments": 0,
+        "unsupported_semantics": 0
+      },
+      "sections": 162,
+      "record_count": 667668,
+      "sha256": "7d91bbe963afda9bf9556d90f48385c0b566f38fd5793a199da4de22581f4978"
+    }
+  ],
+  "audit_source_lf_sha256": "731316945f16e205b06ff4ef4ffb7b57451ba1a480ce5f5c3b6f9e8fc11d1881",
+  "validation": {
+    "windows_tests": 388,
+    "seconds": 46.977,
+    "exit": 0,
+    "cli_actual_matches_library": true,
+    "cli_help_exit": 0,
+    "cli_invalid_window_exit": 2,
+    "cli_malformed_framing_exit": 2,
+    "lsp": "unavailable; installation previously declined"
+  }
+}
