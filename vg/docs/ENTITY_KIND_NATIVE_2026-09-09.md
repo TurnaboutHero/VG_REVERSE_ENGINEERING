@@ -27,8 +27,14 @@ bit 31은 영웅 외에 FortressMinion에도 설정되므로 영웅 판정에 �
 직렬화 필드가 actor 설정이라는 연결을 확정하지 않는다. 생성 경로 `01129ea0`은
 `0112c050`으로 이름을 조회한 뒤 간접 registration callback을 호출한다.
 `0093fba0`이 종류 플래그를 초기화할 때에는 actor+`0x1c`가 이미 존재한다.
-그 포인터를 설정하는 callback이 다음 조사 대상이다.
+후속 추적에서 callback `00942d90`이 세 번째 인자를 새 actor+`0x1c`에
+그대로 저장하는 것을 확인했다. `00954e40`의 `00954f8f` 부근에서 이 callback을
+등록하며 타입 descriptor는 `01a7524c`를 통해 `020e9974`를 가리킨다.
+실제 등록 key는 descriptor+4다. 이 descriptor는 BSS에 있어 현재 정적 파일에서
+값을 확인할 수 없었다. 크리스탈 CFF의 SYMB type-id `2419fb6c`와 이 key의
+일치가 남은 검증이다. 일반적인 root 전달·포인터 대입을 확인한 것만으로
+해당 리소스가 이 actor 타입에 등록된다고 단정하지 않는다.
 
 DefinitionManifest의 첫 값은 정의 테이블 relocation 포인터다. 그 오프셋을
-개체 설정의 enum처럼 읽으면 오분류한다. 후속 구현에는 callback 연결 증거와
+개체 설정의 enum처럼 읽으면 오분류한다. 후속 구현에는 위 타입 key의 연결 증거와
 영웅·구조물·몬스터 자산의 대조, 그리고 실제 화면 검증이 필요하다.
