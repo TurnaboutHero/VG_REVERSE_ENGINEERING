@@ -6,11 +6,11 @@ Vainglory: Community Edition (VG:CE) replay file (.vgr) binary format analysis a
 
 This project reverse-engineers the VGR replay binary format to extract match data including player names, hero selections, team compositions, game modes, and entity interactions. All analysis is performed on locally-stored replay files.
 
-### Current event evidence (2026-09-09)
+### Current event evidence (2026-09-10)
 
 Latest offline research: the [161-code binary candidate inventory and validation plans](vg/docs/vg-binary-event-candidates-2026-09-09.md) preserves named and unresolved candidates, observed payload variants, and native/corpus evidence. The [0452 postgame follow-up](vg/docs/POSTGAME_OFFLINE_2026-09-09.md) separates callback evidence from final-score acceptance. These publications add research evidence, not newly validated gameplay semantics or changes to final-stat extraction.
 
-See the [event catalog](vg/docs/EVENT_CATALOG_2026-09-08.md), [endgame boundary investigation](vg/docs/ENDGAME_BOUNDARY_2026-09-08.md), [death action and crystal-source proof](vg/docs/DEATH_EVENTS_2026-09-09.md), and [next implementation plan](docs/plans/2026-09-09-event-semantics-next.md). Native `0x03f1` end actions are available in the timeline; `0x0430` death labels and generic source classification are verified research queued for implementation. Final-match acceptance remains gated. The legacy achievement table below contains historical claims and is not a substitute for those scoped validation records.
+See the [event catalog](vg/docs/EVENT_CATALOG_2026-09-08.md), [endgame boundary investigation](vg/docs/ENDGAME_BOUNDARY_2026-09-08.md), [death action and crystal-source proof](vg/docs/DEATH_EVENTS_2026-09-09.md), and [next implementation plan](docs/plans/2026-09-09-event-semantics-next.md). The timeline exposes native `0x03f1` end actions, `0x0430` death actions and `0x040b` deletion observations, with optional verified definition names and selected Actor resource kinds. The [recorded counter-gap audit](vg/docs/TERMINAL_COUNTER_AUDIT_2026-09-09.md) preserves unmatched observations without changing final statistics. The [Windows replay follow-up](vg/docs/WINDOWS_REPLAY_ACCEPTANCE_2026-09-10.md) records successful normal playback and the unresolved C16 replay-entry failure. Final-match acceptance remains gated. The legacy achievement table below contains historical claims and is not a substitute for those scoped validation records.
 
 ### Key Achievements
 

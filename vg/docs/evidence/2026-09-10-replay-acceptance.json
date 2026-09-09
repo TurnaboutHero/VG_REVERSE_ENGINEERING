@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "date_kst": "2026-09-10",
+  "scope": "Derived observation summary; C16 late-game UI acceptance remains unverified.",
+  "research_commit": "aa014b23a365fc1abb15e38b33ad963a3ab55076",
+  "executable_sha256": "659f9eed557a426db57554d2a768efe34ba9fe02ba1085d77db64390b0d92642",
+  "session_gate": {"wts_session": 1, "active": true, "unlocked_flag": 1, "fresh_before_input_and_capture": true},
+  "c16": {
+    "source_sections_verified": 171,
+    "replacement_sections_verified": 171,
+    "replacement_hash_mismatches": 0,
+    "original_slot_sections_backed_up_and_restored": 17,
+    "entry_observation": "Returned to home menu; remained there about 44 seconds later; process remained alive.",
+    "gameplay_observed": false,
+    "late_game_kda_verified": false,
+    "failure_cause": null,
+    "pre_click_screenshot_gap_seconds_approx": 125
+  },
+  "normal_control": {
+    "file_substitution": false,
+    "same_process_as_c16": false,
+    "same_slot_as_c16": false,
+    "live_result_hud": "2:44",
+    "replay_result_hud": "2:44",
+    "live_kda": [0, 0, 0],
+    "replay_kda": [0, 0, 0],
+    "replay_intermediate_hud": ["0:55", "2:18"],
+    "end_reason_observed": "surrender",
+    "source_sections_retained": 17,
+    "replacement_control_repeated_this_run": false
+  },
+  "private_evidence_sha256": {
+    "c16_home_after_click": "96d2d94580d33cdaf74ae7c2261d0b2a61d1632f66a671902d749d4cb9533c7e",
+    "c16_home_followup": "96d2d94580d33cdaf74ae7c2261d0b2a61d1632f66a671902d749d4cb9533c7e",
+    "normal_live_result": "538615b76db179b050e4081509aaa41105bea13cdbde0e64c34da17528e88bb3",
+    "normal_replay_00_55": "320bdb526281fbe8bfac564abf52fc93eeca7e7b9196015d5ff4863766f9d942",
+    "normal_replay_result": "3f035776016a32989ddaaddde1efc92c8b778b74fb8e31bce4139ef951e6240f",
+    "source_report": "f9e11723be4a7a28516ba1d47e49ad190b5426ccf21bab3e8adc022d29b5eb47"
+  },
+  "evidence_distribution": "Private originals are retained separately. These hashes identify them; they do not provide independent public visual verification.",
+  "cleanup": {"substituted_slot_restored_before_normal_control": true, "owned_processes_remaining": [], "temporary_scheduled_task_removed": true, "preexisting_steam_preserved": true},
+  "final_stat_policy_changed": false
+}
